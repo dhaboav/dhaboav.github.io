@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dhaboav's Website</title>
+    <link rel="stylesheet" href="dist/style.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <script>
+        if (
+            localStorage.theme === "dark" ||
+            (!("theme" in localStorage) &&
+                window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Header start -->
+    <header class="absolute left-0 top-0 z-10 flex w-full items-center bg-transparent">
+        <div class="container">
+            <div class="relative flex items-center justify-between">
+                <div class="px-4">
+                    <a href="#home" class="block py-6 text-lg font-bold text-primary">
+                        <img src="dist/img/logo.png" alt="Logos" style="width: 100px; height: auto;">
+                    </a>
+                </div>
+                <div class="flex items-center px-4">
+                    <button id="hamburger" name="hamburger" type="button" class="absolute right-4 block lg:hidden">
+                        <span class="hamburger-line origin-top-left transition duration-300 ease-in-out"></span>
+                        <span class="hamburger-line transition duration-300 ease-in-out"></span>
+                        <span class="hamburger-line origin-top-left transition duration-300 ease-in-out"></span>
+                    </button>
+                    <nav id="nav-menu"
+                        class="absolute right-[1px] top-full mt-2 hidden w-full rounded-lg bg-slate-50 py-5 shadow-lg dark:bg-secondary dark:shadow-slate-500 lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none lg:dark:bg-transparent">
+                        <ul class="block lg:flex">
+                            <li class="group">
+                                <a href="#home"
+                                    class="mx-8 flex transform py-2 text-base text-dark transition-transform group-hover:text-primary dark:text-white lg:hover:scale-150">
+                                    Beranda
+                                </a>
+                            </li>
+                            <li class="group">
+                                <a href="#about"
+                                    class="mx-8 flex transform py-2 text-base text-dark transition-transform group-hover:text-primary dark:text-white lg:hover:scale-150">
+                                    Tentang Saya
+                                </a>
+                            </li>
+                            <li class="group">
+                                <a href="#skills"
+                                    class="mx-8 flex transform py-2 text-base text-dark transition-transform group-hover:text-primary dark:text-white lg:hover:scale-150">
+                                    Keterampilan
+                                </a>
+                            </li>
+                            <li class="group">
+                                <a href="#portofolio"
+                                    class="mx-8 flex transform py-2 text-base text-dark transition-transform group-hover:text-primary dark:text-white lg:hover:scale-150">
+                                    Portofolio
+                                </a>
+                            </li>
+                            <li class="group">
+                                <a href="#contact"
+                                    class="mx-8 flex transform py-2 text-base text-dark transition-transform group-hover:text-primary dark:text-white lg:hover:scale-150">
+                                    Kontak
+                                </a>
+                            </li>
+                            <li class="flex items-center py-2 pl-8">
+                                <div class="flex">
+                                    <span class="mr-2 text-sm text-dark dark:text-white">Light</span>
+                                    <input type="checkbox" class="hidden" id="dark-toggle" />
+                                    <label for="dark-toggle">
+                                        <div
+                                            class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-primary p-1">
+                                            <div
+                                                class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out">
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <span class="ml-2 text-sm text-dark dark:text-white">Dark</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header end -->
+
+    <!-- Hero section -->
+    <section id="home" class="pt-36 dark:bg-dark">
+        <div class="container">
+            <div class="flex flex-wrap">
+                <div class="w-full self-center px-4 lg:w-1/2">
+                    <h1 class="text-base font-semibold text-dark dark:text-white md:text-xl lg:text-2xl">
+                        Hai Semua👋, saya
+                        <span class="lg:text-5 mt-1 block text-4xl font-bold text-primary">
+                            Dhammiko Bodhi Avatara
+                        </span>
+                    </h1>
+                    <h2 class="mb-3 text-lg font-medium text-secondary">
+                        Mahasiswa Universitas Tanjungpura
+                    </h2>
+                    <p class="mb-8 font-medium leading-relaxed text-secondary">
+                        Seseorang yang belajar menjadi 1% lebih baik setiap hari.
+                    </p>
+                    <a href="dist/other/resume.pdf" download="Resume Dhammiko Bodhi Avatara"
+                        class="rounded-full border-2 border-transparent bg-primary px-3 py-3 text-base font-semibold text-white transition-colors duration-300 ease-in-out hover:border-primary hover:text-black hover:shadow-lg">
+                        <i class="bx bxs-download"></i> | Resume
+                    </a>
+                </div>
+                <div class="relative w-full self-end px-4 lg:w-1/2">
+                    <img src="dist/img/profile.png" alt="Dhammiko" class="relative z-10 mx-auto max-w-full lg:-mt-8" />
+                    <span class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1 md:scale-150">
+                        <svg class="h-72 w-72" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#ea580c"
+                                d="M50.5,-71.2C62,-61.2,65.6,-41.8,66.6,-24.9C67.5,-8,65.9,6.4,63,22C60.1,37.6,55.9,54.4,45.2,60.3C34.4,66.2,17.2,61.3,2.4,58C-12.5,54.8,-25,53.1,-36.7,47.5C-48.4,42,-59.3,32.4,-66.7,19.4C-74.2,6.3,-78.1,-10.2,-74.3,-24.9C-70.5,-39.6,-59.1,-52.5,-45.4,-61.9C-31.7,-71.2,-15.9,-76.9,1.8,-79.4C19.5,-81.9,39,-81.2,50.5,-71.2Z"
+                                transform="translate(100 100)" />
+                        </svg>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero section end -->
+
+    <!-- About section -->
+    <section id="about" class="pb-32 pt-36 dark:bg-dark">
+        <div class="container">
+            <div class="flex flex-wrap">
+                <div class="mb-10 w-full px-4 lg:w-1/2">
+                    <h4 class="mb-3 text-lg font-bold uppercase text-primary">
+                        Tentang Saya
+                    </h4>
+                    <h2 class="mb-3 max-w-md text-3xl font-bold text-dark dark:text-white lg:text-4xl">
+                        Perkenalan singkat
+                    </h2>
+                    <p class="text-base font-medium text-secondary lg:text-lg">
+                        Seorang mahasiswa semester akhir jurusan Informatika di Universitas Tanjungpura
+                        yang hobinya membaca dan bergabung di tim robotika untuk mengisi
+                        waktu luang.
+                    </p>
+                </div>
+                <div class="w-full px-4 lg:w-1/2">
+                    <h3 class="mb-4 text-2xl font-semibold text-dark dark:text-white lg:pt-10 lg:text-3xl">
+                        Mari Berteman
+                    </h3>
+                    <p class="lg:text- mb-6 text-base font-medium text-secondary">
+                        Tak kenal, maka tak sayang! Yuk, kita berkenalan lebih dekat,
+                        mulai dari mengklik akun medsos di bawah 👇
+                    </p>
+                    <div class="flex items-center">
+                        <!-- Linked in -->
+                        <a href="https://www.linkedin.com/in/dhammiko-bodhi-avatara/" target="_blank"
+                            class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
+                            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <title>LinkedIn</title>
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+
+                        <!-- Github -->
+                        <a href="https://github.com/Dhaboav" target="_blank"
+                            class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
+                            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <title>GitHub</title>
+                                <path
+                                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About section end -->
+
+    <!-- Skills section -->
+    <section id="skills" class="bg-slate-100 pb-32 pt-36 dark:bg-slate-800">
+        <div class="container">
+            <div class="w-full px-4">
+                <div class="max-width-xl mx-auto mb-14 text-center">
+                    <h4 class="text-lg font-bold uppercase text-primary">
+                        Keterampilan
+                    </h4>
+                </div>
+            </div>
+            <div class="flex w-full flex-wrap justify-center px-4 xl:mx-auto xl:w-10/12">
+                <!-- Python -->
+                <div class="w-1/2 p-4 lg:w-1/3">
+                    <div class="flex h-full flex-col p-2 dark:text-white lg:flex-row">
+                        <!-- SVG Icon -->
+                        <svg role="img" class="mx-auto mb-2 w-14 fill-current md:m-0" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <title>Python</title>
+                            <path
+                                d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z" />
+                        </svg>
+                        <!-- Text Content -->
+                        <div class="flex-grow items-center justify-center text-center md:text-left lg:ml-2">
+                            <h3 class="text-xl font-semibold">Python</h3>
+                            <p class="text-base font-medium text-secondary">
+                                Bahasa pemrograman tingkat tinggi
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OpenCV -->
+                <div class="w-1/2 p-4 lg:w-1/3">
+                    <div class="flex h-full flex-col p-2 dark:text-white lg:flex-row">
+                        <!-- SVG Icon -->
+                        <svg role="img" class="mx-auto mb-2 w-14 fill-current md:m-0" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <title>OpenCV</title>
+                            <path
+                                d="M11.8992.8525C8.735.8525 6.17 3.4175 6.17 6.5817c0 2.102 1.1321 3.9398 2.8198 4.9366l1.6412-2.7849c.0411-.0699.0176-.1593-.0495-.2048-.6233-.4227-1.0328-1.137-1.0328-1.947 0-1.298 1.0524-2.3504 2.3505-2.3504 1.2981 0 2.3505 1.0524 2.3505 2.3505 0 .8098-.4095 1.5242-1.0328 1.947-.0671.0454-.0907.1348-.0495.2047l1.6414 2.785c1.6878-.9969 2.8199-2.8346 2.8199-4.9367 0-3.1642-2.5653-5.7292-5.7295-5.7292zm-6.17 10.8366C2.565 11.6891 0 14.2541 0 17.4183c0 3.1642 2.565 5.7292 5.7292 5.7292 3.1798 0 5.8074-2.6995 5.7275-5.8762H8.2313c-.0847 0-.1513.0717-.1519.1564-.0082 1.266-1.0644 2.3411-2.3502 2.3411-1.2981 0-2.3505-1.0524-2.3505-2.3505 0-1.2982 1.0524-2.3505 2.3505-2.3505.34 0 .663.0724.9547.2022.0713.0318.1566.0077.1962-.0595l1.6464-2.7935c-.8273-.4636-1.7815-.7279-2.7973-.7279zm15.4424.7614l-1.6366 2.7878c-.041.07-.0172.1594.05.2048.624.4217 1.0348 1.1354 1.0363 1.9452.0022 1.298-1.0483 2.352-2.3465 2.3542-1.298.0023-2.3523-1.0482-2.3545-2.3462-.0015-.8098.4068-1.5248 1.0294-1.9486.067-.0457.0905-.1353.0492-.2051l-1.6464-2.7818c-1.6859.9998-2.8146 2.8394-2.811 4.9415.0056 3.1641 2.575 5.7248 5.7393 5.7192 3.1641-.0054 5.7246-2.575 5.7192-5.7392-.0037-2.1022-1.139-3.938-2.8284-4.9318z" />
+                        </svg>
+                        <!-- Text Content -->
+                        <div class="flex-grow items-center justify-center text-center md:text-left lg:ml-2">
+                            <h3 class="text-xl font-semibold">OpenCV</h3>
+                            <p class="text-base font-medium text-secondary">
+                                Library untuk pengolahan citra
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HTML -->
+                <div class="w-1/2 p-4 lg:w-1/3">
+                    <div class="flex h-full flex-col p-2 dark:text-white lg:flex-row">
+                        <!-- SVG Icon -->
+                        <svg role="img" class="mx-auto mb-2 w-14 fill-current md:m-0" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <title>HTML5</title>
+                            <path
+                                d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z" />
+                        </svg>
+
+                        <!-- Text Content -->
+                        <div class="flex-grow items-center justify-center text-center md:text-left lg:ml-2">
+                            <h3 class="text-xl font-semibold">HTML</h3>
+                            <p class="text-base font-medium text-secondary">
+                                Struktur Website
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CSS -->
+                <div class="w-1/2 p-4 lg:w-1/3">
+                    <div class="flex h-full flex-col p-2 dark:text-white lg:flex-row">
+                        <!-- SVG Icon -->
+                        <svg role="img" class="mx-auto mb-2 w-14 fill-current md:m-0" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <title>CSS3</title>
+                            <path
+                                d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z" />
+                        </svg>
+
+                        <!-- Text Content -->
+                        <div class="flex-grow items-center justify-center text-center md:text-left lg:ml-2">
+                            <h3 class="text-xl font-semibold">CSS</h3>
+                            <p class="text-base font-medium text-secondary">
+                                Tampilan Website
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tailwind -->
+                <div class="w-1/2 p-4 lg:w-1/3">
+                    <div class="flex h-full flex-col p-2 dark:text-white lg:flex-row">
+                        <!-- SVG Icon -->
+                        <svg role="img" class="mx-auto mb-2 w-14 fill-current md:m-0" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <title>Tailwind CSS</title>
+                            <path
+                                d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z" />
+                        </svg>
+                        <!-- Text Content -->
+                        <div class="flex-grow items-center justify-center text-center md:text-left lg:ml-2">
+                            <h3 class="text-xl font-semibold">Tailwindcss</h3>
+                            <p class="text-base font-medium text-secondary">
+                                Framework CSS
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Skills section end -->
+
+    <!-- Portofolio section -->
+    <section id="portofolio" class="pb-16 pt-36 dark:bg-dark">
+        <div class="container">
+            <div class="w-full px-4">
+                <div class="max-width-xl mx-auto mb-16 text-center">
+                    <h4 class="mb-2 text-lg font-bold uppercase text-primary">
+                        Portofolio
+                    </h4>
+                    <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white">
+                        Project Terbaru
+                    </h2>
+                </div>
+            </div>
+            <div class="flex flex-wrap">
+                <!-- Basestation -->
+                <div class="mb-5 w-full px-4 lg:w-1/2 xl:w-1/3">
+                    <div
+                        class="mb-10 flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-primary dark:bg-slate-800">
+                        <img src="dist/img/basestation.png" alt="basestation" class="h-48 w-full object-cover" />
+                        <div class="flex flex-col justify-between px-6 py-8">
+                            <div>
+                                <h3 class="mb-3 truncate text-xl font-semibold text-dark dark:text-white">
+                                    Basestation
+                                </h3>
+                                <p class="mb-6 text-base font-medium text-secondary">
+                                    Aplikasi untuk mengkontrol robot dengan menggunakan teknologi 
+                                    jaringan lokal berbasis pemrograman Python dan memiliki kemampuan 
+                                    cross platform sistem operasi Windows dan Linux (Ubuntu) serta
+                                    tema gelap terang yang otomatis mengikuti preferensi sistem.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+                <!-- Login Website -->
+                <div class="mb-5 w-full px-4 lg:w-1/2 xl:w-1/3">
+                    <div
+                        class="mb-10 flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-primary dark:bg-slate-800">
+                        <img src="dist/img/login.png" alt="basestation" class="h-48 w-full object-cover" />
+                        <div class="flex flex-col justify-between px-6 py-8">
+                            <div>
+                                <h3 class="mb-3 truncate text-xl font-semibold text-dark dark:text-white">
+                                    Simple Login Website
+                                </h3>
+                                <p class="mb-6 text-base font-medium text-secondary">
+                                    Menggunakan teknologi HTML, CSS, PHP dan MySQL yang dapat melakukan login dan menampilkan data sesuai dengan kategori akun yaitu admin dan mahasiswa.
+                                </p>
+                                <a href="https://github.com/Dhaboav/web-login" target="_blank"
+                                class="block w-full rounded-lg bg-primary px-4 py-2 text-center text-sm font-normal text-white hover:opacity-80">Repository</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Portofolio section end -->
+
+    <!-- Contact section -->
+    <section id="contact" class="bg-slate-100 pb-32 pt-36 dark:bg-slate-800">
+        <div class="container">
+            <div class="w-full px-4">
+                <div class="mx-auto mb-16 max-w-full text-center">
+                    <h4 class="mb-2 text-lg font-bold uppercase text-primary">
+                        Kontak
+                    </h4>
+                    <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl lg:text-5xl">
+                        Hubungi Kami
+                    </h2>
+                    <p class="text-md font-medium text-secondary md:text-lg">
+                        Hai! Jika ada yang ingin kamu sampaikan, ide keren yang ingin
+                        meledakkan pikiran, atau peluang kolaborasi yang seru-seruan,
+                        jangan ditahan-tahan lagi! Isi formulir kontak di bawah untuk
+                        memulai pembicaraan yang akan menginspirasi.
+                    </p>
+                </div>
+            </div>
+            <div id="alert-3"
+                class="my-alert mb-4 hidden w-full items-center rounded-md bg-green-500 p-2 text-green-800 lg:mx-auto lg:w-2/3"
+                role="alert">
+                <div class="ms-3 text-sm font-medium text-white">
+                    <strong>Terima kasih!</strong> Pesan anda sudah kami terima.
+                </div>
+                <button type="button"
+                    class="-mx-1.5 -my-1.5 ms-auto inline-flex h-8 w-8 items-center justify-center rounded-md bg-green-50 p-1.5 text-green-500 hover:bg-red-400 hover:text-white focus:ring-2 focus:ring-green-400"
+                    data-dismiss-target="#alert-3" aria-label="Close">
+                    <span class="sr-only">Close</span>
+                    <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                    </svg>
+                </button>
+            </div>
+            <form name="contacts-form">
+                <div class="w-full lg:mx-auto lg:w-2/3">
+                    <div class="mb-8 w-full px-4">
+                        <label for="name" class="text-base font-bold text-primary">Nama</label>
+                        <input type="text" id="name" name="nama"
+                            class="w-full rounded-md bg-slate-200 p-2 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                            required placeholder="Nama lengkap anda" />
+                    </div>
+                    <div class="mb-8 w-full px-4">
+                        <label for="email" class="text-base font-bold text-primary">Email</label>
+                        <input type="email" id="email" name="email"
+                            class="w-full rounded-md bg-slate-200 p-2 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                            required placeholder="Email anda" />
+                    </div>
+                    <div class="mb-8 w-full px-4">
+                        <label for="message" class="text-base font-bold text-primary">Pesan</label>
+                        <textarea type="text" id="message" name="pesan"
+                            class="h-32 w-full rounded-md bg-slate-200 p-2 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                            required placeholder="Pesan yang ingin anda kirim"></textarea>
+                    </div>
+                    <div class="w-full px-4">
+                        <button type="submit"
+                            class="btn-kirim w-full rounded-full bg-primary px-5 py-3 text-base font-semibold text-white transition duration-500 hover:text-dark hover:opacity-80 hover:shadow-lg">
+                            Kirim
+                        </button>
+
+                        <button disabled type="button"
+                            class="btn-loading hidden w-full rounded-full bg-primary px-5 py-3 text-base font-semibold text-white">
+                            <svg aria-hidden="true" role="status" class="me-3 inline h-4 w-4 animate-spin text-white"
+                                viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                                    fill="#E5E7EB" />
+                                <path
+                                    d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                                    fill="currentColor" />
+                            </svg>
+                            Loading...
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- Contact section end -->
+
+    <!-- Footer -->
+    <footer class="bg-primary pb-12 pt-24">
+        <div class="container">
+            <div class="flex flex-wrap">
+                <div class="mb-12 w-full px-4 font-medium text-slate-200 md:w-1/3">
+                    <h2 class="mb-3 text-4xl font-bold text-white">Dhaboav</h2>
+                    <h3 class="mb-2 text-2xl font-bold">Hubungi Kami</h3>
+                    <p>xxx@gmail.com</p>
+                    <p>Pontianak</p>
+                </div>
+                <div class="mb-12 w-full px-4 font-medium text-slate-200 md:w-1/3">
+                    <h3 class="mb-3 text-xl font-semibold text-white">Media Sosial</h3>
+                    <div class="flex items-center">
+                        <!-- Linked in -->
+                        <a href="https://www.linkedin.com/in/dhammiko-bodhi-avatara/" target="_blank"
+                            class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-slate-200 hover:border-blue-700 hover:bg-blue-700 hover:text-white">
+                            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <title>LinkedIn</title>
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+
+                        <!-- Github -->
+                        <a href="https://www.linkedin.com/in/dhammiko-bodhi-avatara/" target="_blank"
+                            class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-slate-200 hover:border-dark hover:bg-dark hover:text-white">
+                            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <title>GitHub</title>
+                                <path
+                                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="mb-12 w-full px-4 md:w-1/3">
+                    <h3 class="mb-3 text-xl font-semibold text-white">Tautan</h3>
+                    <ul class="text-slate-200">
+                        <li>
+                            <a href="#home" class="mb-2 inline-block text-base hover:text-black">Beranda</a>
+                        </li>
+                        <li>
+                            <a href="#about" class="mb-2 inline-block text-base hover:text-black">Tentang Saya</a>
+                        </li>
+                        <li>
+                            <a href="#skills" class="mb-2 inline-block text-base hover:text-black">Keterampilan</a>
+                        </li>
+                        <li>
+                            <a href="#portofolio" class="mb-2 inline-block text-base hover:text-black">Portofolio</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="mb-2 inline-block text-base hover:text-black">Kontak</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="w-full border-t border-orange-200 pt-10">
+                <p class="text-center text-xs font-medium text-white">
+                    Copyright © 2024 Dhammiko Bodhi Avatara. Inspirasi desain dari
+                    <a href="https://www.youtube.com/@sandhikagalihWPU" target="_blank"
+                        class="text-dark underline">Sandhika Galih</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer end -->
+
+    <!-- Back to top -->
+    <a href="#home" id="to-top"
+        class="fixed bottom-4 right-4 z-[9999] hidden h-3 w-14 items-center justify-center rounded-full bg-orange-700 p-4 hover:animate-pulse">
+        <span class="2 2 mt-2 block h-5 w-5 rotate-45 border-l border-t"></span>
+    </a>
+    <!-- Back to top end -->
+
+    <!-- Script javascript -->
+    <script src="dist/js/script.js"></script>
+    <script>
+        // Kirim kontak form
+        const scriptURL =
+            "https://script.google.com/macros/s/AKfycbwD7ee0bUKMHKSQYVir2GXOfkNY8qrQ65MazHrWgX7nO378yWh58kc2iVu58zgGhlyt/exec";
+        const form = document.forms["contacts-form"];
+        const btnKirim = document.querySelector(".btn-kirim");
+        const btnLoading = document.querySelector(".btn-loading");
+        const alertNotif = document.querySelector(".my-alert");
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            // Ketika tombol kirim diklik
+            // Tampilkan tombol loading hilangkan tombol kirim
+            btnLoading.classList.toggle("hidden");
+            btnKirim.classList.toggle("hidden");
+            fetch(scriptURL, { method: "POST", body: new FormData(form) })
+                .then((response) => {
+                    // Tampilkan tombol kirim hilangkan tombol loading
+                    btnLoading.classList.toggle("hidden");
+                    btnKirim.classList.toggle("hidden");
+
+                    // tampilkan alert
+                    alertNotif.classList.remove("hidden");
+                    alertNotif.classList.add("flex");
+
+                    // Reset form
+                    form.reset();
+
+                    console.log("Success!", response);
+                })
+                .catch((error) => console.error("Error!", error.message));
+        });
+
+        // Close button  alert
+        const closeButton = document.querySelector(
+            '#alert-3 button[data-dismiss-target="#alert-3"]',
+        );
+        if (closeButton) {
+            closeButton.addEventListener("click", function () {
+                // Sembunyikan alert ketika tombol "Close" diklik
+                alertNotif.classList.add("hidden");
+            });
+        }
+    </script>
+    <!-- Script javascript end -->
+</body>
+
+</html>
