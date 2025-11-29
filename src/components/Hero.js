@@ -9,7 +9,7 @@ export default function Hero() {
             <div class="flex flex-wrap">
                 <div class="w-full self-center px-4 lg:w-1/2">
                     <p class="animate-fade-in mb-4 font-mono text-sm text-primary">Hai, I'm</p>
-                    <h1 class="animate-fade-in-delay-1 mb-6 text-6xl font-medium leading-none tracking-tight dark:text-white">
+                    <h1 class="animate-fade-in-delay-1 mb-6 text-6xl font-medium leading-none tracking-tight text-white">
                         Dhammiko Bodhi Avatara
                     </h1>
                     <p class="animate-fade-in-delay-2 mb-8 text-xl font-light leading-relaxed text-zinc-400">
