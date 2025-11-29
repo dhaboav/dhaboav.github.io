@@ -1,541 +1,506 @@
 <!doctype html>
 <html lang="id" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dhaboav's Website</title>
-    <link rel="stylesheet" href="dist/style.css" />
-    <link
-      href="https://cdn.boxicons.com/3.0.5/fonts/basic/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.boxicons.com/3.0.5/fonts/brands/boxicons-brands.min.css"
-      rel="stylesheet"
-    />
-    <script>
-      if (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-    </script>
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dhaboav's Website</title>
+        <link rel="stylesheet" href="dist/style.css" />
+        <link
+            href="https://cdn.boxicons.com/3.0.5/fonts/basic/boxicons.min.css"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdn.boxicons.com/3.0.5/fonts/brands/boxicons-brands.min.css"
+            rel="stylesheet"
+        />
+        <script>
+            if (
+                localStorage.theme === 'dark' ||
+                (!('theme' in localStorage) &&
+                    window.matchMedia('(prefers-color-scheme: dark)').matches)
+            ) {
+                document.documentElement.classList.add('dark')
+            } else {
+                document.documentElement.classList.remove('dark')
+            }
+        </script>
+    </head>
 
-  <body>
-    <header class="fixed left-0 right-0 z-50 transition-all duration-300">
-      <div class="container mx-auto max-w-7xl px-6">
-        <nav class="flex h-16 items-center justify-between">
-          <div class="px-4">
-            <a href="#home" class="block py-6">
-              <i class="bx bx-fire bx-lg text-3xl text-primary"></i>
-            </a>
-          </div>
+    <body>
+        <header class="fixed left-0 right-0 z-50 transition-all duration-300">
+            <div class="container mx-auto max-w-7xl px-6">
+                <nav class="flex h-16 items-center justify-between">
+                    <div class="px-4">
+                        <a href="#home" class="block py-6">
+                            <i
+                                class="bx bx-fire bx-lg text-3xl text-primary"
+                            ></i>
+                        </a>
+                    </div>
 
-          <div class="flex items-center gap-8">
-            <a
-              href="#about"
-              class="link-underline text-sm text-zinc-400 transition-colors hover:text-white"
-              >About</a
-            >
-            <a
-              href="#projects"
-              class="link-underline text-sm text-zinc-400 transition-colors hover:text-white"
-              >Projects</a
-            >
+                    <div class="flex items-center gap-8">
+                        <a
+                            href="#about"
+                            class="link-underline text-sm text-zinc-400 transition-colors hover:text-white"
+                            >About</a
+                        >
+                        <a
+                            href="#projects"
+                            class="link-underline text-sm text-zinc-400 transition-colors hover:text-white"
+                            >Projects</a
+                        >
 
-            <a
-              href="#experience"
-              class="link-underline text-sm text-zinc-400 transition-colors hover:text-white"
-              >Experience</a
-            >
-          </div>
+                        <a
+                            href="#experience"
+                            class="link-underline text-sm text-zinc-400 transition-colors hover:text-white"
+                            >Experience</a
+                        >
+                    </div>
 
-          <a
-            href="#contact"
-            class="block text-sm font-medium text-primary transition-colors hover:text-white"
-          >
-            Let's talk
-          </a>
-        </nav>
-      </div>
-    </header>
-
-    <!-- Hero section -->
-    <section
-      id="home"
-      class="flex min-h-screen items-center justify-center bg-black pt-16"
-    >
-      <div class="container mx-auto max-w-7xl px-4">
-        <div class="flex flex-wrap">
-          <div class="w-full self-center px-4 lg:w-1/2">
-            <p class="animate-fade-in mb-4 font-mono text-sm text-primary">
-              Hai, I'm
-            </p>
-            <h1
-              class="animate-fade-in-delay-1 mb-6 text-6xl font-medium leading-none tracking-tight dark:text-white"
-            >
-              Dhammiko Bodhi Avatara
-            </h1>
-
-            <p
-              class="animate-fade-in-delay-2 mb-8 text-xl font-light leading-relaxed text-zinc-400"
-            >
-              Passionate about robotics and computer vision, developing smart
-              systems that see and act.
-            </p>
-
-            <div class="animate-fade-in-delay-3 flex items-center gap-6">
-              <a
-                href="#projects"
-                class="inline-flex items-center gap-2 text-sm font-medium text-white transition-colors hover:text-primary"
-              >
-                View work <span class="text-lg">→</span>
-              </a>
-              <a
-                href="#contact"
-                class="link-underline text-sm text-zinc-400 transition-colors hover:text-white"
-              >
-                Get in touch
-              </a>
-            </div>
-          </div>
-          <div class="relative w-full self-end px-4 lg:w-1/2">
-            <img
-              src="dist/img/profile.png"
-              alt="Dhammiko"
-              class="relative z-10 mx-auto max-w-full lg:-mt-8"
-            />
-            <span
-              class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1 md:scale-150"
-            >
-              <svg
-                class="h-72 w-72"
-                viewBox="0 0 200 200"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill="#ea580c"
-                  d="M50.5,-71.2C62,-61.2,65.6,-41.8,66.6,-24.9C67.5,-8,65.9,6.4,63,22C60.1,37.6,55.9,54.4,45.2,60.3C34.4,66.2,17.2,61.3,2.4,58C-12.5,54.8,-25,53.1,-36.7,47.5C-48.4,42,-59.3,32.4,-66.7,19.4C-74.2,6.3,-78.1,-10.2,-74.3,-24.9C-70.5,-39.6,-59.1,-52.5,-45.4,-61.9C-31.7,-71.2,-15.9,-76.9,1.8,-79.4C19.5,-81.9,39,-81.2,50.5,-71.2Z"
-                  transform="translate(100 100)"
-                />
-              </svg>
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Hero section end -->
-
-    <section id="about" class="min-h-screen bg-zinc-900 py-64">
-      <div class="container mx-auto max-w-7xl px-6">
-        <div class="grid gap-16 md:grid-cols-2 lg:gap-24">
-          <div>
-            <p
-              class="mb-4 font-mono text-xs uppercase tracking-wider text-zinc-500"
-            >
-              About
-            </p>
-            <h2
-              class="mb-6 text-2xl font-medium tracking-tight text-white md:text-3xl"
-            >
-              Building with purpose
-            </h2>
-            <div class="space-y-4 leading-relaxed text-zinc-400">
-              <p>
-                I'm passionate about robotics and computer vision. Building
-                systems that see, interpret, and respond to the world around
-                them. I believe in keeping things simple, robust, and
-                meaningful.
-              </p>
-              <p>
-                When I'm not writing code, you'll probably find me reading a
-                good book, grinding through a game, or binge-watching anime.
-              </p>
-            </div>
-            <a
-              href="dist/other/resume.pdf"
-              download="Resume Dhammiko Bodhi Avatara"
-              class="mt-6 inline-flex items-center gap-2 border-2 border-transparent bg-primary px-4 py-3 text-base font-semibold text-white transition-colors duration-300 ease-in-out hover:border-primary hover:text-black hover:shadow-lg"
-            >
-              <i class="bx bx-save text-lg"></i>
-              | Resume
-            </a>
-          </div>
-          <div>
-            <p
-              class="mb-4 font-mono text-xs uppercase tracking-wider text-zinc-500"
-            >
-              Tech Stack
-            </p>
-            <div class="flex flex-wrap gap-3">
-              <span
-                class="rounded bg-primary px-3 py-1.5 font-mono text-sm text-white"
-                >Python</span
-              >
-              <span
-                class="rounded bg-primary px-3 py-1.5 font-mono text-sm text-white"
-                >OpenCV</span
-              >
-              <span
-                class="rounded bg-primary px-3 py-1.5 font-mono text-sm text-white"
-                >FastAPI</span
-              >
-              <span
-                class="rounded bg-primary px-3 py-1.5 font-mono text-sm text-white"
-                >MySQL</span
-              >
-              <span
-                class="rounded bg-primary px-3 py-1.5 font-mono text-sm text-white"
-                >React</span
-              >
-              <span
-                class="rounded bg-primary px-3 py-1.5 font-mono text-sm text-white"
-                >Tailwind</span
-              >
-
-              <span
-                class="rounded bg-primary px-3 py-1.5 font-mono text-sm text-white"
-                >Docker</span
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="bg-black py-32">
-      <div class="container mx-auto max-w-7xl px-6">
-        <div class="mb-16">
-          <p
-            class="mb-4 font-mono text-xs uppercase tracking-wider text-zinc-500"
-          >
-            Projects
-          </p>
-          <h2
-            class="text-2xl font-medium tracking-tight text-white md:text-3xl"
-          >
-            Selected work
-          </h2>
-        </div>
-        <div class="flex flex-wrap">
-          <!-- Basestation -->
-          <div class="mb-5 w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div
-              class="mb-10 flex h-full flex-col overflow-hidden rounded-xl bg-zinc-900 shadow-lg hover:shadow-primary"
-            >
-              <img
-                src="dist/img/basestation.png"
-                alt="basestation"
-                class="h-48 w-full object-cover"
-              />
-              <div class="flex flex-col justify-between px-6 py-8">
-                <div>
-                  <h3 class="mb-3 truncate text-xl font-semibold text-white">
-                    Basestation Robot Controller
-                  </h3>
-                  <p class="mb-6 text-base font-medium text-gray-600">
-                    A Python-built basestation used to control robots through a
-                    local network, offering Windows and Linux compatibility
-                    along with an adaptive light/dark theme.
-                  </p>
-                  <a
-                    href="https://github.com/dhaboav/robot-basestation"
-                    target="_blank"
-                    class="block w-full rounded-lg bg-primary px-4 py-2 text-center text-sm font-normal text-white hover:opacity-80"
-                    >Repository</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Login Website -->
-          <div class="mb-5 w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div
-              class="mb-10 flex h-full flex-col overflow-hidden rounded-xl bg-zinc-900 shadow-lg hover:shadow-primary"
-            >
-              <img
-                src="dist/img/login.png"
-                alt="basestation"
-                class="h-48 w-full object-cover"
-              />
-              <div class="flex flex-col justify-between px-6 py-8">
-                <div>
-                  <h3 class="mb-3 truncate text-xl font-semibold text-white">
-                    Simple Login Website
-                  </h3>
-                  <p class="mb-6 text-base font-medium text-gray-600">
-                    A web application using HTML, CSS, PHP, and MySQL that
-                    provides login features and role-based data access for
-                    admins and students.
-                  </p>
-                  <a
-                    href="https://github.com/dhaboav/college-web-login"
-                    target="_blank"
-                    class="block w-full rounded-lg bg-primary px-4 py-2 text-center text-sm font-normal text-white hover:opacity-80"
-                    >Repository</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience" class="bg-zinc-900 py-32">
-      <div class="container mx-auto max-w-7xl px-6">
-        <div class="mb-16">
-          <h2
-            class="text-2xl font-medium tracking-tight text-white md:text-3xl"
-          >
-            Experience
-          </h2>
-        </div>
-        <div class="max-w-2xl">
-          <div class="relative">
-            <div class="absolute bottom-2 left-0 top-2 w-px bg-zinc-800"></div>
-            <div class="space-y-12">
-              <div class="relative pl-8">
-                <div
-                  class="absolute left-0 top-2 h-2 w-2 -translate-x-[3px] rounded-full bg-primary"
-                ></div>
-                <div
-                  class="mb-2 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between"
-                >
-                  <h3 class="text-base font-medium text-primary">
-                    Undergraduate Student
-                    <span class="font-normal text-zinc-400">
-                      @ University of Tanjungpura.</span
+                    <a
+                        href="#contact"
+                        class="block text-sm font-medium text-primary transition-colors hover:text-white"
                     >
-                  </h3>
-                  <span class="font-mono text-xs text-zinc-500"
-                    >2021 — Present</span
-                  >
-                </div>
-                <p class="text-sm text-zinc-400">
-                  Studied Computer Science with focus on computer vision.
-                </p>
-              </div>
-              <div class="relative pl-8">
-                <div
-                  class="absolute left-0 top-2 h-2 w-2 -translate-x-[3px] rounded-full bg-primary"
-                ></div>
-                <div
-                  class="mb-2 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between"
-                >
-                  <h3 class="text-base font-medium text-primary">
-                    Computer Vision Researcher
-                    <span class="font-normal text-zinc-400"> @ PKM</span>
-                  </h3>
-                  <span class="font-mono text-xs text-zinc-500">2024</span>
-                </div>
-                <p class="text-sm text-zinc-400">
-                  Researched citrus ripeness using a Raspberry Pi camera to
-                  detect skin color.
-                </p>
-              </div>
-              <div class="relative pl-8">
-                <div
-                  class="absolute left-0 top-2 h-2 w-2 -translate-x-[3px] rounded-full bg-primary"
-                ></div>
-                <div
-                  class="mb-2 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between"
-                >
-                  <h3 class="text-base font-medium text-primary">
-                    Team Lead<span class="font-normal text-zinc-400">
-                      @ Eon Terigas</span
-                    >
-                  </h3>
-                  <span class="font-mono text-xs text-zinc-500"
-                    >2023 — 2024</span
-                  >
-                </div>
-                <p class="text-sm text-zinc-400">
-                  Oversaw a small team to execute projects and achieve
-                  competitive goals.
-                </p>
-              </div>
-              <div class="relative pl-8">
-                <div
-                  class="absolute left-0 top-2 h-2 w-2 -translate-x-[3px] rounded-full bg-primary"
-                ></div>
-                <div
-                  class="mb-2 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between"
-                >
-                  <h3 class="text-base font-medium text-primary">
-                    Robotics Vision Engineer<span
-                      class="font-normal text-zinc-400"
-                    >
-                      @ Eon Terigas</span
-                    >
-                  </h3>
-                  <span class="font-mono text-xs text-zinc-500"
-                    >2022 — 2023</span
-                  >
-                </div>
-                <p class="text-sm text-zinc-400">
-                  Developed computer vision systems for robots to detect
-                  objects.
-                </p>
-              </div>
+                        Let's talk
+                    </a>
+                </nav>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        </header>
 
-    <section id="contact" class="bg-black py-32 text-white">
-      <div class="container mx-auto">
-        <div class="mx-auto mb-16 max-w-xl text-center">
-          <p
-            class="text-muted-foreground mb-4 font-mono text-xs uppercase tracking-wider"
-          >
-            Contact
-          </p>
-          <h2 class="mb-4 text-2xl font-medium tracking-tight md:text-3xl">
-            Let's connect
-          </h2>
-          <p class="text-muted-foreground">
-            Have a project in mind or just want to chat? I'd love to hear from
-            you.
-          </p>
-        </div>
-
-        <div class="mx-auto max-w-md">
-          <form onSubmit="{handleSubmit}" class="mb-12 space-y-6">
-            <div>
-              <label htmlFor="name" class="sr-only">Name</label>
-              <input
-                type="text"
-                id="name"
-                placeholder="Name"
-                required
-                class="border-gray-600 placeholder:text-muted-foreground w-full border-0 border-b bg-transparent px-0 py-3 transition-colors focus:border-primary focus:outline-none"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="email" class="sr-only">Email</label>
-              <input
-                type="email"
-                id="email"
-                placeholder="Email"
-                required
-                class="border-gray-600 placeholder:text-muted-foreground w-full border-0 border-b bg-transparent px-0 py-3 transition-colors focus:border-primary focus:outline-none"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="message" class="sr-only">Message</label>
-              <textarea
-                id="message"
-                placeholder="Message"
-                rows="{4}"
-                required
-                class="border-gray-600 placeholder:text-muted-foreground w-full resize-none border-0 border-b bg-transparent px-0 py-3 transition-colors focus:border-primary focus:outline-none"
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              class="w-full bg-white py-3 text-sm font-medium text-black transition-colors hover:bg-white/90"
-            >
-              Send message
-            </button>
-          </form>
-
-          <div class="flex items-center justify-center gap-6">
-            <a
-              href="https://github.com/dhaboav"
-              class="transition-colors hover:text-primary"
-            >
-              <i
-                class="bxl bx-github text-2xl text-white hover:text-gray-600"
-              ></i>
-            </a>
-
-            <a href="#home" class="transition-colors hover:text-primary">
-              <i
-                class="bxl bx-linkedin text-2xl text-white hover:text-blue-600"
-              ></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="border-t border-slate-800 bg-black py-8 text-white">
-      <div class="container mx-auto max-w-7xl px-6">
-        <div
-          class="text-muted-foreground flex flex-col items-center justify-between gap-4 text-sm sm:flex-row"
+        <!-- Hero section -->
+        <section
+            id="home"
+            class="flex min-h-screen items-center justify-center bg-black pt-16"
         >
-          <p class="font-mono">© 2025 Dhammiko Bodhi Avatara</p>
-          <p>Built with purpose.</p>
-        </div>
-      </div>
-    </footer>
+            <div class="container mx-auto max-w-7xl px-4">
+                <div class="flex flex-wrap">
+                    <div class="w-full self-center px-4 lg:w-1/2">
+                        <p
+                            class="animate-fade-in mb-4 font-mono text-sm text-primary"
+                        >
+                            Hai, I'm
+                        </p>
+                        <h1
+                            class="animate-fade-in-delay-1 mb-6 text-6xl font-medium leading-none tracking-tight dark:text-white"
+                        >
+                            Dhammiko Bodhi Avatara
+                        </h1>
 
-    <a
-      href="#home"
-      id="to-top"
-      class="fixed bottom-4 right-4 z-[9999] hidden h-4 w-4 items-center justify-center rounded-full bg-orange-700 p-4 hover:animate-pulse"
-    >
-      <i class="bx bx-chevron-up text-3xl text-white"></i>
-    </a>
-    <!-- Back to top end -->
+                        <p
+                            class="animate-fade-in-delay-2 mb-8 text-xl font-light leading-relaxed text-zinc-400"
+                        >
+                            Passionate about robotics and computer vision,
+                            developing smart systems that see and act.
+                        </p>
 
-    <!-- Script javascript -->
-    <script src="dist/js/script.js"></script>
-    <script>
-      // Kirim kontak form
-      const scriptURL =
-        "https://script.google.com/macros/s/AKfycbwD7ee0bUKMHKSQYVir2GXOfkNY8qrQ65MazHrWgX7nO378yWh58kc2iVu58zgGhlyt/exec";
-      const form = document.forms["contacts-form"];
-      const btnKirim = document.querySelector(".btn-kirim");
-      const btnLoading = document.querySelector(".btn-loading");
-      const alertNotif = document.querySelector(".my-alert");
+                        <div
+                            class="animate-fade-in-delay-3 flex items-center gap-6"
+                        >
+                            <a
+                                href="#projects"
+                                class="inline-flex items-center gap-2 text-sm font-medium text-white transition-colors hover:text-primary"
+                            >
+                                View work <span class="text-lg">→</span>
+                            </a>
+                            <a
+                                href="#contact"
+                                class="link-underline text-sm text-zinc-400 transition-colors hover:text-white"
+                            >
+                                Get in touch
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative w-full self-end px-4 lg:w-1/2">
+                        <img
+                            src="dist/img/profile.png"
+                            alt="Dhammiko"
+                            class="relative z-10 mx-auto max-w-full lg:-mt-8"
+                        />
+                        <span
+                            class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1 md:scale-150"
+                        >
+                            <svg
+                                class="h-72 w-72"
+                                viewBox="0 0 200 200"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    fill="#ea580c"
+                                    d="M50.5,-71.2C62,-61.2,65.6,-41.8,66.6,-24.9C67.5,-8,65.9,6.4,63,22C60.1,37.6,55.9,54.4,45.2,60.3C34.4,66.2,17.2,61.3,2.4,58C-12.5,54.8,-25,53.1,-36.7,47.5C-48.4,42,-59.3,32.4,-66.7,19.4C-74.2,6.3,-78.1,-10.2,-74.3,-24.9C-70.5,-39.6,-59.1,-52.5,-45.4,-61.9C-31.7,-71.2,-15.9,-76.9,1.8,-79.4C19.5,-81.9,39,-81.2,50.5,-71.2Z"
+                                    transform="translate(100 100)"
+                                />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Hero section end -->
 
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        // Ketika tombol kirim diklik
-        // Tampilkan tombol loading hilangkan tombol kirim
-        btnLoading.classList.toggle("hidden");
-        btnKirim.classList.toggle("hidden");
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => {
-            // Tampilkan tombol kirim hilangkan tombol loading
-            btnLoading.classList.toggle("hidden");
-            btnKirim.classList.toggle("hidden");
+        <div id="about-container"></div>
 
-            // tampilkan alert
-            alertNotif.classList.remove("hidden");
-            alertNotif.classList.add("flex");
+        <section id="projects" class="bg-black py-32">
+            <div class="container mx-auto max-w-7xl px-6">
+                <div class="mb-16">
+                    <p
+                        class="mb-4 font-mono text-xs uppercase tracking-wider text-zinc-500"
+                    >
+                        Projects
+                    </p>
+                    <h2
+                        class="text-2xl font-medium tracking-tight text-white md:text-3xl"
+                    >
+                        Selected work
+                    </h2>
+                </div>
+                <div class="flex flex-wrap">
+                    <!-- Basestation -->
+                    <div class="mb-5 w-full px-4 lg:w-1/2 xl:w-1/3">
+                        <div
+                            class="mb-10 flex h-full flex-col overflow-hidden rounded-xl bg-zinc-900 shadow-lg hover:shadow-primary"
+                        >
+                            <img
+                                src="dist/img/basestation.png"
+                                alt="basestation"
+                                class="h-48 w-full object-cover"
+                            />
+                            <div
+                                class="flex flex-col justify-between px-6 py-8"
+                            >
+                                <div>
+                                    <h3
+                                        class="mb-3 truncate text-xl font-semibold text-white"
+                                    >
+                                        Basestation Robot Controller
+                                    </h3>
+                                    <p
+                                        class="mb-6 text-base font-medium text-gray-600"
+                                    >
+                                        A Python-built basestation used to
+                                        control robots through a local network,
+                                        offering Windows and Linux compatibility
+                                        along with an adaptive light/dark theme.
+                                    </p>
+                                    <a
+                                        href="https://github.com/dhaboav/robot-basestation"
+                                        target="_blank"
+                                        class="block w-full rounded-lg bg-primary px-4 py-2 text-center text-sm font-normal text-white hover:opacity-80"
+                                        >Repository</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            // Reset form
-            form.reset();
+                    <!-- Login Website -->
+                    <div class="mb-5 w-full px-4 lg:w-1/2 xl:w-1/3">
+                        <div
+                            class="mb-10 flex h-full flex-col overflow-hidden rounded-xl bg-zinc-900 shadow-lg hover:shadow-primary"
+                        >
+                            <img
+                                src="dist/img/login.png"
+                                alt="basestation"
+                                class="h-48 w-full object-cover"
+                            />
+                            <div
+                                class="flex flex-col justify-between px-6 py-8"
+                            >
+                                <div>
+                                    <h3
+                                        class="mb-3 truncate text-xl font-semibold text-white"
+                                    >
+                                        Simple Login Website
+                                    </h3>
+                                    <p
+                                        class="mb-6 text-base font-medium text-gray-600"
+                                    >
+                                        A web application using HTML, CSS, PHP,
+                                        and MySQL that provides login features
+                                        and role-based data access for admins
+                                        and students.
+                                    </p>
+                                    <a
+                                        href="https://github.com/dhaboav/college-web-login"
+                                        target="_blank"
+                                        class="block w-full rounded-lg bg-primary px-4 py-2 text-center text-sm font-normal text-white hover:opacity-80"
+                                        >Repository</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            console.log("Success!", response);
-          })
-          .catch((error) => console.error("Error!", error.message));
-      });
+        <section id="experience" class="bg-zinc-900 py-32">
+            <div class="container mx-auto max-w-7xl px-6">
+                <div class="mb-16">
+                    <h2
+                        class="text-2xl font-medium tracking-tight text-white md:text-3xl"
+                    >
+                        Experience
+                    </h2>
+                </div>
+                <div class="max-w-2xl">
+                    <div class="relative">
+                        <div
+                            class="absolute bottom-2 left-0 top-2 w-px bg-zinc-800"
+                        ></div>
+                        <div class="space-y-12">
+                            <div class="relative pl-8">
+                                <div
+                                    class="absolute left-0 top-2 h-2 w-2 -translate-x-[3px] rounded-full bg-primary"
+                                ></div>
+                                <div
+                                    class="mb-2 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between"
+                                >
+                                    <h3
+                                        class="text-base font-medium text-primary"
+                                    >
+                                        Undergraduate Student
+                                        <span class="font-normal text-zinc-400">
+                                            @ University of Tanjungpura.</span
+                                        >
+                                    </h3>
+                                    <span
+                                        class="font-mono text-xs text-zinc-500"
+                                        >2021 — Present</span
+                                    >
+                                </div>
+                                <p class="text-sm text-zinc-400">
+                                    Studied Computer Science with focus on
+                                    computer vision.
+                                </p>
+                            </div>
+                            <div class="relative pl-8">
+                                <div
+                                    class="absolute left-0 top-2 h-2 w-2 -translate-x-[3px] rounded-full bg-primary"
+                                ></div>
+                                <div
+                                    class="mb-2 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between"
+                                >
+                                    <h3
+                                        class="text-base font-medium text-primary"
+                                    >
+                                        Computer Vision Researcher
+                                        <span class="font-normal text-zinc-400">
+                                            @ PKM</span
+                                        >
+                                    </h3>
+                                    <span
+                                        class="font-mono text-xs text-zinc-500"
+                                        >2024</span
+                                    >
+                                </div>
+                                <p class="text-sm text-zinc-400">
+                                    Researched citrus ripeness using a Raspberry
+                                    Pi camera to detect skin color.
+                                </p>
+                            </div>
+                            <div class="relative pl-8">
+                                <div
+                                    class="absolute left-0 top-2 h-2 w-2 -translate-x-[3px] rounded-full bg-primary"
+                                ></div>
+                                <div
+                                    class="mb-2 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between"
+                                >
+                                    <h3
+                                        class="text-base font-medium text-primary"
+                                    >
+                                        Team Lead<span
+                                            class="font-normal text-zinc-400"
+                                        >
+                                            @ Eon Terigas</span
+                                        >
+                                    </h3>
+                                    <span
+                                        class="font-mono text-xs text-zinc-500"
+                                        >2023 — 2024</span
+                                    >
+                                </div>
+                                <p class="text-sm text-zinc-400">
+                                    Oversaw a small team to execute projects and
+                                    achieve competitive goals.
+                                </p>
+                            </div>
+                            <div class="relative pl-8">
+                                <div
+                                    class="absolute left-0 top-2 h-2 w-2 -translate-x-[3px] rounded-full bg-primary"
+                                ></div>
+                                <div
+                                    class="mb-2 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between"
+                                >
+                                    <h3
+                                        class="text-base font-medium text-primary"
+                                    >
+                                        Robotics Vision Engineer<span
+                                            class="font-normal text-zinc-400"
+                                        >
+                                            @ Eon Terigas</span
+                                        >
+                                    </h3>
+                                    <span
+                                        class="font-mono text-xs text-zinc-500"
+                                        >2022 — 2023</span
+                                    >
+                                </div>
+                                <p class="text-sm text-zinc-400">
+                                    Developed computer vision systems for robots
+                                    to detect objects.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      // Close button  alert
-      const closeButton = document.querySelector(
-        '#alert-3 button[data-dismiss-target="#alert-3"]',
-      );
-      if (closeButton) {
-        closeButton.addEventListener("click", function () {
-          // Sembunyikan alert ketika tombol "Close" diklik
-          alertNotif.classList.add("hidden");
-        });
-      }
-    </script>
-    <!-- Script javascript end -->
-  </body>
+        <section id="contact" class="bg-black py-32 text-white">
+            <div class="container mx-auto">
+                <div class="mx-auto mb-16 max-w-xl text-center">
+                    <p
+                        class="text-muted-foreground mb-4 font-mono text-xs uppercase tracking-wider"
+                    >
+                        Contact
+                    </p>
+                    <h2
+                        class="mb-4 text-2xl font-medium tracking-tight md:text-3xl"
+                    >
+                        Let's connect
+                    </h2>
+                    <p class="text-muted-foreground">
+                        Have a project in mind or just want to chat? I'd love to
+                        hear from you.
+                    </p>
+                </div>
+
+                <div class="mx-auto max-w-md">
+                    <form onSubmit="{handleSubmit}" class="mb-12 space-y-6">
+                        <div>
+                            <label htmlFor="name" class="sr-only">Name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Name"
+                                required
+                                class="placeholder:text-muted-foreground w-full border-0 border-b border-gray-600 bg-transparent px-0 py-3 transition-colors focus:border-primary focus:outline-none"
+                            />
+                        </div>
+
+                        <div>
+                            <label htmlFor="email" class="sr-only">Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Email"
+                                required
+                                class="placeholder:text-muted-foreground w-full border-0 border-b border-gray-600 bg-transparent px-0 py-3 transition-colors focus:border-primary focus:outline-none"
+                            />
+                        </div>
+
+                        <div>
+                            <label htmlFor="message" class="sr-only"
+                                >Message</label
+                            >
+                            <textarea
+                                id="message"
+                                placeholder="Message"
+                                rows="{4}"
+                                required
+                                class="placeholder:text-muted-foreground w-full resize-none border-0 border-b border-gray-600 bg-transparent px-0 py-3 transition-colors focus:border-primary focus:outline-none"
+                            ></textarea>
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="w-full bg-white py-3 text-sm font-medium text-black transition-colors hover:bg-white/90"
+                        >
+                            Send message
+                        </button>
+                    </form>
+
+                    <div class="flex items-center justify-center gap-6">
+                        <a
+                            href="https://github.com/dhaboav"
+                            class="transition-colors hover:text-primary"
+                        >
+                            <i
+                                class="bxl bx-github text-2xl text-white hover:text-gray-600"
+                            ></i>
+                        </a>
+
+                        <a
+                            href="#home"
+                            class="transition-colors hover:text-primary"
+                        >
+                            <i
+                                class="bxl bx-linkedin text-2xl text-white hover:text-blue-600"
+                            ></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="footer-container"></div>
+
+        <a
+            href="#home"
+            id="to-top"
+            class="fixed bottom-4 right-4 z-[9999] hidden h-4 w-4 items-center justify-center rounded-full bg-orange-700 p-4 hover:animate-pulse"
+        >
+            <i class="bx bx-chevron-up text-3xl text-white"></i>
+        </a>
+        <!-- Back to top end -->
+
+        <!-- Script javascript -->
+        <script src="dist/js/script.js"></script>
+        <script>
+            // Kirim kontak form
+            const scriptURL =
+                'https://script.google.com/macros/s/AKfycbwD7ee0bUKMHKSQYVir2GXOfkNY8qrQ65MazHrWgX7nO378yWh58kc2iVu58zgGhlyt/exec'
+            const form = document.forms['contacts-form']
+            const btnKirim = document.querySelector('.btn-kirim')
+            const btnLoading = document.querySelector('.btn-loading')
+            const alertNotif = document.querySelector('.my-alert')
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault()
+                // Ketika tombol kirim diklik
+                // Tampilkan tombol loading hilangkan tombol kirim
+                btnLoading.classList.toggle('hidden')
+                btnKirim.classList.toggle('hidden')
+                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                    .then((response) => {
+                        // Tampilkan tombol kirim hilangkan tombol loading
+                        btnLoading.classList.toggle('hidden')
+                        btnKirim.classList.toggle('hidden')
+
+                        // tampilkan alert
+                        alertNotif.classList.remove('hidden')
+                        alertNotif.classList.add('flex')
+
+                        // Reset form
+                        form.reset()
+
+                        console.log('Success!', response)
+                    })
+                    .catch((error) => console.error('Error!', error.message))
+            })
+
+            // Close button  alert
+            const closeButton = document.querySelector(
+                '#alert-3 button[data-dismiss-target="#alert-3"]'
+            )
+            if (closeButton) {
+                closeButton.addEventListener('click', function () {
+                    // Sembunyikan alert ketika tombol "Close" diklik
+                    alertNotif.classList.add('hidden')
+                })
+            }
+        </script>
+        <script type="module" src="dist/js/main.js"></script>
+        <!-- Script javascript end -->
+    </body>
 </html>
