@@ -16,7 +16,7 @@ window.onscroll = function () {
 
 // Hamburger
 const hamburger = document.querySelector("#hamburger");
-const navMenu = document.querySelector("#nav-menu");
+const navMenu = document.querySelector("#mobileMenu");
 
 hamburger.addEventListener("click", function (e) {
   e.stopPropagation();
@@ -47,7 +47,11 @@ darkToggle.addEventListener("click", function () {
 });
 
 // Posisi toggle sesuai mode
-if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+if (
+  localStorage.theme === "dark" ||
+  (!("theme" in localStorage) &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches)
+) {
   darkToggle.checked = true;
 } else {
   darkToggle.checked = false;
