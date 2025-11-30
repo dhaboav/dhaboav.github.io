@@ -79,5 +79,6 @@ npm run build
 3. Customize data in `src/data`
 
 -   Update `experience.js` to add or modify your experience entries
+-   Update `languages.js` to add or modify text content for all sections and languages
 -   Update `projects.js` to add or modify projects
 -   Update `techStack.js` to add or modify your tech stack
