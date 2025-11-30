@@ -1,7 +1,7 @@
 {
     "name": "portofolio-website",
-    "version": "2.0.0",
-    "description": "",
+    "version": "2.1.0",
+    "description": "portofolio website for personal usage",
     "main": "index.js",
     "scripts": {
         "format": "prettier --write \"src/**/*.js\" \"dist/**/*.js\"",
@@ -9,9 +9,9 @@
         "build:css": "tailwindcss -i ./dist/css/input.css -o ./dist/css/output.css --minify",
         "watch:css": "tailwindcss -i ./dist/css/input.css -o ./dist/css/output.css --watch"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
+    "keywords": ["portfolio", "website", "HTML", "css", "javascript"],
+    "author": "dhaboav",
+    "license": "MIT",
     "devDependencies": {
         "prettier": "^3.7.3",
         "prettier-plugin-tailwindcss": "^0.7.1",
