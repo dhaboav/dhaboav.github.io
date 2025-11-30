@@ -1,27 +1,25 @@
-import { techStack } from '../data/techStack.js'
-import { text } from '../utils/languagesUtil.js'
+import { techStack } from '../data/techStack.js';
+import { text } from '../utils/languagesUtil.js';
 
 function TechStack(stack = []) {
-    const container = document.createElement('div')
-    container.className = 'flex flex-wrap gap-3 mt-4'
+    const container = document.createElement('div');
+    container.className = 'flex flex-wrap gap-3 mt-4';
 
     stack.forEach((item) => {
-        const span = document.createElement('span')
-        span.className =
-            'rounded bg-primary px-3 py-1.5 font-mono text-sm text-white'
-        span.textContent = item
-        container.appendChild(span)
-    })
+        const span = document.createElement('span');
+        span.className = 'rounded-sm bg-primary px-3 py-1.5 font-mono text-sm text-white';
+        span.textContent = item;
+        container.appendChild(span);
+    });
 
-    return container
+    return container;
 }
 
 export default function About() {
-    const textLang = text('about')
-    const section = document.createElement('section')
-    section.id = 'about'
-    section.className =
-        'min-h-screen bg-zinc-900 py-24 sm:py-32 md:py-40 lg:py-56'
+    const textLang = text('about');
+    const section = document.createElement('section');
+    section.id = 'about';
+    section.className = 'min-h-screen bg-zinc-900 py-24 sm:py-32 md:py-40 lg:py-56';
 
     section.innerHTML = `
         <div class="container mx-auto max-w-7xl px-4 sm:px-6">
@@ -62,13 +60,11 @@ export default function About() {
                 </div>
             </div>
         </div>
-    `
+    `;
 
     // Append tech stack dynamically
-    const stackContainer = TechStack(techStack)
-    section
-        .querySelector('div.grid > div:nth-child(2)')
-        .appendChild(stackContainer)
+    const stackContainer = TechStack(techStack);
+    section.querySelector('div.grid > div:nth-child(2)').appendChild(stackContainer);
 
-    return section
+    return section;
 }

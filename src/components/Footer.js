@@ -1,14 +1,14 @@
-import { langData } from '../data/languages.js'
-import { getLang } from '../utils/languagesUtil.js'
+import { langData } from '../data/languages.js';
+import { getLang } from '../utils/languagesUtil.js';
 
 export default function Footer() {
-    const footer = document.createElement('footer')
+    const footer = document.createElement('footer');
     footer.className = `
         border-t border-zinc-800 bg-black 
         py-8 sm:py-10 text-white
-    `
+    `;
 
-    const savedLang = getLang()
+    const savedLang = getLang();
 
     footer.innerHTML = `
         <div class="container mx-auto max-w-7xl px-4 sm:px-6">
@@ -47,36 +47,36 @@ export default function Footer() {
                                         <span class="text-lg">${langData[key].flag}</span>
                                         <span>${langData[key].full}</span>
                                     </button>
-                                `
+                                `,
                             )
                             .join('')}
                     </div>
                 </div>
             </div>
         </div>
-    `
+    `;
 
     // --- Functionality ---
-    const btn = footer.querySelector('#lang-btn')
-    const menu = footer.querySelector('#lang-menu')
-    const flagEl = footer.querySelector('#lang-flag')
-    const codeEl = footer.querySelector('#lang-code')
+    const btn = footer.querySelector('#lang-btn');
+    const menu = footer.querySelector('#lang-menu');
+    const flagEl = footer.querySelector('#lang-flag');
+    const codeEl = footer.querySelector('#lang-code');
 
-    btn.addEventListener('click', () => menu.classList.toggle('hidden'))
+    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
 
     menu.querySelectorAll('button').forEach((option) => {
         option.addEventListener('click', () => {
-            const lang = option.dataset.lang
+            const lang = option.dataset.lang;
 
             // Save language
-            localStorage.setItem('site-lang', lang)
+            localStorage.setItem('site-lang', lang);
 
-            flagEl.textContent = langData[lang].flag
-            codeEl.textContent = langData[lang].label
-            menu.classList.add('hidden')
-            window.dispatchEvent(new Event('language-change'))
-        })
-    })
+            flagEl.textContent = langData[lang].flag;
+            codeEl.textContent = langData[lang].label;
+            menu.classList.add('hidden');
+            window.dispatchEvent(new Event('language-change'));
+        });
+    });
 
-    return footer
+    return footer;
 }

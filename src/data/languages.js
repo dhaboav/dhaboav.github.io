@@ -43,8 +43,7 @@ export const langData = {
         contact: {
             label: 'Contact',
             title: "Let's connect",
-            subtitle:
-                "Have a project in mind or just want to chat? I'd love to hear from you.",
+            subtitle: "Have a project in mind or just want to chat? I'd love to hear from you.",
             namePlaceholder: 'Name',
             emailPlaceholder: 'Email',
             messagePlaceholder: 'Message',
@@ -99,8 +98,7 @@ export const langData = {
         contact: {
             label: 'Kontak',
             title: 'Terhubung',
-            subtitle:
-                'Punya proyek atau sekadar ingin berbicara? Saya siap mendengarkan.',
+            subtitle: 'Punya proyek atau sekadar ingin berbicara? Saya siap mendengarkan.',
             namePlaceholder: 'Nama',
             emailPlaceholder: 'Email',
             messagePlaceholder: 'Pesan',
@@ -165,4 +163,4 @@ export const langData = {
             failure: 'メッセージの送信に失敗しました。',
         },
     },
-}
+};

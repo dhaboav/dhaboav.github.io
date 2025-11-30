@@ -6,10 +6,10 @@ Hi there! 👋 I'm **Dhammiko Bodhi Avatara**, a passionate robotics and compute
 
 ## 🔹 About Me
 
--   💻 Undergraduate Student in Computer Science at University of Tanjungpura
--   🤖 Focused on Computer Vision, and Automation
--   ⚡ I value **simplicity**, **robustness**, and **purpose-driven development**
--   📚 Outside of coding: reading, gaming, and anime marathons
+- 💻 Undergraduate Student in Computer Science at University of Tanjungpura
+- 🤖 Focused on Computer Vision, and Automation
+- ⚡ I value **simplicity**, **robustness**, and **purpose-driven development**
+- 📚 Outside of coding: reading, gaming, and anime marathons
 
 ---
 
@@ -31,23 +31,23 @@ Hi there! 👋 I'm **Dhammiko Bodhi Avatara**, a passionate robotics and compute
 
 ### Basestation Robot Controller
 
--   Python-built basestation to control robots over a local network
--   Windows & Linux compatible
--   Adaptive light/dark theme  
-    [🔗 Repository](https://github.com/dhaboav/robot-basestation)
+- Python-built basestation to control robots over a local network
+- Windows & Linux compatible
+- Adaptive light/dark theme  
+  [🔗 Repository](https://github.com/dhaboav/robot-basestation)
 
 ### Simple Login Website
 
--   HTML, CSS, PHP, MySQL
--   Role-based access for admins & students  
-    [🔗 Repository](https://github.com/dhaboav/college-web-login)
+- HTML, CSS, PHP, MySQL
+- Role-based access for admins & students  
+  [🔗 Repository](https://github.com/dhaboav/college-web-login)
 
 ---
 
 ## 📫 Contact Me
 
--   GitHub: [@dhaboav](https://github.com/dhaboav)
--   LinkedIn: [Connect with me](https://linkedin.com/in/your-linkedin)
+- GitHub: [@dhaboav](https://github.com/dhaboav)
+- LinkedIn: [Connect with me](https://linkedin.com/in/your-linkedin)
 
 > "Building systems that are simple, robust, and meaningful."
 
@@ -55,9 +55,9 @@ Hi there! 👋 I'm **Dhammiko Bodhi Avatara**, a passionate robotics and compute
 
 ## 🌟 Features
 
--   Fully responsive portfolio site built with **HTML, CSS, Tailwind, and JS**
--   Modular JS components for `About`, `Projects`, `Experience`, `Contact`, and `Footer`
--   Smooth scrolling, animations, and “Back to Top” functionality
+- Fully responsive portfolio site built with **HTML, CSS, Tailwind, and JS**
+- Modular JS components for `About`, `Projects`, `Experience`, `Contact`, and `Footer`
+- Smooth scrolling, animations, and “Back to Top” functionality
 
 ---
 
@@ -78,7 +78,7 @@ npm run build
 
 3. Customize data in `src/data`
 
--   Update `experience.js` to add or modify your experience entries
--   Update `languages.js` to add or modify text content for all sections and languages
--   Update `projects.js` to add or modify projects
--   Update `techStack.js` to add or modify your tech stack
+- Update `experience.js` to add or modify your experience entries
+- Update `languages.js` to add or modify text content for all sections and languages
+- Update `projects.js` to add or modify projects
+- Update `techStack.js` to add or modify your tech stack

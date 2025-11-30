@@ -1,0 +1,62 @@
+@import 'tailwindcss';
+
+@theme {
+    --font-*: initial;
+    --font-sans: Inter, system-ui, sans-serif;
+    --font-mono: JetBrains Mono, monospace;
+
+    --color-primary: #ea580c;
+    --color-secondary: #64748b;
+
+    --breakpoint-2xl: 1320px;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentcolor);
+    }
+}
+
+body {
+    font-family: sans-serif;
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #ea580c;
+}
+
+.link-underline {
+    position: relative;
+}
+.link-underline::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+.link-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}

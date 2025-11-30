@@ -29,19 +29,16 @@ export const projectsData = [
         text: {
             en: {
                 title: 'Simple Login Website',
-                description:
-                    'A web app using HTML, CSS, PHP, and MySQL with role-based access.',
+                description: 'A web app using HTML, CSS, PHP, and MySQL with role-based access.',
             },
             id: {
                 title: 'Website Login Sederhana',
-                description:
-                    'Aplikasi web dengan HTML, CSS, PHP, MySQL dan akses berbasis peran.',
+                description: 'Aplikasi web dengan HTML, CSS, PHP, MySQL dan akses berbasis peran.',
             },
             jp: {
                 title: 'シンプルなログインサイト',
-                description:
-                    'HTML、CSS、PHP、MySQL を使用したロールベースアクセスの Web アプリ。',
+                description: 'HTML、CSS、PHP、MySQL を使用したロールベースアクセスの Web アプリ。',
             },
         },
     },
-]
+];

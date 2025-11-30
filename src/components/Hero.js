@@ -1,11 +1,10 @@
-import { text } from '../utils/languagesUtil.js'
+import { text } from '../utils/languagesUtil.js';
 
 export default function Hero() {
-    const textLang = text('hero')
-    const section = document.createElement('section')
-    section.id = 'home'
-    section.className =
-        'flex min-h-screen items-center bg-black pt-20 sm:pt-28 lg:pt-28'
+    const textLang = text('hero');
+    const section = document.createElement('section');
+    section.id = 'home';
+    section.className = 'flex min-h-screen items-center bg-black pt-20 sm:pt-28 lg:pt-28';
 
     section.innerHTML = `
         <div class="container mx-auto max-w-7xl px-4">
@@ -59,7 +58,7 @@ export default function Hero() {
 
             </div>
         </div>
-    `
+    `;
 
-    return section
+    return section;
 }

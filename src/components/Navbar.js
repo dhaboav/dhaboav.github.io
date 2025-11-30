@@ -1,12 +1,12 @@
-import { text } from '../utils/languagesUtil.js'
+import { text } from '../utils/languagesUtil.js';
 
 export default function Navbar() {
-    const textLang = text('navbar')
-    const header = document.createElement('header')
+    const textLang = text('navbar');
+    const header = document.createElement('header');
     header.className = `
-        fixed left-0 right-0 z-50 backdrop-blur bg-black/60 border-b border-transparent
+        fixed left-0 right-0 z-50 backdrop-blur-sm bg-black/60 border-b border-transparent
         transition-all duration-300
-    `
+    `;
 
     header.innerHTML = `
         <div class="container mx-auto max-w-7xl px-4 sm:px-6">
@@ -51,44 +51,41 @@ export default function Navbar() {
 
             </div>
         </div>
-    `
+    `;
 
     // ===== MOBILE MENU TOGGLE LOGIC ===== //
-    const toggleButton = header.querySelector('#nav-toggle')
-    const mobileMenu = header.querySelector('#mobile-menu')
+    const toggleButton = header.querySelector('#nav-toggle');
+    const mobileMenu = header.querySelector('#mobile-menu');
 
     function closeMenu() {
-        mobileMenu.classList.add('hidden')
-        mobileMenu.classList.remove('flex')
-        toggleButton.innerHTML = `<i class="bx bx-menu"></i>`
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+        toggleButton.innerHTML = `<i class="bx bx-menu"></i>`;
     }
 
     function openMenu() {
-        mobileMenu.classList.remove('hidden')
-        mobileMenu.classList.add('flex')
-        toggleButton.innerHTML = `<i class="bx bx-x"></i>`
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
+        toggleButton.innerHTML = `<i class="bx bx-x"></i>`;
     }
 
     toggleButton.addEventListener('click', (e) => {
-        e.stopPropagation()
-        const isOpen = mobileMenu.classList.contains('flex')
-        isOpen ? closeMenu() : openMenu()
-    })
+        e.stopPropagation();
+        const isOpen = mobileMenu.classList.contains('flex');
+        isOpen ? closeMenu() : openMenu();
+    });
 
     // ===== CLOSE WHEN CLICKING OUTSIDE ===== //
     document.addEventListener('click', (e) => {
-        const isOpen = mobileMenu.classList.contains('flex')
+        const isOpen = mobileMenu.classList.contains('flex');
 
-        if (!isOpen) return
+        if (!isOpen) return;
 
         // If click is NOT inside menu or button
-        if (
-            !mobileMenu.contains(e.target) &&
-            !toggleButton.contains(e.target)
-        ) {
-            closeMenu()
+        if (!mobileMenu.contains(e.target) && !toggleButton.contains(e.target)) {
+            closeMenu();
         }
-    })
+    });
 
-    return header
+    return header;
 }
