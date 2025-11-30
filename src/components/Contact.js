@@ -1,62 +1,156 @@
+const scriptURL =
+    'https://script.google.com/macros/s/AKfycbxMpAHVtSNb-KGhAuOIn5qZ5cyVvCbZ4PS0lL3mPyRUre53DNWfWBmlHi9ZfyUGPQKl/exec'
+
 export default function Contact() {
     const section = document.createElement('section')
     section.id = 'contact'
-    section.className = 'bg-black py-32 text-white'
+    section.className = 'bg-black py-20 text-white sm:py-28 md:py-32'
 
     section.innerHTML = `
-        <div class="container mx-auto">
-            <div class="mx-auto mb-16 max-w-xl text-center">
-                <p class="text-muted-foreground mb-4 font-mono text-xs uppercase tracking-wider">
+        <div class="container mx-auto px-4">
+
+            <!-- SECTION HEADER -->
+            <div class="mx-auto mb-12 max-w-md text-center sm:mb-14 md:mb-16">
+                <p class="text-muted-foreground mb-3 font-mono text-[10px] uppercase tracking-wider sm:text-xs">
                     Contact
                 </p>
-                <h2 class="mb-4 text-2xl font-medium tracking-tight md:text-3xl">
+
+                <h2 class="mb-3 text-xl font-medium tracking-tight sm:text-2xl md:text-3xl">
                     Let's connect
                 </h2>
-                <p class="text-muted-foreground">
+
+                <p class="text-muted-foreground text-sm sm:text-base">
                     Have a project in mind or just want to chat? I'd love to hear from you.
                 </p>
             </div>
 
-            <div class="mx-auto max-w-md">
-                <form class="mb-12 space-y-6">
+            <!-- FORM -->
+            <div class="mx-auto max-w-sm sm:max-w-md">
+                <form id="contact-form" class="mb-10 space-y-5 sm:space-y-6">
                     <div>
-                        <label for="name" class="sr-only">Name</label>
-                        <input type="text" id="name" placeholder="Name" required
-                            class="placeholder:text-muted-foreground w-full border-0 border-b border-gray-600 bg-transparent px-0 py-3 transition-colors focus:border-primary focus:outline-none" />
+                        <input 
+                            type="text" 
+                            name="name"
+                            placeholder="Name" 
+                            required
+                            class="w-full border-0 border-b border-gray-600 bg-transparent px-0 py-3 placeholder:text-muted-foreground focus:border-primary focus:outline-none"
+                        />
                     </div>
 
                     <div>
-                        <label for="email" class="sr-only">Email</label>
-                        <input type="email" id="email" placeholder="Email" required
-                            class="placeholder:text-muted-foreground w-full border-0 border-b border-gray-600 bg-transparent px-0 py-3 transition-colors focus:border-primary focus:outline-none" />
+                        <input 
+                            type="email" 
+                            name="email"
+                            placeholder="Email" 
+                            required
+                            class="w-full border-0 border-b border-gray-600 bg-transparent px-0 py-3 placeholder:text-muted-foreground focus:border-primary focus:outline-none"
+                        />
                     </div>
 
                     <div>
-                        <label for="message" class="sr-only">Message</label>
-                        <textarea id="message" placeholder="Message" rows="4" required
-                            class="placeholder:text-muted-foreground w-full resize-none border-0 border-b border-gray-600 bg-transparent px-0 py-3 transition-colors focus:border-primary focus:outline-none"></textarea>
+                        <textarea 
+                            name="message"
+                            placeholder="Message" 
+                            rows="4" 
+                            required
+                            class="w-full resize-none border-0 border-b border-gray-600 bg-transparent px-0 py-3 placeholder:text-muted-foreground focus:border-primary focus:outline-none"
+                        ></textarea>
                     </div>
 
-                    <button type="submit"
-                        class="w-full bg-white py-3 text-sm font-medium text-black transition-colors hover:bg-white/90">
-                        Send message
+                    <!-- SUBMIT BUTTON -->
+                    <button 
+                        id="submit-btn"
+                        type="submit"
+                        class="w-full bg-white py-3 text-sm font-medium text-black transition-colors hover:bg-white/90 flex items-center justify-center gap-2"
+                    >
+                        <span id="btn-text">Send message</span>
                     </button>
                 </form>
 
-                <div class="flex items-center justify-center gap-6">
-                    <a href="https://github.com/dhaboav" class="transition-colors hover:text-primary">
-                        <i class="bxl bx-github text-2xl text-white hover:text-gray-600"></i>
+                <!-- ICON LINKS -->
+                <div class="flex items-center justify-center gap-4 sm:gap-6">
+                    <a href="https://github.com/dhaboav" class="transition-colors hover:text-gray-600 text-2xl">
+                        <i class="bxl bx-github"></i>
                     </a>
 
-                    <a href="#home" class="transition-colors hover:text-primary">
-                        <i class="bxl bx-linkedin text-2xl text-white hover:text-blue-600"></i>
+                    <a href="#home" class="transition-colors text-2xl hover:text-blue-600">
+                        <i class="bxl bx-linkedin"></i>
                     </a>
                 </div>
             </div>
         </div>
+
+        <!-- NOTIFICATION -->
+        <div id="notification" 
+            class="hidden fixed bottom-6 right-6 rounded-lg px-4 py-3 text-sm 
+                   bg-zinc-900 border border-zinc-700 shadow-lg opacity-0 
+                   transition-opacity duration-300">
+        </div>
     `
 
-    // Optional: Add JS for form submission here if needed
+    // ===== FORM LOGIC & NOTIFICATIONS ===== //
+    const form = section.querySelector('#contact-form')
+    const submitBtn = section.querySelector('#submit-btn')
+    const btnText = section.querySelector('#btn-text')
+    const notif = section.querySelector('#notification')
+
+    // Show notification
+    function showNotification(message, success = true) {
+        notif.textContent = message
+        notif.classList.remove('hidden')
+        notif.classList.remove('opacity-0')
+
+        notif.classList.add(success ? 'text-green-400' : 'text-red-400')
+
+        // Show
+        setTimeout(() => {
+            notif.classList.add('opacity-100')
+        }, 10)
+
+        // Hide after 4 seconds
+        setTimeout(() => {
+            notif.classList.remove('opacity-100')
+            setTimeout(() => notif.classList.add('hidden'), 300)
+        }, 4000)
+    }
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault()
+
+        // Change button state to "Sending..."
+        btnText.textContent = 'Sending...'
+        submitBtn.disabled = true
+        submitBtn.classList.add('opacity-70')
+
+        // Add spinner
+        const spinner = document.createElement('span')
+        spinner.className =
+            'animate-spin border-2 border-black border-t-transparent rounded-full w-4 h-4'
+        submitBtn.prepend(spinner)
+
+        try {
+            const formData = new FormData(form)
+            const response = await fetch(scriptURL, {
+                method: 'POST',
+                body: formData,
+            })
+
+            if (response.ok) {
+                showNotification('Message sent successfully!', true)
+                form.reset()
+            } else {
+                showNotification('Failed to send message.', false)
+            }
+        } catch (error) {
+            showNotification(`Error: Unable to send message.${error}`, false)
+        }
+
+        // Reset button state
+        spinner.remove()
+        btnText.textContent = 'Send message'
+        submitBtn.disabled = false
+        submitBtn.classList.remove('opacity-70')
+    })
 
     return section
 }
