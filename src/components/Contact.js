@@ -76,8 +76,12 @@ export default function Contact() {
                         <i class="bxl bx-github"></i>
                     </a>
 
-                    <a href="#home" class="transition-colors text-2xl hover:text-blue-600">
+                    <a href="https://www.linkedin.com/in/dhaboav" class="transition-colors text-2xl hover:text-blue-600">
                         <i class="bxl bx-linkedin"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/dhaboav?igsh=MTJoZjk0bTZpYjY1Nw==" class="transition-colors hover:text-pink-600 text-2xl">
+                        <i class="bxl bx-instagram"></i>
                     </a>
                 </div>
             </div>
