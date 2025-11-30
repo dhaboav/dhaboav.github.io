@@ -1,4 +1,7 @@
+import { text } from '../utils/languagesUtil.js'
+
 export default function Hero() {
+    const textLang = text('hero')
     const section = document.createElement('section')
     section.id = 'home'
     section.className =
@@ -11,7 +14,7 @@ export default function Hero() {
                 <!-- TEXT SECTION -->
                 <div class="w-full px-4 mb-12 lg:mb-0 lg:w-1/2">
                     <p class="animate-fade-in mb-4 font-mono text-xs text-primary sm:text-sm">
-                        Hai, I'm
+                        ${textLang.greet}
                     </p>
 
                     <h1 class="animate-fade-in-delay-1 mb-6 text-4xl font-medium leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
@@ -19,16 +22,16 @@ export default function Hero() {
                     </h1>
 
                     <p class="animate-fade-in-delay-2 mb-8 text-base font-light leading-relaxed text-zinc-400 sm:text-lg lg:text-xl">
-                        Passionate about robotics and computer vision, developing smart systems that see and act.
+                        ${textLang.tagline}
                     </p>
 
                     <div class="animate-fade-in-delay-3 flex items-center gap-6">
                         <a href="#projects" class="inline-flex items-center gap-2 text-sm font-medium text-white transition-colors hover:text-primary">
-                            View work <span class="text-lg">→</span>
+                            ${textLang.viewWork} <span class="text-lg">→</span>
                         </a>
 
                         <a href="#contact" class="link-underline text-sm text-zinc-400 transition-colors hover:text-white">
-                            Get in touch
+                            ${textLang.getInTouch}
                         </a>
                     </div>
                 </div>

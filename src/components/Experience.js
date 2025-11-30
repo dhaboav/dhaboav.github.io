@@ -1,4 +1,5 @@
 import { experienceData } from '../data/experience.js'
+import { text, getLang } from '../utils/languagesUtil.js'
 
 function createExperienceItem({ role, company, period, description }) {
     const item = document.createElement('div')
@@ -21,6 +22,8 @@ function createExperienceItem({ role, company, period, description }) {
 }
 
 export default function Experience() {
+    const lang = getLang()
+    const textLang = text('experience')
     const section = document.createElement('section')
     section.id = 'experience'
     section.className = 'bg-zinc-900 py-20 sm:py-28 md:py-32'
@@ -31,7 +34,7 @@ export default function Experience() {
             <!-- Title -->
             <div class="mb-12 sm:mb-16">
                 <h2 class="text-2xl font-medium tracking-tight text-white sm:text-3xl md:text-4xl">
-                    Experience
+                    ${textLang.title}
                 </h2>
             </div>
 
@@ -47,7 +50,15 @@ export default function Experience() {
 
     const listContainer = section.querySelector('.experience-list')
     experienceData.forEach((item) => {
-        listContainer.appendChild(createExperienceItem(item))
+        const { role, period, description } = item.text[lang]
+        listContainer.appendChild(
+            createExperienceItem({
+                role,
+                company: item.company,
+                period,
+                description,
+            })
+        )
     })
 
     return section

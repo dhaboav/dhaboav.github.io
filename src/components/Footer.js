@@ -1,4 +1,5 @@
 import { langData } from '../data/languages.js'
+import { getLang } from '../utils/languagesUtil.js'
 
 export default function Footer() {
     const footer = document.createElement('footer')
@@ -7,8 +8,7 @@ export default function Footer() {
         py-8 sm:py-10 text-white
     `
 
-    // Load saved language
-    const savedLang = localStorage.getItem('site-lang') || 'en'
+    const savedLang = getLang()
 
     footer.innerHTML = `
         <div class="container mx-auto max-w-7xl px-4 sm:px-6">
@@ -18,7 +18,6 @@ export default function Footer() {
                 sm:flex-row sm:justify-between sm:gap-0 sm:text-sm"
             >
                 <p class="font-mono">© 2025 Dhammiko Bodhi Avatara</p>
-                
 
                 <div class="relative">
                     <button
@@ -40,15 +39,15 @@ export default function Footer() {
                         ${Object.keys(langData)
                             .map(
                                 (key) => `
-                                <button
-                                    data-lang="${key}"
-                                    class="flex w-full items-center gap-3 px-4 py-3 
-                                    text-left text-sm hover:bg-zinc-800 transition"
-                                >
-                                    <span class="text-lg">${langData[key].flag}</span>
-                                    <span>${langData[key].full}</span>
-                                </button>
-                            `
+                                    <button
+                                        data-lang="${key}"
+                                        class="flex w-full items-center gap-3 px-4 py-3 
+                                        text-left text-sm hover:bg-zinc-800 transition"
+                                    >
+                                        <span class="text-lg">${langData[key].flag}</span>
+                                        <span>${langData[key].full}</span>
+                                    </button>
+                                `
                             )
                             .join('')}
                     </div>
@@ -57,7 +56,7 @@ export default function Footer() {
         </div>
     `
 
-    // Lang selector functionality
+    // --- Functionality ---
     const btn = footer.querySelector('#lang-btn')
     const menu = footer.querySelector('#lang-menu')
     const flagEl = footer.querySelector('#lang-flag')
@@ -69,10 +68,13 @@ export default function Footer() {
         option.addEventListener('click', () => {
             const lang = option.dataset.lang
 
+            // Save language
             localStorage.setItem('site-lang', lang)
+
             flagEl.textContent = langData[lang].flag
             codeEl.textContent = langData[lang].label
             menu.classList.add('hidden')
+            window.dispatchEvent(new Event('language-change'))
         })
     })
 

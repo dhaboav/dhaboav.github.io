@@ -1,4 +1,5 @@
 import { techStack } from '../data/techStack.js'
+import { text } from '../utils/languagesUtil.js'
 
 function TechStack(stack = []) {
     const container = document.createElement('div')
@@ -16,6 +17,7 @@ function TechStack(stack = []) {
 }
 
 export default function About() {
+    const textLang = text('about')
     const section = document.createElement('section')
     section.id = 'about'
     section.className =
@@ -28,33 +30,33 @@ export default function About() {
                 <!-- LEFT COLUMN -->
                 <div>
                     <p class="mb-4 font-mono text-[11px] uppercase tracking-wider text-zinc-500 sm:text-xs">
-                        About
+                        ${textLang.label}
                     </p>
 
                     <h2 class="mb-6 text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight text-white">
-                        Building with purpose
+                        ${textLang.title}
                     </h2>
 
                     <div class="space-y-4 leading-relaxed text-zinc-400 text-sm sm:text-base">
                         <p>
-                            I'm passionate about robotics and computer vision. Building systems that see, interpret, and respond to the world around them. I believe in keeping things simple, robust, and meaningful.
+                            ${textLang.p1}
                         </p>
                         <p>
-                            When I'm not writing code, you'll probably find me reading a good book, grinding through a game, or binge-watching anime.
+                            ${textLang.p2}
                         </p>
                     </div>
 
                     <a href="dist/other/resume.pdf"
                        download="Resume Dhammiko Bodhi Avatara"
                        class="mt-8 inline-flex items-center gap-2 border-2 border-transparent bg-primary px-4 py-3 text-sm sm:text-base font-semibold text-white transition-colors hover:border-primary hover:text-black hover:shadow-lg">
-                        <i class="bx bx-save text-lg"></i> Resume
+                        <i class="bx bx-save text-lg"></i> ${textLang.resume}
                     </a>
                 </div>
 
                 <!-- RIGHT COLUMN -->
                 <div>
                     <p class="mb-3 font-mono text-[11px] uppercase tracking-wider text-zinc-500 sm:text-xs">
-                        Tech Stack
+                        ${textLang.techLabel}
                     </p>
                     <!-- TechStack will be inserted here -->
                 </div>

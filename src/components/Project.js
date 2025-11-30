@@ -1,6 +1,7 @@
 import { projectsData } from '../data/projects.js'
+import { text, getLang } from '../utils/languagesUtil.js'
 
-function createProjectCard({ title, description, image, link }) {
+function createProjectCard({ title, description, image, link, repo }) {
     const cardWrapper = document.createElement('div')
     cardWrapper.className = 'w-full px-4 mb-8 sm:w-1/2 lg:w-1/3' // Mobile 1 col → sm 2 cols → lg 3 cols
 
@@ -21,7 +22,7 @@ function createProjectCard({ title, description, image, link }) {
 
                     <a href="${link}" target="_blank"
                        class="block w-full rounded-lg bg-primary px-4 py-2 text-center text-sm font-medium text-white hover:opacity-80">
-                        Repository
+                        ${repo}
                     </a>
                 </div>
             </div>
@@ -31,6 +32,8 @@ function createProjectCard({ title, description, image, link }) {
 }
 
 export default function Project() {
+    const lang = getLang()
+    const textLang = text('projects')
     const section = document.createElement('section')
     section.id = 'projects'
     section.className = 'bg-black py-20 sm:py-28 md:py-32' // mobile-first responsive spacing
@@ -40,11 +43,11 @@ export default function Project() {
 
             <div class="mb-12 sm:mb-16">
                 <p class="mb-3 font-mono text-[11px] uppercase tracking-wider text-zinc-500 sm:text-xs">
-                    Projects
+                    ${textLang.label}
                 </p>
 
                 <h2 class="text-2xl font-medium tracking-tight text-white sm:text-3xl md:text-4xl">
-                    Selected work
+                    ${textLang.title}
                 </h2>
             </div>
 
@@ -54,7 +57,17 @@ export default function Project() {
 
     const listContainer = section.querySelector('.projects-list')
     projectsData.forEach((project) => {
-        listContainer.appendChild(createProjectCard(project))
+        const { image, link } = project
+        const { title, description } = project.text[lang]
+        listContainer.appendChild(
+            createProjectCard({
+                title,
+                description,
+                image,
+                link,
+                repo: textLang.repo,
+            })
+        )
     })
 
     return section

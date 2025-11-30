@@ -1,34 +1,15 @@
-import Navbar from '../../src/components/Navbar.js'
-import Hero from '../../src/components/Hero.js'
-import About from '../../src/components/About.js'
-import Project from '../../src/components/Project.js'
-import Experience from '../../src/components/Experience.js'
-import Contact from '../../src/components/Contact.js'
-import Footer from '../../src/components/Footer.js'
-import BackToTop from '../../src/components/BackToTop.js'
+import { renderAll } from './renderAll.js'
+import { updateHtmlLang } from '../../src/utils/languagesUtil.js'
 
-document.body.appendChild(BackToTop())
+// First render
+updateHtmlLang()
+renderAll()
 
-const navbarContainer = document.getElementById('navbar-container')
-navbarContainer.appendChild(Navbar())
-
-const heroContainer = document.getElementById('hero-container')
-heroContainer.appendChild(Hero())
-
-const aboutContainer = document.getElementById('about-container')
-aboutContainer.appendChild(About())
-
-const projectsContainer = document.getElementById('projects-container')
-projectsContainer.appendChild(Project())
-
-const experienceContainer = document.getElementById('experience-container')
-experienceContainer.appendChild(Experience())
-
-const contactContainer = document.getElementById('contact-container')
-contactContainer.appendChild(Contact())
-
-const footerContainer = document.getElementById('footer-container')
-footerContainer.appendChild(Footer())
+// Re-render when language changes
+window.addEventListener('language-change', () => {
+    updateHtmlLang()
+    renderAll()
+})
 
 // Scroll behavior for navbar + back to top
 window.addEventListener('scroll', () => {
