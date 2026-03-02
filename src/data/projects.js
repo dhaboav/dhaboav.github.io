@@ -23,6 +23,26 @@ export const projectsData = [
     },
 
     {
+        image: 'dist/img/bookshelf.png',
+        link: 'https://github.com/dhaboav/bookshelf',
+
+        text: {
+            en: {
+                title: 'Simple Personal Bookshelf App',
+                description: 'A responsive web app using React, FastAPI, and Docker able to run CRUD operation.',
+            },
+            id: {
+                title: 'Aplikasi Sederhana Rak buku',
+                description: 'Aplikasi web dengan React, FastAPI, dan Docker yang bisa menjalankan CRUD sederhana untuk buku',
+            },
+            jp: {
+                title: 'シンプルな個人用本棚アプリ',
+                description: 'React、FastAPI、および Docker を使用した、CRUD 操作が可能なレスポンシブな Web アプリ。',
+            },
+        },
+    },
+
+    {
         image: 'dist/img/login.png',
         link: 'https://github.com/dhaboav/college-web-login',
 

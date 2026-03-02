@@ -3,18 +3,18 @@ export const experienceData = [
         company: 'University of Tanjungpura',
         text: {
             en: {
-                role: 'Undergraduate Student',
-                period: '2021 — Present',
-                description: 'Studied Computer Science with focus on computer vision.',
+                role: 'B.S. in Computer Science',
+                period: '2021 — 2025',
+                description: 'Fresh graduate majoring in Computer Science with a specialization in Computer Vision.',
             },
             id: {
-                role: 'Mahasiswa S1',
-                period: '2021 — Sekarang',
+                role: 'S1 Informatika',
+                period: '2021 — 2025',
                 description: 'Mempelajari Ilmu Komputer dengan fokus pada computer vision.',
             },
             jp: {
-                role: '学部生',
-                period: '2021年 — 現在',
+                role: 'コンピュータサイエンス学士（新卒）',
+                period: '2021年 — 2025年',
                 description: 'コンピュータビジョンを中心に計算機科学を専攻。',
             },
         },
