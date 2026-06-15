@@ -47,7 +47,7 @@ Hi there! 👋 I'm **Dhammiko Bodhi Avatara**, a passionate robotics and compute
 ## 📫 Contact Me
 
 - GitHub: [@dhaboav](https://github.com/dhaboav)
-- LinkedIn: [Connect with me](https://linkedin.com/in/your-linkedin)
+- LinkedIn: [Connect with me](https://linkedin.com/in/dhaboav)
 
 > "Building systems that are simple, robust, and meaningful."
 

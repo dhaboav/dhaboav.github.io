@@ -1,16 +1,16 @@
-import { langData } from '../data/languages.js';
-import { getLang } from '../utils/languagesUtil.js';
+import { langData } from '@/data/languages.js';
+import { getLang } from '@/utils/languagesUtil.js';
 
 export default function Footer() {
-    const footer = document.createElement('footer');
-    footer.className = `
+  const footer = document.createElement('footer');
+  footer.className = `
         border-t border-zinc-800 bg-black 
         py-8 sm:py-10 text-white
     `;
 
-    const savedLang = getLang();
+  const savedLang = getLang();
 
-    footer.innerHTML = `
+  footer.innerHTML = `
         <div class="container mx-auto max-w-7xl px-4 sm:px-6">
             <div
                 class="flex flex-col items-center justify-center gap-4 
@@ -37,8 +37,8 @@ export default function Footer() {
                         rounded-lg bg-zinc-900 shadow-lg border border-zinc-700 overflow-hidden"
                     >
                         ${Object.keys(langData)
-                            .map(
-                                (key) => `
+                          .map(
+                            (key) => `
                                     <button
                                         data-lang="${key}"
                                         class="flex w-full items-center gap-3 px-4 py-3 
@@ -48,35 +48,35 @@ export default function Footer() {
                                         <span>${langData[key].full}</span>
                                     </button>
                                 `,
-                            )
-                            .join('')}
+                          )
+                          .join('')}
                     </div>
                 </div>
             </div>
         </div>
     `;
 
-    // --- Functionality ---
-    const btn = footer.querySelector('#lang-btn');
-    const menu = footer.querySelector('#lang-menu');
-    const flagEl = footer.querySelector('#lang-flag');
-    const codeEl = footer.querySelector('#lang-code');
+  // --- Functionality ---
+  const btn = footer.querySelector('#lang-btn');
+  const menu = footer.querySelector('#lang-menu');
+  const flagEl = footer.querySelector('#lang-flag');
+  const codeEl = footer.querySelector('#lang-code');
 
-    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+  btn.addEventListener('click', () => menu.classList.toggle('hidden'));
 
-    menu.querySelectorAll('button').forEach((option) => {
-        option.addEventListener('click', () => {
-            const lang = option.dataset.lang;
+  menu.querySelectorAll('button').forEach((option) => {
+    option.addEventListener('click', () => {
+      const lang = option.dataset.lang;
 
-            // Save language
-            localStorage.setItem('site-lang', lang);
+      // Save language
+      localStorage.setItem('site-lang', lang);
 
-            flagEl.textContent = langData[lang].flag;
-            codeEl.textContent = langData[lang].label;
-            menu.classList.add('hidden');
-            window.dispatchEvent(new Event('language-change'));
-        });
+      flagEl.textContent = langData[lang].flag;
+      codeEl.textContent = langData[lang].label;
+      menu.classList.add('hidden');
+      window.dispatchEvent(new Event('language-change'));
     });
+  });
 
-    return footer;
+  return footer;
 }

@@ -1,15 +1,15 @@
-import { text } from '../utils/languagesUtil.js';
+import { text } from '@/utils/languagesUtil.js';
 
 const scriptURL =
-    'https://script.google.com/macros/s/AKfycbxMpAHVtSNb-KGhAuOIn5qZ5cyVvCbZ4PS0lL3mPyRUre53DNWfWBmlHi9ZfyUGPQKl/exec';
+  'https://script.google.com/macros/s/AKfycbxMpAHVtSNb-KGhAuOIn5qZ5cyVvCbZ4PS0lL3mPyRUre53DNWfWBmlHi9ZfyUGPQKl/exec';
 
 export default function Contact() {
-    const textLang = text('contact');
-    const section = document.createElement('section');
-    section.id = 'contact';
-    section.className = 'bg-black py-20 text-white sm:py-28 md:py-32';
+  const textLang = text('contact');
+  const section = document.createElement('section');
+  section.id = 'contact';
+  section.className = 'bg-black py-20 text-white sm:py-28 md:py-32';
 
-    section.innerHTML = `
+  section.innerHTML = `
         <div class="container mx-auto px-4">
 
             <!-- SECTION HEADER -->
@@ -95,69 +95,69 @@ export default function Contact() {
         </div>
     `;
 
-    // ===== FORM LOGIC & NOTIFICATIONS ===== //
-    const form = section.querySelector('#contact-form');
-    const submitBtn = section.querySelector('#submit-btn');
-    const btnText = section.querySelector('#btn-text');
-    const notif = section.querySelector('#notification');
+  // ===== FORM LOGIC & NOTIFICATIONS ===== //
+  const form = section.querySelector('#contact-form');
+  const submitBtn = section.querySelector('#submit-btn');
+  const btnText = section.querySelector('#btn-text');
+  const notif = section.querySelector('#notification');
 
-    // Show notification
-    function showNotification(message, success = true) {
-        notif.textContent = message;
-        notif.classList.remove('hidden');
-        notif.classList.remove('opacity-0');
+  // Show notification
+  function showNotification(message, success = true) {
+    notif.textContent = message;
+    notif.classList.remove('hidden');
+    notif.classList.remove('opacity-0');
 
-        notif.classList.add(success ? 'text-green-400' : 'text-red-400');
+    notif.classList.add(success ? 'text-green-400' : 'text-red-400');
 
-        // Show
-        setTimeout(() => {
-            notif.classList.add('opacity-100');
-        }, 10);
+    // Show
+    setTimeout(() => {
+      notif.classList.add('opacity-100');
+    }, 10);
 
-        // Hide after 4 seconds
-        setTimeout(() => {
-            notif.classList.remove('opacity-100');
-            setTimeout(() => notif.classList.add('hidden'), 300);
-        }, 4000);
+    // Hide after 4 seconds
+    setTimeout(() => {
+      notif.classList.remove('opacity-100');
+      setTimeout(() => notif.classList.add('hidden'), 300);
+    }, 4000);
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Change button state to "Sending..."
+    btnText.textContent = textLang.loading;
+    submitBtn.disabled = true;
+    submitBtn.classList.add('opacity-70');
+
+    // Add spinner
+    const spinner = document.createElement('span');
+    spinner.className =
+      'animate-spin border-2 border-black border-t-transparent rounded-full w-4 h-4';
+    submitBtn.prepend(spinner);
+
+    try {
+      const formData = new FormData(form);
+      const response = await fetch(scriptURL, {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        showNotification(`${textLang.success}`, true);
+        form.reset();
+      } else {
+        showNotification(`${textLang.failure}`, false);
+      }
+    } catch (error) {
+      showNotification(`Error: ${error}`, false);
     }
 
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
+    // Reset button state
+    spinner.remove();
+    btnText.textContent = textLang.send;
+    submitBtn.disabled = false;
+    submitBtn.classList.remove('opacity-70');
+  });
 
-        // Change button state to "Sending..."
-        btnText.textContent = textLang.loading;
-        submitBtn.disabled = true;
-        submitBtn.classList.add('opacity-70');
-
-        // Add spinner
-        const spinner = document.createElement('span');
-        spinner.className =
-            'animate-spin border-2 border-black border-t-transparent rounded-full w-4 h-4';
-        submitBtn.prepend(spinner);
-
-        try {
-            const formData = new FormData(form);
-            const response = await fetch(scriptURL, {
-                method: 'POST',
-                body: formData,
-            });
-
-            if (response.ok) {
-                showNotification(`${textLang.success}`, true);
-                form.reset();
-            } else {
-                showNotification(`${textLang.failure}`, false);
-            }
-        } catch (error) {
-            showNotification(`Error: ${error}`, false);
-        }
-
-        // Reset button state
-        spinner.remove();
-        btnText.textContent = textLang.send;
-        submitBtn.disabled = false;
-        submitBtn.classList.remove('opacity-70');
-    });
-
-    return section;
+  return section;
 }

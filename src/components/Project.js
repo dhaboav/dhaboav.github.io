@@ -1,11 +1,11 @@
-import { projectsData } from '../data/projects.js';
-import { text, getLang } from '../utils/languagesUtil.js';
+import { projectsData } from '@/data/projects.js';
+import { text, getLang } from '@/utils/languagesUtil.js';
 
 function createProjectCard({ title, description, image, link, repo }) {
-    const cardWrapper = document.createElement('div');
-    cardWrapper.className = 'w-full px-4 mb-8 sm:w-1/2 lg:w-1/3'; // Mobile 1 col → sm 2 cols → lg 3 cols
+  const cardWrapper = document.createElement('div');
+  cardWrapper.className = 'w-full px-4 mb-8 sm:w-1/2 lg:w-1/3'; // Mobile 1 col → sm 2 cols → lg 3 cols
 
-    cardWrapper.innerHTML = `
+  cardWrapper.innerHTML = `
         <div class="flex h-full flex-col overflow-hidden rounded-xl bg-zinc-900 shadow-md transition-shadow lg:hover:shadow-primary">
             <img src="${image}" alt="${title}"
                  class="h-48 w-full object-cover sm:h-56 lg:h-64" />
@@ -28,17 +28,17 @@ function createProjectCard({ title, description, image, link, repo }) {
             </div>
         </div>
     `;
-    return cardWrapper;
+  return cardWrapper;
 }
 
 export default function Project() {
-    const lang = getLang();
-    const textLang = text('projects');
-    const section = document.createElement('section');
-    section.id = 'projects';
-    section.className = 'bg-black py-20 sm:py-28 md:py-32'; // mobile-first responsive spacing
+  const lang = getLang();
+  const textLang = text('projects');
+  const section = document.createElement('section');
+  section.id = 'projects';
+  section.className = 'bg-black py-20 sm:py-28 md:py-32'; // mobile-first responsive spacing
 
-    section.innerHTML = `
+  section.innerHTML = `
         <div class="container mx-auto max-w-7xl px-4 sm:px-6">
 
             <div class="mb-12 sm:mb-16">
@@ -55,20 +55,20 @@ export default function Project() {
         </div>
     `;
 
-    const listContainer = section.querySelector('.projects-list');
-    projectsData.forEach((project) => {
-        const { image, link } = project;
-        const { title, description } = project.text[lang];
-        listContainer.appendChild(
-            createProjectCard({
-                title,
-                description,
-                image,
-                link,
-                repo: textLang.repo,
-            }),
-        );
-    });
+  const listContainer = section.querySelector('.projects-list');
+  projectsData.forEach((project) => {
+    const { image, link } = project;
+    const { title, description } = project.text[lang];
+    listContainer.appendChild(
+      createProjectCard({
+        title,
+        description,
+        image,
+        link,
+        repo: textLang.repo,
+      }),
+    );
+  });
 
-    return section;
+  return section;
 }

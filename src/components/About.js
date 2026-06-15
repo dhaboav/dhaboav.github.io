@@ -1,27 +1,27 @@
-import { techStack } from '../data/techStack.js';
-import { text } from '../utils/languagesUtil.js';
+import { techStack } from '@/data/techStack.js';
+import { text } from '@/utils/languagesUtil.js';
 
 function TechStack(stack = []) {
-    const container = document.createElement('div');
-    container.className = 'flex flex-wrap gap-3 mt-4';
+  const container = document.createElement('div');
+  container.className = 'flex flex-wrap gap-3 mt-4';
 
-    stack.forEach((item) => {
-        const span = document.createElement('span');
-        span.className = 'rounded-sm bg-primary px-3 py-1.5 font-mono text-sm text-white';
-        span.textContent = item;
-        container.appendChild(span);
-    });
+  stack.forEach((item) => {
+    const span = document.createElement('span');
+    span.className = 'rounded-sm bg-primary px-3 py-1.5 font-mono text-sm text-white';
+    span.textContent = item;
+    container.appendChild(span);
+  });
 
-    return container;
+  return container;
 }
 
 export default function About() {
-    const textLang = text('about');
-    const section = document.createElement('section');
-    section.id = 'about';
-    section.className = 'min-h-screen bg-zinc-900 py-24 sm:py-32 md:py-40 lg:py-56';
+  const textLang = text('about');
+  const section = document.createElement('section');
+  section.id = 'about';
+  section.className = 'min-h-screen bg-zinc-900 py-24 sm:py-32 md:py-40 lg:py-56';
 
-    section.innerHTML = `
+  section.innerHTML = `
         <div class="container mx-auto max-w-7xl px-4 sm:px-6">
             <div class="grid gap-16 md:grid-cols-2 lg:gap-24">
 
@@ -44,9 +44,9 @@ export default function About() {
                         </p>
                     </div>
 
-                    <a href="dist/other/resume.pdf"
-                       download="Resume Dhammiko Bodhi Avatara"
-                       class="mt-8 inline-flex items-center gap-2 border-2 border-transparent bg-primary px-4 py-3 text-sm sm:text-base font-semibold text-white transition-colors hover:border-primary hover:text-black hover:shadow-lg">
+                    <a href="other/${textLang.resumeFile}.pdf"
+                      download="Resume Dhammiko Bodhi Avatara"
+                      class="mt-8 inline-flex items-center gap-2 border-2 border-transparent rounded-md bg-primary px-4 py-3 text-sm sm:text-base font-semibold text-white transition-colors hover:border-primary hover:text-black hover:shadow-lg">
                         <i class="bx bx-save text-lg"></i> ${textLang.resume}
                     </a>
                 </div>
@@ -62,9 +62,9 @@ export default function About() {
         </div>
     `;
 
-    // Append tech stack dynamically
-    const stackContainer = TechStack(techStack);
-    section.querySelector('div.grid > div:nth-child(2)').appendChild(stackContainer);
+  // Append tech stack dynamically
+  const stackContainer = TechStack(techStack);
+  section.querySelector('div.grid > div:nth-child(2)').appendChild(stackContainer);
 
-    return section;
+  return section;
 }

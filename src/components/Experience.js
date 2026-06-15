@@ -1,11 +1,11 @@
-import { experienceData } from '../data/experience.js';
-import { text, getLang } from '../utils/languagesUtil.js';
+import { experienceData } from '@/data/experience.js';
+import { text, getLang } from '@/utils/languagesUtil.js';
 
 function createExperienceItem({ role, company, period, description }) {
-    const item = document.createElement('div');
-    item.className = 'relative pl-6 sm:pl-8';
+  const item = document.createElement('div');
+  item.className = 'relative pl-6 sm:pl-8';
 
-    item.innerHTML = `
+  item.innerHTML = `
         <div class="absolute left-0 top-2 h-2 w-2 -translate-x-[2px] rounded-full bg-primary sm:-translate-x-[3px]"></div>
         
         <div class="mb-2 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
@@ -18,17 +18,17 @@ function createExperienceItem({ role, company, period, description }) {
 
         <p class="text-sm text-zinc-400 leading-relaxed">${description}</p>
     `;
-    return item;
+  return item;
 }
 
 export default function Experience() {
-    const lang = getLang();
-    const textLang = text('experience');
-    const section = document.createElement('section');
-    section.id = 'experience';
-    section.className = 'bg-zinc-900 py-20 sm:py-28 md:py-32';
+  const lang = getLang();
+  const textLang = text('experience');
+  const section = document.createElement('section');
+  section.id = 'experience';
+  section.className = 'bg-zinc-900 py-20 sm:py-28 md:py-32';
 
-    section.innerHTML = `
+  section.innerHTML = `
         <div class="container mx-auto max-w-7xl px-4 sm:px-6">
 
             <!-- Title -->
@@ -48,18 +48,18 @@ export default function Experience() {
         </div>
     `;
 
-    const listContainer = section.querySelector('.experience-list');
-    experienceData.forEach((item) => {
-        const { role, period, description } = item.text[lang];
-        listContainer.appendChild(
-            createExperienceItem({
-                role,
-                company: item.company,
-                period,
-                description,
-            }),
-        );
-    });
+  const listContainer = section.querySelector('.experience-list');
+  experienceData.forEach((item) => {
+    const { role, period, description } = item.text[lang];
+    listContainer.appendChild(
+      createExperienceItem({
+        role,
+        company: item.company,
+        period,
+        description,
+      }),
+    );
+  });
 
-    return section;
+  return section;
 }

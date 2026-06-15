@@ -1,12 +1,12 @@
-import { text } from '../utils/languagesUtil.js';
+import { text } from '@/utils/languagesUtil.js';
 
 export default function Hero() {
-    const textLang = text('hero');
-    const section = document.createElement('section');
-    section.id = 'home';
-    section.className = 'flex min-h-screen items-center bg-black pt-20 sm:pt-28 lg:pt-28';
+  const textLang = text('hero');
+  const section = document.createElement('section');
+  section.id = 'home';
+  section.className = 'flex min-h-screen items-center bg-black pt-20 sm:pt-28 lg:pt-28';
 
-    section.innerHTML = `
+  section.innerHTML = `
         <div class="container mx-auto max-w-7xl px-4">
             <div class="flex flex-wrap items-center">
                 
@@ -39,7 +39,7 @@ export default function Hero() {
                 <div class="relative w-full px-4 lg:w-1/2 flex justify-center lg:justify-end">
                     <div class="relative">
                         <img 
-                            src="dist/img/profile.png" 
+                            src="img/profile.png" 
                             alt="Dhammiko" 
                             class="relative z-10 mx-auto max-w-xs sm:max-w-sm lg:max-w-full lg:-mt-8"
                         />
@@ -60,5 +60,5 @@ export default function Hero() {
         </div>
     `;
 
-    return section;
+  return section;
 }
