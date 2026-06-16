@@ -1,6 +1,6 @@
 import '@/css/style.css';
 import { renderAll } from './renderAll.js';
-import { updateHtmlLang } from '@/utils/languagesUtil.js';
+import { updateHtmlLang } from '@/utils/langUtils.js';
 
 // First render
 updateHtmlLang();

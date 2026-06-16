@@ -1,5 +1,5 @@
 import { langData } from '@/data/languages.js';
-import { getLang } from '@/utils/languagesUtil.js';
+import { getLang } from '@/utils/langUtils.js';
 
 export default function Footer() {
   const footer = document.createElement('footer');

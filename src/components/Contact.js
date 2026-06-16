@@ -1,4 +1,4 @@
-import { text } from '@/utils/languagesUtil.js';
+import { text } from '@/utils/langUtils.js';
 
 const scriptURL =
   'https://script.google.com/macros/s/AKfycbxMpAHVtSNb-KGhAuOIn5qZ5cyVvCbZ4PS0lL3mPyRUre53DNWfWBmlHi9ZfyUGPQKl/exec';

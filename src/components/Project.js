@@ -1,5 +1,5 @@
 import { projectsData } from '@/data/projects.js';
-import { text, getLang } from '@/utils/languagesUtil.js';
+import { text, getLang } from '@/utils/langUtils.js';
 
 function createProjectCard({ title, description, image, link, repo }) {
   const cardWrapper = document.createElement('div');

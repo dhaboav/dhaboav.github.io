@@ -1,4 +1,4 @@
-import { text } from '@/utils/languagesUtil.js';
+import { text } from '@/utils/langUtils.js';
 
 export default function Hero() {
   const textLang = text('hero');

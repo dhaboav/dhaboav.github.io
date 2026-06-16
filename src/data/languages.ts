@@ -1,10 +1,11 @@
-export const langData = {
+import type { DynamicLangData } from '@/types/languages';
+
+export const langData: DynamicLangData = {
   en: {
     flag: '🇺🇸',
     label: 'EN',
     full: 'English',
     pageTitle: "Dhaboav's Website",
-
     navbar: {
       home: 'Home',
       about: 'About',
@@ -12,7 +13,6 @@ export const langData = {
       blog: 'Blog',
       contact: "Let's talk",
     },
-
     hero: {
       greet: "Hi, I'm",
       tagline:
@@ -21,26 +21,19 @@ export const langData = {
       resume: 'Resume',
       resumeFile: 'resume',
     },
-
     about: {
       label: 'About',
       title: 'Building with purpose',
       p1: "I'm passionate about robotics and computer vision. Building systems that see, interpret, and respond to the world around them. I believe in keeping things simple, robust, and meaningful.",
       p2: "When I'm not writing code, you'll probably find me reading a good book, grinding through a game, or binge-watching anime.",
-
       techLabel: 'Tech Stack',
     },
-
     projects: {
       title: 'Selected work',
       label: 'Projects',
       repo: 'Repository',
     },
-
-    experience: {
-      title: 'Experience',
-    },
-
+    experience: { title: 'Experience' },
     blog: {
       label: 'Blog',
       title: 'Technical Notes',
@@ -49,7 +42,6 @@ export const langData = {
         'Thoughts on the future of robotics, AI ethics, and the technical challenges of computer vision in Indonesia.',
       blogLinkButton: 'Read more',
     },
-
     contact: {
       label: 'Contact',
       title: "Let's connect",
@@ -63,13 +55,11 @@ export const langData = {
       failure: 'Failed to send message.',
     },
   },
-
   id: {
     flag: '🇮🇩',
     label: 'ID',
     full: 'Indonesia',
     pageTitle: 'Website Dhaboav',
-
     navbar: {
       home: 'Beranda',
       about: 'Tentang',
@@ -77,7 +67,6 @@ export const langData = {
       blog: 'Blog',
       contact: 'Mari terhubung',
     },
-
     hero: {
       greet: 'Hai, saya',
       tagline:
@@ -86,26 +75,19 @@ export const langData = {
       resume: 'resume',
       resumeFile: 'resume-id',
     },
-
     about: {
       label: 'Tentang',
       title: 'Membangun dengan tujuan',
       p1: 'Saya tertarik pada robotika dan computer vision. Membangun sistem yang dapat melihat, memahami, dan merespons dunia di sekitarnya.',
       p2: 'Saat tidak ngoding, saya biasanya membaca buku, bermain game, atau menonton anime.',
-
       techLabel: 'Tumpukan Teknologi',
     },
-
     projects: {
       title: 'Karya pilihan',
       label: 'Proyek',
       repo: 'Repositori',
     },
-
-    experience: {
-      title: 'Pengalaman',
-    },
-
+    experience: { title: 'Pengalaman' },
     blog: {
       label: 'Blog',
       title: 'Catatan Teknis',
@@ -114,7 +96,6 @@ export const langData = {
         'Pemikiran tentang masa depan robotika, etika AI, dan tantangan teknis computer vision di Indonesia.',
       blogLinkButton: 'Baca selengkapnya',
     },
-
     contact: {
       label: 'Kontak',
       title: 'Terhubung',
@@ -128,13 +109,11 @@ export const langData = {
       failure: 'Gagal mengirim pesan.',
     },
   },
-
   jp: {
     flag: '🇯🇵',
     label: 'JP',
     full: '日本語',
     pageTitle: 'Dhaboavのウェブサイト',
-
     navbar: {
       home: 'ホーム',
       about: '概要',
@@ -142,7 +121,6 @@ export const langData = {
       blog: 'ブログ',
       contact: '話しましょう',
     },
-
     hero: {
       greet: 'こんにちは、私は',
       tagline:
@@ -151,26 +129,19 @@ export const langData = {
       resume: '履歴書',
       resumeFile: 'resume',
     },
-
     about: {
       label: '概要',
       title: '目的を持って作る',
       p1: '私はロボット工学とコンピュータビジョンに情熱があります。世界を見て理解し反応するシステムを作ることを追求しています。',
       p2: 'コードを書いていないときは、本を読んだりゲームをしたりアニメを見ています。',
-
       techLabel: '技術スタック',
     },
-
     projects: {
       title: '選ばれた作品',
       label: 'プロジェクト',
       repo: 'リポジトリ',
     },
-
-    experience: {
-      title: '経験',
-    },
-
+    experience: { title: '経験' },
     blog: {
       label: 'ブログ',
       title: '技術ノート',
@@ -179,7 +150,6 @@ export const langData = {
         'ロボティクス、AI倫理、およびインドネシアにおけるコンピュータビジョンの技術的課題についての考察。',
       blogLinkButton: '続きを読む',
     },
-
     contact: {
       label: '連絡先',
       title: 'つながりましょう',

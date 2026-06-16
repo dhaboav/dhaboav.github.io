@@ -1,5 +1,5 @@
 import { techStack } from '@/data/techStack.js';
-import { text, getLang } from '@/utils/languagesUtil.js';
+import { text, getLang } from '@/utils/langUtils.js';
 import { experienceData } from '@/data/experience.js';
 
 function TechStack(stack = []) {

@@ -1,5 +1,5 @@
 import { blogData } from '@/data/blog.js';
-import { text, getLang } from '@/utils/languagesUtil.js';
+import { text, getLang } from '@/utils/langUtils.js';
 
 function createBlogItem({ date, tag, title, excerpt, linkButton }) {
   const article = document.createElement('article');
