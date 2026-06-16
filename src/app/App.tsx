@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
+import About from '@/components/About';
 import { updateHtmlLang } from '@/utils/langUtils';
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <About />
       </main>
       <Footer />
     </div>
