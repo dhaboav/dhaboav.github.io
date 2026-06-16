@@ -3,7 +3,7 @@ import type { SyntheticEvent } from 'react';
 import { text } from '@/utils/langUtils';
 
 const SCRIPT_URL =
-  'https://script.google.com/macros/s/AKfycbxMpAHVtSNb-KGhAuOIn5qZ5cyVvCbZ4PS0lL3mPyRUre53DNWfWBmlHi9ZfyUGPQKl/exec';
+  'https://script.google.com/macros/s/AKfycby3mxHqj4yA8Q15HGEVohQ_F3TS4gQo8AmUcjfqQ7lg4x8u1xwRDjKH33KxzS_FdiFD/exec';
 
 interface NotificationState {
   message: string;
