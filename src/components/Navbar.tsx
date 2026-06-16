@@ -1,42 +1,44 @@
 import { useNavbar } from '@/hooks/useNavbar';
+import { HashLink } from 'react-router-hash-link';
 
 export default function Navbar() {
   const { textLang, isOpen, menuRef, buttonRef, toggleMenu, closeMenu } = useNavbar();
   const navLinks = [
-    { href: '#home', label: textLang.home },
-    { href: '#about', label: textLang.about },
-    { href: '#projects', label: textLang.projects },
-    { href: '#blog', label: textLang.blog },
+    { href: '/#home', label: textLang.home },
+    { href: '/#about', label: textLang.about },
+    { href: '/#projects', label: textLang.projects },
+    { href: '/#blog', label: textLang.blog },
+    { href: '/blog', label: 'All Articles' },
   ];
-  const ctaLink = { href: '#contact', label: textLang.contact };
+  const ctaLink = { href: '/#contact', label: textLang.contact };
 
   return (
     <header className="fixed right-0 left-0 z-50 border-b border-transparent bg-black/60 backdrop-blur-sm transition-all duration-300">
       <div className="container mx-auto max-w-7xl px-4">
         <nav className="flex items-center justify-between py-4">
-          <a href="#home">
+          <HashLink to="#home">
             <i className="bx bx-fire bx-lg text-primary text-3xl" />
-          </a>
+          </HashLink>
 
           {/* DESKTOP MENU */}
           <div className="hidden items-center gap-8 md:flex lg:flex">
             {navLinks.map(({ href, label }) => (
-              <a
+              <HashLink
                 key={href}
-                href={href}
+                to={href}
                 className="link-underline text-sm text-zinc-400 hover:text-white"
               >
                 {label}
-              </a>
+              </HashLink>
             ))}
           </div>
 
-          <a
-            href={ctaLink.href}
+          <HashLink
+            to={ctaLink.href}
             className="text-primary hidden text-sm font-medium hover:text-white md:block lg:block"
           >
             {ctaLink.label}
-          </a>
+          </HashLink>
 
           {/* HAMBURGER BUTTON (Mobile Only) */}
           <button
@@ -57,18 +59,18 @@ export default function Navbar() {
           } flex-col gap-3 pb-4 text-white/80 transition-all duration-300 md:hidden lg:hidden`}
         >
           {navLinks.map(({ href, label }) => (
-            <a key={href} href={href} onClick={closeMenu} className="text-sm hover:text-white">
+            <HashLink key={href} to={href} onClick={closeMenu} className="text-sm hover:text-white">
               {label}
-            </a>
+            </HashLink>
           ))}
 
-          <a
-            href={ctaLink.href}
+          <HashLink
+            to={ctaLink.href}
             onClick={closeMenu}
             className="text-primary pt-2 text-sm font-medium hover:text-white"
           >
             {ctaLink.label}
-          </a>
+          </HashLink>
         </div>
       </div>
     </header>

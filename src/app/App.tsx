@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
-import About from '@/components/About';
 import { updateHtmlLang } from '@/utils/langUtils';
-import Project from '@/components/Project';
-import Blog from '@/components/Blog';
-import Contact from '@/components/Contact';
 import BackToTop from '@/components/BackToTop';
+import Home from '@/pages/Home';
+import BlogDetail from '@/pages/BlogDetail';
+import BlogList from '@/pages/BlogList';
 
 export default function App() {
   const [langTrigger, setLangTrigger] = useState<number>(0);
@@ -24,16 +23,18 @@ export default function App() {
 
   return (
     <div key={langTrigger}>
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Project />
-        <Blog />
-        <Contact />
-      </main>
-      <Footer />
-      <BackToTop />
+      <HashRouter>
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/blog" element={<BlogList />} />
+            <Route path="/blog/:slug" element={<BlogDetail />} />
+          </Routes>
+        </main>
+        <Footer />
+        <BackToTop />
+      </HashRouter>
     </div>
   );
 }

@@ -1,14 +1,8 @@
-import type { SupportedLang } from '@/utils/langUtils';
-
-export interface BlogDetails {
+export interface BlogItem {
+  slug: string;
+  date: string;
+  dateISO: string;
   tag: string;
   title: string;
   excerpt: string;
-}
-
-export interface BlogItem {
-  date: string;
-  dateISO: string;
-  slug?: string;
-  text: Record<SupportedLang, BlogDetails>;
 }

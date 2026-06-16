@@ -1,17 +1,23 @@
 import { blogData } from '@/data/blog';
-import { text, getLang } from '@/utils/langUtils';
 
 export function useBlog() {
-  const lang = getLang();
-  const textLang = text('blog');
-  const titleParts = (textLang.title || '').split(' ');
   const recentBlogs = [...blogData]
     .sort((a, b) => new Date(b.dateISO).getTime() - new Date(a.dateISO).getTime())
     .slice(0, 4);
 
+  const textUi = {
+    label: 'BLOG',
+    title: 'TECHNICAL Notes',
+    description:
+      'Thoughts on the future of robotics, AI ethics, and the technical challenges of computer vision in Indonesia.',
+    allButton: 'SEE ALL',
+    blogLinkButton: 'READ MORE',
+  };
+
+  const titleParts = textUi.title.split(' ');
+
   return {
-    lang,
-    textLang,
+    textUi,
     titleParts,
     recentBlogs,
   };
