@@ -2,7 +2,7 @@ import Navbar from '@/components/Navbar.js';
 import Hero from '@/components/Hero.js';
 import About from '@/components/About.js';
 import Project from '@/components/Project.js';
-import Experience from '@/components/Experience.js';
+import Blog from '@/components/Blog.js';
 import Contact from '@/components/Contact.js';
 import Footer from '@/components/Footer.js';
 import BackToTop from '@/components/BackToTop.js';
@@ -13,7 +13,7 @@ export function renderAll() {
     ['hero-container', Hero],
     ['about-container', About],
     ['projects-container', Project],
-    ['experience-container', Experience],
+    ['blog-container', Blog],
     ['contact-container', Contact],
     ['footer-container', Footer],
   ];

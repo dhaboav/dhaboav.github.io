@@ -36,15 +36,17 @@ export default function Project() {
   const textLang = text('projects');
   const section = document.createElement('section');
   section.id = 'projects';
-  section.className = 'bg-black py-20 sm:py-28 md:py-32'; // mobile-first responsive spacing
+  section.className = 'min-h-screen bg-black py-32 md:py-40 lg:py-56';
 
   section.innerHTML = `
         <div class="container mx-auto max-w-7xl px-4 sm:px-6">
 
             <div class="mb-12 sm:mb-16">
-                <p class="mb-3 font-mono text-[11px] uppercase tracking-wider text-zinc-500 sm:text-xs">
-                    ${textLang.label}
-                </p>
+
+            <p class="font-mono text-[10px] uppercase tracking-[0.3em] text-primary/80 mb-6">
+            [ 02 ] ${textLang.label}
+          </p>
+                
 
                 <h2 class="text-2xl font-medium tracking-tight text-white sm:text-3xl md:text-4xl">
                     ${textLang.title}

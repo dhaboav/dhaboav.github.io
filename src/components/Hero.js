@@ -24,14 +24,25 @@ export default function Hero() {
                         ${textLang.tagline}
                     </p>
 
+                    
+
                     <div class="animate-fade-in-delay-3 flex items-center gap-6">
+
+                    <a href="other/${textLang.resumeFile}.pdf" 
+                          download="Resume Dhammiko Bodhi Avatara" 
+                          class="inline-flex items-center justify-center gap-1 text-sm text-zinc-400 transition-colors hover:text-white leading-none border-1 border-white/20 hover:bg-primary hover:border-primary p-2 rounded-lg">
+                            
+                            <i class="bx bx-save text-lg leading-none"></i> 
+                            
+                            <span class="leading-none">${textLang.resume}</span>
+                        </a>
+
                         <a href="#projects" class="inline-flex items-center gap-2 text-sm font-medium text-white transition-colors hover:text-primary">
                             ${textLang.viewWork} <span class="text-lg">→</span>
                         </a>
 
-                        <a href="#contact" class="link-underline text-sm text-zinc-400 transition-colors hover:text-white">
-                            ${textLang.getInTouch}
-                        </a>
+                        
+
                     </div>
                 </div>
 

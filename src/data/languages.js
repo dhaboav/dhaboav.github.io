@@ -9,7 +9,7 @@ export const langData = {
       home: 'Home',
       about: 'About',
       projects: 'Projects',
-      experience: 'Experience',
+      blog: 'Blog',
       contact: "Let's talk",
     },
 
@@ -18,7 +18,8 @@ export const langData = {
       tagline:
         'Passionate about robotics and computer vision, developing smart systems that see and act.',
       viewWork: 'View work',
-      getInTouch: 'Get in touch',
+      resume: 'Resume',
+      resumeFile: 'resume',
     },
 
     about: {
@@ -26,8 +27,7 @@ export const langData = {
       title: 'Building with purpose',
       p1: "I'm passionate about robotics and computer vision. Building systems that see, interpret, and respond to the world around them. I believe in keeping things simple, robust, and meaningful.",
       p2: "When I'm not writing code, you'll probably find me reading a good book, grinding through a game, or binge-watching anime.",
-      resume: 'Resume',
-      resumeFile: 'resume',
+
       techLabel: 'Tech Stack',
     },
 
@@ -39,6 +39,15 @@ export const langData = {
 
     experience: {
       title: 'Experience',
+    },
+
+    blog: {
+      label: 'Blog',
+      title: 'Technical Notes',
+      allButton: 'See all',
+      description:
+        'Thoughts on the future of robotics, AI ethics, and the technical challenges of computer vision in Indonesia.',
+      blogLinkButton: 'Read more',
     },
 
     contact: {
@@ -65,7 +74,7 @@ export const langData = {
       home: 'Beranda',
       about: 'Tentang',
       projects: 'Proyek',
-      experience: 'Pengalaman',
+      blog: 'Blog',
       contact: 'Mari terhubung',
     },
 
@@ -74,7 +83,8 @@ export const langData = {
       tagline:
         'Berfokus pada robotika dan computer vision, mengembangkan sistem pintar yang dapat melihat dan bertindak.',
       viewWork: 'Lihat karya',
-      getInTouch: 'Hubungi saya',
+      resume: 'resume',
+      resumeFile: 'resume-id',
     },
 
     about: {
@@ -82,8 +92,7 @@ export const langData = {
       title: 'Membangun dengan tujuan',
       p1: 'Saya tertarik pada robotika dan computer vision. Membangun sistem yang dapat melihat, memahami, dan merespons dunia di sekitarnya.',
       p2: 'Saat tidak ngoding, saya biasanya membaca buku, bermain game, atau menonton anime.',
-      resume: 'resume',
-      resumeFile: 'resume-id',
+
       techLabel: 'Tumpukan Teknologi',
     },
 
@@ -95,6 +104,15 @@ export const langData = {
 
     experience: {
       title: 'Pengalaman',
+    },
+
+    blog: {
+      label: 'Blog',
+      title: 'Catatan Teknis',
+      allButton: 'Lihat semua',
+      description:
+        'Pemikiran tentang masa depan robotika, etika AI, dan tantangan teknis computer vision di Indonesia.',
+      blogLinkButton: 'Baca selengkapnya',
     },
 
     contact: {
@@ -121,7 +139,7 @@ export const langData = {
       home: 'ホーム',
       about: '概要',
       projects: 'プロジェクト',
-      experience: '経験',
+      blog: 'ブログ',
       contact: '話しましょう',
     },
 
@@ -130,7 +148,8 @@ export const langData = {
       tagline:
         'ロボティクスとコンピュータビジョンに情熱を持ち、見て判断し行動するスマートシステムを開発しています。',
       viewWork: '作品を見る',
-      getInTouch: '連絡する',
+      resume: '履歴書',
+      resumeFile: 'resume',
     },
 
     about: {
@@ -138,8 +157,7 @@ export const langData = {
       title: '目的を持って作る',
       p1: '私はロボット工学とコンピュータビジョンに情熱があります。世界を見て理解し反応するシステムを作ることを追求しています。',
       p2: 'コードを書いていないときは、本を読んだりゲームをしたりアニメを見ています。',
-      resume: '履歴書',
-      resumeFile: 'resume',
+
       techLabel: '技術スタック',
     },
 
@@ -151,6 +169,15 @@ export const langData = {
 
     experience: {
       title: '経験',
+    },
+
+    blog: {
+      label: 'ブログ',
+      title: '技術ノート',
+      allButton: 'すべてを見る',
+      description:
+        'ロボティクス、AI倫理、およびインドネシアにおけるコンピュータビジョンの技術的課題についての考察。',
+      blogLinkButton: '続きを読む',
     },
 
     contact: {

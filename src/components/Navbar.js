@@ -27,7 +27,7 @@ export default function Navbar() {
                     <a href="#home" class="link-underline text-sm text-zinc-400 hover:text-white">${textLang.home}</a>
                     <a href="#about" class="link-underline text-sm text-zinc-400 hover:text-white">${textLang.about}</a>
                     <a href="#projects" class="link-underline text-sm text-zinc-400 hover:text-white">${textLang.projects}</a>
-                    <a href="#experience" class="link-underline text-sm text-zinc-400 hover:text-white">${textLang.experience}</a>
+                    <a href="#blog" class="link-underline text-sm text-zinc-400 hover:text-white">${textLang.blog}</a>
                 </div>
 
                 <!-- DESKTOP CTA -->
@@ -44,7 +44,7 @@ export default function Navbar() {
                 <a href="#home" class="text-sm hover:text-white">${textLang.home}</a>
                 <a href="#about" class="text-sm hover:text-white">${textLang.about}</a>
                 <a href="#projects" class="text-sm hover:text-white">${textLang.projects}</a>
-                <a href="#experience" class="text-sm hover:text-white">${textLang.experience}</a>
+                <a href="#blog" class="text-sm hover:text-white">${textLang.blog}</a>
                 <a href="#contact" class="text-sm font-medium text-primary hover:text-white">
                     ${textLang.contact}
                 </a>

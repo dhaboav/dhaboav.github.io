@@ -7,7 +7,7 @@ export default function Contact() {
   const textLang = text('contact');
   const section = document.createElement('section');
   section.id = 'contact';
-  section.className = 'bg-black py-20 text-white sm:py-28 md:py-32';
+  section.className = 'bg-black text-white min-h-screen bg-black py-32 md:py-40 lg:py-56';
 
   section.innerHTML = `
         <div class="container mx-auto px-4">
