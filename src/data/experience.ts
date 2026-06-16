@@ -1,4 +1,6 @@
-export const experienceData = [
+import type { ExperienceItem } from '@/types/experience';
+
+export const experienceData: ExperienceItem[] = [
   {
     company: 'University of Tanjungpura',
     text: {

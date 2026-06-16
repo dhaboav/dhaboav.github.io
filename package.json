@@ -2,14 +2,14 @@
     "name": "portofolio-website",
     "version": "2.1.0",
     "description": "portofolio website for personal usage",
-    "main": "index.js",
+    "types": "module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build",
+        "build": "tsc -b && vite build",
         "preview": "vite preview",
         "deploy": "gh-pages -d dist",
-        "format": "prettier --write \"src/**/*.js\" ",
-        "format:check": "prettier --check \"src/**/*.js\" "
+        "format": "prettier --write \"src/**/*.{ts,tsx}\"",
+        "format:check": "prettier --check \"src/**/*.{ts,tsx}\""
     },
     "keywords": [
         "portfolio",
@@ -21,14 +21,21 @@
     "author": "dhaboav",
     "license": "MIT",
     "devDependencies": {
+        "@types/node": "^25.9.3",
+        "@types/react": "^19.2.17",
+        "@types/react-dom": "^19.2.3",
+        "@vitejs/plugin-react": "^6.0.2",
         "gh-pages": "^6.3.0",
         "prettier": "^3.7.3",
         "prettier-plugin-tailwindcss": "^0.7.1",
         "tailwindcss": "^4.3.1",
+        "typescript": "^6.0.3",
         "vite": "^8.0.16"
     },
     "dependencies": {
-        "@tailwindcss/vite": "^4.3.1"
+        "@tailwindcss/vite": "^4.3.1",
+        "react": "^19.2.7",
+        "react-dom": "^19.2.7"
     },
     "repository": {
         "type": "git",

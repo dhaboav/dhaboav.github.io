@@ -1,8 +1,9 @@
-export const projectsData = [
+import type { ProjectItem } from '@/types/projects';
+
+export const projectsData: ProjectItem[] = [
   {
     image: 'img/basestation.png',
     link: 'https://github.com/dhaboav/robot-basestation',
-
     text: {
       en: {
         title: 'Basestation Robot Controller',
@@ -20,11 +21,9 @@ export const projectsData = [
       },
     },
   },
-
   {
     image: 'img/bookshelf.png',
     link: 'https://github.com/dhaboav/bookshelf',
-
     text: {
       en: {
         title: 'Simple Personal Bookshelf App',
@@ -43,11 +42,9 @@ export const projectsData = [
       },
     },
   },
-
   {
     image: 'img/login.png',
     link: 'https://github.com/dhaboav/college-web-login',
-
     text: {
       en: {
         title: 'Simple Login Website',
