@@ -4,7 +4,7 @@ import { useBlogDetail } from '@/hooks/useBlogDetail';
 import NotFound from '@/pages/NotFound';
 
 export default function BlogDetail() {
-  const { currentBlog, content, isLoading, isError } = useBlogDetail();
+  const { currentBlog, content, isLoading, isError, formattedDate } = useBlogDetail();
 
   if (isError || !currentBlog) {
     return <NotFound />;
@@ -31,10 +31,10 @@ export default function BlogDetail() {
               {currentBlog.title}
             </h1>
 
-            <p className="font-mono text-xs text-slate-400">{currentBlog.date}</p>
+            <p className="font-mono text-xs text-slate-400">{formattedDate}</p>
           </div>
 
-          <article className="leading-relaxed text-slate-700">
+          <article className="prose">
             <ReactMarkdown>{content}</ReactMarkdown>
           </article>
 

@@ -2,6 +2,17 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { blogData } from '@/data/blog';
 
+const formatDate = (dateString: string) => {
+  if (!dateString) return '';
+  const date = new Date(dateString);
+
+  return new Intl.DateTimeFormat('id-ID', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }).format(date);
+};
+
 export function useBlogDetail() {
   const { slug } = useParams<{ slug: string }>();
 
@@ -9,11 +20,9 @@ export function useBlogDetail() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isError, setIsError] = useState<boolean>(false);
 
-  // 1. Cari dulu metadata artikel berdasarkan slug di URL
   const currentBlog = blogData.find((blog) => blog.slug === slug);
 
   useEffect(() => {
-    // Jika dari awal metadata slug tidak ditemukan di data/blog.ts
     if (!currentBlog) {
       setIsError(true);
       setIsLoading(false);
@@ -23,8 +32,7 @@ export function useBlogDetail() {
     setIsLoading(true);
     setIsError(false);
 
-    // 2. Ambil file .md secara dinamis dari folder public/content/
-    fetch(`/content/${currentBlog.slug}.md`)
+    fetch(`/blog/${currentBlog.slug}.md`)
       .then((res) => {
         if (!res.ok) {
           throw new Error('File artikel tidak ditemukan di folder public');
@@ -43,9 +51,10 @@ export function useBlogDetail() {
   }, [slug, currentBlog]);
 
   return {
-    currentBlog, // Data judul, tanggal, tag
-    content, // Isi teks mentah Markdown (.md)
-    isLoading, // State loading untuk UI skeleton/spinner
-    isError, // State error jika file hilang/salah ketik slug
+    currentBlog,
+    content,
+    isLoading,
+    isError,
+    formattedDate: currentBlog ? formatDate(currentBlog.dateISO) : '',
   };
 }

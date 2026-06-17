@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@plugin "@tailwindcss/typography";
 
 @theme {
     --font-*: initial;
@@ -59,4 +60,133 @@ body::-webkit-scrollbar-thumb {
 .link-underline:hover::after {
     transform: scaleX(1);
     transform-origin: left;
+}
+
+
+.prose {
+  /* Judul Utama H2 di dalam Markdown */
+  & h2 {
+    font-family: var(--font-mono), monospace;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.025em;
+    color: #0f172a; /* slate-900 */
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid #0f172a;
+    padding-bottom: 0.5rem;
+  }
+
+  /* Sub-judul H3 di dalam Markdown */
+  & h3 {
+    font-family: var(--font-mono), monospace;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #1e293b; /* slate-800 */
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Paragraf Teks */
+  & p {
+    font-family: var(--font-sans), sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: #475569; /* slate-600 */
+    margin-bottom: 1.5rem;
+    text-align: justify;
+  }
+
+  /* Tulisan yang di-Bold (**) */
+  & strong {
+    font-weight: 700;
+    color: #0f172a;
+    background-color: #fff7ed; /* orange-50/10 */
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  /* Garis Pembatas (---) */
+  & hr {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-top: 1px dashed #cbd5e1; /* slate-300 */
+  }
+
+  /* Sistem List / Poin (Unordered List) */
+  & ul {
+    margin-bottom: 1.5rem;
+    padding-left: 0.5rem;
+    list-style: none; 
+  }
+
+  & li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.6;
+
+    &::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #f97316; /* orange-500 */
+      font-family: var(--font-mono), monospace;
+      font-weight: bold;
+    }
+  }
+
+  /* Format Inline Code (menggunakan tanda ` ` ) */
+  & :not(pre) > code {
+    font-family: var(--font-mono), monospace;
+    font-size: 0.85em;
+    font-weight: 700;
+    color: #ea580c; /* orange-600 */
+    background-color: #f1f5f9; /* slate-100 */
+    padding: 0.2rem 0.4rem;
+    border: 1px solid #e2e8f0;
+  }
+
+  /* Blok Kode Besar (Fenced Code Blocks ``` ) */
+  & pre {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    background-color: #0f172a; /* slate-900 */
+    padding: 1.25rem;
+    overflow-x: auto;
+    border: 2px solid #0f172a;
+    box-shadow: 4px 4px 0px 0px #0f172a; /* Bayangan tebal khas neo-brutalisme */
+    
+    & code {
+      font-family: var(--font-mono), monospace;
+      font-size: 0.85rem;
+      color: #f8fafc; /* slate-50 */
+      background: transparent;
+      padding: 0;
+      border: none;
+    }
+  }
+
+  /* Kutipan / Blockquote ( menggunakan tanda > ) */
+  & blockquote {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid #f97316; /* orange-500 */
+    background-color: #f8fafc;
+    padding: 1rem 1.25rem;
+    font-family: var(--font-mono), monospace;
+    font-style: italic;
+    color: #64748b; /* slate-500 */
+    box-shadow: 2px 2px 0px 0px #0f172a;
+
+    & p {
+      margin-bottom: 0;
+      color: #64748b;
+    }
+  }
 }

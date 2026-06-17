@@ -4,7 +4,7 @@ interface Blog {
   slug: string;
   tag: string;
   title: string;
-  date: string;
+  dateISO: string;
   excerpt: string;
 }
 
@@ -15,9 +15,21 @@ interface BlogCardProps {
   searchQuery: string;
 }
 
+const formatDate = (dateString: string) => {
+  if (!dateString) return '';
+  const date = new Date(dateString);
+
+  return new Intl.DateTimeFormat('id-ID', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }).format(date);
+};
+
 export default function BlogCard({ blog, index, currentPage, searchQuery }: BlogCardProps) {
   const globalIndex = currentPage === 1 ? index : 8 + (currentPage - 2) * 9 + index;
   const isHero = globalIndex === 0 && searchQuery === '';
+  const formattedDate = formatDate(blog.dateISO);
 
   // Class grid editorial
   let gridColumnClass = 'lg:col-span-4 border-b border-slate-200 pb-12';
@@ -68,7 +80,7 @@ export default function BlogCard({ blog, index, currentPage, searchQuery }: Blog
         className={`flex flex-col items-start justify-between ${isHero ? 'lg:col-span-5 lg:pt-8' : ''}`}
       >
         <div>
-          <div className="mb-4 font-mono text-xs text-slate-400">[ {blog.date} ]</div>
+          <div className="mb-4 font-mono text-xs text-slate-400">[ {formattedDate} ]</div>
           <p className="mb-6 line-clamp-3 text-sm leading-relaxed font-normal text-slate-500/80">
             {blog.excerpt}
           </p>

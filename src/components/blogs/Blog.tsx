@@ -1,6 +1,17 @@
 import { Link } from 'react-router-dom';
 import { useBlog } from '@/hooks/useBlog';
 
+const formatDate = (dateString: string) => {
+  if (!dateString) return '';
+  const date = new Date(dateString);
+
+  return new Intl.DateTimeFormat('id-ID', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }).format(date);
+};
+
 export default function Blog() {
   const { textUi, titleParts, recentBlogs } = useBlog();
 
@@ -34,13 +45,15 @@ export default function Blog() {
 
         <div className="bg-background/10 divide-background/20 grid grid-cols-1 gap-px divide-y md:divide-x md:divide-y-0 lg:grid-cols-4">
           {recentBlogs.map((item) => {
+            const formattedDate = formatDate(item.dateISO);
+
             return (
               <article
                 key={item.slug}
                 className="bg-foreground hover:bg-foreground/95 group flex cursor-pointer flex-col p-8 transition-colors"
               >
                 <div className="text-background mb-10 flex justify-between font-mono text-[10px] opacity-50">
-                  <time>{item.date}</time>
+                  <time>{formattedDate}</time>
                   <span>{item.tag}</span>
                 </div>
 

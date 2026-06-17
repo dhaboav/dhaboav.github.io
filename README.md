@@ -6,7 +6,7 @@ Hi there! 👋 I'm **Dhammiko Bodhi Avatara**, a passionate robotics and compute
 
 ## 🔹 About Me
 
-- 💻 Undergraduate Student in Computer Science at University of Tanjungpura
+- 💻 Freshgraduate Student in Computer Science at University of Tanjungpura
 - 🤖 Focused on Computer Vision, and Automation
 - ⚡ I value **simplicity**, **robustness**, and **purpose-driven development**
 - 📚 Outside of coding: reading, gaming, and anime marathons
@@ -55,8 +55,8 @@ Hi there! 👋 I'm **Dhammiko Bodhi Avatara**, a passionate robotics and compute
 
 ## 🌟 Features
 
-- Fully responsive portfolio site built with **HTML, CSS, Tailwind, and JS**
-- Modular JS components for `About`, `Projects`, `Experience`, `Contact`, and `Footer`
+- Fully responsive portfolio site built with **React, and Tailwindcss**
+- Modular components for `About`, `Projects`, `Experience`, `Contact`, `Blogs`, and `Footer`
 - Smooth scrolling, animations, and “Back to Top” functionality
 
 ---
@@ -69,16 +69,18 @@ Hi there! 👋 I'm **Dhammiko Bodhi Avatara**, a passionate robotics and compute
 git clone https://github.com/dhaboav/dhaboav.github.io.git
 ```
 
-2. Install dependencies and build TailwindCSS
+2. Install dependencies, build, and deploy into Github Pages
 
 ```bash
 npm install
 npm run build
+npm run deploy
 ```
 
 3. Customize data in `src/data`
 
-- Update `experience.js` to add or modify your experience entries
-- Update `languages.js` to add or modify text content for all sections and languages
-- Update `projects.js` to add or modify projects
-- Update `techStack.js` to add or modify your tech stack
+- Update `blog.ts` to add or modify blogs meta data + `content` for the blog content with note that use `markdown` format file with the name formating is same as **`slugs`**
+- Update `experience.ts` to add or modify your experience entries
+- Update `languages.ts` to add or modify text content for all sections and languages
+- Update `projects.ts` to add or modify projects
+- Update `techStack.ts` to add or modify your tech stack
