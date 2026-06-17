@@ -12,7 +12,7 @@ export default function BlogDetail() {
 
   if (isLoading) {
     return (
-      <div className="animate-pulse pt-28 text-center font-mono text-slate-400">
+      <div className="min-h-screen animate-pulse pt-28 text-center font-mono text-slate-400 text-slate-900">
         Loading the article...
       </div>
     );
