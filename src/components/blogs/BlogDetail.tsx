@@ -2,9 +2,14 @@ import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router-dom';
 import { useBlogDetail } from '@/hooks/useBlogDetail';
 import NotFound from '@/pages/NotFound';
+import { useEffect } from 'react';
 
 export default function BlogDetail() {
   const { currentBlog, content, isLoading, isError, formattedDate } = useBlogDetail();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [content]);
 
   if (isError || !currentBlog) {
     return <NotFound />;
