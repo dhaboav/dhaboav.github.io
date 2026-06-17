@@ -7,6 +7,7 @@ import BackToTop from '@/components/BackToTop';
 import Home from '@/pages/Home';
 import BlogDetail from '@/pages/BlogDetail';
 import BlogList from '@/pages/BlogList';
+import NotFound from '@/pages/NotFound';
 
 export default function App() {
   const [langTrigger, setLangTrigger] = useState<number>(0);
@@ -30,6 +31,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/blog" element={<BlogList />} />
             <Route path="/blog/:slug" element={<BlogDetail />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />

@@ -15,3 +15,48 @@ export function useBlogDetail() {
   // ... logika pengambilan data
 }
 ```
+* **Custom Hooks:** Seluruh logika bisnis dipisah penuh dari file tampilan UI.
+* **Client-side Routing:** Menggunakan `HashRouter` agar web statis aman dari eror 404 saat di-host di GitHub Pages.
+* **Markdown Parsing:** Artikel ditulis terpisah agar manajemen konten menjadi lebih modular.
+* **Custom Hooks:** Seluruh logika bisnis dipisah penuh dari file tampilan UI.
+* **Client-side Routing:** Menggunakan `HashRouter` agar web statis aman dari eror 404 saat di-host di GitHub Pages.
+* **Markdown Parsing:** Artikel ditulis terpisah agar manajemen konten menjadi lebih modular.
+* **Custom Hooks:** Seluruh logika bisnis dipisah penuh dari file tampilan UI.
+* **Client-side Routing:** Menggunakan `HashRouter` agar web statis aman dari eror 404 saat di-host di GitHub Pages.
+* **Markdown Parsing:** Artikel ditulis terpisah agar manajemen konten menjadi lebih modular.
+* **Custom Hooks:** Seluruh logika bisnis dipisah penuh dari file tampilan UI.
+* **Client-side Routing:** Menggunakan `HashRouter` agar web statis aman dari eror 404 saat di-host di GitHub Pages.
+* **Markdown Parsing:** Artikel ditulis terpisah agar manajemen konten menjadi lebih modular.
+* **Custom Hooks:** Seluruh logika bisnis dipisah penuh dari file tampilan UI.
+* **Client-side Routing:** Menggunakan `HashRouter` agar web statis aman dari eror 404 saat di-host di GitHub Pages.
+* **Markdown Parsing:** Artikel ditulis terpisah agar manajemen konten menjadi lebih modular.
+* **Custom Hooks:** Seluruh logika bisnis dipisah penuh dari file tampilan UI.
+* **Client-side Routing:** Menggunakan `HashRouter` agar web statis aman dari eror 404 saat di-host di GitHub Pages.
+* **Markdown Parsing:** Artikel ditulis terpisah agar manajemen konten menjadi lebih modular.
+* **Custom Hooks:** Seluruh logika bisnis dipisah penuh dari file tampilan UI.
+* **Client-side Routing:** Menggunakan `HashRouter` agar web statis aman dari eror 404 saat di-host di GitHub Pages.
+* **Markdown Parsing:** Artikel ditulis terpisah agar manajemen konten menjadi lebih modular.
+* **Custom Hooks:** Seluruh logika bisnis dipisah penuh dari file tampilan UI.
+* **Client-side Routing:** Menggunakan `HashRouter` agar web statis aman dari eror 404 saat di-host di GitHub Pages.
+* **Markdown Parsing:** Artikel ditulis terpisah agar manajemen konten menjadi lebih modular.
+* **Custom Hooks:** Seluruh logika bisnis dipisah penuh dari file tampilan UI.
+* **Client-side Routing:** Menggunakan `HashRouter` agar web statis aman dari eror 404 saat di-host di GitHub Pages.
+* **Markdown Parsing:** Artikel ditulis terpisah agar manajemen konten menjadi lebih modular.
+* **Custom Hooks:** Seluruh logika bisnis dipisah penuh dari file tampilan UI.
+* **Client-side Routing:** Menggunakan `HashRouter` agar web statis aman dari eror 404 saat di-host di GitHub Pages.
+* **Markdown Parsing:** Artikel ditulis terpisah agar manajemen konten menjadi lebih modular.
+* **Custom Hooks:** Seluruh logika bisnis dipisah penuh dari file tampilan UI.
+* **Client-side Routing:** Menggunakan `HashRouter` agar web statis aman dari eror 404 saat di-host di GitHub Pages.
+* **Markdown Parsing:** Artikel ditulis terpisah agar manajemen konten menjadi lebih modular.
+* **Custom Hooks:** Seluruh logika bisnis dipisah penuh dari file tampilan UI.
+* **Client-side Routing:** Menggunakan `HashRouter` agar web statis aman dari eror 404 saat di-host di GitHub Pages.
+* **Markdown Parsing:** Artikel ditulis terpisah agar manajemen konten menjadi lebih modular.
+* **Custom Hooks:** Seluruh logika bisnis dipisah penuh dari file tampilan UI.
+* **Client-side Routing:** Menggunakan `HashRouter` agar web statis aman dari eror 404 saat di-host di GitHub Pages.
+* **Markdown Parsing:** Artikel ditulis terpisah agar manajemen konten menjadi lebih modular.
+* **Custom Hooks:** Seluruh logika bisnis dipisah penuh dari file tampilan UI.
+* **Client-side Routing:** Menggunakan `HashRouter` agar web statis aman dari eror 404 saat di-host di GitHub Pages.
+* **Markdown Parsing:** Artikel ditulis terpisah agar manajemen konten menjadi lebih modular.
+* **Custom Hooks:** Seluruh logika bisnis dipisah penuh dari file tampilan UI.
+* **Client-side Routing:** Menggunakan `HashRouter` agar web statis aman dari eror 404 saat di-host di GitHub Pages.
+* **Markdown Parsing:** Artikel ditulis terpisah agar manajemen konten menjadi lebih modular.
