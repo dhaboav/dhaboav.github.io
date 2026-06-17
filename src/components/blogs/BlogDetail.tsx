@@ -1,7 +1,7 @@
 import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router-dom';
 import { useBlogDetail } from '@/hooks/useBlogDetail';
-import NotFound from './NotFound';
+import NotFound from '@/pages/NotFound';
 
 export default function BlogDetail() {
   const { currentBlog, content, isLoading, isError } = useBlogDetail();
@@ -13,7 +13,7 @@ export default function BlogDetail() {
   if (isLoading) {
     return (
       <div className="animate-pulse pt-28 text-center font-mono text-slate-400">
-        Memuat konten artikel...
+        Loading the article...
       </div>
     );
   }

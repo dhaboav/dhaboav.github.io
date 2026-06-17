@@ -1,84 +1,89 @@
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { useBlogList } from '@/hooks/useBlogList';
+import { usePagination } from '@/hooks/usePagination';
+import BlogCard from '@/components/blogs/BlogCard';
+import PaginationNav from '@/components/PaginationNav';
 
 export default function BlogList() {
   const { searchQuery, setSearchQuery, blogs } = useBlogList();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  const {
+    currentPage,
+    setCurrentPage,
+    jumpPage,
+    setJumpPage,
+    currentPosts,
+    totalPages,
+    getPageNumbers,
+    handleJumpPageSubmit,
+  } = usePagination({ items: blogs, searchQuery });
 
   return (
-    <div className="min-h-screen bg-white">
-      <header className="container mx-auto max-w-7xl px-4">
-        <div className="flex flex-col justify-between gap-8 border-b border-slate-200 pt-24 pb-12 md:flex-row">
-          <div>
-            <span className="font-mono text-xs tracking-widest text-slate-400 uppercase">
-              [ 00 ] Archive
-            </span>
-            <h1 className="mt-2 font-sans text-5xl font-black tracking-tight text-slate-900 uppercase">
-              All Technical{' '}
-              <span className="font-serif font-light text-slate-700 italic">Notes</span>
-            </h1>
-            <p className="mt-4 max-w-md text-sm leading-relaxed font-light text-slate-500">
-              Kumpulan dokumentasi mendalam, catatan sistem, dan eksplorasi teknis seputar AI,
-              Computer Vision, dan Embedded Systems.
-            </p>
+    <div className="min-h-screen bg-[#fcfcfc] text-slate-900 selection:bg-orange-500 selection:text-white">
+      {/* ─── HEADER SECTION ─── */}
+      <header className="container mx-auto max-w-7xl px-4 pt-36">
+        <div className="relative border-b-4 border-slate-900 pb-12">
+          <div className="absolute -top-16 right-4 hidden font-sans text-9xl font-black tracking-tighter text-slate-100/80 select-none md:block">
+            ARCHIVE
           </div>
 
-          {/* Bar Pencarian Minimalis */}
-          <div className="w-full md:w-72">
-            <input
-              type="text"
-              placeholder="Search articles..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-none border border-slate-200 bg-white px-4 py-2 font-mono text-sm text-slate-900 transition-colors focus:border-orange-500 focus:outline-none"
-            />
+          <div className="relative z-10 flex flex-col justify-between gap-8 md:flex-row md:items-end">
+            <div>
+              <span className="text-primary font-mono text-xs font-bold tracking-[0.3em] uppercase">
+                // ARCHIVE
+              </span>
+              <h1 className="mt-2 font-sans text-6xl font-black tracking-tight text-slate-900 uppercase lg:text-8xl">
+                Digital <span className="font-serif font-light text-slate-400 italic">Notes.</span>
+              </h1>
+            </div>
+
+            <div className="w-full md:w-80">
+              <div className="relative overflow-hidden rounded-full border border-slate-400 transition-all focus-within:-translate-y-1 focus-within:shadow-[4px_4px_0px_0px_rgba(249,115,22,1)]">
+                <input
+                  type="text"
+                  placeholder="Type to search..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full p-2 font-mono text-sm text-black placeholder:text-slate-400 focus:ring-0 focus:outline-none"
+                />
+                <span className="text-primary absolute top-1/2 right-4 -translate-y-1/2 font-mono text-xs font-bold">
+                  {blogs.length} PTS
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </header>
 
-      <main className="mx-auto max-w-7xl px-4 py-16">
-        {blogs.length === 0 ? (
-          <div className="py-20 text-center font-mono text-slate-400">
-            No articles found for "{searchQuery}"
+      {/* ─── MAIN CONTENT ─── */}
+      <main className="container mx-auto max-w-7xl px-4 py-20">
+        {currentPosts.length === 0 ? (
+          <div className="overflow-hidden border-4 border-dashed border-slate-200 p-32 text-center font-mono text-slate-400">
+            [ No results found for "{searchQuery}" ]
           </div>
         ) : (
-          <div className="grid grid-cols-1 gap-x-12 gap-y-16 md:grid-cols-2">
-            {blogs.map((blog) => (
-              <article key={blog.slug} className="group flex flex-col items-start justify-between">
-                <div className="w-full">
-                  <div className="mb-4 flex items-center justify-between border-b border-slate-100 pb-2 font-mono text-xs text-slate-400">
-                    <span>{blog.date}</span>
-                    <span className="font-medium tracking-wider text-slate-500 uppercase">
-                      {blog.tag}
-                    </span>
-                  </div>
-
-                  <h2 className="text-2xl leading-snug font-bold tracking-tight text-slate-900 transition-colors duration-200 group-hover:text-orange-500">
-                    <Link to={`/blog/${blog.slug}`}>{blog.title}</Link>
-                  </h2>
-
-                  <p className="mt-3 line-clamp-3 text-sm leading-relaxed font-light text-slate-500">
-                    {blog.excerpt}
-                  </p>
-                </div>
-
-                <Link
-                  to={`/blog/${blog.slug}`}
-                  className="mt-6 inline-flex items-center font-mono text-xs font-bold tracking-wider text-orange-500 uppercase transition-colors hover:text-orange-600"
-                >
-                  Read Full Article
-                  <span className="ml-1 transform transition-transform duration-200 group-hover:translate-x-1">
-                    →
-                  </span>
-                </Link>
-              </article>
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
+            {currentPosts.map((blog, index) => (
+              <BlogCard
+                key={`${blog.slug}-${currentPage}-${index}`}
+                blog={blog}
+                index={index}
+                currentPage={currentPage}
+                searchQuery={searchQuery}
+              />
             ))}
           </div>
         )}
+
+        {/* ─── COMPONENT PAGINATION NAV ─── */}
+        <PaginationNav
+          currentPage={currentPage}
+          totalPages={totalPages}
+          jumpPage={jumpPage}
+          setJumpPage={setJumpPage}
+          getPageNumbers={getPageNumbers}
+          setCurrentPage={setCurrentPage}
+          handleJumpPageSubmit={handleJumpPageSubmit}
+        />
       </main>
     </div>
   );

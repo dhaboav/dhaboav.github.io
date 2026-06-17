@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import { updateHtmlLang } from '@/utils/langUtils';
 import BackToTop from '@/components/BackToTop';
 import Home from '@/pages/Home';
-import BlogDetail from '@/pages/BlogDetail';
+import BlogDetail from '@/components/blogs/BlogDetail';
 import BlogList from '@/pages/BlogList';
 import NotFound from '@/pages/NotFound';
 

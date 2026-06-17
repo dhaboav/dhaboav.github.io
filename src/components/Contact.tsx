@@ -17,7 +17,7 @@ export default function Contact() {
           <p className="text-sm text-zinc-400 sm:text-base">{textLang.subtitle}</p>
         </div>
 
-        {/* FORM KONTAK */}
+        {/* Contact form */}
         <div className="mx-auto max-w-sm sm:max-w-md">
           <form ref={formRef} onSubmit={handleSubmit} className="mb-10 space-y-5 sm:space-y-6">
             <div>
@@ -53,7 +53,7 @@ export default function Contact() {
               />
             </div>
 
-            {/* TOMBOL KIRIM */}
+            {/* Send button */}
             <button
               type="submit"
               disabled={isLoading}
@@ -115,7 +115,7 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* POP-UP TOAST NOTIFIKASI */}
+      {/* Toast */}
       <div
         className={`fixed right-6 bottom-6 z-50 rounded-lg border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm shadow-lg transition-all duration-300 ${
           notif.show ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-2 opacity-0'
