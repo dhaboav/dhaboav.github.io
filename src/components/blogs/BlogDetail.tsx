@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import { useBlogDetail } from '@/hooks/useBlogDetail';
 import NotFound from '@/pages/NotFound';
 import { useEffect } from 'react';
+import { useI18n } from '@/hooks/useI18n';
 
 export default function BlogDetail() {
   const { currentBlog, content, isLoading, isError, formattedDate } = useBlogDetail();
+  const { ui } = useI18n();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -48,7 +50,7 @@ export default function BlogDetail() {
               to="/blog"
               className="text-primary link-underline font-mono text-xs transition-colors"
             >
-              ← Back to Articles
+              ← {ui.blog.blogDetailBackLabel}
             </Link>
           </div>
         </div>
@@ -56,18 +58,17 @@ export default function BlogDetail() {
         <aside className="hidden w-full max-w-2xs lg:col-span-4 lg:block">
           <div className="sticky top-36 mx-4 p-4">
             <h2 className="mb-2 border-b border-slate-200 pb-2 font-mono text-xs font-bold tracking-widest text-slate-400 uppercase">
-              About the Author
+              {ui.blog.blogDetailAuthorLabel}
             </h2>
-            <p className="mb-6 text-sm leading-relaxed text-slate-600">
-              <strong className="text-slate-900">Dhammiko Bodhi Avatara</strong> writes about
-              software engineering, robotics, and automation. He builds clean systems and scales
-              modern applications.
+            <p className="mb-2 text-sm leading-relaxed text-slate-600">
+              <strong className="text-slate-900">Dhammiko Bodhi Avatara</strong>{' '}
+              {ui.blog.blogDetailAuthorDescLabel}
             </p>
             <Link
               to="/#about"
               className="link-underline font-mono text-xs text-slate-900 transition-colors"
             >
-              Click here to learn more →
+              {ui.blog.blogDetailAuthorLinkLabel} →
             </Link>
           </div>
         </aside>

@@ -37,6 +37,14 @@ export interface BlogTranslations {
   blogDescription: string;
   blogAllButton: string;
   blogLinkButton: string;
+  blogArchiveLabel: string;
+  blogArchiveSearchLabel: string;
+  blogNotFoundLabel: string;
+  blogCardLinkLabel: string;
+  blogDetailBackLabel: string;
+  blogDetailAuthorLabel: string;
+  blogDetailAuthorDescLabel: string;
+  blogDetailAuthorLinkLabel: string;
 }
 
 export interface ContactTranslations {

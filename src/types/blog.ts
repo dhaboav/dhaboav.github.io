@@ -1,7 +1,7 @@
 export interface BlogItem {
   slug: string;
-  dateISO: string;
   tag: string;
   title: string;
+  dateISO: string;
   excerpt: string;
 }

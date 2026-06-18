@@ -1,15 +1,9 @@
 import { Link } from 'react-router-dom';
-
-interface Blog {
-  slug: string;
-  tag: string;
-  title: string;
-  dateISO: string;
-  excerpt: string;
-}
+import type { BlogItem } from '@/types/blog';
+import { useI18n } from '@/hooks/useI18n';
 
 interface BlogCardProps {
-  blog: Blog;
+  blog: BlogItem;
   index: number;
   currentPage: number;
   searchQuery: string;
@@ -30,6 +24,8 @@ export default function BlogCard({ blog, index, currentPage, searchQuery }: Blog
   const globalIndex = currentPage === 1 ? index : 8 + (currentPage - 2) * 9 + index;
   const isHero = globalIndex === 0 && searchQuery === '';
   const formattedDate = formatDate(blog.dateISO);
+
+  const { ui } = useI18n();
 
   // Class grid editorial
   let gridColumnClass = 'lg:col-span-4 border-b border-slate-200 pb-12';
@@ -91,7 +87,7 @@ export default function BlogCard({ blog, index, currentPage, searchQuery }: Blog
           className="group/btn inline-flex items-center gap-1 font-mono text-xs font-black tracking-widest text-slate-900 uppercase"
         >
           <span className="link-underline group-hover/btn:text-primary transition-colors">
-            Read Entry
+            {ui.blog.blogCardLinkLabel}
           </span>
           <div className="slate-900 group-hover:border-primary group-hover:bg-primary flex h-7 w-7 items-center justify-center rounded-full transition-all duration-300 group-hover:text-white">
             <span className="transform transition-transform duration-300 group-hover:rotate-45">

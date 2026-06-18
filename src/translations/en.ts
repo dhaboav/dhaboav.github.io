@@ -40,6 +40,15 @@ export const en: WebUiTranslations = {
       'A place where I document my learning process, experiments, thoughts, and interesting ideas worth sharing.',
     blogAllButton: 'View all',
     blogLinkButton: 'Read more',
+    blogArchiveLabel: 'Archive',
+    blogArchiveSearchLabel: 'Type to search',
+    blogNotFoundLabel: 'No results found for',
+    blogCardLinkLabel: 'Read Entry',
+    blogDetailBackLabel: 'Back to Articles',
+    blogDetailAuthorLabel: 'About the Author',
+    blogDetailAuthorDescLabel:
+      'Writes about many things, with technology and software engineering as the main theme. Sharing thoughts, insights, and experience through written words.',
+    blogDetailAuthorLinkLabel: 'Click here to learn more',
   },
   contact: {
     label: 'Contact',

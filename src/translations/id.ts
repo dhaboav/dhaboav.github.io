@@ -40,6 +40,15 @@ export const id: WebUiTranslations = {
     blogDescription:
       'Tempat saya mendokumentasikan pembelajaran, eksperimen, pemikiran, dan berbagai ide yang menarik untuk dibagikan.',
     blogLinkButton: 'Baca selengkapnya',
+    blogArchiveLabel: 'Arsip',
+    blogArchiveSearchLabel: 'Cari',
+    blogNotFoundLabel: 'Tidak ada hasil untuk',
+    blogCardLinkLabel: 'Lihat Entri',
+    blogDetailBackLabel: 'Lihat Artikel Lainnya',
+    blogDetailAuthorLabel: 'Tentang Penulis',
+    blogDetailAuthorDescLabel:
+      'Menulis tentang banyak hal, dengan teknologi dan rekayasa perangkat lunak (software engineering) sebagai tema utamanya. Berbagi berbagai pemikiran, wawasan, dan pengalaman lewat tulisan.',
+    blogDetailAuthorLinkLabel: 'Pelajari selengkapnya di sini',
   },
   contact: {
     label: 'Kontak',
