@@ -2,17 +2,6 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { blogData } from '@/data/blog';
 
-const formatDate = (dateString: string) => {
-  if (!dateString) return '';
-  const date = new Date(dateString);
-
-  return new Intl.DateTimeFormat('id-ID', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  }).format(date);
-};
-
 export function useBlogDetail() {
   const { slug } = useParams<{ slug: string }>();
 
@@ -55,6 +44,5 @@ export function useBlogDetail() {
     content,
     isLoading,
     isError,
-    formattedDate: currentBlog ? formatDate(currentBlog.dateISO) : '',
   };
 }

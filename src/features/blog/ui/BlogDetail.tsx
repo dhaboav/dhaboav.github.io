@@ -1,13 +1,14 @@
 import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router-dom';
-import { useBlogDetail } from '@/hooks/useBlogDetail';
+import { useBlogDetail } from '@/features/blog/hooks/useBlogDetail';
 import NotFound from '@/pages/NotFound';
 import { useEffect } from 'react';
 import { useI18n } from '@/hooks/useI18n';
+import { formatDate } from '../utils/formatDate';
 
 export default function BlogDetail() {
-  const { currentBlog, content, isLoading, isError, formattedDate } = useBlogDetail();
-  const { ui } = useI18n();
+  const { currentBlog, content, isLoading, isError } = useBlogDetail();
+  const { ui, lang } = useI18n();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -38,7 +39,9 @@ export default function BlogDetail() {
               {currentBlog.title}
             </h1>
 
-            <p className="font-mono text-xs text-slate-400">{formattedDate}</p>
+            <p className="font-mono text-xs text-slate-400">
+              {formatDate(currentBlog.dateISO, lang)}
+            </p>
           </div>
 
           <article className="prose">

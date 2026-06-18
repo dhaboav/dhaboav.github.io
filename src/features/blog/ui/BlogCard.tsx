@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import type { BlogItem } from '@/types/blog';
+import type { BlogItem } from '@/features/blog/types/blog.types';
 import { useI18n } from '@/hooks/useI18n';
+import { formatDate } from '../utils/formatDate';
 
 interface BlogCardProps {
   blog: BlogItem;
@@ -9,23 +10,11 @@ interface BlogCardProps {
   searchQuery: string;
 }
 
-const formatDate = (dateString: string) => {
-  if (!dateString) return '';
-  const date = new Date(dateString);
-
-  return new Intl.DateTimeFormat('id-ID', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  }).format(date);
-};
-
 export default function BlogCard({ blog, index, currentPage, searchQuery }: BlogCardProps) {
   const globalIndex = currentPage === 1 ? index : 8 + (currentPage - 2) * 9 + index;
   const isHero = globalIndex === 0 && searchQuery === '';
-  const formattedDate = formatDate(blog.dateISO);
 
-  const { ui } = useI18n();
+  const { ui, lang } = useI18n();
 
   // Class grid editorial
   let gridColumnClass = 'lg:col-span-4 border-b border-slate-200 pb-12';
@@ -76,7 +65,9 @@ export default function BlogCard({ blog, index, currentPage, searchQuery }: Blog
         className={`flex flex-col items-start justify-between ${isHero ? 'lg:col-span-5 lg:pt-8' : ''}`}
       >
         <div>
-          <div className="mb-4 font-mono text-xs text-slate-400">[ {formattedDate} ]</div>
+          <div className="mb-4 font-mono text-xs text-slate-400">
+            [ {formatDate(blog.dateISO, lang)} ]
+          </div>
           <p className="mb-6 line-clamp-3 text-sm leading-relaxed font-normal text-slate-500/80">
             {blog.excerpt}
           </p>

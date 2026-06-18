@@ -1,6 +1,6 @@
-import { useBlogList } from '@/hooks/useBlogList';
+import { useBlogList } from '@/features/blog/hooks/useBlogList';
 import { usePagination } from '@/hooks/usePagination';
-import BlogCard from '@/components/blogs/BlogCard';
+import BlogCard from '@/features/blog/ui/BlogCard';
 import PaginationNav from '@/components/PaginationNav';
 import { useI18n } from '@/hooks/useI18n';
 

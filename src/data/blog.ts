@@ -1,4 +1,4 @@
-import type { BlogItem } from '@/types/blog';
+import type { BlogItem } from '@/features/blog/types/blog.types';
 
 export const blogData: BlogItem[] = [
   {

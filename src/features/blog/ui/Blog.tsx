@@ -1,19 +1,10 @@
 import { Link } from 'react-router-dom';
-import { useBlog } from '@/hooks/useBlog';
+import { useBlog } from '@/features/blog/hooks/useBlog';
 import { useI18n } from '@/hooks/useI18n';
-
-const formatDate = (dateString: string) => {
-  if (!dateString) return '';
-
-  return new Intl.DateTimeFormat('id-ID', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  }).format(new Date(dateString));
-};
+import { formatDate } from '../utils/formatDate';
 
 export default function Blog() {
-  const { ui } = useI18n();
+  const { ui, lang } = useI18n();
   const { recentBlogs } = useBlog();
 
   return (
@@ -58,7 +49,7 @@ export default function Blog() {
               className="group bg-foreground hover:bg-foreground/95 flex cursor-pointer flex-col p-8 transition-colors"
             >
               <div className="text-background mb-10 flex justify-between font-mono text-[10px] opacity-50">
-                <time>{formatDate(item.dateISO)}</time>
+                <time>{formatDate(item.dateISO, lang)}</time>
                 <span>{item.tag}</span>
               </div>
 

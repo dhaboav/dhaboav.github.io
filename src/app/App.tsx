@@ -3,7 +3,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import BackToTop from '@/components/BackToTop';
 import Home from '@/pages/Home';
-import BlogDetail from '@/components/blogs/BlogDetail';
+import BlogDetail from '@/features/blog/ui/BlogDetail';
 import BlogList from '@/pages/BlogList';
 import NotFound from '@/pages/NotFound';
 
