@@ -1,43 +1,45 @@
-import { text } from '@/utils/langUtils.ts';
+import { useI18n } from '@/hooks/useI18n';
 
 export default function Hero() {
-  const textLang = text('hero');
+  const { ui } = useI18n();
+
   return (
     <section id="home" className="flex min-h-screen items-center bg-black pt-28">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="flex flex-wrap items-center">
           {/* TEXT SECTION */}
           <div className="w-full md:w-1/2 lg:mb-0">
-            <p className="animate-fade-in text-primary mb-2 font-mono text-sm">{textLang.greet}</p>
+            <p className="animate-fade-in text-primary mb-2 font-mono text-sm">{ui.hero.greet}</p>
 
-            <h1 className="animate-fade-in-delay-1 mb-3 text-4xl leading-tight font-medium tracking-tight text-white lg:text-5xl">
+            <h1 className="animate-fade-in-delay-1 mb-3 text-4xl font-medium tracking-tight text-white lg:text-5xl">
               Dhammiko Bodhi Avatara
             </h1>
 
-            <p className="animate-fade-in-delay-2 mb-6 text-base leading-relaxed font-light text-zinc-400">
-              {textLang.tagline}
+            <p className="animate-fade-in-delay-2 mb-6 text-base font-light text-zinc-400">
+              {ui.hero.tagline}
             </p>
 
             <div className="animate-fade-in-delay-3 flex items-center gap-4">
               <a
-                href={`other/${textLang.resumeFile}.pdf`}
+                href={`other/${ui.hero.resumeFile}.pdf`}
                 download="Resume Dhammiko Bodhi Avatara"
-                className="hover:bg-primary hover:border-primary inline-flex items-center justify-center gap-1 rounded-lg border-1 border-white/20 p-2 text-sm leading-none text-zinc-400 transition-colors hover:text-white"
+                className="hover:bg-primary inline-flex items-center gap-1 rounded-lg border border-white/20 p-2 text-sm text-zinc-400 transition-colors hover:text-white"
               >
-                <i className="bx bx-save text-lg leading-none" />
-                <span className="leading-none">{textLang.resume}</span>
+                <i className="bx bx-save text-lg" />
+                <span>Resume</span>
               </a>
 
               <a
                 href="#projects"
-                className="hover:text-primary inline-flex items-center justify-center gap-2 text-sm font-medium text-white transition-colors"
+                className="hover:text-primary inline-flex items-center gap-2 text-sm font-medium text-white transition-colors"
               >
-                {textLang.viewWork} <i className="bx bx-arrow-right-stroke text-lg" />
+                {ui.hero.viewProjectLabel}
+                <i className="bx bx-arrow-right-stroke text-lg" />
               </a>
             </div>
           </div>
 
-          {/* Profile Image */}
+          {/* PROFILE IMAGE */}
           <div className="relative flex w-full justify-center md:w-1/2">
             <div className="relative">
               <img
@@ -45,6 +47,7 @@ export default function Hero() {
                 alt="Dhammiko"
                 className="relative z-10 max-w-3xs md:max-w-full"
               />
+
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-10 scale-130 md:-translate-y-12 md:scale-140">
                 <svg className="text-primary h-60 w-60 fill-current" viewBox="0 0 200 200">
                   <path

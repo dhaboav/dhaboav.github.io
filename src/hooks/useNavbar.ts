@@ -1,10 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import { text } from '@/utils/langUtils';
 
 export function useNavbar() {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const textLang = text('navbar');
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -14,6 +12,7 @@ export function useNavbar() {
   };
 
   const closeMenu = () => setIsOpen(false);
+
   useEffect(() => {
     const handleOutsideClick = (e: MouseEvent) => {
       if (!isOpen) return;
@@ -33,7 +32,6 @@ export function useNavbar() {
   }, [isOpen]);
 
   return {
-    textLang,
     isOpen,
     menuRef,
     buttonRef,

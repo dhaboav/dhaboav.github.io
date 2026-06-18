@@ -1,4 +1,4 @@
-import type { SupportedLang } from '@/utils/langUtils';
+import type { Localized } from './lang';
 
 export interface ProjectDetails {
   title: string;
@@ -8,5 +8,5 @@ export interface ProjectDetails {
 export interface ProjectItem {
   image: string;
   link: string;
-  text: Record<SupportedLang, ProjectDetails>;
+  text: Localized<ProjectDetails>;
 }

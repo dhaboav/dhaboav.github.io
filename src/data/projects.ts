@@ -14,11 +14,6 @@ export const projectsData: ProjectItem[] = [
         description:
           'Basestation berbasis Python untuk mengendalikan robot melalui jaringan lokal.',
       },
-      jp: {
-        title: 'ベースステーションロボットコントローラ',
-        description:
-          'ローカルネットワークでロボットを制御するためのPythonベースのステーションです。',
-      },
     },
   },
   {
@@ -35,11 +30,6 @@ export const projectsData: ProjectItem[] = [
         description:
           'Aplikasi web dengan React, FastAPI, dan Docker yang bisa menjalankan CRUD sederhana untuk buku',
       },
-      jp: {
-        title: 'シンプルな個人用本棚アプリ',
-        description:
-          'React、FastAPI、および Docker を使用した、CRUD 操作が可能なレスポンシブな Web アプリ。',
-      },
     },
   },
   {
@@ -53,10 +43,6 @@ export const projectsData: ProjectItem[] = [
       id: {
         title: 'Website Login Sederhana',
         description: 'Aplikasi web dengan HTML, CSS, PHP, MySQL dan akses berbasis peran.',
-      },
-      jp: {
-        title: 'シンプルなログインサイト',
-        description: 'HTML、CSS、PHP、MySQL を使用したロールベースアクセスの Web アプリ。',
       },
     },
   },

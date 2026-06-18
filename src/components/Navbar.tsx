@@ -1,21 +1,30 @@
-import { useNavbar } from '@/hooks/useNavbar';
+import { useI18n } from '@/hooks/useI18n';
 import { HashLink } from 'react-router-hash-link';
+import { useNavbar } from '@/hooks/useNavbar';
 
 export default function Navbar() {
-  const { textLang, isOpen, menuRef, buttonRef, toggleMenu, closeMenu } = useNavbar();
+  const { ui } = useI18n();
+  const { isOpen, menuRef, buttonRef, toggleMenu, closeMenu } = useNavbar();
+
   const navLinks = [
-    { href: '/#home', label: textLang.home },
-    { href: '/#about', label: textLang.about },
-    { href: '/#projects', label: textLang.projects },
-    { href: '/#blog', label: textLang.blog },
-    { href: '/blog', label: 'All Articles' },
+    { href: '/#home', label: ui.navbar.home },
+    { href: '/#about', label: ui.navbar.about },
+    { href: '/#projects', label: ui.navbar.projects },
+    { href: '/#blog', label: ui.navbar.blogTeaser },
+    { href: '/blog', label: ui.navbar.blogArchive },
   ];
-  const ctaLink = { href: '/#contact', label: textLang.contact };
+
+  const ctaLink = {
+    href: '/#contact',
+    label: ui.navbar.contact,
+  };
 
   return (
     <header className="fixed right-0 left-0 z-50 border-b border-transparent bg-black/60 backdrop-blur-sm transition-all duration-300">
       <div className="container mx-auto max-w-7xl px-4">
+        {/* NAVBAR TOP */}
         <nav className="flex items-center justify-between py-4">
+          {/* LOGO */}
           <HashLink to="#home">
             <i className="bx bx-fire bx-lg text-primary text-3xl" />
           </HashLink>
@@ -33,6 +42,7 @@ export default function Navbar() {
             ))}
           </div>
 
+          {/* CTA (DESKTOP) */}
           <HashLink
             to={ctaLink.href}
             className="text-primary hidden text-sm font-medium hover:text-white md:block lg:block"
@@ -40,11 +50,11 @@ export default function Navbar() {
             {ctaLink.label}
           </HashLink>
 
-          {/* HAMBURGER BUTTON (Mobile Only) */}
+          {/* MOBILE BUTTON */}
           <button
             ref={buttonRef}
             onClick={toggleMenu}
-            className="text-3xl text-white focus:outline-none md:hidden lg:hidden"
+            className="text-3xl text-white md:hidden lg:hidden"
             aria-label="Toggle Menu"
           >
             <i className={`bx ${isOpen ? 'bx-x' : 'bx-menu'}`} />
@@ -56,7 +66,7 @@ export default function Navbar() {
           ref={menuRef}
           className={`${
             isOpen ? 'flex' : 'hidden'
-          } flex-col gap-3 pb-4 text-white/80 transition-all duration-300 md:hidden lg:hidden`}
+          } flex-col gap-3 pb-4 text-white/80 md:hidden lg:hidden`}
         >
           {navLinks.map(({ href, label }) => (
             <HashLink key={href} to={href} onClick={closeMenu} className="text-sm hover:text-white">

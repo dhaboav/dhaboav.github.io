@@ -15,11 +15,6 @@ export const experienceData: ExperienceItem[] = [
         period: '2021 — 2025',
         description: 'Mempelajari Ilmu Komputer dengan fokus pada computer vision.',
       },
-      jp: {
-        role: 'コンピュータサイエンス学士（新卒）',
-        period: '2021年 — 2025年',
-        description: 'コンピュータビジョンを中心に計算機科学を専攻。',
-      },
     },
   },
   {
@@ -35,11 +30,6 @@ export const experienceData: ExperienceItem[] = [
         period: '2024',
         description:
           'Meneliti tingkat kematangan jeruk menggunakan kamera Raspberry Pi untuk mendeteksi warna kulit buah.',
-      },
-      jp: {
-        role: 'コンピュータビジョン研究者',
-        period: '2024年',
-        description: 'Raspberry Pi カメラを用いて果皮の色を検出し、柑橘類の熟度を研究。',
       },
     },
   },
@@ -57,11 +47,6 @@ export const experienceData: ExperienceItem[] = [
         description:
           'Memimpin tim kecil untuk menyelesaikan proyek dan mencapai target kompetitif.',
       },
-      jp: {
-        role: 'チームリーダー',
-        period: '2023年 — 2024年',
-        description: '小規模チームを指揮し、プロジェクト遂行および競技目標の達成を担当。',
-      },
     },
   },
   {
@@ -76,11 +61,6 @@ export const experienceData: ExperienceItem[] = [
         role: 'Insinyur Robotics Vision',
         period: '2022 — 2023',
         description: 'Mengembangkan sistem computer vision pada robot untuk mendeteksi objek.',
-      },
-      jp: {
-        role: 'ロボティクスビジョンエンジニア',
-        period: '2022年 — 2023年',
-        description: 'ロボットの物体検出のためのコンピュータビジョンシステムを開発。',
       },
     },
   },

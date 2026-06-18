@@ -1,6 +1,5 @@
 import { useState, useRef } from 'react';
 import type { SyntheticEvent } from 'react';
-import { text } from '@/utils/langUtils';
 
 const SCRIPT_URL =
   'https://script.google.com/macros/s/AKfycby3mxHqj4yA8Q15HGEVohQ_F3TS4gQo8AmUcjfqQ7lg4x8u1xwRDjKH33KxzS_FdiFD/exec';
@@ -11,18 +10,17 @@ interface NotificationState {
   isSuccess: boolean;
 }
 
-export function useContact() {
-  const textLang = text('contact');
+export function useContact(messages: { success: string; failure: string }) {
   const formRef = useRef<HTMLFormElement>(null);
 
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [notif, setNotif] = useState<NotificationState>({
     message: '',
     show: false,
     isSuccess: true,
   });
 
-  const showNotification = (message: string, isSuccess: boolean = true) => {
+  const showNotification = (message: string, isSuccess = true) => {
     setNotif({ message, show: true, isSuccess });
 
     setTimeout(() => {
@@ -38,26 +36,26 @@ export function useContact() {
 
     try {
       const formData = new FormData(formRef.current);
+
       const response = await fetch(SCRIPT_URL, {
         method: 'POST',
         body: formData,
       });
 
       if (response.ok) {
-        showNotification(textLang.success, true);
+        showNotification(messages.success, true);
         formRef.current.reset();
       } else {
-        showNotification(textLang.failure, false);
+        showNotification(messages.failure, false);
       }
     } catch (error) {
-      showNotification(`Error: ${error instanceof Error ? error.message : error}`, false);
+      showNotification(`Error: ${error instanceof Error ? error.message : String(error)}`, false);
     } finally {
       setIsLoading(false);
     }
   };
 
   return {
-    textLang,
     formRef,
     isLoading,
     notif,

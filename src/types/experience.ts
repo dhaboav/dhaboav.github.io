@@ -1,4 +1,4 @@
-import type { SupportedLang } from '@/utils/langUtils';
+import type { Localized } from './lang';
 
 export interface ExperienceDetails {
   role: string;
@@ -8,5 +8,5 @@ export interface ExperienceDetails {
 
 export interface ExperienceItem {
   company: string;
-  text: Record<SupportedLang, ExperienceDetails>;
+  text: Localized<ExperienceDetails>;
 }
