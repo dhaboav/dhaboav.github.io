@@ -3,9 +3,12 @@ import { usePagination } from '@/hooks/usePagination';
 import BlogCard from '@/features/blog/ui/BlogCard';
 import PaginationNav from '@/components/PaginationNav';
 import { useI18n } from '@/hooks/useI18n';
+import { useBlog } from '@/hooks/useBlog';
+import { BlogUICard } from '@/features/blog/ui/BlogUICard';
+import { formatDate } from '@/features/blog/utils/formatDate';
 
 export default function BlogList() {
-  const { ui } = useI18n();
+  const { ui, lang } = useI18n();
   const { searchQuery, setSearchQuery, blogs } = useBlogList();
 
   const {
@@ -18,6 +21,10 @@ export default function BlogList() {
     getPageNumbers,
     handleJumpPageSubmit,
   } = usePagination({ items: blogs, searchQuery });
+
+  const index = 0;
+
+  const {gridColumnClass, isHero} = useBlog({ index, currentPage, searchQuery });
 
   return (
     <div className="min-h-screen bg-[#fcfcfc] text-slate-900 selection:bg-orange-500 selection:text-white">
@@ -68,14 +75,27 @@ export default function BlogList() {
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-            {currentPosts.map((blog, index) => (
-              <BlogCard
-                key={`${blog.slug}-${currentPage}-${index}`}
-                blog={blog}
-                index={index}
-                currentPage={currentPage}
-                searchQuery={searchQuery}
+            {currentPosts.map((item, index) => (
+
+              <BlogUICard 
+              blogIndex={index + 1}
+              slug={item.slug}
+              tag={item.tag}
+              title={item.title}
+              date={formatDate(item.dateISO, lang)}
+              excerpt={item.excerpt}
+              slugButtonLabel={ui.blog.blogLinkButton}
+              className={gridColumnClass}
+              
               />
+              
+              // <BlogCard
+              //   key={`${blog.slug}-${currentPage}-${gridColumnClass}`}
+              //   blog={blog}
+              //   index={index}
+              //   currentPage={currentPage}
+              //   searchQuery={searchQuery}
+              // />
             ))}
           </div>
         )}

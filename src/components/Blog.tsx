@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useBlog } from '@/features/blog/hooks/useBlog';
 import { useI18n } from '@/hooks/useI18n';
-import { formatDate } from '../utils/formatDate';
+import { formatDate } from '../features/blog/utils/formatDate';
+import { BlogUICard } from '../features/blog/ui/BlogUICard';
 
 export default function Blog() {
   const { ui, lang } = useI18n();
@@ -43,31 +44,16 @@ export default function Blog() {
 
         {/* GRID */}
         <div className="bg-background/10 grid grid-cols-1 gap-px md:grid-cols-4 md:divide-x lg:divide-y-0">
-          {recentBlogs.map((item) => (
-            <article
-              key={item.slug}
-              className="group bg-foreground hover:bg-foreground/95 flex cursor-pointer flex-col p-8 transition-colors"
-            >
-              <div className="text-background mb-10 flex justify-between font-mono text-[10px] opacity-50">
-                <time>{formatDate(item.dateISO, lang)}</time>
-                <span>{item.tag}</span>
-              </div>
-
-              <h3 className="text-background mb-4 line-clamp-3 text-2xl leading-tight font-bold">
-                {item.title}
-              </h3>
-
-              <p className="mb-6 line-clamp-4 flex-1 text-sm text-black/70 opacity-70 lg:text-xs">
-                {item.excerpt}
-              </p>
-
-              <Link
-                to={`/blog/${item.slug}`}
-                className="text-primary link-underline self-start text-xs font-bold tracking-widest uppercase"
-              >
-                {ui.blog.blogLinkButton}
-              </Link>
-            </article>
+          {recentBlogs.map((item, index) => (
+            <BlogUICard
+              blogIndex={index + 1}
+              slug={item.slug}
+              tag={item.tag}
+              title={item.title}
+              date={formatDate(item.dateISO, lang)}
+              excerpt={item.excerpt}
+              slugButtonLabel={ui.blog.blogLinkButton}
+            />
           ))}
         </div>
       </div>
