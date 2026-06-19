@@ -1,17 +1,13 @@
-import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Project from '@/components/Project';
-import Blog from '@/components/Blog';
-import Contact from '@/components/Contact';
+import { BlogSection, AboutSection, HeroSection, ContactSection, ProjectSection } from '@/widgets';
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <About />
-      <Project />
-      <Blog />
-      <Contact />
+      <HeroSection />
+      <AboutSection />
+      <ProjectSection />
+      <BlogSection />
+      <ContactSection />
     </>
   );
 }

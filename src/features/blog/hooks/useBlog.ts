@@ -1,4 +1,4 @@
-import { blogData } from '@/data/blog';
+import { blogData } from '@/entities/blog/model/data';
 
 export function useBlog() {
   const recentBlogs = [...blogData]

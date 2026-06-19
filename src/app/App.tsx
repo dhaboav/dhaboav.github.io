@@ -1,11 +1,10 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import { Footer, Navbar } from '@/widgets';
 import BackToTop from '@/components/BackToTop';
 import Home from '@/pages/Home';
 import BlogDetail from '@/features/blog/ui/BlogDetail';
 import BlogList from '@/pages/BlogList';
-import NotFound from '@/pages/NotFound';
+import { NotFound } from '@/shared/ui';
 
 export default function App() {
   return (

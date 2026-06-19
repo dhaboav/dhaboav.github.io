@@ -1,11 +1,9 @@
 import { useBlogList } from '@/features/blog/hooks/useBlogList';
 import { usePagination } from '@/hooks/usePagination';
-import BlogCard from '@/features/blog/ui/BlogCard';
 import PaginationNav from '@/components/PaginationNav';
-import { useI18n } from '@/hooks/useI18n';
-import { useBlog } from '@/hooks/useBlog';
-import { BlogUICard } from '@/features/blog/ui/BlogUICard';
-import { formatDate } from '@/features/blog/utils/formatDate';
+import { useI18n } from '@/shared/lib/I18n/useI18n';
+import { BlogCard } from '@/entities/blog';
+import { formatDate } from '@/entities/blog/lib/formatDate';
 
 export default function BlogList() {
   const { ui, lang } = useI18n();
@@ -21,10 +19,6 @@ export default function BlogList() {
     getPageNumbers,
     handleJumpPageSubmit,
   } = usePagination({ items: blogs, searchQuery });
-
-  const index = 0;
-
-  const {gridColumnClass, isHero} = useBlog({ index, currentPage, searchQuery });
 
   return (
     <div className="min-h-screen bg-[#fcfcfc] text-slate-900 selection:bg-orange-500 selection:text-white">
@@ -75,28 +69,35 @@ export default function BlogList() {
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-            {currentPosts.map((item, index) => (
+            {currentPosts.map((item, index) => {
+              // 1. 🧮 Hitung indeks global untuk penomoran dan pengecekan Hero
+              const globalIndex = currentPage === 1 ? index : 8 + (currentPage - 2) * 9 + index;
+              const isHero = globalIndex === 0 && searchQuery === '';
 
-              <BlogUICard 
-              blogIndex={index + 1}
-              slug={item.slug}
-              tag={item.tag}
-              title={item.title}
-              date={formatDate(item.dateISO, lang)}
-              excerpt={item.excerpt}
-              slugButtonLabel={ui.blog.blogLinkButton}
-              className={gridColumnClass}
-              
-              />
-              
-              // <BlogCard
-              //   key={`${blog.slug}-${currentPage}-${gridColumnClass}`}
-              //   blog={blog}
-              //   index={index}
-              //   currentPage={currentPage}
-              //   searchQuery={searchQuery}
-              // />
-            ))}
+              // 2. 🎛️ Tentukan tipe varian CVA secara dinamis berdasarkan aturan koran/editorial
+              let currentVariant: 'default' | 'editorial' | 'hero' = 'default';
+
+              if (isHero) {
+                currentVariant = 'hero';
+              } else if (currentPage === 1 && searchQuery === '') {
+                if (index === 1 || index === 7) {
+                  currentVariant = 'editorial';
+                }
+              }
+
+              return (
+                <BlogCard
+                  variant={currentVariant}
+                  blogIndex={index + 1}
+                  slug={item.slug}
+                  tag={item.tag}
+                  title={item.title}
+                  date={formatDate(item.dateISO, lang)}
+                  excerpt={item.excerpt}
+                  slugButtonLabel={ui.blog.blogCardLinkLabel}
+                />
+              );
+            })}
           </div>
         )}
 

@@ -1,10 +1,10 @@
 import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router-dom';
 import { useBlogDetail } from '@/features/blog/hooks/useBlogDetail';
-import NotFound from '@/pages/NotFound';
+import { NotFound } from '@/shared/ui';
 import { useEffect } from 'react';
-import { useI18n } from '@/hooks/useI18n';
-import { formatDate } from '../utils/formatDate';
+import { useI18n } from '@/shared/lib';
+import { formatDate } from '@/entities/blog';
 
 export default function BlogDetail() {
   const { currentBlog, content, isLoading, isError } = useBlogDetail();

@@ -3,7 +3,7 @@ import './css/style.css';
 import { StrictMode } from 'react';
 import App from './App';
 
-import { LangProvider } from '@/context/langContext';
+import { LangProvider } from '@/shared/lib';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
