@@ -1,6 +1,6 @@
 {
-    "name": "portofolio-website",
-    "version": "2.1.0",
+    "name": "My personal portofolio website",
+    "version": "2.9.0",
     "description": "portofolio website for personal usage",
     "types": "module",
     "scripts": {
@@ -16,10 +16,10 @@
         "portfolio",
         "website",
         "HTML",
-        "css",
-        "javascript"
+        "tailwindcss",
+        "react"
     ],
-    "author": "dhaboav",
+    "author": "Dhammiko Bodhi Avatara",
     "license": "MIT",
     "devDependencies": {
         "@tailwindcss/typography": "^0.5.20",

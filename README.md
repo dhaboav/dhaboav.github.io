@@ -1,86 +1,103 @@
-# 🚀 Dhammiko Bodhi Avatara Portfolio
+# 🚀 My personal portofolio website
 
-Hi there! 👋 I'm **Dhammiko Bodhi Avatara**, a passionate robotics and computer vision enthusiast, building smart systems that see, interpret, and act on the world.
+A modern, responsive personal portfolio website built with **React**, **TypeScript**, **Tailwind
+CSS**, and **Feature-Sliced Design (FSD)**.
 
----
+This website showcases my projects, experience, technical skills, and blog posts while following a
+clean and scalable architecture.
 
-## 🔹 About Me
+Deployed and hosted using **GitHub Pages**.
 
-- 💻 Freshgraduate Student in Computer Science at University of Tanjungpura
-- 🤖 Focused on Computer Vision, and Automation
-- ⚡ I value **simplicity**, **robustness**, and **purpose-driven development**
-- 📚 Outside of coding: reading, gaming, and anime marathons
+## ✨ Features
 
----
+- 📱 **Responsive Design**  
+  Works smoothly on desktop, tablet, and mobile devices.
 
-## 🛠 Tech Stack
+- 🎨 **Modern UI**  
+  Clean interface with smooth animations and scrolling.
 
-<div>
-  <span style="margin: 2px; padding: 4px 8px; background-color: #f97316; color:white; border-radius: 4px;">Python</span>
-  <span style="margin: 2px; padding: 4px 8px; background-color: #f97316; color:white; border-radius: 4px;">OpenCV</span>
-  <span style="margin: 2px; padding: 4px 8px; background-color: #f97316; color:white; border-radius: 4px;">FastAPI</span>
-  <span style="margin: 2px; padding: 4px 8px; background-color: #f97316; color:white; border-radius: 4px;">MySQL</span>
-  <span style="margin: 2px; padding: 4px 8px; background-color: #f97316; color:white; border-radius: 4px;">React</span>
-  <span style="margin: 2px; padding: 4px 8px; background-color: #f97316; color:white; border-radius: 4px;">Tailwind</span>
-  <span style="margin: 2px; padding: 4px 8px; background-color: #f97316; color:white; border-radius: 4px;">Docker</span>
-</div>
+- 📄 **Portfolio Sections**  
+  Includes About, Experience, Projects, Blog, and Contact sections.
 
----
+- 📝 **Blog System**  
+  Supports Markdown-based blogs with easy content management.
 
-## 💼 Selected Projects
+- 🌐 **Multi-Language Support**  
+  Centralized translation system for managing multiple languages.
 
-### Basestation Robot Controller
+- 🧩 **FSD Architecture**  
+  Built with Feature-Sliced Design for better organization, scalability, and maintainability.
 
-- Python-built basestation to control robots over a local network
-- Windows & Linux compatible
-- Adaptive light/dark theme  
-  [🔗 Repository](https://github.com/dhaboav/robot-basestation)
+## 🏗 Architecture
 
-### Simple Login Website
+This project uses **Feature-Sliced Design (FSD)** to keep the code organized, easy to understand,
+and scalable.
 
-- HTML, CSS, PHP, MySQL
-- Role-based access for admins & students  
-  [🔗 Repository](https://github.com/dhaboav/college-web-login)
+```text
+src/
+├── app/          # Application setup
+├── pages/        # Website pages
+├── widgets/      # Large page sections
+├── features/     # User actions and features
+├── entities/     # Main data and business logic
+└── shared/       # Reusable components and utilities
+```
 
----
+### Layer Purpose
 
-## 📫 Contact Me
+| Layer    | Description                               |
+| -------- | ----------------------------------------- |
+| app      | Application configuration and providers   |
+| pages    | Complete website pages                    |
+| widgets  | Reusable page sections                    |
+| features | User interactions and functionality       |
+| entities | Core data models                          |
+| shared   | Common components, helpers, and utilities |
 
-- GitHub: [@dhaboav](https://github.com/dhaboav)
-- LinkedIn: [Connect with me](https://linkedin.com/in/dhaboav)
+### Why FSD?
 
-> "Building systems that are simple, robust, and meaningful."
+- 📦 Keeps code organized
+- 🔍 Makes files easier to find
+- 🚀 Simplifies adding new features
+- 🛠 Improves maintenance
+- 📈 Supports project growth
 
----
-
-## 🌟 Features
-
-- Fully responsive portfolio site built with **React, and Tailwindcss**
-- Modular components for `About`, `Projects`, `Experience`, `Contact`, `Blogs`, and `Footer`
-- Smooth scrolling, animations, and “Back to Top” functionality
-
----
-
-## ⚡ Getting Started
-
-1. Clone the repo
+## 🚀 Getting Started
 
 ```bash
 git clone https://github.com/dhaboav/dhaboav.github.io.git
+cd dhaboav.github.io
+npm install
+npm run dev
 ```
 
-2. Install dependencies, build, and deploy into Github Pages
+Open `http://localhost:5173` in your browser.
+
+## 📦 Build & Deploy
 
 ```bash
-npm install
-npm run build
-npm run deploy
+npm run build     # Production build
+npm run preview   # Preview build locally
+npm run deploy    # Deploy to GitHub Pages
 ```
 
-3. Customize data in `src/data`
+## ✏️ Customization
 
-- Update `blog.ts` to add or modify blogs meta data + `content` for the blog content with note that use `markdown` format file with the name formating is same as **`slugs`**
-- Update `experience.ts` to add or modify your experience entries
-- Update `languages.ts` to add or modify text content for all sections and languages
-- Update `projects.ts` to add or modify projects
-- Update `techStack.ts` to add or modify your tech stack
+- `src/shared/config/authorName.ts` → Update your name
+- `src/entities/blog/model/data.ts` → Manage blogs, tags, and publish dates
+- `src/entities/experience/model/data.ts` → Manage work experiences, internships, and activities
+- `src/entities/project/model/data.ts` → Manage projects, descriptions, repositories, and demo links
+- `src/shared/lib/i18n/locales/` → Manage translations and multilingual content
+
+> Restart the development server if changes are not reflected automatically.
+
+## 📄 License
+
+This project is available under the **MIT License**.
+
+⭐ If you find this project interesting, feel free to give it a star.
+
+🐛 Found a bug or have a suggestion? Please open a **GitHub Issue** with details about the problem
+or improvement.
+
+💡 Contributions, feedback, and ideas are always welcome.
