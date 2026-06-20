@@ -1,48 +1,50 @@
-interface PaginationNavProps {
+import React from 'react';
+
+interface PaginationProps {
   currentPage: number;
   totalPages: number;
   jumpPage: string;
+  pageNumbers: number[];
   setJumpPage: (value: string) => void;
-  getPageNumbers: () => number[];
-  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
+  setCurrentPage: (page: number) => void;
   handleJumpPageSubmit: (e: React.FormEvent) => void;
 }
 
-export default function PaginationNav({
+export const Pagination = ({
   currentPage,
   totalPages,
   jumpPage,
+  pageNumbers,
   setJumpPage,
-  getPageNumbers,
   setCurrentPage,
   handleJumpPageSubmit,
-}: PaginationNavProps) {
+}: PaginationProps) => {
   if (totalPages <= 1) return null;
 
   return (
     <div className="flex flex-col items-center gap-1 pt-4 font-mono">
       <nav className="flex w-full items-center justify-between gap-1 text-sm">
-        {/* Prev button */}
+        {/* Prev Button */}
         <button
-          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+          onClick={() => setCurrentPage(Math.max(currentPage - 1, 1))}
           disabled={currentPage === 1}
-          className="group text-mono hover:text-primary flex items-center gap-1 text-xs font-bold text-slate-400 transition-colors disabled:pointer-events-none disabled:opacity-20"
+          className="group hover:text-primary flex items-center gap-1 text-xs font-bold text-slate-400 transition-colors disabled:pointer-events-none disabled:opacity-20"
         >
           <span>←</span>
           <span className="hidden lg:inline">PREV</span>
         </button>
 
         <div className="flex flex-row gap-2">
-          {/* Pagination number */}
+          {/* Pagination Numbers */}
           <div className="flex items-center gap-1">
-            {getPageNumbers().map((pageNumber) => (
+            {pageNumbers.map((pageNumber) => (
               <button
                 key={pageNumber}
                 onClick={() => setCurrentPage(pageNumber)}
-                className={`h-7 w-7 rounded-full border-1 border-black/20 text-[11px] font-bold text-slate-400 transition-all ${
+                className={`h-7 w-7 rounded-full border border-black/20 text-[11px] font-bold text-slate-400 transition-all ${
                   currentPage === pageNumber
-                    ? 'bg-primary border-primary rounded-full text-white'
-                    : 'hover:text-primary hover:border-primary'
+                    ? 'bg-primary border-primary text-white'
+                    : 'hover:border-primary hover:text-primary'
                 }`}
               >
                 {String(pageNumber).padStart(2, '0')}
@@ -50,7 +52,7 @@ export default function PaginationNav({
             ))}
           </div>
 
-          {/* Jump page form */}
+          {/* Jump Page Form */}
           <form onSubmit={handleJumpPageSubmit} className="flex shrink-0 items-center gap-1">
             <label
               htmlFor="jump-input"
@@ -66,23 +68,23 @@ export default function PaginationNav({
               placeholder="Go"
               value={jumpPage}
               onChange={(e) => setJumpPage(e.target.value)}
-              className="focus:border-primary h-7 w-7 [appearance:textfield] rounded-full border-1 border-black/20 text-center text-[10px] font-bold focus:ring-0 focus:outline-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+              className="focus:border-primary h-7 w-7 [appearance:textfield] rounded-full border border-black/20 text-center text-[10px] font-bold focus:ring-0 focus:outline-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
             />
           </form>
         </div>
 
         {/* Next Button */}
         <button
-          onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+          onClick={() => setCurrentPage(Math.min(currentPage + 1, totalPages))}
           disabled={currentPage === totalPages}
-          className="group text-mono hover:text-primary flex items-center gap-1 text-xs font-bold text-slate-400 transition-colors disabled:pointer-events-none disabled:opacity-20"
+          className="group hover:text-primary flex items-center gap-1 text-xs font-bold text-slate-400 transition-colors disabled:pointer-events-none disabled:opacity-20"
         >
           <span className="hidden lg:inline">NEXT</span>
           <span>→</span>
         </button>
       </nav>
 
-      {/* Pages info */}
+      {/* Pages Info */}
       <div>
         <span className="font-mono text-[10px] font-bold tracking-widest text-slate-400">
           PAGE {currentPage} OF {totalPages}
@@ -90,4 +92,4 @@ export default function PaginationNav({
       </div>
     </div>
   );
-}
+};

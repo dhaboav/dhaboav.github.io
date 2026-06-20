@@ -1,6 +1,6 @@
 import { useI18n } from '@/shared/lib';
 import { HashLink } from 'react-router-hash-link';
-import { useNavbar } from '@/hooks/useNavbar';
+import { useNavbar } from '../hooks/useNavbar';
 
 export const Navbar = () => {
   const { ui } = useI18n();

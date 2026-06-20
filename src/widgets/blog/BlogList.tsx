@@ -1,24 +1,17 @@
-import { useBlogList } from '@/features/blog/hooks/useBlogList';
-import { usePagination } from '@/hooks/usePagination';
-import PaginationNav from '@/components/PaginationNav';
-import { useI18n } from '@/shared/lib/I18n/useI18n';
-import { BlogCard } from '@/entities/blog';
-import { formatDate } from '@/entities/blog/lib/formatDate';
+import { useBlogList } from '@/features/blog';
+import { usePagination } from '@/shared/hooks';
+import { Pagination } from '@/shared/ui';
+import { useI18n } from '@/shared/lib';
+import { BlogCard, formatDate } from '@/entities/blog';
 
-export default function BlogList() {
+export const BlogList = () => {
   const { ui, lang } = useI18n();
   const { searchQuery, setSearchQuery, blogs } = useBlogList();
-
-  const {
-    currentPage,
-    setCurrentPage,
-    jumpPage,
-    setJumpPage,
-    currentPosts,
-    totalPages,
-    getPageNumbers,
-    handleJumpPageSubmit,
-  } = usePagination({ items: blogs, searchQuery });
+  const { currentPosts, pageNumbers, currentPage, ...paginationProps } = usePagination({
+    items: blogs,
+    searchQuery,
+  });
+  const isInitialPageWithoutSearch = currentPage === 1 && !searchQuery;
 
   return (
     <div className="min-h-screen bg-[#fcfcfc] text-slate-900 selection:bg-orange-500 selection:text-white">
@@ -63,32 +56,25 @@ export default function BlogList() {
       {/* ─── MAIN CONTENT ─── */}
       <main className="container mx-auto max-w-7xl px-4 py-20">
         {currentPosts.length === 0 ? (
-          <div className="overflow-hidden border-4 border-dashed border-slate-200 text-center font-mono text-slate-400">
+          <div className="overflow-hidden border-4 border-dashed border-slate-200 p-12 text-center font-mono text-slate-400">
             {ui.blog.blogNotFoundLabel}{' '}
             <span className="text-foreground font-bold">"{searchQuery}"</span>
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
             {currentPosts.map((item, index) => {
-              // 1. 🧮 Hitung indeks global untuk penomoran dan pengecekan Hero
               const globalIndex = currentPage === 1 ? index : 8 + (currentPage - 2) * 9 + index;
-              const isHero = globalIndex === 0 && searchQuery === '';
-
-              // 2. 🎛️ Tentukan tipe varian CVA secara dinamis berdasarkan aturan koran/editorial
               let currentVariant: 'default' | 'editorial' | 'hero' = 'default';
-
-              if (isHero) {
-                currentVariant = 'hero';
-              } else if (currentPage === 1 && searchQuery === '') {
-                if (index === 1 || index === 7) {
-                  currentVariant = 'editorial';
-                }
+              if (isInitialPageWithoutSearch) {
+                if (globalIndex === 0) currentVariant = 'hero';
+                else if (index === 1 || index === 7) currentVariant = 'editorial';
               }
 
               return (
                 <BlogCard
+                  key={item.slug}
                   variant={currentVariant}
-                  blogIndex={index + 1}
+                  blogIndex={globalIndex + 1}
                   slug={item.slug}
                   tag={item.tag}
                   title={item.title}
@@ -101,17 +87,8 @@ export default function BlogList() {
           </div>
         )}
 
-        {/* ─── COMPONENT PAGINATION NAV ─── */}
-        <PaginationNav
-          currentPage={currentPage}
-          totalPages={totalPages}
-          jumpPage={jumpPage}
-          setJumpPage={setJumpPage}
-          getPageNumbers={getPageNumbers}
-          setCurrentPage={setCurrentPage}
-          handleJumpPageSubmit={handleJumpPageSubmit}
-        />
+        <Pagination pageNumbers={pageNumbers} currentPage={currentPage} {...paginationProps} />
       </main>
     </div>
   );
-}
+};

@@ -1,15 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { blogData } from '@/entities/blog/model/data';
 
 export function useBlogDetail() {
   const { slug } = useParams<{ slug: string }>();
-
   const [content, setContent] = useState<string>('');
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [isError, setIsError] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
 
-  const currentBlog = blogData.find((blog) => blog.slug === slug);
+  const currentBlog = useMemo(() => {
+    return blogData.find((blog) => blog.slug === slug);
+  }, [slug]);
 
   useEffect(() => {
     if (!currentBlog) {
@@ -21,11 +22,10 @@ export function useBlogDetail() {
     setIsLoading(true);
     setIsError(false);
 
-    fetch(`/blog/${currentBlog.slug}.md`)
+    // Fetching data from markdown
+    fetch(`/blog/${slug}.md`)
       .then((res) => {
-        if (!res.ok) {
-          throw new Error('File artikel tidak ditemukan di folder public');
-        }
+        if (!res.ok) throw new Error('File artikel tidak ditemukan');
         return res.text();
       })
       .then((text) => {

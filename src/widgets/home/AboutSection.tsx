@@ -3,7 +3,6 @@ import { useI18n } from '@/shared/lib';
 
 export const AboutSection = () => {
   const { lang, ui } = useI18n();
-
   const techStack = ['Python', 'OpenCV', 'FastAPI', 'MySQL', 'React', 'Tailwind', 'Docker'];
 
   return (

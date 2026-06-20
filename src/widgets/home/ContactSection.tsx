@@ -1,11 +1,11 @@
-import { useContact } from '@/hooks/useContact';
+import { useContact } from '@/features/contacts';
 import { useI18n } from '@/shared/lib';
 
 export const ContactSection = () => {
   const { ui } = useI18n();
   const { formRef, isLoading, notif, handleSubmit } = useContact({
-    success: ui.contact.successStatus,
-    failure: ui.contact.failureStatus,
+    successMessage: ui.contact.successStatus,
+    failureMessage: ui.contact.failureStatus,
   });
 
   return (

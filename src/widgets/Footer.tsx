@@ -2,18 +2,16 @@ import { useState, useRef } from 'react';
 import { useI18n, languages } from '@/shared/lib';
 import type { SupportedLang } from '@/shared/lib';
 
+import { AUTHOR_NAME } from '@/shared/config';
+
 export const Footer = () => {
   const { lang, setLang } = useI18n();
-
   const [isOpen, setIsOpen] = useState(false);
-
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
-
   const currentYear = new Date().getFullYear();
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
-
   const changeLanguage = (key: SupportedLang) => {
     setLang(key);
     setIsOpen(false);
@@ -24,7 +22,9 @@ export const Footer = () => {
       <div className="container mx-auto max-w-7xl px-4">
         <div className="flex flex-col items-center justify-center gap-4 text-center text-sm text-zinc-500 md:flex-row md:justify-between">
           {/* COPYRIGHT */}
-          <p className="font-mono">© 2025-{currentYear} Dhammiko Bodhi Avatara</p>
+          <p className="font-mono">
+            © 2025-{currentYear} {AUTHOR_NAME}
+          </p>
 
           {/* LANGUAGE SWITCHER */}
           <div className="relative">

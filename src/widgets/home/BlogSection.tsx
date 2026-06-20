@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useBlog } from '@/features/blog/hooks/useBlog';
+import { useBlog } from '@/features/blog';
 import { useI18n } from '@/shared/lib';
 import { BlogCard, formatDate } from '@/entities/blog';
 

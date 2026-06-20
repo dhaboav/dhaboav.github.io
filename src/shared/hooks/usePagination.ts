@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 interface UsePaginationProps<T> {
   items: T[];
@@ -9,40 +9,42 @@ export function usePagination<T>({ items, searchQuery }: UsePaginationProps<T>) 
   const [currentPage, setCurrentPage] = useState(1);
   const [jumpPage, setJumpPage] = useState('');
 
-  // Reset input jump dan scroll ke atas saat halaman berganti
+  // Reset kolom jump input & kembalikan scroll ke atas saat halaman berganti
   useEffect(() => {
     window.scrollTo(0, 0);
     setJumpPage('');
   }, [currentPage]);
 
-  // Reset ke halaman 1 jika user mengetik pencarian baru
+  // Reset ke halaman 1 jika user mengetik kata kunci pencarian baru
   useEffect(() => {
     setCurrentPage(1);
   }, [searchQuery]);
 
-  // 🌟 LOGIKA SLICE DINAMIS: Halaman 1 ambil 8 item, berikutnya ambil 9 item
-  let indexOfFirstPost = 0;
-  let indexOfLastPost = 8;
+  // 🚀 OPTIMASI SLICE & TOTAL PAGES
+  const { currentPosts, totalPages } = useMemo(() => {
+    let first = 0;
+    let last = 8;
 
-  if (currentPage > 1) {
-    indexOfFirstPost = 8 + (currentPage - 2) * 9;
-    indexOfLastPost = indexOfFirstPost + 9;
-  }
+    if (currentPage > 1) {
+      first = 8 + (currentPage - 2) * 9;
+      last = first + 9;
+    }
 
-  const currentPosts = items.slice(indexOfFirstPost, indexOfLastPost);
+    return {
+      currentPosts: items.slice(first, last),
+      totalPages: items.length <= 8 ? 1 : 1 + Math.ceil((items.length - 8) / 9),
+    };
+  }, [items, currentPage]);
 
-  // Kalkulasi total halaman berdasarkan formula bobot dinamis
-  const totalPages = items.length <= 8 ? 1 : 1 + Math.ceil((items.length - 8) / 9);
-
-  // 🌟 LOGIKA SLIDING WINDOW (Maksimal 5 Angka)
-  const getPageNumbers = () => {
-    const maxVisibleButtons = 5;
-    let startPage = Math.max(1, currentPage - Math.floor(maxVisibleButtons / 2));
-    let endPage = startPage + maxVisibleButtons - 1;
+  // 🚀 OPTIMASI SLIDING WINDOW (Ganti getPageNumbers biasa dengan useMemo)
+  const pageNumbers = useMemo(() => {
+    const maxButtons = 5;
+    let startPage = Math.max(1, currentPage - Math.floor(maxButtons / 2));
+    let endPage = startPage + maxButtons - 1;
 
     if (endPage > totalPages) {
       endPage = totalPages;
-      startPage = Math.max(1, endPage - maxVisibleButtons + 1);
+      startPage = Math.max(1, endPage - maxButtons + 1);
     }
 
     const pages = [];
@@ -50,7 +52,7 @@ export function usePagination<T>({ items, searchQuery }: UsePaginationProps<T>) 
       pages.push(i);
     }
     return pages;
-  };
+  }, [currentPage, totalPages]);
 
   const handleJumpPageSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -67,7 +69,7 @@ export function usePagination<T>({ items, searchQuery }: UsePaginationProps<T>) 
     setJumpPage,
     currentPosts,
     totalPages,
-    getPageNumbers,
+    pageNumbers,
     handleJumpPageSubmit,
   };
 }

@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 
 export function useNavbar() {
   const [isOpen, setIsOpen] = useState(false);
-
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -14,21 +13,23 @@ export function useNavbar() {
   const closeMenu = () => setIsOpen(false);
 
   useEffect(() => {
-    const handleOutsideClick = (e: MouseEvent) => {
-      if (!isOpen) return;
+    if (!isOpen) return;
 
-      if (
-        menuRef.current &&
-        !menuRef.current.contains(e.target as Node) &&
-        buttonRef.current &&
-        !buttonRef.current.contains(e.target as Node)
-      ) {
+    const handleOutsideClick = (e: MouseEvent) => {
+      const target = e.target as Node;
+      const clickedOutsideMenu = menuRef.current && !menuRef.current.contains(target);
+      const clickedOutsideButton = buttonRef.current && !buttonRef.current.contains(target);
+
+      if (clickedOutsideMenu && clickedOutsideButton) {
         setIsOpen(false);
       }
     };
 
     document.addEventListener('click', handleOutsideClick);
-    return () => document.removeEventListener('click', handleOutsideClick);
+
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
   }, [isOpen]);
 
   return {

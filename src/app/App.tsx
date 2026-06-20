@@ -1,25 +1,21 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
-import { Footer, Navbar } from '@/widgets';
-import BackToTop from '@/components/BackToTop';
-import Home from '@/pages/Home';
-import BlogDetail from '@/features/blog/ui/BlogDetail';
-import BlogList from '@/pages/BlogList';
 import { NotFound } from '@/shared/ui';
+import { HomePage, BlogPage, BlogPostPage } from '@/pages';
+import { MainLayout } from './layouts/MainLayout';
 
 export default function App() {
   return (
     <HashRouter>
-      <Navbar />
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/blog" element={<BlogList />} />
-          <Route path="/blog/:slug" element={<BlogDetail />} />
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-      <Footer />
-      <BackToTop />
     </HashRouter>
   );
 }

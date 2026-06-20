@@ -1,3 +1,4 @@
+import { AUTHOR_NAME } from '@/shared/config';
 import { useI18n } from '@/shared/lib';
 
 export const HeroSection = () => {
@@ -12,7 +13,7 @@ export const HeroSection = () => {
             <p className="animate-fade-in text-primary mb-2 font-mono text-sm">{ui.hero.greet}</p>
 
             <h1 className="animate-fade-in-delay-1 mb-3 text-4xl font-medium tracking-tight text-white lg:text-5xl">
-              Dhammiko Bodhi Avatara
+              {AUTHOR_NAME}
             </h1>
 
             <p className="animate-fade-in-delay-2 mb-6 text-base font-light text-zinc-400">
@@ -22,7 +23,7 @@ export const HeroSection = () => {
             <div className="animate-fade-in-delay-3 flex items-center gap-4">
               <a
                 href={`other/${ui.hero.resumeFile}.pdf`}
-                download="Resume Dhammiko Bodhi Avatara"
+                download={`Resume ${AUTHOR_NAME}`}
                 className="hover:bg-primary inline-flex items-center gap-1 rounded-lg border border-white/20 p-2 text-sm text-zinc-400 transition-colors hover:text-white"
               >
                 <i className="bx bx-save text-lg" />
