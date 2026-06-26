@@ -1,6 +1,6 @@
 {
-    "name": "My personal portofolio website",
-    "version": "2.9.0",
+    "name": "Personal Portofolio website",
+    "version": "3.0",
     "description": "portofolio website for personal usage",
     "types": "module",
     "scripts": {

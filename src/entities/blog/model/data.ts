@@ -17,4 +17,12 @@ export const blogData: BlogItem[] = [
     excerpt:
       'Panduan lengkap memasang, menjalankan, dan mengkustomisasi portfolio React & Tailwind CSS.',
   },
+  {
+    slug: 'migrasi-arsitektur-react-ke-feature-sliced-design',
+    dateISO: '2026-06-26',
+    tag: 'Web Dev',
+    title: 'Migrasi Arsitektur React ke Feature-Sliced Design (FSD): Pengalaman dan Pembelajaran',
+    excerpt:
+      'Cerita pengalaman memindahkan struktur project React ke Feature-Sliced Design, tantangan yang dihadapi, serta alasan di balik setiap perubahan.',
+  },
 ];

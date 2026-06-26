@@ -39,7 +39,7 @@ export const ContactSection = () => {
             <input
               type="email"
               name="email"
-              placeholder="email"
+              placeholder="Email"
               required
               disabled={isLoading}
               className="focus:border-primary w-full border-b border-zinc-600 bg-transparent py-3 text-white placeholder:text-zinc-500 focus:outline-none disabled:opacity-50"
@@ -57,7 +57,7 @@ export const ContactSection = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className={`flex w-full items-center justify-center gap-2 bg-white py-3 text-sm font-medium text-black transition-all ${
+              className={`flex w-full items-center justify-center gap-2 rounded-md bg-white py-3 text-sm font-medium text-black transition-all ${
                 isLoading
                   ? 'cursor-not-allowed opacity-70'
                   : 'hover:bg-white/90 active:scale-[0.99]'

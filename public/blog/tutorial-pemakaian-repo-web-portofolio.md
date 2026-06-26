@@ -45,18 +45,14 @@ Setelah proses selesai, portfolio akan tersedia melalui deployment yang telah di
 
 #### Mengkustomisasi Konten
 
-Seluruh data utama portfolio tersimpan di dalam folder `src/data`.
+Seluruh data portfolio dibagi dan tersimpan dengan struktur seperti berikut:
 
-- `languages.ts`: Mengatur teks yang digunakan pada berbagai bagian halaman seperti Header, About,
-  dan Contact.
-
-- `techStack.ts`: Berisi daftar teknologi atau keahlian yang ingin ditampilkan pada portfolio.
-
-- `projects.ts`: Mengelola daftar proyek, termasuk judul, deskripsi, teknologi, dan tautan terkait.
-
-- `experience.ts`: Menyimpan pengalaman profesional, organisasi, maupun perjalanan akademik.
-
-- `blog.ts`: Berisi metadata artikel seperti judul, tanggal publikasi, kategori, dan slug.
+- `src/shared/config/authorName.ts` → Data nama developer (nama kamu)
+- `src/entities/blog/model/data.ts` → Data terkait dengan metadata blog
+- `src/entities/experience/model/data.ts` → Data bagian pengalaman
+- `src/entities/project/model/data.ts` → Data bagian proyek
+- `src/shared/lib/i18n/locales/` → Khusus untuk bagian translate UI untuk dua bahasa (Indonesia, dan
+  Inggris)
 
 #### Menambahkan Artikel Blog
 
@@ -65,8 +61,8 @@ terdapat dua langkah utama.
 
 ##### 1. Tambahkan Metadata Artikel
 
-Buka file `src/data/blog.ts`, lalu tambahkan data artikel baru. Gunakan format **kebab-case** dan
-pastikan setiap `slug` bersifat unik, contoh:
+Buka file `src/entities/blog/model/data.ts`, lalu tambahkan data artikel baru. Gunakan format
+**kebab-case** dan pastikan setiap `slug` bersifat unik, contoh:
 
 ```ts
 {

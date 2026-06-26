@@ -15,7 +15,7 @@ export const en: WebUiTranslations = {
     tagline:
       'Learning by doing and building with purpose, while exploring automation, robotics, and web development.',
     viewProjectLabel: 'View work',
-    resumeFile: 'resume',
+    resumeFile: 'resume-en',
   },
   about: {
     aboutLabel: 'About me',

@@ -27,9 +27,13 @@ export const ProjectSection = () => {
             return (
               <div
                 key={`${link}-${index}`}
-                className="flex h-full flex-col overflow-hidden rounded-xl border border-white/30"
+                className="group flex h-full flex-col overflow-hidden rounded-xl border border-white/30"
               >
-                <img src={image} alt={title} className="h-48 w-full object-cover lg:h-64" />
+                <img
+                  src={image}
+                  alt={title}
+                  className="h-48 w-full object-cover duration-300 md:grayscale md:group-hover:grayscale-0 lg:h-64"
+                />
 
                 <div className="flex flex-1 flex-col justify-between p-5">
                   <div>
