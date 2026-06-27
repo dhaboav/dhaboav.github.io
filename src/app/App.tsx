@@ -1,6 +1,5 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
-import { NotFound } from '@/shared/ui';
-import { HomePage, BlogPage, BlogPostPage } from '@/pages';
+import { HomePage, BlogPage, BlogPostPage, NotFoundPage } from '@/pages';
 import { MainLayout } from './layouts/MainLayout';
 
 export default function App() {
@@ -13,7 +12,7 @@ export default function App() {
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
           </Route>
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
     </HashRouter>

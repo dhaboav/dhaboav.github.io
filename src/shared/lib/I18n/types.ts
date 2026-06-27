@@ -10,6 +10,12 @@ export const languages = {
   id: { flag: '🇮🇩', label: 'ID', full: 'Indonesia' },
 } as const;
 
+export interface NotfoundTranslations {
+  pageTitle: string;
+  pageDesc: string;
+  buttonLabel: string;
+}
+
 export interface NavbarTranslations {
   home: string;
   about: string;
@@ -57,6 +63,7 @@ export interface BlogTranslations {
   blogDetailAuthorLabel: string;
   blogDetailAuthorDescLabel: string;
   blogDetailAuthorLinkLabel: string;
+  blogDetailLoadPageLabel: string;
 }
 
 export interface ContactTranslations {
@@ -73,6 +80,7 @@ export interface ContactTranslations {
 
 export interface WebUiTranslations {
   webTitle: string;
+  notfound: NotfoundTranslations;
   navbar: NavbarTranslations;
   hero: HeroTranslations;
   about: AboutTranslations;

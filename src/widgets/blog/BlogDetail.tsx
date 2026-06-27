@@ -15,14 +15,21 @@ export const BlogDetail = () => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [currentBlog?.slug]);
 
-  if (isError || !currentBlog) return <NotFound />;
+  if (isError || !currentBlog)
+    return (
+      <NotFound
+        pageTitle={ui.notfound.pageTitle}
+        pageDesc={ui.notfound.pageDesc}
+        buttonLabel={ui.notfound.buttonLabel}
+      />
+    );
   if (isLoading) {
     return (
       <div
         className="min-h-screen animate-pulse pt-28 text-center font-mono text-slate-400"
         role="status"
       >
-        Loading the article...
+        {ui.blog.blogDetailLoadPageLabel}
       </div>
     );
   }

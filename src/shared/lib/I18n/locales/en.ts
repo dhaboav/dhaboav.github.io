@@ -2,6 +2,12 @@ import type { WebUiTranslations } from '../types';
 
 export const en: WebUiTranslations = {
   webTitle: "Dhaboav's Website",
+  notfound: {
+    pageTitle: 'Page not found.',
+    pageDesc:
+      "Oops! Page not found. We can't seem to find the page you're looking for. Go back to home.",
+    buttonLabel: 'Back to Home',
+  },
   navbar: {
     home: 'Home',
     about: 'About',
@@ -49,6 +55,7 @@ export const en: WebUiTranslations = {
     blogDetailAuthorDescLabel:
       'Writes about many things, with technology and software engineering as the main theme. Sharing thoughts, insights, and experience through written words.',
     blogDetailAuthorLinkLabel: 'Click here to learn more',
+    blogDetailLoadPageLabel: 'Loading the article...',
   },
   contact: {
     label: 'Contact',

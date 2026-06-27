@@ -2,6 +2,12 @@ import type { WebUiTranslations } from '../types';
 
 export const id: WebUiTranslations = {
   webTitle: 'Website Dhaboav',
+  notfound: {
+    pageTitle: 'Halaman tidak Ditemukan.',
+    pageDesc:
+      'Ups! Halaman tidak ditemukan. Kami tidak dapat menemukan halaman yang Anda cari. Kembali ke beranda.',
+    buttonLabel: 'Kembali ke Beranda',
+  },
   navbar: {
     home: 'Beranda',
     about: 'Tentang',
@@ -49,6 +55,7 @@ export const id: WebUiTranslations = {
     blogDetailAuthorDescLabel:
       'Menulis tentang banyak hal, dengan teknologi dan rekayasa perangkat lunak (software engineering) sebagai tema utamanya. Berbagi berbagai pemikiran, wawasan, dan pengalaman lewat tulisan.',
     blogDetailAuthorLinkLabel: 'Pelajari selengkapnya di sini',
+    blogDetailLoadPageLabel: 'Memuat artikel...',
   },
   contact: {
     label: 'Kontak',

@@ -1,4 +1,4 @@
-import type { SupportedLang } from '@/shared/lib/I18n/types';
+import type { SupportedLang } from '@/shared/lib/I18n';
 
 export const formatDate = (dateString: string, lang: SupportedLang) => {
   if (!dateString) return '';
