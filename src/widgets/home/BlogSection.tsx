@@ -45,6 +45,7 @@ export const BlogSection = () => {
         <div className="bg-background/10 grid grid-cols-1 gap-px md:grid-cols-4 md:divide-x lg:divide-y-0">
           {recentBlogs.map((item, index) => (
             <BlogCard
+              key={item.slug}
               blogIndex={index + 1}
               slug={item.slug}
               tag={item.tag}

@@ -43,7 +43,7 @@ export const BlogCard = ({
       <div className="flex-1 group-data-[variant=hero]:lg:col-span-7">
         <div className="mb-2 flex items-center gap-3 font-mono text-xs font-bold">
           <span className="text-slate-400">/0{blogIndex}</span>
-          <span className="group-hover:bg-primary h-[1px] w-8 bg-slate-200 transition-all duration-300 group-hover:w-12"></span>
+          <span className="group-hover:bg-primary h-px w-8 bg-slate-200 transition-all duration-300 group-hover:w-12"></span>
           <span className="text-primary tracking-widest">{tag}</span>
         </div>
         <h2 className="text-background line-clamp-3 text-2xl leading-tight font-bold group-data-[variant=editorial]:lg:text-4xl group-data-[variant=hero]:lg:text-6xl">
