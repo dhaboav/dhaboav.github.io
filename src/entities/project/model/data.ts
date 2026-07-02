@@ -2,17 +2,18 @@ import type { ProjectItem } from './types';
 
 export const projectsData: ProjectItem[] = [
   {
-    image: 'img/basestation.png',
-    link: 'https://github.com/dhaboav/robot-basestation',
+    image: 'img/trueformat.png',
+    link: 'https://github.com/dhaboav/trueformat-backend',
     text: {
       en: {
-        title: 'Basestation Robot Controller',
-        description: 'A Python-built basestation used to control robots through a local network.',
+        title: 'TrueFormat',
+        description:
+          'Backend service built with FastAPI and OpenCV to automatically validate passport photos through computer vision.',
       },
       id: {
-        title: 'Pengendali Robot Basestation',
+        title: 'TrueFormat',
         description:
-          'Basestation berbasis Python untuk mengendalikan robot melalui jaringan lokal.',
+          'Layanan backend menggunakan FastAPI dan OpenCV untuk memvalidasi pas foto secara otomatis dengan teknologi computer vision.',
       },
     },
   },
@@ -21,28 +22,30 @@ export const projectsData: ProjectItem[] = [
     link: 'https://github.com/dhaboav/bookshelf',
     text: {
       en: {
-        title: 'Simple Personal Bookshelf App',
+        title: 'Bookshelf Management System',
         description:
-          'A responsive web app using React, FastAPI, and Docker able to run CRUD operation.',
+          'Fullstack web application built with React, FastAPI, MySQL, and Docker for managing personal book collections.',
       },
       id: {
-        title: 'Aplikasi Sederhana Rak buku',
+        title: 'Aplikasi Manajemen Buku',
         description:
-          'Aplikasi web dengan React, FastAPI, dan Docker yang bisa menjalankan CRUD sederhana untuk buku',
+          'Aplikasi web fullstack menggunakan React, FastAPI, MySQL, dan Docker untuk mengelola koleksi buku pribadi.',
       },
     },
   },
   {
-    image: 'img/login.png',
-    link: 'https://github.com/dhaboav/college-web-login',
+    image: 'img/basestation.png',
+    link: 'https://github.com/dhaboav/robot-basestation',
     text: {
       en: {
-        title: 'Simple Login Website',
-        description: 'A web app using HTML, CSS, PHP, and MySQL with role-based access.',
+        title: 'Multi-Robot Control System',
+        description:
+          'Python-based control station for monitoring and controlling multiple robots over a local network.',
       },
       id: {
-        title: 'Website Login Sederhana',
-        description: 'Aplikasi web dengan HTML, CSS, PHP, MySQL dan akses berbasis peran.',
+        title: 'Sistem Kendali Multi Robot',
+        description:
+          'Sistem kendali berbasis Python untuk memantau dan mengendalikan beberapa robot melalui jaringan lokal.',
       },
     },
   },

@@ -19,7 +19,7 @@ export const en: WebUiTranslations = {
   hero: {
     greet: "Hi, I'm",
     tagline:
-      'Learning by doing and building with purpose, while exploring automation, robotics, and web development.',
+      'Backend Developer experienced in building REST APIs with FastAPI, Computer Vision applications with OpenCV, and IoT systems using Raspberry Pi & ESP32.',
     viewProjectLabel: 'View work',
     resumeFile: 'resume-en',
   },
@@ -27,7 +27,7 @@ export const en: WebUiTranslations = {
     aboutLabel: 'About me',
     aboutMeHeader: 'Building with purpose',
     aboutMeParagraph:
-      'I believe technology exists to solve human problems. My interest in automation and robotics stems from a simple principle: learning by doing. Beyond that, I enjoy building websites as a way to combine logic and creativity. In my free time, I usually enjoy life through books, games, and anime.',
+      'I enjoy solving real-world problems by building backend services, computer vision applications, and IoT systems. My projects range from REST APIs with FastAPI to embedded systems powered by Raspberry Pi and ESP32. Outside programming, I enjoy reading books, anime, and strategy games.',
     techStackLabel: 'Tech Stack',
     experienceLabel: 'Experience',
   },
@@ -59,8 +59,9 @@ export const en: WebUiTranslations = {
   },
   contact: {
     label: 'Contact',
-    header: "Let's connect",
-    description: "Have a project in mind or just want to chat? I'd love to hear from you.",
+    header: "Have an idea? Let's talk.",
+    description:
+      "I'm currently seeking Backend Developer, Software Engineer, or IoT Engineer opportunities. Feel free to reach out.",
     namePlaceholder: 'Name',
     messagePlaceholder: 'Message',
     sendStatus: 'Send message',

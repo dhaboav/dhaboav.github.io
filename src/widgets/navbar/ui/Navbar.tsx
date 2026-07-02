@@ -57,7 +57,7 @@ export const Navbar = () => {
             className="text-3xl text-white md:hidden lg:hidden"
             aria-label="Toggle Menu"
           >
-            <i className={`bx ${isOpen ? 'bx-x' : 'bx-menu'}`} />
+            <span>{isOpen ? '✖' : '☰'}</span>
           </button>
         </nav>
 

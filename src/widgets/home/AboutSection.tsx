@@ -3,7 +3,7 @@ import { useI18n } from '@/shared/lib';
 
 export const AboutSection = () => {
   const { lang, ui } = useI18n();
-  const techStack = ['Python', 'OpenCV', 'FastAPI', 'MySQL', 'React', 'Tailwind', 'Docker'];
+  const techStack = ['Python', 'Docker', 'FastAPI', 'OpenCV', 'MySQL', 'React', 'Tailwind'];
 
   return (
     <section id="about" className="min-h-screen bg-zinc-900 py-32 md:py-40 lg:py-56">
@@ -54,7 +54,7 @@ export const AboutSection = () => {
 
                   return (
                     <div key={`${item.company}-${index}`} className="relative">
-                      <div className="bg-primary absolute top-1.5 -left-[31px] h-2 w-2 rounded-full lg:-left-[36px]" />
+                      <div className="bg-primary absolute top-1.5 -left-7.75 h-2 w-2 rounded-full lg:-left-9" />
 
                       <div className="flex flex-col gap-1 lg:flex-row lg:items-center lg:justify-between">
                         <h3 className="text-primary text-sm font-medium lg:text-base">

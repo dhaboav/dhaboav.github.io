@@ -46,7 +46,7 @@ export const HeroSection = () => {
               <img
                 src="img/profile.png"
                 alt="Dhammiko"
-                className="relative z-10 max-w-3xs md:max-w-full"
+                className="relative z-10 max-w-xs transition-transform duration-300 hover:scale-105"
               />
 
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-10 scale-130 md:-translate-y-12 md:scale-140">

@@ -19,7 +19,7 @@ export const id: WebUiTranslations = {
   hero: {
     greet: 'Hai, saya',
     tagline:
-      'Belajar melalui praktik, membangun dengan tujuan, sembari mengeksplorasi otomatisasi, robotika, dan pengembangan web.',
+      'Backend Developer dengan pengalaman mengembangkan REST API menggunakan FastAPI, aplikasi computer vision berbasis OpenCV, serta sistem IoT menggunakan Raspberry Pi dan ESP32.',
     viewProjectLabel: 'Eksplorasi Proyek',
     resumeFile: 'resume-id',
   },
@@ -27,7 +27,7 @@ export const id: WebUiTranslations = {
     aboutLabel: 'Tentang saya',
     aboutMeHeader: 'Membangun dengan Tujuan',
     aboutMeParagraph:
-      'Saya percaya teknologi hadir untuk menyelesaikan masalah manusia. Ketertarikan saya pada otomatisasi dan robotika berawal dari prinsip sederhana: belajar dengan langsung mempraktikkan. Selain itu, saya menikmati membangun website sebagai ruang untuk menggabungkan logika dan kreativitas. Di waktu luang, saya biasanya menikmati hidup melalui buku, game, dan anime',
+      'Saya senang menyelesaikan permasalahan nyata melalui pengembangan backend, computer vision, dan IoT. Proyek yang saya kerjakan mencakup REST API menggunakan FastAPI hingga sistem embedded berbasis Raspberry Pi dan ESP32. Di luar pemrograman, saya menikmati membaca buku, menonton anime, dan bermain game strategi.',
     techStackLabel: 'Teknologi & Tools',
     experienceLabel: 'Pengalaman',
   },
@@ -44,7 +44,7 @@ export const id: WebUiTranslations = {
     },
     blogAllButton: 'Lihat semua',
     blogDescription:
-      'Tempat saya mendokumentasikan pembelajaran, eksperimen, pemikiran, dan berbagai ide yang menarik untuk dibagikan.',
+      'Tempat saya mendokumentasikan proses belajar, eksperimen, pemikiran, dan berbagai ide menarik yang layak untuk dibagikan.',
     blogLinkButton: 'Baca selengkapnya',
     blogArchiveLabel: 'Arsip',
     blogArchiveSearchLabel: 'Cari',
@@ -60,7 +60,8 @@ export const id: WebUiTranslations = {
   contact: {
     label: 'Kontak',
     header: 'Mari Terhubung',
-    description: 'Punya proyek atau ingin berdiskusi? Saya akan senang untuk mendengar dari anda',
+    description:
+      'Saat ini saya terbuka untuk peluang sebagai Backend Developer, Software Engineer, maupun IoT Engineer. Jangan ragu untuk menghubungi saya.',
     namePlaceholder: 'Nama',
     messagePlaceholder: 'Pesan',
     sendStatus: 'Kirim pesan',

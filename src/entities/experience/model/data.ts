@@ -8,59 +8,64 @@ export const experienceData: ExperienceItem[] = [
         role: 'B.S. in Computer Science',
         period: '2021 — 2025',
         description:
-          'Fresh graduate majoring in Computer Science with a specialization in Computer Vision.',
+          'Graduated with a Bachelor of Computer Science. Completed projects in backend development, computer vision, and embedded systems.',
       },
       id: {
         role: 'S1 Informatika',
         period: '2021 — 2025',
-        description: 'Mempelajari Ilmu Komputer dengan fokus pada computer vision.',
+        description:
+          'Lulus dengan gelar Sarjana Komputer dengan fokus pada computer vision serta mengerjakan berbagai proyek di bidang backend, computer vision, dan sistem embedded.',
       },
     },
   },
   {
-    company: 'PKM',
+    company: 'PKM-RE',
     text: {
       en: {
-        role: 'Computer Vision Researcher',
-        period: '2024',
-        description: 'Researched citrus ripeness using a Raspberry Pi camera to detect skin color.',
-      },
-      id: {
-        role: 'Peneliti Computer Vision',
+        role: 'Embedded Systems Research Assistant',
         period: '2024',
         description:
-          'Meneliti tingkat kematangan jeruk menggunakan kamera Raspberry Pi untuk mendeteksi warna kulit buah.',
+          'Developed an embedded computer vision system using Raspberry Pi for citrus ripeness analysis, focusing on camera integration and image acquisition.',
+      },
+      id: {
+        role: 'Asisten Peneliti Embedded Systems',
+        period: '2024',
+        description:
+          'Mengembangkan sistem embedded berbasis Raspberry Pi untuk analisis kematangan jeruk dengan fokus pada integrasi kamera dan akuisisi citra.',
       },
     },
   },
   {
-    company: 'Eon Terigas',
+    company: 'Robotics Team FT UNTAN',
     text: {
       en: {
         role: 'Team Leader',
         period: '2023 — 2024',
-        description: 'Oversaw a small team to execute projects and achieve competitive goals.',
+        description:
+          'Led a student robotics team by coordinating development tasks, managing project progress, and preparing for competitions.',
       },
       id: {
         role: 'Ketua Tim',
         period: '2023 — 2024',
         description:
-          'Memimpin tim kecil untuk menyelesaikan proyek dan mencapai target kompetitif.',
+          'Memimpin tim robotika mahasiswa dengan mengoordinasikan pengembangan proyek, pembagian tugas, dan persiapan kompetisi.',
       },
     },
   },
   {
-    company: 'Eon Terigas',
+    company: 'Robotics Team FT UNTAN',
     text: {
       en: {
-        role: 'Robotics Vision Engineer',
+        role: 'Computer Vision Engineer',
         period: '2022 — 2023',
-        description: 'Developed computer vision systems for robots to detect objects.',
+        description:
+          'Developed computer vision software using Python and OpenCV for object detection in autonomous robotics applications.',
       },
       id: {
-        role: 'Insinyur Robotics Vision',
+        role: 'Computer Vision Engineer',
         period: '2022 — 2023',
-        description: 'Mengembangkan sistem computer vision pada robot untuk mendeteksi objek.',
+        description:
+          'Mengembangkan perangkat lunak computer vision menggunakan Python dan OpenCV untuk deteksi objek pada aplikasi robot otonom.',
       },
     },
   },

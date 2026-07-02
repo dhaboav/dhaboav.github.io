@@ -50,7 +50,7 @@ export const ProjectSection = () => {
                     href={link}
                     target="_blank"
                     rel="noreferrer"
-                    className="border-primary hover:bg-primary block w-full rounded-md border border-white/30 py-2 text-center text-xs font-medium text-white transition-colors"
+                    className="border-primary hover:bg-primary block w-full rounded-md border py-2 text-center text-xs font-medium text-white transition-colors"
                   >
                     {ui.projects.gitHubRepoLabel}
                   </a>
