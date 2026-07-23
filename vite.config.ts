@@ -8,14 +8,9 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   base: '/',  
   resolve: {
-    alias: {
-        '@': path.resolve(__dirname, './src'),
-    },
+    alias: {'@': path.resolve(__dirname, './src')},
   },
-  plugins: [
-    react(), 
-    tailwindcss()
-  ],
+  plugins: [react(), tailwindcss()],
   build: {
     outDir: 'dist',
     emptyOutDir: true, 

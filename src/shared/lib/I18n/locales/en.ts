@@ -14,7 +14,7 @@ export const en: WebUiTranslations = {
     projects: 'Projects',
     blogTeaser: 'Recent Notes',
     blogArchive: 'All Articles',
-    contact: "Let's talk",
+    contact: 'Contact',
   },
   hero: {
     greet: "Hi, I'm",

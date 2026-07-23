@@ -1,4 +1,4 @@
-import { useBackToTop } from '../hooks/useBackToTop';
+import { useBackToTop } from './hooks/useBackToTop';
 
 export const BackToTop = () => {
   const { isVisible, scrollToTop } = useBackToTop();

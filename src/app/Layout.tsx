@@ -1,8 +1,7 @@
 import { Outlet } from 'react-router-dom';
-import { Footer, Navbar } from '@/widgets';
-import { BackToTop } from '@/shared/ui';
+import { Footer, Navbar, BackToTop } from '@/widgets/layout';
 
-export function MainLayout() {
+export function Layout() {
   return (
     <>
       <Navbar />
