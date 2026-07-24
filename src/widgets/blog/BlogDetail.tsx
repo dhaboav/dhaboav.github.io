@@ -2,12 +2,11 @@ import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router-dom';
 import { useBlogDetail } from '@/features/blog';
-import { useI18n } from '@/shared/lib';
-import { formatDate } from '@/entities/blog';
+import { useI18n, formatDate } from '@/shared/lib';
 import { NotFound } from '@/shared/ui';
 import { AUTHOR_NAME } from '@/shared/config';
 
-export const BlogDetail = () => {
+export function BlogDetail() {
   const { ui, lang } = useI18n();
   const { currentBlog, content, isLoading, isError } = useBlogDetail();
 
@@ -86,4 +85,4 @@ export const BlogDetail = () => {
       </div>
     </section>
   );
-};
+}

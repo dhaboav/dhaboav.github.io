@@ -1,5 +1,5 @@
 import { BlogDetail } from '@/widgets/blog';
 
-export const BlogPostPage = () => {
+export function BlogPostPage() {
   return <BlogDetail />;
-};
+}

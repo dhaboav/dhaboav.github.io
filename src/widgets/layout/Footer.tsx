@@ -4,7 +4,7 @@ import type { SupportedLang } from '@/shared/lib';
 
 import { AUTHOR_NAME } from '@/shared/config';
 
-export const Footer = () => {
+export function Footer() {
   const { lang, setLang } = useI18n();
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -60,4 +60,4 @@ export const Footer = () => {
       </div>
     </footer>
   );
-};
+}

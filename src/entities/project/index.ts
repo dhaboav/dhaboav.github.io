@@ -1,1 +1,1 @@
-export { projectsData } from './model/data';
+export { projectsData } from './data';

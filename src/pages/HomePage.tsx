@@ -6,7 +6,7 @@ import {
   ProjectSection,
 } from '@/widgets/home';
 
-export const HomePage = () => {
+export function HomePage() {
   return (
     <>
       <HeroSection />
@@ -16,4 +16,4 @@ export const HomePage = () => {
       <ContactSection />
     </>
   );
-};
+}

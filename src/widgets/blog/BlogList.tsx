@@ -1,10 +1,9 @@
 import { useBlogList } from '@/features/blog';
-import { usePagination } from '@/shared/hooks';
 import { Pagination } from '@/shared/ui';
-import { useI18n } from '@/shared/lib';
-import { BlogCard, formatDate } from '@/entities/blog';
+import { useI18n, formatDate, usePagination } from '@/shared/lib';
+import { BlogCard } from '@/entities/blog';
 
-export const BlogList = () => {
+export function BlogList() {
   const { ui, lang } = useI18n();
   const { searchQuery, setSearchQuery, blogs } = useBlogList();
   const { currentPosts, pageNumbers, currentPage, ...paginationProps } = usePagination({
@@ -91,4 +90,4 @@ export const BlogList = () => {
       </main>
     </div>
   );
-};
+}

@@ -84,9 +84,9 @@ npm run deploy    # Deploy to GitHub Pages
 ## ✏️ Customization
 
 - `src/shared/config/authorName.ts` → Update your name
-- `src/entities/blog/model/data.ts` → Manage blogs, tags, and publish dates
-- `src/entities/experience/model/data.ts` → Manage work experiences, internships, and activities
-- `src/entities/project/model/data.ts` → Manage projects, descriptions, repositories, and demo links
+- `src/entities/blog/data.ts` → Manage blogs, tags, and publish dates
+- `src/entities/experience/data.ts` → Manage work experiences, internships, and activities
+- `src/entities/project/data.ts` → Manage projects, descriptions, repositories, and demo links
 - `src/shared/lib/i18n/locales/` → Manage translations and multilingual content
 
 > Restart the development server if changes are not reflected automatically.

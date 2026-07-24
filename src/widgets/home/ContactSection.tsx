@@ -1,7 +1,7 @@
 import { useContact } from '@/features/contacts';
 import { useI18n } from '@/shared/lib';
 
-export const ContactSection = () => {
+export function ContactSection() {
   const { ui } = useI18n();
   const { formRef, isLoading, notif, handleSubmit } = useContact({
     successMessage: ui.contact.successStatus,
@@ -108,4 +108,4 @@ export const ContactSection = () => {
       </div>
     </section>
   );
-};
+}

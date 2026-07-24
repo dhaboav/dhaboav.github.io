@@ -1,7 +1,7 @@
 import { useI18n } from '@/shared/lib';
 import { NotFound } from '@/shared/ui';
 
-export const NotFoundPage = () => {
+export function NotFoundPage() {
   const { ui } = useI18n();
   return (
     <NotFound
@@ -10,4 +10,4 @@ export const NotFoundPage = () => {
       buttonLabel={ui.notfound.buttonLabel}
     />
   );
-};
+}

@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
-import { blogData } from '@/entities/blog/model/data';
+import { blogData } from '@/entities/blog';
 
 export function useBlogDetail() {
   const { slug } = useParams<{ slug: string }>();

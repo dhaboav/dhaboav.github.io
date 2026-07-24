@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { blogData } from '@/entities/blog/model/data';
+import { blogData } from '@/entities/blog';
 
 export function useBlogList() {
   const [searchQuery, setSearchQuery] = useState<string>('');

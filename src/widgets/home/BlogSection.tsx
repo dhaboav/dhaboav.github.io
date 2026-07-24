@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import { useBlog } from '@/features/blog';
-import { useI18n } from '@/shared/lib';
-import { BlogCard, formatDate } from '@/entities/blog';
+import { useI18n, formatDate } from '@/shared/lib';
+import { BlogCard } from '@/entities/blog';
 
-export const BlogSection = () => {
+export function BlogSection() {
   const { ui, lang } = useI18n();
   const { recentBlogs } = useBlog();
 
@@ -60,4 +60,4 @@ export const BlogSection = () => {
       </div>
     </section>
   );
-};
+}

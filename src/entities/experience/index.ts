@@ -1,1 +1,1 @@
-export { experienceData } from './model/data';
+export { experienceData } from './data';

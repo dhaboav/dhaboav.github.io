@@ -27,7 +27,7 @@ interface BlogCardProps extends React.ComponentProps<'div'>, VariantProps<typeof
   className?: string;
 }
 
-export const BlogCard = ({
+export function BlogCard({
   variant = 'default',
   blogIndex,
   slug,
@@ -36,7 +36,7 @@ export const BlogCard = ({
   date,
   excerpt,
   slugButtonLabel,
-}: BlogCardProps) => {
+}: BlogCardProps) {
   return (
     <div data-variant={variant} className={cn(blogCardVariants({ variant }))}>
       {/* Tag + Title */}
@@ -78,4 +78,4 @@ export const BlogCard = ({
       </div>
     </div>
   );
-};
+}

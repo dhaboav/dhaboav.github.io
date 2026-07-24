@@ -3,7 +3,7 @@ import { HashLink } from 'react-router-hash-link';
 import { useNavbar } from './hooks/useNavbar';
 import { Menu, X } from 'lucide-react';
 
-export const Navbar = () => {
+export function Navbar() {
   const { ui } = useI18n();
   const { isOpen, menuRef, buttonRef, toggleMenu, closeMenu } = useNavbar();
 
@@ -60,4 +60,4 @@ export const Navbar = () => {
       </div>
     </header>
   );
-};
+}

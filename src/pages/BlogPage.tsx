@@ -1,5 +1,5 @@
 import { BlogList } from '@/widgets/blog';
 
-export const BlogPage = () => {
+export function BlogPage() {
   return <BlogList />;
-};
+}

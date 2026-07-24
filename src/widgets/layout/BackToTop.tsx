@@ -1,6 +1,6 @@
 import { useBackToTop } from './hooks/useBackToTop';
 
-export const BackToTop = () => {
+export function BackToTop() {
   const { isVisible, scrollToTop } = useBackToTop();
 
   return (
@@ -14,4 +14,4 @@ export const BackToTop = () => {
       <span>︿</span>
     </button>
   );
-};
+}

@@ -10,7 +10,7 @@ interface PaginationProps {
   handleJumpPageSubmit: (e: React.FormEvent) => void;
 }
 
-export const Pagination = ({
+export function Pagination({
   currentPage,
   totalPages,
   jumpPage,
@@ -18,7 +18,7 @@ export const Pagination = ({
   setJumpPage,
   setCurrentPage,
   handleJumpPageSubmit,
-}: PaginationProps) => {
+}: PaginationProps) {
   if (totalPages <= 1) return null;
 
   return (
@@ -92,4 +92,4 @@ export const Pagination = ({
       </div>
     </div>
   );
-};
+}

@@ -1,7 +1,7 @@
 import { AUTHOR_NAME } from '@/shared/config';
 import { useI18n } from '@/shared/lib';
 
-export const HeroSection = () => {
+export function HeroSection() {
   const { ui } = useI18n();
 
   return (
@@ -63,4 +63,4 @@ export const HeroSection = () => {
       </div>
     </section>
   );
-};
+}

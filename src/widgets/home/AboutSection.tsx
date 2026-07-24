@@ -1,7 +1,7 @@
 import { experienceData } from '@/entities/experience';
 import { useI18n } from '@/shared/lib';
 
-export const AboutSection = () => {
+export function AboutSection() {
   const { lang, ui } = useI18n();
   const techStack = ['Python', 'Docker', 'FastAPI', 'OpenCV', 'MySQL', 'React', 'Tailwind'];
 
@@ -80,4 +80,4 @@ export const AboutSection = () => {
       </div>
     </section>
   );
-};
+}
