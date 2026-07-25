@@ -5,10 +5,10 @@ export type LangContextType = {
   setLang: (lang: SupportedLang) => void;
 };
 
-export const languages = {
-  en: { flag: '🇺🇸', label: 'EN', full: 'English' },
-  id: { flag: '🇮🇩', label: 'ID', full: 'Indonesia' },
-} as const;
+export const languages = [
+  { flag: '🇺🇸', label: 'en', full: 'English' },
+  { flag: '🇮🇩', label: 'id', full: 'Indonesia' },
+] as const;
 
 export interface NotfoundTranslations {
   pageTitle: string;
