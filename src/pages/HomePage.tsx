@@ -8,12 +8,12 @@ import {
 
 export function HomePage() {
   return (
-    <>
+    <div className="bg-background">
       <HeroSection />
       <AboutSection />
       <ProjectSection />
       <BlogSection />
       <ContactSection />
-    </>
+    </div>
   );
 }

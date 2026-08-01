@@ -17,7 +17,7 @@ export function Navbar() {
   ];
 
   return (
-    <header className="fixed z-9999 w-full bg-black">
+    <header className="sticky top-0 z-9999 w-full bg-black">
       <div className="mx-auto max-w-7xl p-4">
         <nav className="flex items-center justify-between" aria-label="desktop-menu">
           <HashLink to="#home" aria-label="logo">

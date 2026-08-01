@@ -1,66 +1,108 @@
 import { AUTHOR_NAME } from '@/shared/config';
 import { useI18n } from '@/shared/lib';
+import { ArrowRight, BookOpen, FileText } from 'lucide-react';
+import { buttonVariants } from '@/shared/ui';
+import { HashLink } from 'react-router-hash-link';
 
 export function HeroSection() {
-  const { ui } = useI18n();
+  const {
+    ui: { hero },
+  } = useI18n();
+  const techStack = ['Python', 'Docker', 'FastAPI', 'OpenCV', 'MySQL', 'React', 'Tailwind'];
+  const authorSlug = AUTHOR_NAME.toLowerCase().replace(' ', '-');
 
   return (
-    <section id="home" className="flex min-h-screen items-center bg-black pt-28">
-      <div className="container mx-auto max-w-7xl px-4">
-        <div className="flex flex-wrap items-center">
-          {/* TEXT SECTION */}
-          <div className="w-full md:w-1/2 lg:mb-0">
-            <p className="animate-fade-in text-primary mb-2 font-mono text-sm">{ui.hero.greet}</p>
+    <section id="home" className="relative min-h-screen overflow-hidden">
+      <div
+        className="grid-bg pointer-events-none absolute inset-0"
+        aria-hidden="true"
+        aria-label="background"
+      />
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-32 lg:grid-cols-[1.5fr_1fr] lg:gap-0">
+        <div className="space-y-4">
+          <p className="text-primary font-mono text-xs tracking-[0.2em] uppercase">
+            Software Engineer · Indonesia
+          </p>
 
-            <h1 className="animate-fade-in-delay-1 mb-3 text-4xl font-medium tracking-tight text-white lg:text-5xl">
-              {AUTHOR_NAME}
-            </h1>
+          <h1 className="text-4xl font-extrabold tracking-tight text-white lg:text-6xl">
+            {AUTHOR_NAME}.
+          </h1>
 
-            <p className="animate-fade-in-delay-2 mb-6 text-base font-light text-zinc-400">
-              {ui.hero.tagline}
-            </p>
+          <p className="text-muted-foreground max-w-xl text-base leading-relaxed lg:text-lg">
+            {hero.tagline}
+          </p>
 
-            <div className="animate-fade-in-delay-3 flex items-center gap-4">
-              <a
-                href={`other/${ui.hero.resumeFile}.pdf`}
-                download={`Resume ${AUTHOR_NAME}`}
-                className="hover:bg-primary inline-flex items-center gap-1 rounded-lg border border-white/20 p-2 text-sm text-zinc-400 transition-colors hover:text-white"
-              >
-                <i className="bx bx-save text-lg" />
-                <span>Resume</span>
-              </a>
-
-              <a
-                href="#projects"
-                className="hover:text-primary inline-flex items-center gap-2 text-sm font-medium text-white transition-colors"
-              >
-                {ui.hero.viewProjectLabel}
-                <i className="bx bx-arrow-right-stroke text-lg" />
-              </a>
-            </div>
-          </div>
-
-          {/* PROFILE IMAGE */}
-          <div className="relative flex w-full justify-center md:w-1/2">
-            <div className="relative">
-              <img
-                src="img/profile.png"
-                alt="Dhammiko"
-                className="relative z-10 max-w-xs transition-transform duration-300 hover:scale-105"
-              />
-
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-10 scale-130 md:-translate-y-12 md:scale-140">
-                <svg className="text-primary h-60 w-60 fill-current" viewBox="0 0 200 200">
-                  <path
-                    d="M50.5,-71.2C62,-61.2,65.6,-41.8,66.6,-24.9C67.5,-8,65.9,6.4,63,22C60.1,37.6,55.9,54.4,45.2,60.3C34.4,66.2,17.2,61.3,2.4,58C-12.5,54.8,-25,53.1,-36.7,47.5C-48.4,42,-59.3,32.4,-66.7,19.4C-74.2,6.3,-78.1,-10.2,-74.3,-24.9C-70.5,-39.6,-59.1,-52.5,-45.4,-61.9C-31.7,-71.2,-15.9,-76.9,1.8,-79.4C19.5,-81.9,39,-81.2,50.5,-71.2Z"
-                    transform="translate(100 100)"
-                  />
-                </svg>
-              </span>
-            </div>
+          <div className="flex flex-col gap-2 md:flex-row">
+            <HashLink
+              to="/#projects"
+              className={`${buttonVariants({ variant: 'default' })} h-12 px-6`}
+            >
+              {hero.viewProjectLabel}
+              <ArrowRight />
+            </HashLink>
+            <a
+              href={`other/${hero.resumeFile}.pdf`}
+              download={`Resume ${AUTHOR_NAME}`}
+              className={`${buttonVariants({ variant: 'secondary' })} h-12 px-6`}
+            >
+              <FileText className="h-4 w-4" /> Resume
+            </a>
+            <HashLink
+              to="/#blog"
+              className={`${buttonVariants({ variant: 'outline' })} h-12 px-6 text-white`}
+            >
+              <BookOpen /> Read Blog
+            </HashLink>
           </div>
         </div>
+
+        <TerminalCard techStack={techStack} authorSlug={authorSlug} />
       </div>
     </section>
+  );
+}
+
+interface TerminalCardProps {
+  techStack: string[];
+  authorSlug: string;
+}
+
+function TerminalCard({ techStack, authorSlug }: TerminalCardProps) {
+  return (
+    <div className="border-border bg-card rounded-xl border">
+      <div
+        className="border-border flex items-center gap-2 border-b px-4 py-3"
+        aria-label="Terminal Window"
+      >
+        <span className="h-3 w-3 rounded-full bg-red-500/70" />
+        <span className="h-3 w-3 rounded-full bg-yellow-500/70" />
+        <span className="h-3 w-3 rounded-full bg-green-500/70" />
+        <span className="text-muted-foreground ml-2 font-mono text-xs">~/stack.zsh</span>
+      </div>
+
+      <div className="space-y-4 p-4 font-mono text-[13px] leading-relaxed text-white">
+        <div>
+          <p className="text-muted-foreground">
+            <span className="text-primary">$</span> whoami
+          </p>
+          <p>{authorSlug} — building resilient systems since 2018</p>
+        </div>
+
+        <div>
+          <p className="text-muted-foreground">
+            <span className="text-primary">$</span> ls stack
+          </p>
+          <div className="flex gap-2">
+            {techStack.map((tech) => (
+              <span key={tech}>{tech}</span>
+            ))}
+          </div>
+        </div>
+
+        <p className="text-muted-foreground">
+          <span className="text-primary">$</span> <span className="blink-cursor">▍</span>
+        </p>
+      </div>
+    </div>
   );
 }
