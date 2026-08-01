@@ -80,21 +80,6 @@ export function ContactSection() {
               <span>{isLoading ? ui.contact.loadingStatus : ui.contact.sendStatus}</span>
             </button>
           </form>
-
-          {/* SOCIAL */}
-          <div className="flex items-center justify-center gap-4 text-white/80 sm:gap-6">
-            <a href="https://github.com/dhaboav" className="text-2xl hover:text-zinc-400">
-              <i className="bxl bx-github" />
-            </a>
-
-            <a href="https://www.linkedin.com/in/dhaboav" className="text-2xl hover:text-blue-500">
-              <i className="bxl bx-linkedin" />
-            </a>
-
-            <a href="https://www.instagram.com/dhaboav" className="text-2xl hover:text-pink-500">
-              <i className="bxl bx-instagram" />
-            </a>
-          </div>
         </div>
       </div>
 

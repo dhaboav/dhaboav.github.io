@@ -18,7 +18,7 @@ export function HeroSection() {
         aria-hidden="true"
         aria-label="background"
       />
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-32 lg:grid-cols-[1.5fr_1fr] lg:gap-0">
+      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-32 lg:grid-cols-[1.2fr_1fr] lg:gap-0">
         <div className="space-y-4">
           <p className="text-primary font-mono text-xs tracking-[0.2em] uppercase">
             Software Engineer · Indonesia
@@ -48,7 +48,7 @@ export function HeroSection() {
               <FileText className="h-4 w-4" /> Resume
             </a>
             <HashLink
-              to="/#blog"
+              to="/blog"
               className={`${buttonVariants({ variant: 'outline' })} h-12 px-6 text-white`}
             >
               <BookOpen /> Read Blog

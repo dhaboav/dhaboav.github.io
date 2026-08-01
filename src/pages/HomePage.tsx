@@ -1,10 +1,4 @@
-import {
-  BlogSection,
-  AboutSection,
-  HeroSection,
-  ContactSection,
-  ProjectSection,
-} from '@/widgets/home';
+import { AboutSection, HeroSection, ContactSection, ProjectSection } from '@/widgets/home';
 
 export function HomePage() {
   return (
@@ -12,7 +6,6 @@ export function HomePage() {
       <HeroSection />
       <AboutSection />
       <ProjectSection />
-      <BlogSection />
       <ContactSection />
     </div>
   );
