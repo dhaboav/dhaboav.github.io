@@ -6,7 +6,7 @@ export function ProjectSection() {
 
   return (
     <section id="projects" className="min-h-screen bg-black py-32">
-      <div className="mx-auto max-w-7xl px-4">
+      <div className="mx-auto max-w-6xl px-4">
         <header className="mb-2">
           <p className="text-primary/80 mb-6 font-mono text-[0.625rem] tracking-[0.3em] uppercase">
             [ 02 ] {ui.projects.projectLabel}

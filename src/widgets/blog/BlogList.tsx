@@ -13,10 +13,14 @@ export function BlogList() {
   const isInitialPageWithoutSearch = currentPage === 1 && !searchQuery;
 
   return (
-    <div className="min-h-screen bg-[#fcfcfc] text-slate-900 selection:bg-orange-500 selection:text-white">
-      {/* ─── HEADER SECTION ─── */}
-      <header className="container mx-auto max-w-7xl px-4 pt-36">
-        <div className="relative border-b-4 border-slate-900 pb-8">
+    <div className="bg-background min-h-screen text-white">
+      <header className="mx-auto max-w-6xl px-4 pt-36">
+        <div
+          className="grid-bg pointer-events-none absolute inset-0"
+          aria-hidden="true"
+          aria-label="background"
+        />
+        <div className="relative">
           <div className="absolute -top-20 left-[60%] hidden font-sans text-9xl font-black tracking-tighter text-slate-100/80 select-none md:block">
             {ui.blog.blogArchiveLabel}
           </div>
@@ -35,13 +39,13 @@ export function BlogList() {
             </div>
 
             <div className="w-full md:max-w-80">
-              <div className="relative overflow-hidden rounded-full border border-slate-400 transition-all focus-within:-translate-y-1 focus-within:shadow-[4px_4px_0px_0px_rgba(249,115,22,1)]">
+              <div className="border-border relative overflow-hidden rounded-full border transition-all focus-within:-translate-y-1 focus-within:shadow-[4px_4px_0px_0px_var(--color-primary)]">
                 <input
                   type="text"
                   placeholder={`${ui.blog.blogArchiveSearchLabel}...`}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-white/30 p-2 font-mono text-sm text-black backdrop-blur-md placeholder:text-slate-400 focus:ring-0 focus:outline-none"
+                  className="text-muted-foreground w-full bg-white/30 p-2 font-mono text-sm backdrop-blur-md placeholder:text-slate-400 focus:ring-0 focus:outline-none"
                 />
                 <span className="text-primary absolute top-1/2 right-4 -translate-y-1/2 font-mono text-xs font-bold">
                   {blogs.length} PTS
@@ -52,10 +56,9 @@ export function BlogList() {
         </div>
       </header>
 
-      {/* ─── MAIN CONTENT ─── */}
-      <main className="container mx-auto max-w-7xl px-4 py-20">
+      <main className="mx-auto max-w-6xl px-4 py-20">
         {currentPosts.length === 0 ? (
-          <div className="overflow-hidden border-4 border-dashed border-slate-200 p-12 text-center font-mono text-slate-400">
+          <div className="border-border overflow-hidden border-4 border-dashed p-12 text-center font-mono text-slate-400">
             {ui.blog.blogNotFoundLabel}{' '}
             <span className="text-foreground font-bold">"{searchQuery}"</span>
           </div>

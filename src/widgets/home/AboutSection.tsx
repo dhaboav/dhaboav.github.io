@@ -7,7 +7,7 @@ export function AboutSection() {
 
   return (
     <section id="about" className="min-h-screen bg-zinc-900 py-32 md:py-40 lg:py-56">
-      <div className="container mx-auto max-w-7xl px-4">
+      <div className="container mx-auto max-w-6xl px-4">
         <div className="grid gap-16 md:grid-cols-2 lg:gap-24">
           {/* LEFT SIDE */}
           <div>
