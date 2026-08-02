@@ -13,8 +13,8 @@ export function BlogList() {
   const isInitialPageWithoutSearch = currentPage === 1 && !searchQuery;
 
   return (
-    <div className="bg-background min-h-screen text-white">
-      <header className="mx-auto max-w-6xl px-4 pt-36">
+    <section className="bg-background min-h-screen text-white">
+      <header className="mx-auto max-w-6xl px-4 md:pt-36">
         <div
           className="grid-bg pointer-events-none absolute inset-0"
           aria-hidden="true"
@@ -56,7 +56,7 @@ export function BlogList() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-6xl px-4 py-20">
+      <main className="mx-auto max-w-6xl px-4 pt-12 lg:pt-36">
         {currentPosts.length === 0 ? (
           <div className="border-border overflow-hidden border-4 border-dashed p-12 text-center font-mono text-slate-400">
             {ui.blog.blogNotFoundLabel}{' '}
@@ -91,6 +91,6 @@ export function BlogList() {
 
         <Pagination pageNumbers={pageNumbers} currentPage={currentPage} {...paginationProps} />
       </main>
-    </div>
+    </section>
   );
 }

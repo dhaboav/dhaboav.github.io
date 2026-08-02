@@ -50,15 +50,18 @@ export function Navbar() {
             ))}
 
             <Select value={lang} onValueChange={(value) => setLang(value as SupportedLang)}>
-              <SelectTrigger className="text-muted-foreground w-full max-w-20 border-0 font-mono text-sm">
+              <SelectTrigger className="text-muted-foreground border-0 font-mono text-sm uppercase">
                 <SelectValue />
               </SelectTrigger>
-              <SelectContent className="bg-zinc-900 text-white">
+              <SelectContent
+                className="bg-background border-0 text-white"
+                alignItemWithTrigger={false}
+              >
                 {languages.map((langItem) => (
                   <SelectItem
                     key={langItem.label}
                     value={langItem.label}
-                    className="hover:bg-zinc-500"
+                    className="hover:bg-white/10"
                   >
                     {langItem.flag} {langItem.full}
                   </SelectItem>
@@ -89,15 +92,18 @@ export function Navbar() {
           ))}
 
           <Select value={lang} onValueChange={(value) => setLang(value as SupportedLang)}>
-            <SelectTrigger className="w-full max-w-20 border-0 text-sm">
+            <SelectTrigger className="border-0 text-sm uppercase">
               <SelectValue />
             </SelectTrigger>
-            <SelectContent className="bg-zinc-900 text-white">
+            <SelectContent
+              className="bg-background border-0 text-white"
+              alignItemWithTrigger={false}
+            >
               {languages.map((langItem) => (
                 <SelectItem
                   key={langItem.label}
                   value={langItem.label}
-                  className="hover:bg-zinc-500"
+                  className="hover:bg-white/10"
                 >
                   {langItem.flag} {langItem.full}
                 </SelectItem>

@@ -24,12 +24,12 @@ export function BlogDetail() {
 
   if (isLoading) {
     return (
-      <div
-        className="min-h-screen animate-pulse pt-28 text-center font-mono text-slate-400"
+      <section
+        className="text-muted-foreground bg-background min-h-screen animate-pulse pt-28 text-center font-mono font-bold"
         role="status"
       >
         {ui.blog.blogDetailLoadPageLabel}
-      </div>
+      </section>
     );
   }
 

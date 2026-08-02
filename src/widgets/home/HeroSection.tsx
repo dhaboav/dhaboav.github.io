@@ -12,13 +12,14 @@ export function HeroSection() {
   const authorSlug = AUTHOR_NAME.toLowerCase().replace(' ', '-');
 
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden">
-      <div
-        className="grid-bg pointer-events-none absolute inset-0"
-        aria-hidden="true"
-        aria-label="background"
-      />
+    <section id="home" className="min-h-screen">
       <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-32 lg:grid-cols-[1.2fr_1fr] lg:gap-0">
+        <div
+          className="grid-bg pointer-events-none absolute inset-0"
+          aria-hidden="true"
+          aria-label="background"
+        />
+
         <div className="space-y-4">
           <p className="text-primary font-mono text-xs tracking-[0.2em] uppercase">
             Software Engineer · Indonesia
@@ -92,7 +93,8 @@ function TerminalCard({ techStack, authorSlug }: TerminalCardProps) {
           <p className="text-muted-foreground">
             <span className="text-primary">$</span> ls stack
           </p>
-          <div className="flex gap-2">
+
+          <div className="flex flex-wrap gap-x-2">
             {techStack.map((tech) => (
               <span key={tech}>{tech}</span>
             ))}
