@@ -10,7 +10,7 @@ export function Footer() {
 
   return (
     <footer className="bg-background border-border border-t text-white">
-      <div className="mx-auto grid max-w-6xl gap-3 p-4 text-sm text-zinc-500 md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
+      <div className="content-container nav grid gap-3 text-sm text-zinc-500 md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
         <div>
           <h1 className="text-primary font-mono text-base font-bold">
             ~/

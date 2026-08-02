@@ -28,7 +28,7 @@ export function Navbar() {
     <header
       className={`sticky top-0 z-50 border-b transition-colors ${scrolled ? 'border-border bg-background/85 backdrop-blur-md' : 'bg-background border-transparent'}`}
     >
-      <div className="mx-auto max-w-6xl p-4">
+      <div className="content-container nav">
         <nav className="flex items-center justify-between" aria-label="desktop-menu">
           <HashLink to="/#home" aria-label="logo">
             <h1 className="text-primary font-mono text-base font-bold">

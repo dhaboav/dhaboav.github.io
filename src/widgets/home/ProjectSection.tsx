@@ -1,6 +1,6 @@
 import { projectsData } from '@/entities/project';
 import { useI18n } from '@/shared/lib';
-import { SectionHeading } from './SectionHEading';
+import { SectionHeading } from './SectionHeading';
 import {
   Card,
   CardContent,
@@ -8,26 +8,22 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/shared/ui/card';
-import { Button, buttonVariants } from '@/shared/ui';
+  Button,
+  buttonVariants,
+} from '@/shared/ui';
 import { ExternalLink } from 'lucide-react';
 
 export function ProjectSection() {
   const { lang, ui } = useI18n();
 
   return (
-    <section id="projects" className="bg-surface min-h-screen">
-      <div className="mx-auto max-w-6xl px-4 py-32 text-white">
+    <section id="projects" className="section-container alt">
+      <div className="content-container layout text-white">
         <SectionHeading
           index="03"
-          title={ui.projects.projectLabel}
+          title={ui.projects.projectHeader}
           note="things shipped in the open"
         />
-        <header className="mt-10">
-          <h2 className="text-3xl font-medium tracking-tight text-white">
-            {ui.projects.projectHeader}
-          </h2>
-        </header>
 
         <div className="mt-8 grid gap-4 lg:grid-cols-3" aria-label="project-collections">
           {projectsData.map((project, index) => (

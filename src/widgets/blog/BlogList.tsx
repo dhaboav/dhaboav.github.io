@@ -13,7 +13,7 @@ export function BlogList() {
   const isInitialPageWithoutSearch = currentPage === 1 && !searchQuery;
 
   return (
-    <section className="bg-background min-h-screen text-white">
+    <section className="section-container text-white">
       <header className="mx-auto max-w-6xl px-4 md:pt-36">
         <div
           className="grid-bg pointer-events-none absolute inset-0"

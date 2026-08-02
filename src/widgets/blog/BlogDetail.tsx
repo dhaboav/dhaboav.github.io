@@ -25,7 +25,7 @@ export function BlogDetail() {
   if (isLoading) {
     return (
       <section
-        className="text-muted-foreground bg-background min-h-screen animate-pulse pt-28 text-center font-mono font-bold"
+        className="text-muted-foreground section-container animate-pulse pt-28 text-center font-mono font-bold"
         role="status"
       >
         {ui.blog.blogDetailLoadPageLabel}
@@ -34,7 +34,7 @@ export function BlogDetail() {
   }
 
   return (
-    <section className="bg-background min-h-screen pt-28 text-white">
+    <section className="section-container pt-28 text-white">
       <article className="mx-auto max-w-3xl px-4">
         <header className="border-border mb-10 border-b pb-6">
           <span className="text-primary mb-3 block font-mono text-xs font-bold tracking-widest uppercase">
