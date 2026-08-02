@@ -25,7 +25,7 @@ export function ContactSection() {
     >
       <SectionHeading index="04" title={ui.contact.label} note="open a channel" />
 
-      <div className="mt-10 grid gap-6 px-4 lg:grid-cols-[1fr_1.2fr] lg:px-0">
+      <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_1.2fr] lg:px-0">
         <div className="flex flex-col gap-6">
           <p className="text-muted-foreground text-base leading-relaxed lg:text-lg">
             {ui.contact.description}
@@ -50,7 +50,10 @@ export function ContactSection() {
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
               <div className="grid gap-4 lg:grid-cols-2">
                 <div className="space-y-2">
-                  <Label htmlFor="name" className="text-muted-foreground">
+                  <Label
+                    htmlFor="name"
+                    className="text-muted-foreground font-mono text-xs tracking-[0.15em] uppercase"
+                  >
                     {ui.contact.namePlaceholder}
                   </Label>
                   <Input
@@ -63,7 +66,10 @@ export function ContactSection() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-muted-foreground">
+                  <Label
+                    htmlFor="email"
+                    className="text-muted-foreground font-mono text-xs tracking-[0.15em] uppercase"
+                  >
                     Email
                   </Label>
                   <Input
