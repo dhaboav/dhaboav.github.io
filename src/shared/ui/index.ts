@@ -2,3 +2,8 @@ export { NotFound } from './NotFound';
 export { Pagination } from './Pagination';
 export * from './select';
 export * from './button';
+export * from './card';
+export * from './label';
+export * from './spinner';
+export * from './input';
+export * from './textarea';

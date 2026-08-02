@@ -219,3 +219,7 @@ body::-webkit-scrollbar-thumb {
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
 }
+
+@utility section-pad {
+  padding-block: 5rem;
+}

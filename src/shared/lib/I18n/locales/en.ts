@@ -59,9 +59,8 @@ export const en: WebUiTranslations = {
   },
   contact: {
     label: 'Contact',
-    header: "Have an idea? Let's talk.",
     description:
-      "I'm currently seeking Backend Developer, Software Engineer, or IoT Engineer opportunities. Feel free to reach out.",
+      'Consulting, advisory work, speaking, or just a good systems argument — I read everything and reply within a couple of days.',
     namePlaceholder: 'Name',
     messagePlaceholder: 'Message',
     sendStatus: 'Send message',

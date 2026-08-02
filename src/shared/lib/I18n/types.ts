@@ -68,7 +68,6 @@ export interface BlogTranslations {
 
 export interface ContactTranslations {
   label: string;
-  header: string;
   description: string;
   namePlaceholder: string;
   messagePlaceholder: string;

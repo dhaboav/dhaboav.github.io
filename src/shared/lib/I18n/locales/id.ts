@@ -59,9 +59,8 @@ export const id: WebUiTranslations = {
   },
   contact: {
     label: 'Kontak',
-    header: 'Mari Terhubung',
     description:
-      'Saat ini saya terbuka untuk peluang sebagai Backend Developer, Software Engineer, maupun IoT Engineer. Jangan ragu untuk menghubungi saya.',
+      'Konsultasi, ngobrol, atau sekadar diskusi teknis teknologi — saya membaca semuanya dan akan membalas dalam beberapa hari.',
     namePlaceholder: 'Nama',
     messagePlaceholder: 'Pesan',
     sendStatus: 'Kirim pesan',

@@ -1,5 +1,15 @@
 import { useContact } from '@/features/contacts';
 import { useI18n } from '@/shared/lib';
+import { SectionHeading } from './SectionHEading';
+import { Button, Input, Label, Textarea, Card, CardContent } from '@/shared/ui';
+import { Send } from 'lucide-react';
+import { Spinner } from '@/shared/ui/spinner';
+
+const MEDSOS = [
+  { logo: 'bxl bx-github', href: 'https://github.com/dhaboav' },
+  { logo: 'bxl bx-linkedin', href: 'https://www.linkedin.com/in/dhaboav' },
+  { logo: 'bxl bx-instagram', href: 'https://www.instagram.com/dhaboav' },
+];
 
 export function ContactSection() {
   const { ui } = useI18n();
@@ -9,81 +19,105 @@ export function ContactSection() {
   });
 
   return (
-    <section id="contact" className="min-h-screen bg-black py-32 text-white md:py-40 lg:py-56">
-      <div className="container mx-auto px-4">
-        {/* HEADER */}
-        <div className="mx-auto mb-12 max-w-md text-center sm:mb-14 md:mb-16">
-          <p className="mb-3 font-mono text-[10px] tracking-wider text-zinc-500 uppercase sm:text-xs">
-            {ui.contact.label}
+    <section
+      id="contact"
+      className="bg-background mx-auto min-h-screen max-w-6xl px-4 py-32 text-white"
+    >
+      <SectionHeading index="04" title={ui.contact.label} note="open a channel" />
+
+      <div className="mt-10 grid gap-6 px-4 lg:grid-cols-[1fr_1.2fr] lg:px-0">
+        <div className="flex flex-col gap-6">
+          <p className="text-muted-foreground text-base leading-relaxed lg:text-lg">
+            {ui.contact.description}
           </p>
-
-          <h2 className="mb-3 text-xl font-medium tracking-tight sm:text-2xl md:text-3xl">
-            {ui.contact.header}
-          </h2>
-
-          <p className="text-sm text-zinc-400 sm:text-base">{ui.contact.description}</p>
+          <div className="flex gap-6 text-white/80">
+            {MEDSOS.map(({ logo, href }) => (
+              <a
+                key={logo}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-primary text-2xl transition-colors"
+              >
+                <i className={logo} />
+              </a>
+            ))}
+          </div>
         </div>
 
-        {/* FORM */}
-        <div className="mx-auto max-w-sm sm:max-w-md">
-          <form ref={formRef} onSubmit={handleSubmit} className="mb-10 space-y-5 sm:space-y-6">
-            <input
-              type="text"
-              name="name"
-              placeholder={ui.contact.namePlaceholder}
-              required
-              disabled={isLoading}
-              className="focus:border-primary w-full border-b border-zinc-600 bg-transparent py-3 text-white placeholder:text-zinc-500 focus:outline-none disabled:opacity-50"
-            />
-
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              required
-              disabled={isLoading}
-              className="focus:border-primary w-full border-b border-zinc-600 bg-transparent py-3 text-white placeholder:text-zinc-500 focus:outline-none disabled:opacity-50"
-            />
-
-            <textarea
-              name="message"
-              placeholder={ui.contact.messagePlaceholder}
-              rows={4}
-              required
-              disabled={isLoading}
-              className="focus:border-primary w-full resize-none border-b border-zinc-600 bg-transparent py-3 text-white placeholder:text-zinc-500 focus:outline-none disabled:opacity-50"
-            />
-
-            <button
-              type="submit"
-              disabled={isLoading}
-              className={`flex w-full items-center justify-center gap-2 rounded-md bg-white py-3 text-sm font-medium text-black transition-all ${
-                isLoading
-                  ? 'cursor-not-allowed opacity-70'
-                  : 'hover:bg-white/90 active:scale-[0.99]'
-              }`}
-            >
-              {isLoading && (
-                <svg className="h-4 w-4 animate-spin" fill="none" viewBox="0 0 24 24">
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="currentColor"
-                    strokeWidth="4"
-                    className="opacity-25"
+        <Card>
+          <CardContent className="px-4 lg:p-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
+              <div className="grid gap-4 lg:grid-cols-2">
+                <div className="space-y-2">
+                  <Label htmlFor="name" className="text-muted-foreground">
+                    {ui.contact.namePlaceholder}
+                  </Label>
+                  <Input
+                    id="name"
+                    name="name"
+                    placeholder={ui.contact.namePlaceholder}
+                    required
+                    disabled={isLoading}
+                    className="border-border focus:border-primary placeholder:text-muted-foreground py-6 focus-visible:ring-0"
                   />
-                  <path d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" className="opacity-75" />
-                </svg>
-              )}
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="email" className="text-muted-foreground">
+                    Email
+                  </Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="email@domain.com"
+                    required
+                    disabled={isLoading}
+                    className="border-border focus:border-primary placeholder:text-muted-foreground py-6 focus-visible:ring-0"
+                  />
+                </div>
+              </div>
 
-              <span>{isLoading ? ui.contact.loadingStatus : ui.contact.sendStatus}</span>
-            </button>
-          </form>
-        </div>
+              <div className="space-y-2">
+                <Label
+                  htmlFor="message"
+                  className="text-muted-foreground font-mono text-xs tracking-[0.15em] uppercase"
+                >
+                  {ui.contact.messagePlaceholder}
+                </Label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  disabled={isLoading}
+                  required
+                  rows={5}
+                  placeholder={ui.contact.messagePlaceholder}
+                  className="border-border focus:border-primary placeholder:text-muted-foreground bg-background min-h-30 resize-none focus-visible:ring-0"
+                />
+              </div>
+
+              <Button
+                type="submit"
+                disabled={isLoading}
+                className={`flex w-full items-center justify-center gap-2 p-6 text-sm font-medium text-black transition-all ${isLoading && 'cursor-not-allowed opacity-70'}`}
+              >
+                {isLoading ? (
+                  <>
+                    <Spinner />
+                    <span>{ui.contact.loadingStatus}</span>
+                  </>
+                ) : (
+                  <>
+                    <Send />
+                    <span>{ui.contact.sendStatus}</span>
+                  </>
+                )}
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
       </div>
 
-      {/* TOAST */}
       <div
         className={`fixed right-6 bottom-6 z-50 rounded-lg border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm shadow-lg transition-all ${
           notif.show ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-2 opacity-0'
