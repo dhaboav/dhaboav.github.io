@@ -1,56 +1,108 @@
 import { projectsData } from '@/entities/project';
 import { useI18n } from '@/shared/lib';
+import { SectionHeading } from './SectionHEading';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/shared/ui/card';
+import { Button, buttonVariants } from '@/shared/ui';
+import { ExternalLink } from 'lucide-react';
 
 export function ProjectSection() {
   const { lang, ui } = useI18n();
 
   return (
-    <section id="projects" className="min-h-screen bg-black py-32">
-      <div className="mx-auto max-w-6xl px-4">
-        <header className="mb-2">
-          <p className="text-primary/80 mb-6 font-mono text-[0.625rem] tracking-[0.3em] uppercase">
-            [ 02 ] {ui.projects.projectLabel}
-          </p>
-
+    <section id="projects" className="bg-surface min-h-screen">
+      <div className="mx-auto max-w-6xl px-4 py-32 text-white">
+        <SectionHeading
+          index="03"
+          title={ui.projects.projectLabel}
+          note="things shipped in the open"
+        />
+        <header className="mt-10">
           <h2 className="text-3xl font-medium tracking-tight text-white">
             {ui.projects.projectHeader}
           </h2>
         </header>
 
-        <div
-          className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
-          aria-label="project-collections"
-        >
+        <div className="mt-8 grid gap-4 lg:grid-cols-3" aria-label="project-collections">
           {projectsData.map((project, index) => (
-            <article
+            <ProjectCard
               key={index}
-              className="grid grid-rows-[12rem_auto] overflow-hidden rounded-xl border border-white/30"
-            >
-              <img
-                src={project.image}
-                alt={project.text[lang].title}
-                className="h-full w-full bg-white object-cover"
-              />
-              <div className="grid grid-rows-[auto_1fr_auto] bg-black p-4">
-                <h1 className="mb-2 text-lg font-semibold text-white lg:truncate lg:text-sm">
-                  {project.text[lang].title}
-                </h1>
-                <p className="mb-4 text-sm font-medium text-white/45 lg:text-xs">
-                  {project.text[lang].description}
-                </p>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="border-primary hover:bg-primary block w-full rounded-md border py-2 text-center text-xs font-medium text-white transition-colors"
-                >
-                  {ui.projects.gitHubRepoLabel}
-                </a>
-              </div>
-            </article>
+              index={index}
+              title={project.text[lang].title}
+              description={project.text[lang].description}
+              repo={project.link}
+            />
           ))}
         </div>
       </div>
     </section>
+  );
+}
+
+interface ProjectCardProps {
+  index: number;
+  title: string;
+  description: string;
+  repo: string;
+  link?: string;
+}
+
+function ProjectCard({ index, title, description, repo, link }: ProjectCardProps) {
+  const test = ['test1', 'test2', 'test3'];
+  return (
+    <Card key={index} className="lift border-border bg-card flex flex-col rounded-xl border">
+      <CardHeader className="flex-1">
+        <CardTitle className="font-mono text-base font-bold">
+          <span className="text-primary">./</span>
+          {title}
+        </CardTitle>
+        <CardDescription className="text-muted-foreground text-sm leading-relaxed">
+          {description}
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className="flex flex-row flex-wrap items-center gap-2">
+          {test.map((item, index) => (
+            <span
+              key={index}
+              className="bg-secondary text-secondary-foreground rounded px-2 py-1 font-mono text-xs"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+      </CardContent>
+      <CardFooter className={`bg-card grid ${link ? 'grid-cols-2' : 'grid-cols-1'} gap-2 border-0`}>
+        <a
+          href={repo}
+          target="_blank"
+          rel="noreferrer"
+          className={`hover:border-primary flex h-11 flex-row items-center justify-center gap-2 bg-transparent font-mono text-xs hover:bg-transparent ${buttonVariants(
+            {
+              variant: 'outline',
+            },
+          )}`}
+        >
+          <i className="bxl bx-github" />
+          Repo
+        </a>
+
+        {link && (
+          <Button
+            className="hover:border-primary flex h-11 flex-row gap-2 bg-transparent font-mono text-xs hover:bg-transparent"
+            variant="outline"
+          >
+            <ExternalLink />
+            Demo
+          </Button>
+        )}
+      </CardFooter>
+    </Card>
   );
 }
