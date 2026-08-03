@@ -10,80 +10,83 @@ export const languages = [
   { flag: '🇮🇩', label: 'id', full: 'Indonesia' },
 ] as const;
 
-export interface NotfoundTranslations {
-  pageTitle: string;
-  pageDesc: string;
-  buttonLabel: string;
-}
-
-export interface NavbarTranslations {
-  home: string;
-  about: string;
-  projects: string;
-  blogTeaser: string;
-  blogArchive: string;
-  contact: string;
-}
-
-export interface HeroTranslations {
-  greet: string;
-  tagline: string;
-  viewProjectLabel: string;
-  resumeFile: string;
-}
-
-export interface AboutTranslations {
+interface Navbar {
   aboutLabel: string;
-  aboutMeHeader: string;
-  aboutMeParagraph: string;
-  techStackLabel: string;
-  experienceLabel: string;
-}
-
-export interface ProjectsTranslations {
   projectLabel: string;
-  projectHeader: string;
-  gitHubRepoLabel: string;
-}
-
-export interface BlogTranslations {
+  contactLabel: string;
   blogLabel: string;
-  blogHeader: {
-    word1: string;
-    word2: string;
+}
+
+interface HeroSection {
+  projectLabel: string;
+  resumeLabel: string;
+  blogLabel: string;
+}
+
+interface AboutSection {
+  sectionTitle: string;
+  subtitle: string;
+  labels: {
+    basedIn: string;
+    focus: string;
+    currently: string;
+    openTo: string;
   };
-  blogDescription: string;
-  blogAllButton: string;
-  blogLinkButton: string;
-  blogArchiveLabel: string;
-  blogArchiveSearchLabel: string;
-  blogNotFoundLabel: string;
-  blogCardLinkLabel: string;
-  blogDetailBackLabel: string;
-  blogDetailAuthorLabel: string;
-  blogDetailAuthorDescLabel: string;
-  blogDetailAuthorLinkLabel: string;
-  blogDetailLoadPageLabel: string;
 }
 
-export interface ContactTranslations {
-  label: string;
-  description: string;
-  namePlaceholder: string;
-  messagePlaceholder: string;
-  sendStatus: string;
-  loadingStatus: string;
-  successStatus: string;
-  failureStatus: string;
+interface ProjectSection {
+  sectionTitle: string;
+  subtitle: string;
+  buttonLabels: {
+    repoLabel: string;
+    webLinkLabel: string;
+  };
 }
 
-export interface WebUiTranslations {
-  webTitle: string;
-  notfound: NotfoundTranslations;
-  navbar: NavbarTranslations;
-  hero: HeroTranslations;
-  about: AboutTranslations;
-  projects: ProjectsTranslations;
-  blog: BlogTranslations;
-  contact: ContactTranslations;
+interface ContactSection {
+  sectionTitle: string;
+  subtitle: string;
+  formLabels: {
+    name: string;
+    message: string;
+  };
+  placeholders: {
+    name: string;
+    email: string;
+    message: string;
+  };
+  submitButton: string;
+}
+
+interface NotfoundPage {
+  sectionTitle: string;
+  subtitle: string;
+  backButtonLabel: string;
+}
+
+interface BlogPage {
+  headerTag: string;
+  headerTitle: {
+    part1: string;
+    part2: string;
+  };
+  searchPlaceholder: string;
+  noResultLabel: string;
+  readButtonLabel: string;
+}
+
+interface BlogDetail {
+  loadingPageLabel: string;
+  backButtonLabel: string;
+}
+
+export interface Translations {
+  navbar: Navbar;
+  hero: HeroSection;
+  about: AboutSection;
+  project: ProjectSection;
+  contact: ContactSection;
+  notfoundPage: NotfoundPage;
+  blogPage: BlogPage;
+  blogDetail: BlogDetail;
 }

@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 
 export function Navbar() {
   const { ui, lang, setLang } = useI18n();
+  const { aboutLabel, projectLabel, contactLabel, blogLabel } = ui.navbar;
   const { isOpen, menuRef, buttonRef, toggleMenu, closeMenu } = useNavbar();
   const [scrolled, setScrolled] = useState(false);
 
@@ -18,10 +19,10 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
-    { href: '/#about', label: ui.navbar.about },
-    { href: '/#projects', label: ui.navbar.projects },
-    { href: '/#contact', label: ui.navbar.contact },
-    { href: '/blog', label: 'Blogs' },
+    { href: '/#about', label: aboutLabel },
+    { href: '/#projects', label: projectLabel },
+    { href: '/#contact', label: contactLabel },
+    { href: '/blog', label: blogLabel },
   ];
 
   return (

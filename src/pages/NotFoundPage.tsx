@@ -3,11 +3,6 @@ import { NotFound } from '@/shared/ui';
 
 export function NotFoundPage() {
   const { ui } = useI18n();
-  return (
-    <NotFound
-      pageTitle={ui.notfound.pageTitle}
-      pageDesc={ui.notfound.pageDesc}
-      buttonLabel={ui.notfound.buttonLabel}
-    />
-  );
+  const { sectionTitle, subtitle, backButtonLabel } = ui.notfoundPage;
+  return <NotFound pageTitle={sectionTitle} pageDesc={subtitle} buttonLabel={backButtonLabel} />;
 }

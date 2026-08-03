@@ -1,0 +1,64 @@
+{
+  "navbar": {
+    "aboutLabel": "About",
+    "projectLabel": "Projects",
+    "contactLabel": "Contact",
+    "blogLabel": "Blogs"
+  },
+  "hero": {
+    "projectLabel": "View Work",
+    "resumeLabel": "Resume",
+    "blogLabel": "Read Blog"
+  },
+  "about": {
+    "sectionTitle": "About me",
+    "subtitle": "who is behind the commits",
+    "labels": {
+      "basedIn": "based in",
+      "focus": "focus",
+      "currently": "currently",
+      "openTo": "open to"
+    }
+  },
+  "project": {
+    "sectionTitle": "Projects",
+    "subtitle": "things shipped in the open",
+    "buttonLabels": {
+      "repoLabel": "Code",
+      "webLinkLabel": "Demo"
+    }
+  },
+  "contact": {
+    "sectionTitle": "Contact",
+    "subtitle": "open a channel",
+    "formLabels": {
+      "name": "name",
+      "message": "message"
+    },
+    "placeholders": {
+      "name": "Your name",
+      "email": "your@email.com",
+      "message": "What are you building?"
+    },
+    "submitButton": "Send Message"
+  },
+  "notfoundPage": {
+    "sectionTitle": "Page not found",
+    "subtitle": "Oops! Page not found. We can't seem to find the page you're looking for. Go back to home.",
+    "backButtonLabel": "Back to Home"
+  },
+  "blogPage": {
+    "headerTag": "Archive",
+    "headerTitle": {
+      "part1": "Learning",
+      "part2": "Notes"
+    },
+    "searchPlaceholder": "Type to search",
+    "noResultLabel": "No results found for",
+    "readButtonLabel": "Read Article"
+  },
+  "blogDetail": {
+    "loadingPageLabel": "Loading the article",
+    "backButtonLabel": "Back to Articles"
+  }
+}

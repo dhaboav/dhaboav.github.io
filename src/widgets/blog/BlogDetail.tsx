@@ -16,9 +16,9 @@ export function BlogDetail() {
   if (isError || !currentBlog)
     return (
       <NotFound
-        pageTitle={ui.notfound.pageTitle}
-        pageDesc={ui.notfound.pageDesc}
-        buttonLabel={ui.notfound.buttonLabel}
+        pageTitle={ui.notfoundPage.sectionTitle}
+        pageDesc={ui.notfoundPage.subtitle}
+        buttonLabel={ui.notfoundPage.backButtonLabel}
       />
     );
 
@@ -28,7 +28,7 @@ export function BlogDetail() {
         className="text-muted-foreground section-container animate-pulse pt-28 text-center font-mono font-bold"
         role="status"
       >
-        {ui.blog.blogDetailLoadPageLabel}
+        {ui.blogDetail.loadingPageLabel}...
       </section>
     );
   }
@@ -57,7 +57,7 @@ export function BlogDetail() {
             to="/blog"
             className="text-primary link-underline font-mono text-xs transition-colors"
           >
-            ← {ui.blog.blogDetailBackLabel}
+            ← {ui.blogDetail.backButtonLabel}
           </Link>
         </footer>
       </article>

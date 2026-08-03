@@ -1,5 +1,5 @@
-import { id } from './id';
-import { en } from './en';
-import type { SupportedLang, WebUiTranslations } from '../types';
+import id from './id.json';
+import en from './en.json';
+import type { SupportedLang, Translations } from '../types';
 
-export const UiTranslations: Record<SupportedLang, WebUiTranslations> = { id, en };
+export const UiTranslations: Record<SupportedLang, Translations> = { id, en };

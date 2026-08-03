@@ -5,9 +5,8 @@ import { buttonVariants } from '@/shared/ui';
 import { HashLink } from 'react-router-hash-link';
 
 export function HeroSection() {
-  const {
-    ui: { hero },
-  } = useI18n();
+  const { ui } = useI18n();
+  const { projectLabel, resumeLabel, blogLabel } = ui.hero;
   const techStack = ['Python', 'Docker', 'FastAPI', 'OpenCV', 'MySQL', 'React', 'Tailwind'];
   const authorSlug = AUTHOR_NAME.toLowerCase().replace(' ', '-');
 
@@ -20,16 +19,14 @@ export function HeroSection() {
       />
       <div className="content-container layout relative grid items-center gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-0">
         <div className="space-y-4">
-          <p className="text-primary font-mono text-xs tracking-[0.2em] uppercase">
-            Software Engineer · Indonesia
-          </p>
+          <p className="text-primary font-mono text-xs tracking-[0.2em] uppercase">test · test</p>
 
           <h1 className="text-4xl font-extrabold tracking-tight text-white lg:text-6xl">
             {AUTHOR_NAME}.
           </h1>
 
           <p className="text-muted-foreground max-w-xl text-base leading-relaxed lg:text-lg">
-            {hero.tagline}
+            test
           </p>
 
           <div className="flex flex-col gap-2 md:flex-row">
@@ -37,21 +34,21 @@ export function HeroSection() {
               to="/#projects"
               className={`${buttonVariants({ variant: 'default' })} h-12 px-6`}
             >
-              {hero.viewProjectLabel}
+              {projectLabel}
               <ArrowRight />
             </HashLink>
             <a
-              href={`other/${hero.resumeFile}.pdf`}
+              href={`other/resume-en.pdf`}
               download={`Resume ${AUTHOR_NAME}`}
               className={`${buttonVariants({ variant: 'secondary' })} h-12 px-6`}
             >
-              <FileText className="h-4 w-4" /> Resume
+              <FileText className="h-4 w-4" /> {resumeLabel}
             </a>
             <HashLink
               to="/blog"
               className={`${buttonVariants({ variant: 'outline' })} h-12 px-6 text-white`}
             >
-              <BookOpen /> Read Blog
+              <BookOpen /> {blogLabel}
             </HashLink>
           </div>
         </div>
@@ -85,7 +82,7 @@ function TerminalCard({ techStack, authorSlug }: TerminalCardProps) {
           <p className="text-muted-foreground">
             <span className="text-primary">$</span> whoami
           </p>
-          <p>{authorSlug} — building resilient systems since 2018</p>
+          <p>{authorSlug} — test</p>
         </div>
 
         <div>

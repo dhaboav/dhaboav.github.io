@@ -1,0 +1,64 @@
+{
+  "navbar": {
+    "aboutLabel": "Tentang",
+    "projectLabel": "Proyek",
+    "contactLabel": "Kontak",
+    "blogLabel": "Blog"
+  },
+  "hero": {
+    "projectLabel": "Lihat Proyek",
+    "resumeLabel": "Resume",
+    "blogLabel": "Baca Artikel"
+  },
+  "about": {
+    "sectionTitle": "Tentang saya",
+    "subtitle": "profil kreator",
+    "labels": {
+      "basedIn": "lokasi",
+      "focus": "fokus",
+      "currently": "saat ini",
+      "openTo": "terbuka untuk"
+    }
+  },
+  "project": {
+    "sectionTitle": "Proyek",
+    "subtitle": "proyek open source",
+    "buttonLabels": {
+      "repoLabel": "Kode",
+      "webLinkLabel": "Demo"
+    }
+  },
+  "contact": {
+    "sectionTitle": "Kontak",
+    "subtitle": "hubungi saya",
+    "formLabels": {
+      "name": "nama",
+      "message": "pesan"
+    },
+    "placeholders": {
+      "name": "Nama anda",
+      "email": "email@anda.com",
+      "message": "Apa yang sedang anda pikirkan?"
+    },
+    "submitButton": "Kirim Pesan"
+  },
+  "notfoundPage": {
+    "sectionTitle": "Halaman tidak ditemukan",
+    "subtitle": "Ups! Halaman tidak ditemukan. Kami tidak dapat menemukan halaman yang Anda cari. Kembali ke beranda.",
+    "backButtonLabel": "Kembali ke Beranda"
+  },
+  "blogPage": {
+    "headerTag": "Arsip",
+    "headerTitle": {
+      "part1": "Catatan",
+      "part2": "Pembelajaran"
+    },
+    "searchPlaceholder": "Cari",
+    "noResultLabel": "Tidak ada hasil untuk",
+    "readButtonLabel": "Baca Artikel"
+  },
+  "blogDetail": {
+    "loadingPageLabel": "Memuat artikel",
+    "backButtonLabel": "Kembali ke halaman utama"
+  }
+}

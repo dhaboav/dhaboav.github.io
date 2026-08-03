@@ -12,20 +12,19 @@ const MEDSOS = [
 
 export function ContactSection() {
   const { ui } = useI18n();
+  const { sectionTitle, subtitle, formLabels, placeholders, submitButton } = ui.contact;
   const { formRef, isLoading, notif, handleSubmit } = useContact({
-    successMessage: ui.contact.successStatus,
-    failureMessage: ui.contact.failureStatus,
+    successMessage: 's',
+    failureMessage: 'f',
   });
 
   return (
     <section id="contact" className="section-container">
       <div className="content-container layout text-white">
-        <SectionHeading index="04" title={ui.contact.label} note="open a channel" />
+        <SectionHeading index="04" title={sectionTitle} note={subtitle} />
         <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_1.2fr] lg:px-0">
           <div className="flex flex-col gap-6">
-            <p className="text-muted-foreground text-base leading-relaxed lg:text-lg">
-              {ui.contact.description}
-            </p>
+            <p className="text-muted-foreground text-base leading-relaxed lg:text-lg">test</p>
             <div className="flex gap-6 text-white/80">
               {MEDSOS.map(({ logo, href }) => (
                 <a
@@ -50,12 +49,12 @@ export function ContactSection() {
                       htmlFor="name"
                       className="text-muted-foreground font-mono text-xs tracking-[0.15em] uppercase"
                     >
-                      {ui.contact.namePlaceholder}
+                      {formLabels.name}
                     </Label>
                     <Input
                       id="name"
                       name="name"
-                      placeholder={ui.contact.namePlaceholder}
+                      placeholder={placeholders.name}
                       required
                       disabled={isLoading}
                       className="border-border focus:border-primary placeholder:text-muted-foreground py-6 focus-visible:ring-0"
@@ -72,7 +71,7 @@ export function ContactSection() {
                       id="email"
                       name="email"
                       type="email"
-                      placeholder="email@domain.com"
+                      placeholder={placeholders.email}
                       required
                       disabled={isLoading}
                       className="border-border focus:border-primary placeholder:text-muted-foreground py-6 focus-visible:ring-0"
@@ -85,7 +84,7 @@ export function ContactSection() {
                     htmlFor="message"
                     className="text-muted-foreground font-mono text-xs tracking-[0.15em] uppercase"
                   >
-                    {ui.contact.messagePlaceholder}
+                    {formLabels.message}
                   </Label>
                   <Textarea
                     id="message"
@@ -93,7 +92,7 @@ export function ContactSection() {
                     disabled={isLoading}
                     required
                     rows={5}
-                    placeholder={ui.contact.messagePlaceholder}
+                    placeholder={placeholders.message}
                     className="border-border focus:border-primary placeholder:text-muted-foreground bg-background min-h-30 resize-none focus-visible:ring-0"
                   />
                 </div>
@@ -106,12 +105,12 @@ export function ContactSection() {
                   {isLoading ? (
                     <>
                       <Spinner />
-                      <span>{ui.contact.loadingStatus}</span>
+                      <span>s</span>
                     </>
                   ) : (
                     <>
                       <Send />
-                      <span>{ui.contact.sendStatus}</span>
+                      <span>{submitButton}</span>
                     </>
                   )}
                 </Button>
