@@ -5,8 +5,9 @@ import { buttonVariants } from '@/shared/ui';
 import { HashLink } from 'react-router-hash-link';
 
 export function HeroSection() {
-  const { ui } = useI18n();
+  const { ui, data } = useI18n();
   const { projectLabel, resumeLabel, blogLabel } = ui.hero;
+  const t = data.hero;
   const techStack = ['Python', 'Docker', 'FastAPI', 'OpenCV', 'MySQL', 'React', 'Tailwind'];
   const authorSlug = AUTHOR_NAME.toLowerCase().replace(' ', '-');
 
@@ -19,14 +20,16 @@ export function HeroSection() {
       />
       <div className="content-container layout relative grid items-center gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-0">
         <div className="space-y-4">
-          <p className="text-primary font-mono text-xs tracking-[0.2em] uppercase">test · test</p>
+          <p className="text-primary font-mono text-xs tracking-[0.2em] uppercase">
+            {t.tag.jobTitle} · {t.tag.location}{' '}
+          </p>
 
           <h1 className="text-4xl font-extrabold tracking-tight text-white lg:text-6xl">
             {AUTHOR_NAME}.
           </h1>
 
           <p className="text-muted-foreground max-w-xl text-base leading-relaxed lg:text-lg">
-            test
+            {t.subtitle}
           </p>
 
           <div className="flex flex-col gap-2 md:flex-row">
@@ -38,7 +41,7 @@ export function HeroSection() {
               <ArrowRight />
             </HashLink>
             <a
-              href={`other/resume-en.pdf`}
+              href={`other/${t.resumeLink}.pdf`}
               download={`Resume ${AUTHOR_NAME}`}
               className={`${buttonVariants({ variant: 'secondary' })} h-12 px-6`}
             >

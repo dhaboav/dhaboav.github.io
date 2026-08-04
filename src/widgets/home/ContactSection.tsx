@@ -11,8 +11,9 @@ const MEDSOS = [
 ];
 
 export function ContactSection() {
-  const { ui } = useI18n();
+  const { ui, data } = useI18n();
   const { sectionTitle, subtitle, formLabels, placeholders, submitButton } = ui.contact;
+  const t = data.contact;
   const { formRef, isLoading, notif, handleSubmit } = useContact({
     successMessage: 's',
     failureMessage: 'f',
@@ -24,7 +25,9 @@ export function ContactSection() {
         <SectionHeading index="04" title={sectionTitle} note={subtitle} />
         <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_1.2fr] lg:px-0">
           <div className="flex flex-col gap-6">
-            <p className="text-muted-foreground text-base leading-relaxed lg:text-lg">test</p>
+            <p className="text-muted-foreground text-base leading-relaxed lg:text-lg">
+              {t.description}
+            </p>
             <div className="flex gap-6 text-white/80">
               {MEDSOS.map(({ logo, href }) => (
                 <a

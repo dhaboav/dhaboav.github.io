@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { LangContext } from './langContext';
 import { UiTranslations } from './locales';
+import { appData } from '@/data';
 
 export const useI18n = () => {
   const ctx = useContext(LangContext);
@@ -10,5 +11,6 @@ export const useI18n = () => {
     lang: ctx.lang,
     setLang: ctx.setLang,
     ui: UiTranslations[ctx.lang],
+    data: appData[ctx.lang],
   };
 };

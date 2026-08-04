@@ -3,13 +3,14 @@ import { SectionHeading } from './SectionHeading';
 import { AUTHOR_NAME } from '@/shared/config';
 
 export function AboutSection() {
-  const { ui } = useI18n();
-  const { sectionTitle, subtitle, labels } = ui.about;
+  const { ui, data } = useI18n();
+  const { subtitle, sectionTitle, labels } = ui.about;
+  const t = data.about;
   const about = [
-    { label: labels.basedIn, value: 'test' },
-    { label: labels.focus, value: 'test' },
-    { label: labels.currently, value: 'test' },
-    { label: labels.openTo, value: 'test' },
+    { label: labels.basedIn, value: t.data.basedIn },
+    { label: labels.focus, value: t.data.focus },
+    { label: labels.currently, value: t.data.currently },
+    { label: labels.openTo, value: t.data.openTo },
   ];
 
   return (
@@ -20,7 +21,7 @@ export function AboutSection() {
           <div aria-label="profile">
             <img
               src="/img/profile.png"
-              alt="dhabov"
+              alt="dhaboav"
               loading="lazy"
               width={640}
               height={480}
@@ -33,10 +34,9 @@ export function AboutSection() {
           </div>
 
           <div>
-            <h2 className="mb-2 text-3xl font-medium tracking-tight text-white">test</h2>
-
+            <h2 className="mb-2 text-3xl font-medium tracking-tight text-white">{t.subtitle}</h2>
             <div className="text-muted-foreground mb-4 text-base leading-relaxed">
-              <p>test</p>
+              <p>{t.description}</p>
             </div>
 
             <dl className="mt-8 grid gap-3 md:grid-cols-2">

@@ -1,7 +1,7 @@
 import { useBlogList } from '@/features/blog';
 import { Pagination } from '@/shared/ui';
 import { useI18n, formatDate, usePagination } from '@/shared/lib';
-import { BlogCard } from '@/entities/blog';
+import { BlogCard } from './BlogCard';
 
 export function BlogList() {
   const { ui, lang } = useI18n();

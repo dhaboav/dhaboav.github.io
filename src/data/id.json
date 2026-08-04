@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "tag": {
+      "jobTitle": "Fullstack Developer",
+      "location": "Indonesia"
+    },
+    "subtitle": "Backend Developer dengan pengalaman mengembangkan REST API menggunakan FastAPI, aplikasi computer vision berbasis OpenCV, serta sistem IoT menggunakan Raspberry Pi dan ESP32.",
+    "resumeLink": "resume-id"
+  },
+  "about": {
+    "subtitle": "Membangun dengan Tujuan",
+    "description": "Saya senang menyelesaikan permasalahan nyata melalui pengembangan backend, computer vision, dan IoT. Proyek yang saya kerjakan mencakup REST API menggunakan FastAPI hingga sistem embedded berbasis Raspberry Pi dan ESP32. Di luar pemrograman, saya menikmati membaca buku, menonton anime, dan bermain game strategi.",
+    "data": {
+      "basedIn": "Banyuwangi, Indonesia",
+      "focus": "",
+      "currently": "",
+      "openTo": ""
+    }
+  },
+  "project": [
+    {
+      "title": "TrueFormat",
+      "description": "Layanan backend menggunakan FastAPI dan OpenCV untuk memvalidasi pas foto secara otomatis dengan teknologi computer vision.",
+      "techStack": ["OpenCV", "FastAPI"],
+      "repoLink": "https://github.com/dhaboav/trueformat-backend"
+    },
+    {
+      "title": "Aplikasi Manajemen Buku",
+      "description": "Aplikasi web fullstack menggunakan React, FastAPI, MySQL, dan Docker untuk mengelola koleksi buku pribadi.",
+      "techStack": ["React", "FastAPI", "Docker"],
+      "repoLink": "https://github.com/dhaboav/bookshelf"
+    },
+    {
+      "title": "Sistem Kendali Multi Robot",
+      "description": "Sistem kendali berbasis Python untuk memantau dan mengendalikan beberapa robot melalui jaringan lokal.",
+      "techStack": ["Python"],
+      "repoLink": "https://github.com/dhaboav/robot-basestation"
+    }
+  ],
+  "contact": {
+    "description": "Konsultasi, ngobrol, atau sekadar diskusi teknis teknologi — saya membaca semuanya dan akan membalas dalam beberapa hari."
+  }
+}

@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { blogData } from '@/entities/blog';
+import { blogData } from '@/data';
 
 export function useBlog() {
   const recentBlogs = useMemo(() => {

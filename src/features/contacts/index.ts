@@ -1,1 +1,1 @@
-export { useContact } from './hooks/useContact';
+export { useContact } from './useContact';

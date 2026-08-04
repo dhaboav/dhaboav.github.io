@@ -1,4 +1,3 @@
-import { projectsData } from '@/entities/project';
 import { useI18n } from '@/shared/lib';
 import { SectionHeading } from './SectionHeading';
 import {
@@ -14,26 +13,26 @@ import {
 import { ExternalLink } from 'lucide-react';
 
 export function ProjectSection() {
-  const { lang, ui } = useI18n();
+  const { ui, data } = useI18n();
   const { sectionTitle, subtitle, buttonLabels } = ui.project;
 
   return (
     <section id="projects" className="section-container alt">
       <div className="content-container layout text-white">
         <SectionHeading index="03" title={sectionTitle} note={subtitle} />
-
         <div className="mt-8 grid gap-4 lg:grid-cols-3" aria-label="project-collections">
-          {projectsData.map((project, index) => (
+          {data.project.map((project, index) => (
             <ProjectCard
               key={index}
               index={index}
-              title={project.text[lang].title}
-              description={project.text[lang].description}
-              repo={project.link}
+              title={project.title}
+              description={project.description}
+              repo={project.repoLink}
               labels={{
                 repoButton: buttonLabels.repoLabel,
                 webButton: buttonLabels.webLinkLabel,
               }}
+              techStack={project.techStack}
             />
           ))}
         </div>
@@ -50,12 +49,20 @@ interface ProjectCardProps {
     repoButton: string;
     webButton: string;
   };
+  techStack: string[];
   repo: string;
   link?: string;
 }
 
-function ProjectCard({ index, title, description, labels, repo, link }: ProjectCardProps) {
-  const test = ['test1', 'test2', 'test3'];
+function ProjectCard({
+  index,
+  title,
+  description,
+  labels,
+  repo,
+  link,
+  techStack,
+}: ProjectCardProps) {
   return (
     <Card key={index} className="lift border-border bg-card flex flex-col rounded-xl border">
       <CardHeader className="flex-1">
@@ -69,7 +76,7 @@ function ProjectCard({ index, title, description, labels, repo, link }: ProjectC
       </CardHeader>
       <CardContent>
         <div className="flex flex-row flex-wrap items-center gap-2">
-          {test.map((item, index) => (
+          {techStack.map((item, index) => (
             <span
               key={index}
               className="bg-secondary text-secondary-foreground rounded px-2 py-1 font-mono text-xs"
