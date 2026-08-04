@@ -36,10 +36,10 @@ and scalable.
 ```text
 src/
 ├── app/          # Application setup
+├── data/         # Application data
 ├── pages/        # Website pages
 ├── widgets/      # Large page sections
 ├── features/     # User actions and features
-├── entities/     # Main data and business logic
 └── shared/       # Reusable components and utilities
 ```
 
@@ -48,10 +48,10 @@ src/
 | Layer    | Description                               |
 | -------- | ----------------------------------------- |
 | app      | Application configuration and providers   |
+| data     | Application dynamic data                  |
 | pages    | Complete website pages                    |
 | widgets  | Reusable page sections                    |
 | features | User interactions and functionality       |
-| entities | Core data models                          |
 | shared   | Common components, helpers, and utilities |
 
 ### Why FSD?
@@ -83,11 +83,9 @@ npm run deploy    # Deploy to GitHub Pages
 
 ## ✏️ Customization
 
-- `src/shared/config/authorName.ts` → Update your name
-- `src/entities/blog/data.ts` → Manage blogs, tags, and publish dates
-- `src/entities/experience/data.ts` → Manage work experiences, internships, and activities
-- `src/entities/project/data.ts` → Manage projects, descriptions, repositories, and demo links
-- `src/shared/lib/i18n/locales/` → Manage translations and multilingual content
+- `src/shared/config/authorName.ts` → Update your name.
+- `src/data/` → Manage blogs, and translations of app data.
+- `src/shared/lib/i18n/locales/` → Manage translations and multilingual content.
 
 > Restart the development server if changes are not reflected automatically.
 
