@@ -1,0 +1,17 @@
+[
+  {
+    "id": "trueformat",
+    "techStack": ["OpenCV", "FastAPI"],
+    "repoLink": "https://github.com/dhaboav/trueformat-backend"
+  },
+  {
+    "id": "bookshelf",
+    "techStack": ["React", "FastAPI", "Docker"],
+    "repoLink": "https://github.com/dhaboav/bookshelf"
+  },
+  {
+    "id": "robot",
+    "techStack": ["Python"],
+    "repoLink": "https://github.com/dhaboav/robot-basestation"
+  }
+]

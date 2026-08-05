@@ -19,10 +19,11 @@ interface aboutSectionData {
 }
 
 interface projectSectionData {
+  id: string;
   title: string;
   description: string;
   techStack: string[];
-  repoLink: string;
+  repoLink?: string;
   webLink?: string;
 }
 
@@ -37,10 +38,20 @@ export interface dynamicData {
   contact: contactSectionData;
 }
 
-export type BlogItem = {
+export type blogItem = {
   slug: string;
   tag: string;
   title: string;
   dateISO: string;
   excerpt: string;
+};
+
+export type personalInfo = {
+  name: string;
+  brandName: string;
+  sns: {
+    github: string;
+    linkedin: string;
+    instagram: string;
+  };
 };

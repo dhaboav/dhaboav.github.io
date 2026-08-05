@@ -1,10 +1,10 @@
-import { AUTHOR_NAME } from '@/shared/config';
+import { personalData } from '@/data';
 
 export function Footer() {
   const MEDSOS = [
-    { logo: 'bxl bx-github', href: 'https://github.com/dhaboav' },
-    { logo: 'bxl bx-linkedin', href: 'https://www.linkedin.com/in/dhaboav' },
-    { logo: 'bxl bx-instagram', href: 'https://www.instagram.com/dhaboav' },
+    { logo: 'bxl bx-github', href: personalData.sns.github },
+    { logo: 'bxl bx-linkedin', href: personalData.sns.linkedin },
+    { logo: 'bxl bx-instagram', href: personalData.sns.instagram },
   ];
   const currentYear = new Date().getFullYear();
 
@@ -14,11 +14,11 @@ export function Footer() {
         <div>
           <h1 className="text-primary font-mono text-base font-bold">
             ~/
-            <span className="text-white">Dhaboav</span>
+            <span className="text-white">{personalData.brandName}</span>
             <span className="blink-cursor text-primary">_</span>
           </h1>
           <p className="text-muted-foreground text-xs">
-            © {currentYear} {AUTHOR_NAME}. All rights reserved.
+            © {currentYear} {personalData.name}. All rights reserved.
           </p>
         </div>
 

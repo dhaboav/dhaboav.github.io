@@ -19,22 +19,19 @@
   },
   "project": [
     {
+      "id": "trueformat",
       "title": "TrueFormat",
-      "description": "Layanan backend menggunakan FastAPI dan OpenCV untuk memvalidasi pas foto secara otomatis dengan teknologi computer vision.",
-      "techStack": ["OpenCV", "FastAPI"],
-      "repoLink": "https://github.com/dhaboav/trueformat-backend"
+      "description": "Layanan backend menggunakan FastAPI dan OpenCV untuk memvalidasi pas foto secara otomatis dengan teknologi computer vision."
     },
     {
+      "id": "bookshelf",
       "title": "Aplikasi Manajemen Buku",
-      "description": "Aplikasi web fullstack menggunakan React, FastAPI, MySQL, dan Docker untuk mengelola koleksi buku pribadi.",
-      "techStack": ["React", "FastAPI", "Docker"],
-      "repoLink": "https://github.com/dhaboav/bookshelf"
+      "description": "Aplikasi web fullstack menggunakan React, FastAPI, MySQL, dan Docker untuk mengelola koleksi buku pribadi."
     },
     {
+      "id": "robot",
       "title": "Sistem Kendali Multi Robot",
-      "description": "Sistem kendali berbasis Python untuk memantau dan mengendalikan beberapa robot melalui jaringan lokal.",
-      "techStack": ["Python"],
-      "repoLink": "https://github.com/dhaboav/robot-basestation"
+      "description": "Sistem kendali berbasis Python untuk memantau dan mengendalikan beberapa robot melalui jaringan lokal."
     }
   ],
   "contact": {

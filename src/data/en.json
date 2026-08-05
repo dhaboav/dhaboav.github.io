@@ -19,22 +19,19 @@
   },
   "project": [
     {
+      "id": "trueformat",
       "title": "TrueFormat",
-      "description": "Backend service built with FastAPI and OpenCV to automatically validate passport photos through computer vision.",
-      "techStack": ["OpenCV", "FastAPI"],
-      "repoLink": "https://github.com/dhaboav/trueformat-backend"
+      "description": "Backend service built with FastAPI and OpenCV to automatically validate passport photos through computer vision."
     },
     {
+      "id": "bookshelf",
       "title": "Bookshelf Management System",
-      "description": "Fullstack web application built with React, FastAPI, MySQL, and Docker for managing personal book collections.",
-      "techStack": ["React", "FastAPI", "Docker"],
-      "repoLink": "https://github.com/dhaboav/bookshelf"
+      "description": "Fullstack web application built with React, FastAPI, MySQL, and Docker for managing personal book collections."
     },
     {
+      "id": "robot",
       "title": "Multi-Robot Control System",
-      "description": "Python-based control station for monitoring and controlling multiple robots over a local network.",
-      "techStack": ["Python"],
-      "repoLink": "https://github.com/dhaboav/robot-basestation"
+      "description": "Python-based control station for monitoring and controlling multiple robots over a local network."
     }
   ],
   "contact": {

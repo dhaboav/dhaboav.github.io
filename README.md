@@ -83,9 +83,8 @@ npm run deploy    # Deploy to GitHub Pages
 
 ## ✏️ Customization
 
-- `src/shared/config/authorName.ts` → Update your name.
-- `src/data/` → Manage blogs, and translations of app data.
-- `src/shared/lib/i18n/locales/` → Manage translations and multilingual content.
+- `src/data/` → Manage blogs, personal info and translations of app data.
+- `src/shared/lib/i18n/` → Manage translations and multilingual content.
 
 > Restart the development server if changes are not reflected automatically.
 

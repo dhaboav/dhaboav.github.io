@@ -1,4 +1,4 @@
-import type { SupportedLang } from '../I18n';
+import type { SupportedLang } from '.';
 
 const LANG_KEY = 'app_lang';
 

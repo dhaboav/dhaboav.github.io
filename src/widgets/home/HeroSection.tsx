@@ -1,4 +1,4 @@
-import { AUTHOR_NAME } from '@/shared/config';
+import { personalData } from '@/data';
 import { useI18n } from '@/shared/lib';
 import { ArrowRight, BookOpen, FileText } from 'lucide-react';
 import { buttonVariants } from '@/shared/ui';
@@ -9,7 +9,7 @@ export function HeroSection() {
   const { projectLabel, resumeLabel, blogLabel } = ui.hero;
   const t = data.hero;
   const techStack = ['Python', 'Docker', 'FastAPI', 'OpenCV', 'MySQL', 'React', 'Tailwind'];
-  const authorSlug = AUTHOR_NAME.toLowerCase().replace(' ', '-');
+  const authorSlug = personalData.name.toLowerCase().replace(' ', '-');
 
   return (
     <section id="home" className="section-container">
@@ -25,7 +25,7 @@ export function HeroSection() {
           </p>
 
           <h1 className="text-4xl font-extrabold tracking-tight text-white lg:text-6xl">
-            {AUTHOR_NAME}.
+            {personalData.name}.
           </h1>
 
           <p className="text-muted-foreground max-w-xl text-base leading-relaxed lg:text-lg">
@@ -42,7 +42,7 @@ export function HeroSection() {
             </HashLink>
             <a
               href={`other/${t.resumeLink}.pdf`}
-              download={`Resume ${AUTHOR_NAME}`}
+              download={`Resume ${personalData.name}`}
               className={`${buttonVariants({ variant: 'secondary' })} h-12 px-6`}
             >
               <FileText className="h-4 w-4" /> {resumeLabel}

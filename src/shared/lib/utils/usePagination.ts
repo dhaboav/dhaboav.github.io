@@ -9,18 +9,15 @@ export function usePagination<T>({ items, searchQuery }: UsePaginationProps<T>) 
   const [currentPage, setCurrentPage] = useState(1);
   const [jumpPage, setJumpPage] = useState('');
 
-  // Reset kolom jump input & kembalikan scroll ke atas saat halaman berganti
   useEffect(() => {
     window.scrollTo(0, 0);
     setJumpPage('');
   }, [currentPage]);
 
-  // Reset ke halaman 1 jika user mengetik kata kunci pencarian baru
   useEffect(() => {
     setCurrentPage(1);
   }, [searchQuery]);
 
-  // 🚀 OPTIMASI SLICE & TOTAL PAGES
   const { currentPosts, totalPages } = useMemo(() => {
     let first = 0;
     let last = 8;
@@ -36,7 +33,6 @@ export function usePagination<T>({ items, searchQuery }: UsePaginationProps<T>) 
     };
   }, [items, currentPage]);
 
-  // 🚀 OPTIMASI SLIDING WINDOW (Ganti getPageNumbers biasa dengan useMemo)
   const pageNumbers = useMemo(() => {
     const maxButtons = 5;
     let startPage = Math.max(1, currentPage - Math.floor(maxButtons / 2));

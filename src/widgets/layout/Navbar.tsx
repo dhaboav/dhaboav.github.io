@@ -1,6 +1,7 @@
 import { HashLink } from 'react-router-hash-link';
 import { useNavbar } from './hooks/useNavbar';
 import { Menu, X } from 'lucide-react';
+import { personalData } from '@/data';
 import { useI18n, languages, type SupportedLang } from '@/shared/lib';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/shared/ui';
 import { useEffect, useState } from 'react';
@@ -34,7 +35,7 @@ export function Navbar() {
           <HashLink to="/#home" aria-label="logo">
             <h1 className="text-primary font-mono text-base font-bold">
               ~/
-              <span className="text-white">Dhaboav</span>
+              <span className="text-white">{personalData.brandName}</span>
               <span className="blink-cursor text-primary">_</span>
             </h1>
           </HashLink>

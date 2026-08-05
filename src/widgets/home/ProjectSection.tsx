@@ -50,7 +50,7 @@ interface ProjectCardProps {
     webButton: string;
   };
   techStack: string[];
-  repo: string;
+  repo?: string;
   link?: string;
 }
 

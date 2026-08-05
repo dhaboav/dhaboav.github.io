@@ -1,6 +1,6 @@
 import { useI18n } from '@/shared/lib';
 import { SectionHeading } from './SectionHeading';
-import { AUTHOR_NAME } from '@/shared/config';
+import { personalData } from '@/data';
 
 export function AboutSection() {
   const { ui, data } = useI18n();
@@ -21,7 +21,7 @@ export function AboutSection() {
           <div aria-label="profile">
             <img
               src="/img/profile.png"
-              alt="dhaboav"
+              alt={personalData.brandName}
               loading="lazy"
               width={640}
               height={480}
@@ -29,7 +29,7 @@ export function AboutSection() {
               className="border-border bg-card mx-auto h-full w-full overflow-hidden rounded-xl border object-cover md:max-w-sm"
             />
             <p className="text-muted-foreground mt-3 font-mono text-xs">
-              <span className="text-primary">$</span> whoami — {AUTHOR_NAME}
+              <span className="text-primary">$</span> whoami — {personalData.name}
             </p>
           </div>
 
