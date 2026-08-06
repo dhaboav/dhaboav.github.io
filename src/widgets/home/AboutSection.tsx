@@ -14,7 +14,7 @@ export function AboutSection() {
   ];
 
   return (
-    <section id="about" className="section-container">
+    <section id="about" className="section-container alt">
       <div className="content-container layout text-white">
         <SectionHeading index="01" title={sectionTitle} note={subtitle} />
         <div className="mt-10 grid gap-10 md:items-center lg:grid-cols-[minmax(0,320px)_minmax(0,1fr)] lg:items-start">
@@ -26,7 +26,7 @@ export function AboutSection() {
               width={640}
               height={480}
               onContextMenu={(e) => e.preventDefault()}
-              className="border-border bg-card mx-auto h-full w-full overflow-hidden rounded-xl border object-cover md:max-w-sm"
+              className="border-border bg-background mx-auto h-full w-full overflow-hidden rounded-xl border object-cover md:max-w-sm"
             />
             <p className="text-muted-foreground mt-3 font-mono text-xs">
               <span className="text-primary">$</span> whoami — {personalData.name}

@@ -18,6 +18,14 @@ interface aboutSectionData {
   };
 }
 
+interface experienceSectionData {
+  id: string;
+  workPlace?: string;
+  jobTitle: string;
+  timePeriod?: string;
+  description: string;
+}
+
 interface projectSectionData {
   id: string;
   title: string;
@@ -34,6 +42,7 @@ interface contactSectionData {
 export interface dynamicData {
   hero: heroSectionData;
   about: aboutSectionData;
+  experience: experienceSectionData[];
   project: projectSectionData[];
   contact: contactSectionData;
 }

@@ -1,6 +1,7 @@
 {
   "navbar": {
     "aboutLabel": "About",
+    "experienceLabel": "Experiences",
     "projectLabel": "Projects",
     "contactLabel": "Contact",
     "blogLabel": "Blogs"
@@ -19,6 +20,10 @@
       "currently": "currently",
       "openTo": "open to"
     }
+  },
+  "experience": {
+    "sectionTitle": "Experience",
+    "subtitle": "where systems are born"
   },
   "project": {
     "sectionTitle": "Projects",

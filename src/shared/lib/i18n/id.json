@@ -1,6 +1,7 @@
 {
   "navbar": {
     "aboutLabel": "Tentang",
+    "experienceLabel": "Pengalaman",
     "projectLabel": "Proyek",
     "contactLabel": "Kontak",
     "blogLabel": "Blog"
@@ -19,6 +20,10 @@
       "currently": "saat ini",
       "openTo": "terbuka untuk"
     }
+  },
+  "experience": {
+    "sectionTitle": "Pengalaman",
+    "subtitle": "tempat sistem lahir"
   },
   "project": {
     "sectionTitle": "Proyek",

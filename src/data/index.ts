@@ -1,15 +1,29 @@
 import rawId from './id.json';
 import rawEn from './en.json';
 import projectsMeta from './projects-meta.json';
+import experiencesMeta from './experiences-meta.json';
 import blogsData from './blogs.json';
 import personalInfoData from './personal-info.json';
 import type { dynamicData, blogItem, personalInfo } from './types';
 import type { Localized } from '@/shared/lib';
 
-const metaMap = new Map(projectsMeta.map((meta) => [meta.id, meta]));
+const metaProjectMap = new Map(projectsMeta.map((meta) => [meta.id, meta]));
+const metaExperienceMap = new Map(experiencesMeta.map((meta) => [meta.id, meta]));
+
+const injectExperiences = (rawExperiences: typeof rawEn.experience) => {
+  return rawExperiences.map((exp) => {
+    const meta = metaExperienceMap.get(exp.id);
+    return {
+      ...exp,
+      workPlace: meta ? meta.workPlace : '',
+      timePeriod: meta ? meta.timePeriod : '',
+    };
+  });
+};
+
 const injectProjects = (rawProjects: typeof rawEn.project) => {
   return rawProjects.map((proj) => {
-    const meta = metaMap.get(proj.id);
+    const meta = metaProjectMap.get(proj.id);
     return {
       ...proj,
       techStack: meta ? meta.techStack : [],
@@ -20,11 +34,13 @@ const injectProjects = (rawProjects: typeof rawEn.project) => {
 
 const en: dynamicData = {
   ...rawEn,
+  experience: injectExperiences(rawEn.experience),
   project: injectProjects(rawEn.project),
 };
 
 const id: dynamicData = {
   ...rawId,
+  experience: injectExperiences(rawId.experience),
   project: injectProjects(rawId.project),
 };
 

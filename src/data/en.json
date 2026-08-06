@@ -17,6 +17,18 @@
       "openTo": ""
     }
   },
+  "experience": [
+    {
+      "id": "pkm-re",
+      "jobTitle": "Embedded Systems Engineer",
+      "description": "Contributed to securing national funding from Belmawa DIKTI for a citrus fruit taste analysis research project. Took full responsibility for hardware design, wiring, and sensor calibration on Raspberry Pi, while developing embedded software to seamlessly integrate camera data into the computational analysis model."
+    },
+    {
+      "id": "robotic-team",
+      "jobTitle": "Lead Programmer & Member — KRSBI-B Division",
+      "description": "Led cross-functional coordination and integrated software-hardware components for competition robots. Built a desktop basestation app for real-time Wi-Fi control and developed OpenCV computer vision for object tracking."
+    }
+  ],
   "project": [
     {
       "id": "trueformat",

@@ -12,6 +12,7 @@ export const languages = [
 
 interface Navbar {
   aboutLabel: string;
+  experienceLabel: string;
   projectLabel: string;
   contactLabel: string;
   blogLabel: string;
@@ -32,6 +33,11 @@ interface AboutSection {
     currently: string;
     openTo: string;
   };
+}
+
+interface ExperienceSection {
+  sectionTitle: string;
+  subtitle: string;
 }
 
 interface ProjectSection {
@@ -84,6 +90,7 @@ export interface Translations {
   navbar: Navbar;
   hero: HeroSection;
   about: AboutSection;
+  experience: ExperienceSection;
   project: ProjectSection;
   contact: ContactSection;
   notfoundPage: NotfoundPage;

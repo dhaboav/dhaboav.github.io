@@ -17,6 +17,18 @@
       "openTo": ""
     }
   },
+  "experience": [
+    {
+      "id": "pkm-re",
+      "jobTitle": "Embedded Systems Engineer",
+      "description": "Berkontribusi meloloskan riset hingga tahap pendanaan nasional Belmawa DIKTI lewat proyek analisis rasa buah jeruk. Bertanggung jawab penuh atas rancang bangun hardware, kelistrikan, dan kalibrasi sensor pada Raspberry Pi, sekaligus mengembangkan embedded software untuk mengintegrasikan data kamera ke model komputasi."
+    },
+    {
+      "id": "robotic-team",
+      "jobTitle": "Ketua & Anggota Divisi Pemrograman KRSBI-B",
+      "description": "Memimpin koordinasi lintas fungsi serta mengintegrasikan perangkat lunak dan keras untuk mengoptimalkan performa robot kompetisi. Membangun aplikasi basestation desktop untuk kontrol nirkabel Wi-Fi secara real-time serta mengembangkan computer vision OpenCV untuk pelacakan objek."
+    }
+  ],
   "project": [
     {
       "id": "trueformat",
