@@ -41,6 +41,11 @@ interface projectSectionData {
 
 interface contactSectionData {
   description: string;
+  notification: {
+    success: string;
+    failure: string;
+    pending: string;
+  };
 }
 
 export interface dynamicData {
@@ -70,7 +75,6 @@ export type personalInfo = {
 };
 
 type IconType = LucideIcon | ComponentType<IconProps>;
-
 export type snsItem = {
   logo: IconType;
   href: string;

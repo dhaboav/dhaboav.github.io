@@ -27,7 +27,6 @@ export function useContact({ successMessage, failureMessage }: UseContactProps) 
   });
 
   const showNotification = (message: string, isSuccess = true) => {
-    // 🚀 Hapus timer sebelumnya jika pengguna submit ulang dengan cepat (Anti-race condition)
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
 
     setNotif({ message, show: true, isSuccess });
@@ -37,7 +36,6 @@ export function useContact({ successMessage, failureMessage }: UseContactProps) 
     }, 4000);
   };
 
-  // Bersihkan timer otomatis saat komponen di-unmount dari layar browser
   useEffect(() => {
     return () => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -46,8 +44,7 @@ export function useContact({ successMessage, failureMessage }: UseContactProps) 
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!formRef.current || isLoading) return; // 🚀 Mencegah double-submit jika sedang loading
-
+    if (!formRef.current || isLoading) return;
     setIsLoading(true);
 
     try {

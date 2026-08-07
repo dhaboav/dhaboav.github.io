@@ -10,8 +10,8 @@ export function ContactSection() {
   const { sectionTitle, subtitle, formLabels, placeholders, submitButton } = ui.contact;
   const t = data.contact;
   const { formRef, isLoading, notif, handleSubmit } = useContact({
-    successMessage: 's',
-    failureMessage: 'f',
+    successMessage: t.notification.success,
+    failureMessage: t.notification.failure,
   });
 
   return (
@@ -103,7 +103,7 @@ export function ContactSection() {
                   {isLoading ? (
                     <>
                       <Spinner />
-                      <span>s</span>
+                      <span>{t.notification.pending}</span>
                     </>
                   ) : (
                     <>
@@ -119,7 +119,7 @@ export function ContactSection() {
       </div>
 
       <div
-        className={`fixed right-6 bottom-6 z-50 rounded-lg border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm shadow-lg transition-all ${
+        className={`fixed right-6 bottom-6 z-9999 rounded-lg border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm shadow-lg transition-all ${
           notif.show ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-2 opacity-0'
         } ${notif.isSuccess ? 'text-green-400' : 'text-red-400'}`}
       >

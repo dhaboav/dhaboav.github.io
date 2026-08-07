@@ -47,6 +47,11 @@
     }
   ],
   "contact": {
-    "description": "Konsultasi, ngobrol, atau sekadar diskusi teknis teknologi — saya membaca semuanya dan akan membalas dalam beberapa hari."
+    "description": "Konsultasi, ngobrol, atau sekadar diskusi teknis teknologi — saya membaca semuanya dan akan membalas dalam beberapa hari.",
+    "notification": {
+      "success": "Pesan terkirim",
+      "failure": "Gagal mengirim",
+      "pending": "Mengirim..."
+    }
   }
 }
