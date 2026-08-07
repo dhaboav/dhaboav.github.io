@@ -18,7 +18,7 @@ export function ProjectSection() {
 
   return (
     <section id="projects" className="section-container alt">
-      <div className="content-container layout text-white">
+      <div className="content-container layout">
         <SectionHeading index="03" title={sectionTitle} note={subtitle} />
         <div className="mt-8 grid gap-4 lg:grid-cols-3" aria-label="project-collections">
           {data.project.map((project, index) => (

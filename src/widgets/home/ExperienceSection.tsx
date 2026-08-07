@@ -7,7 +7,7 @@ export function ExperienceSection() {
   const { sectionTitle, subtitle } = ui.experience;
   return (
     <section id="experiences" className="section-container">
-      <div className="content-container layout text-white">
+      <div className="content-container layout">
         <SectionHeading index="02" title={sectionTitle} note={subtitle} />
         <div className="mt-8 grid gap-4" aria-label="experiences">
           {data.experience.map((exp, index) => (

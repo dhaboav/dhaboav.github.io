@@ -15,7 +15,7 @@ export function AboutSection() {
 
   return (
     <section id="about" className="section-container alt">
-      <div className="content-container layout text-white">
+      <div className="content-container layout">
         <SectionHeading index="01" title={sectionTitle} note={subtitle} />
         <div className="mt-10 grid gap-10 md:items-center lg:grid-cols-[minmax(0,320px)_minmax(0,1fr)] lg:items-start">
           <div aria-label="profile">
@@ -34,7 +34,7 @@ export function AboutSection() {
           </div>
 
           <div>
-            <h2 className="mb-2 text-3xl font-medium tracking-tight text-white">{t.subtitle}</h2>
+            <h2 className="mb-2 text-3xl font-medium tracking-tight">{t.subtitle}</h2>
             <div className="text-muted-foreground mb-4 text-base leading-relaxed">
               <p>{t.description}</p>
             </div>

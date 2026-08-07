@@ -47,7 +47,7 @@ export function BlogCard({
           <span className="group-hover:bg-primary h-px w-8 bg-slate-200 transition-all duration-300 group-hover:w-12"></span>
           <span className="text-primary tracking-widest">{tag}</span>
         </div>
-        <h2 className="line-clamp-3 text-2xl leading-tight font-bold text-white group-data-[variant=editorial]:lg:text-4xl group-data-[variant=hero]:lg:text-6xl">
+        <h2 className="line-clamp-3 text-2xl leading-tight font-bold group-data-[variant=editorial]:lg:text-4xl group-data-[variant=hero]:lg:text-6xl">
           {title}
         </h2>
       </div>

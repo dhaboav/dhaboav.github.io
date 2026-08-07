@@ -24,7 +24,7 @@ export function HeroSection() {
             {t.tag.jobTitle} · {t.tag.location}{' '}
           </p>
 
-          <h1 className="text-4xl font-extrabold tracking-tight text-white lg:text-6xl">
+          <h1 className="text-4xl font-extrabold tracking-tight lg:text-6xl">
             {personalData.name}.
           </h1>
 
@@ -47,10 +47,7 @@ export function HeroSection() {
             >
               <FileText className="h-4 w-4" /> {resumeLabel}
             </a>
-            <HashLink
-              to="/blog"
-              className={`${buttonVariants({ variant: 'outline' })} h-12 px-6 text-white`}
-            >
+            <HashLink to="/blog" className={`${buttonVariants({ variant: 'outline' })} h-12 px-6`}>
               <BookOpen /> {blogLabel}
             </HashLink>
           </div>
@@ -80,7 +77,7 @@ function TerminalCard({ techStack, authorSlug }: TerminalCardProps) {
         <span className="text-muted-foreground ml-2 font-mono text-xs">~/stack.zsh</span>
       </div>
 
-      <div className="space-y-4 p-4 font-mono text-[13px] leading-relaxed text-white">
+      <div className="space-y-4 p-4 font-mono text-[13px] leading-relaxed">
         <div>
           <p className="text-muted-foreground">
             <span className="text-primary">$</span> whoami

@@ -13,7 +13,7 @@ export const NotFound = ({ pageTitle, pageDesc, buttonLabel }: NotFoundProps) =>
     <div className="section-container flex items-center justify-center">
       <div className="content-container layout text-center">
         <h1 className="mb-4 text-8xl font-bold tracking-tight text-red-600">404</h1>
-        <p className="mb-4 text-4xl font-bold tracking-tight text-white">{pageTitle}</p>
+        <p className="mb-4 text-4xl font-bold tracking-tight">{pageTitle}</p>
         <p className="text-minor text-muted-foreground mb-4 text-lg font-light">{pageDesc}</p>
         <Link
           to="/"

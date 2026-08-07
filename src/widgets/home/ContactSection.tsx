@@ -21,14 +21,14 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="section-container">
-      <div className="content-container layout text-white">
+      <div className="content-container layout">
         <SectionHeading index="04" title={sectionTitle} note={subtitle} />
         <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_1.2fr] lg:px-0">
           <div className="flex flex-col gap-6">
             <p className="text-muted-foreground text-base leading-relaxed lg:text-lg">
               {t.description}
             </p>
-            <div className="flex gap-6 text-white/80">
+            <div className="text-foreground/80 flex gap-6">
               {MEDSOS.map(({ logo, href }) => (
                 <a
                   key={logo}
@@ -103,7 +103,7 @@ export function ContactSection() {
                 <Button
                   type="submit"
                   disabled={isLoading}
-                  className={`flex w-full items-center justify-center gap-2 p-6 text-sm font-medium text-black transition-all ${isLoading && 'cursor-not-allowed opacity-70'}`}
+                  className={`flex w-full items-center justify-center gap-2 p-6 text-sm font-medium transition-all ${isLoading && 'cursor-not-allowed opacity-70'}`}
                 >
                   {isLoading ? (
                     <>

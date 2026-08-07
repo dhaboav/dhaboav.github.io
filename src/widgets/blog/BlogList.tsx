@@ -14,7 +14,7 @@ export function BlogList() {
   const isInitialPageWithoutSearch = currentPage === 1 && !searchQuery;
 
   return (
-    <section className="section-container text-white">
+    <section className="section-container">
       <header className="mx-auto max-w-6xl px-4 md:pt-36">
         <div
           className="grid-bg pointer-events-none absolute inset-0"
@@ -22,7 +22,7 @@ export function BlogList() {
           aria-label="background"
         />
         <div className="relative">
-          <div className="absolute -top-20 left-[60%] hidden font-sans text-9xl font-black tracking-tighter text-slate-100/80 select-none md:block">
+          <div className="text-foreground/80 absolute -top-20 left-[60%] hidden font-sans text-9xl font-black tracking-tighter select-none md:block">
             {headerTag}
           </div>
 

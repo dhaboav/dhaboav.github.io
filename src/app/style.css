@@ -1,6 +1,8 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
+@custom-variant dark (&:is(.dark *));
+
 @theme inline {
   --font-*: initial;
   --font-sans: Inter, system-ui, sans-serif;
@@ -20,6 +22,31 @@
 }
 
 :root {
+  --background: oklch(0.985 0.004 250);
+  --foreground: oklch(0.21 0.04 265);
+  --surface: oklch(0.965 0.006 250);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.21 0.04 265);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.21 0.04 265);
+  --primary: oklch(0.63 0.15 175);
+  --primary-foreground: oklch(0.16 0.03 265);
+  --mint: oklch(0.63 0.15 175);
+  --mint-foreground: oklch(0.16 0.03 265);
+  --secondary: oklch(0.94 0.008 250);
+  --secondary-foreground: oklch(0.21 0.04 265);
+  --muted: oklch(0.94 0.008 250);
+  --muted-foreground: oklch(0.5 0.03 257);
+  --accent: oklch(0.92 0.03 190);
+  --accent-foreground: oklch(0.21 0.04 265);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.98 0.003 248);
+  --border: oklch(0.9 0.012 255);
+  --input: oklch(0.9 0.012 255);
+  --ring: oklch(0.63 0.15 175);
+}
+
+.dark {
   --border: oklch(1 0 0 / 12%);
   --background: oklch(0.208 0.042 265.755);
   --card: oklch(0.253 0.04 264);
@@ -49,10 +76,15 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentcolor);
   }
-}
 
-body {
-  font-family: sans-serif;
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: sans-serif;
+    color: var(--color-foreground);
+  }
 }
 
 /* --- Custom Utilities --- */
@@ -98,7 +130,7 @@ body {
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -0.025em;
-    color: white;
+    color: var(--foreground);
     margin-top: 2.5rem;
     margin-bottom: 1.25rem;
     border-bottom: 2px solid #0f172a;
@@ -110,21 +142,21 @@ body {
     font-size: 1.125rem;
     font-weight: 700;
     text-transform: uppercase;
-    color: white;
+    color: var(--foreground);
     margin-top: 2rem;
     margin-bottom: 1rem;
   }
 
   & h4,
   & h5 {
-    color: white;
+    color: var(--foreground);
   }
 
   & p {
     font-family: var(--font-sans), sans-serif;
     font-size: 0.95rem;
     line-height: 1.75;
-    color: white;
+    color: var(--foreground);
     margin-bottom: 1.5rem;
     text-align: justify;
   }
@@ -132,7 +164,7 @@ body {
   /* Bold (**) */
   & strong {
     font-weight: 700;
-    color: white;
+    color: var(--foreground);
     padding-inline: 0.25rem;
   }
 
@@ -146,7 +178,7 @@ body {
     margin-bottom: 1.5rem;
     padding-left: 0.5rem;
     list-style: none;
-    color: white;
+    color: var(--foreground);
   }
 
   & li {
@@ -154,7 +186,7 @@ body {
     padding-left: 1.5rem;
     margin-bottom: 0.75rem;
     font-size: 0.95rem;
-    color: white;
+    color: var(--foreground);
     line-height: 1.6;
 
     &::before {
@@ -180,13 +212,11 @@ body {
     margin-block: 1.5rem;
     padding: 1.25rem;
     overflow-x: auto;
-    border: 2px solid #0f172a;
-    box-shadow: 4px 4px 0px 0px #0f172a;
 
     & code {
       font-family: var(--font-mono), monospace;
       font-size: 0.85rem;
-      color: #ffffff;
+      color: white;
       background: transparent;
       padding: 0;
       border: none;

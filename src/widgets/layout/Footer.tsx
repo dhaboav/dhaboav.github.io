@@ -9,12 +9,12 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-background border-border border-t text-white">
-      <div className="content-container nav grid gap-3 text-sm text-zinc-500 md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
+    <footer className="bg-background border-border border-t">
+      <div className="content-container nav grid gap-3 text-sm md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
         <div>
-          <h1 className="text-primary font-mono text-base font-bold">
-            ~/
-            <span className="text-white">{personalData.brandName}</span>
+          <h1 className="font-mono text-base font-bold">
+            <span className="text-primary">~/</span>
+            {personalData.brandName}
             <span className="blink-cursor text-primary">_</span>
           </h1>
           <p className="text-muted-foreground text-xs">
@@ -22,7 +22,7 @@ export function Footer() {
           </p>
         </div>
 
-        <div className="flex gap-6 text-white/80">
+        <div className="text-foreground/80 flex gap-6">
           {MEDSOS.map((medsos) => (
             <a href={medsos.href} key={medsos.logo} className="hover:text-primary text-2xl">
               <i className={medsos.logo} />

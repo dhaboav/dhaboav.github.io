@@ -34,13 +34,13 @@ export function BlogDetail() {
   }
 
   return (
-    <section className="section-container pt-28 text-white">
+    <section className="section-container pt-28">
       <article className="mx-auto max-w-3xl px-4">
         <header className="border-border mb-10 border-b pb-6">
           <span className="text-primary mb-3 block font-mono text-xs font-bold tracking-widest uppercase">
             {currentBlog.tag}
           </span>
-          <h1 className="mb-4 text-4xl leading-tight font-extrabold tracking-tight text-white lg:text-5xl">
+          <h1 className="mb-4 text-4xl leading-tight font-extrabold tracking-tight lg:text-5xl">
             {currentBlog.title}
           </h1>
           <p className="font-mono text-xs text-slate-400">
