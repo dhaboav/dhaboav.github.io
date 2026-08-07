@@ -46,10 +46,6 @@ export function Navbar() {
             </h1>
           </HashLink>
 
-          <Button onClick={toggle} variant="ghost" size="icon-sm">
-            {theme === 'dark' ? <Moon /> : <Sun />}
-          </Button>
-
           <div className="hidden items-center gap-4 md:flex">
             {navLinks.map((navMenu) => (
               <HashLink
@@ -62,7 +58,7 @@ export function Navbar() {
             ))}
 
             <Select value={lang} onValueChange={(value) => setLang(value as SupportedLang)}>
-              <SelectTrigger className="text-muted-foreground border-0 font-mono text-sm uppercase">
+              <SelectTrigger className="border-0 p-0 font-mono text-sm text-zinc-400 uppercase">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent className="bg-background border-0" alignItemWithTrigger={false}>
@@ -79,6 +75,10 @@ export function Navbar() {
             </Select>
           </div>
 
+          <Button onClick={toggle} variant="ghost" size="icon-sm" className="text-zinc-400">
+            {theme === 'dark' ? <Moon /> : <Sun />}
+          </Button>
+
           <button ref={buttonRef} onClick={toggleMenu} className="md:hidden" aria-label="nav-icon">
             {isOpen ? <X /> : <Menu />}
           </button>
@@ -86,7 +86,7 @@ export function Navbar() {
 
         <nav
           ref={menuRef}
-          className={` ${isOpen ? 'flex' : 'hidden'} text-foreground/80 flex-col gap-3 py-4 md:hidden`}
+          className={` ${isOpen ? 'flex' : 'hidden'} text-foreground/80 flex-col gap-2 pt-6 md:hidden`}
           aria-label="mobile-menu"
         >
           {navLinks.map((navMenu) => (
@@ -96,7 +96,7 @@ export function Navbar() {
           ))}
 
           <Select value={lang} onValueChange={(value) => setLang(value as SupportedLang)}>
-            <SelectTrigger className="border-0 text-sm uppercase">
+            <SelectTrigger className="border-0 p-0 text-sm uppercase">
               <SelectValue />
             </SelectTrigger>
             <SelectContent className="bg-background border-0" alignItemWithTrigger={false}>

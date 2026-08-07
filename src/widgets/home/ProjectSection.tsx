@@ -9,6 +9,7 @@ import {
   CardTitle,
   Button,
   buttonVariants,
+  Github,
 } from '@/shared/ui';
 import { ExternalLink } from 'lucide-react';
 
@@ -97,7 +98,7 @@ function ProjectCard({
             },
           )}`}
         >
-          <i className="bxl bx-github" />
+          <Github />
           {labels.repoButton}
         </a>
 

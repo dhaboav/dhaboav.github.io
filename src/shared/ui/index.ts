@@ -1,5 +1,6 @@
 export { NotFound } from './NotFound';
 export { Pagination } from './Pagination';
+export * from './SocialIcons';
 export * from './select';
 export * from './button';
 export * from './card';

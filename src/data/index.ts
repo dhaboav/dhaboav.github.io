@@ -4,8 +4,9 @@ import projectsMeta from './projects-meta.json';
 import experiencesMeta from './experiences-meta.json';
 import blogsData from './blogs.json';
 import personalInfoData from './personal-info.json';
-import type { dynamicData, blogItem, personalInfo } from './types';
+import type { dynamicData, blogItem, personalInfo, snsItem } from './types';
 import type { Localized } from '@/shared/lib';
+import { Github, Instagram, Linkedin } from '@/shared/ui';
 
 const metaProjectMap = new Map(projectsMeta.map((meta) => [meta.id, meta]));
 const metaExperienceMap = new Map(experiencesMeta.map((meta) => [meta.id, meta]));
@@ -47,3 +48,9 @@ const id: dynamicData = {
 export const appData: Localized<dynamicData> = { en, id };
 export const blogData: blogItem[] = blogsData;
 export const personalData: personalInfo = personalInfoData;
+
+export const snsData: snsItem[] = [
+  { logo: Github, href: personalInfoData.sns.github },
+  { logo: Linkedin, href: personalInfoData.sns.linkedin },
+  { logo: Instagram, href: personalInfoData.sns.instagram },
+];

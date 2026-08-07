@@ -1,11 +1,6 @@
-import { personalData } from '@/data';
+import { personalData, snsData } from '@/data';
 
 export function Footer() {
-  const MEDSOS = [
-    { logo: 'bxl bx-github', href: personalData.sns.github },
-    { logo: 'bxl bx-linkedin', href: personalData.sns.linkedin },
-    { logo: 'bxl bx-instagram', href: personalData.sns.instagram },
-  ];
   const currentYear = new Date().getFullYear();
 
   return (
@@ -23,9 +18,9 @@ export function Footer() {
         </div>
 
         <div className="text-foreground/80 flex gap-6">
-          {MEDSOS.map((medsos) => (
-            <a href={medsos.href} key={medsos.logo} className="hover:text-primary text-2xl">
-              <i className={medsos.logo} />
+          {snsData.map(({ logo: Logo, href }, index) => (
+            <a href={href} key={index} className="hover:text-primary text-2xl">
+              <Logo />
             </a>
           ))}
         </div>

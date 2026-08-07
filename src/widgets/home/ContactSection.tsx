@@ -3,12 +3,7 @@ import { useI18n } from '@/shared/lib';
 import { SectionHeading } from './SectionHeading';
 import { Button, Input, Label, Textarea, Card, CardContent, Spinner } from '@/shared/ui';
 import { Send } from 'lucide-react';
-
-const MEDSOS = [
-  { logo: 'bxl bx-github', href: 'https://github.com/dhaboav' },
-  { logo: 'bxl bx-linkedin', href: 'https://www.linkedin.com/in/dhaboav' },
-  { logo: 'bxl bx-instagram', href: 'https://www.instagram.com/dhaboav' },
-];
+import { snsData } from '@/data';
 
 export function ContactSection() {
   const { ui, data } = useI18n();
@@ -29,15 +24,15 @@ export function ContactSection() {
               {t.description}
             </p>
             <div className="text-foreground/80 flex gap-6">
-              {MEDSOS.map(({ logo, href }) => (
+              {snsData.map(({ logo: Logo, href }, index) => (
                 <a
-                  key={logo}
+                  key={index}
                   href={href}
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-primary text-2xl transition-colors"
                 >
-                  <i className={logo} />
+                  <Logo />
                 </a>
               ))}
             </div>
