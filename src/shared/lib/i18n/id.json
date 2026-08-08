@@ -33,6 +33,10 @@
       "webLinkLabel": "Demo"
     }
   },
+  "showMore": {
+    "showLessLabel": "tutup",
+    "showMoreLabel": "lihat"
+  },
   "contact": {
     "sectionTitle": "Kontak",
     "subtitle": "hubungi saya",

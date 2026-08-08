@@ -49,6 +49,11 @@ interface ProjectSection {
   };
 }
 
+interface ShowmoreButton {
+  showLessLabel: string;
+  showMoreLabel: string;
+}
+
 interface ContactSection {
   sectionTitle: string;
   subtitle: string;
@@ -92,6 +97,7 @@ export interface Translations {
   about: AboutSection;
   experience: ExperienceSection;
   project: ProjectSection;
+  showMore: ShowmoreButton;
   contact: ContactSection;
   notfoundPage: NotfoundPage;
   blogPage: BlogPage;

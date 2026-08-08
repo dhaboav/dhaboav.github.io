@@ -1,16 +1,23 @@
 import { useI18n } from '@/shared/lib';
 import { SectionHeading } from './SectionHeading';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/shared/ui';
+import { ShowMore } from './ShowMore';
+import { useState } from 'react';
+
+const EXP_PREVIEW = 2;
 
 export function ExperienceSection() {
   const { ui, data } = useI18n();
   const { sectionTitle, subtitle } = ui.experience;
+  const [showAll, setShowAll] = useState(false);
+  const visibleExp = showAll ? data.experience : data.experience.slice(0, EXP_PREVIEW);
+  const countExp = data.experience.length - EXP_PREVIEW;
   return (
     <section id="experiences" className="section-container">
       <div className="content-container layout">
         <SectionHeading index="02" title={sectionTitle} note={subtitle} />
         <div className="mt-8 grid gap-4" aria-label="experiences">
-          {data.experience.map((exp, index) => (
+          {visibleExp.map((exp, index) => (
             <ExperienceCard
               key={index}
               index={index}
@@ -21,6 +28,12 @@ export function ExperienceSection() {
             />
           ))}
         </div>
+        <ShowMore
+          expanded={showAll}
+          hiddenCount={countExp}
+          onToggle={() => setShowAll((v) => !v)}
+          label={countExp === 1 ? 'exp' : 'exps'}
+        />
       </div>
     </section>
   );

@@ -12,17 +12,24 @@ import {
   Github,
 } from '@/shared/ui';
 import { ExternalLink } from 'lucide-react';
+import { ShowMore } from './ShowMore';
+import { useState } from 'react';
+
+const PROJECTS_PREVIEW = 3;
 
 export function ProjectSection() {
   const { ui, data } = useI18n();
   const { sectionTitle, subtitle, buttonLabels } = ui.project;
+  const [showAll, setShowAll] = useState(false);
+  const visibleProject = showAll ? data.project : data.project.slice(0, PROJECTS_PREVIEW);
+  const countProject = data.project.length - PROJECTS_PREVIEW;
 
   return (
     <section id="projects" className="section-container alt">
       <div className="content-container layout">
         <SectionHeading index="03" title={sectionTitle} note={subtitle} />
         <div className="mt-8 grid gap-4 lg:grid-cols-3" aria-label="project-collections">
-          {data.project.map((project, index) => (
+          {visibleProject.map((project, index) => (
             <ProjectCard
               key={index}
               index={index}
@@ -37,6 +44,12 @@ export function ProjectSection() {
             />
           ))}
         </div>
+        <ShowMore
+          expanded={showAll}
+          hiddenCount={countProject}
+          onToggle={() => setShowAll((v) => !v)}
+          label={countProject === 1 ? 'project' : 'projects'}
+        />
       </div>
     </section>
   );

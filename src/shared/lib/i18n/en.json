@@ -33,6 +33,10 @@
       "webLinkLabel": "Demo"
     }
   },
+  "showMore": {
+    "showLessLabel": "show less",
+    "showMoreLabel": "show more"
+  },
   "contact": {
     "sectionTitle": "Contact",
     "subtitle": "open a channel",
