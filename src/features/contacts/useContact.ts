@@ -1,76 +1,54 @@
-import { useState, useRef, useEffect } from 'react';
-import type { FormEvent } from 'react';
+import { useRef, useState } from 'react';
+import { toast } from '@/shared/ui';
 
 const SCRIPT_URL =
   'https://script.google.com/macros/s/AKfycby3mxHqj4yA8Q15HGEVohQ_F3TS4gQo8AmUcjfqQ7lg4x8u1xwRDjKH33KxzS_FdiFD/exec';
 
-interface NotificationState {
-  message: string;
-  show: boolean;
-  isSuccess: boolean;
-}
-
 interface UseContactProps {
   successMessage: string;
   failureMessage: string;
+  loadingMessage: string;
 }
 
-export function useContact({ successMessage, failureMessage }: UseContactProps) {
+export function useContact({ successMessage, failureMessage, loadingMessage }: UseContactProps) {
   const formRef = useRef<HTMLFormElement>(null);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
   const [isLoading, setIsLoading] = useState(false);
-  const [notif, setNotif] = useState<NotificationState>({
-    message: '',
-    show: false,
-    isSuccess: true,
-  });
 
-  const showNotification = (message: string, isSuccess = true) => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-
-    setNotif({ message, show: true, isSuccess });
-
-    timeoutRef.current = setTimeout(() => {
-      setNotif((prev) => ({ ...prev, show: false }));
-    }, 4000);
-  };
-
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, []);
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.SubmitEvent) => {
     e.preventDefault();
     if (!formRef.current || isLoading) return;
-    setIsLoading(true);
 
-    try {
-      const response = await fetch(SCRIPT_URL, {
-        method: 'POST',
-        body: new FormData(formRef.current),
-      });
+    const currentForm = formRef.current;
 
-      if (response.ok) {
-        showNotification(successMessage, true);
-        formRef.current.reset();
-      } else {
-        showNotification(failureMessage, false);
+    const sendData = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch(SCRIPT_URL, {
+          method: 'POST',
+          body: new FormData(currentForm),
+        });
+
+        if (!response.ok) {
+          throw new Error(failureMessage);
+        }
+
+        currentForm.reset();
+        return successMessage;
+      } finally {
+        setIsLoading(false);
       }
-    } catch (error) {
-      const errorMsg = error instanceof Error ? error.message : String(error);
-      showNotification(`Error: ${errorMsg}`, false);
-    } finally {
-      setIsLoading(false);
-    }
+    };
+
+    toast.promise(sendData(), {
+      loading: loadingMessage,
+      success: successMessage,
+      error: failureMessage,
+    });
   };
 
   return {
     formRef,
     isLoading,
-    notif,
     handleSubmit,
   };
 }

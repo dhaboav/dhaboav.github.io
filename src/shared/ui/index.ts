@@ -8,3 +8,4 @@ export * from './label';
 export * from './spinner';
 export * from './input';
 export * from './textarea';
+export * from './toast';

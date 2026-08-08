@@ -9,16 +9,17 @@ export function ContactSection() {
   const { ui, data } = useI18n();
   const { sectionTitle, subtitle, formLabels, placeholders, submitButton } = ui.contact;
   const t = data.contact;
-  const { formRef, isLoading, notif, handleSubmit } = useContact({
+  const { formRef, isLoading, handleSubmit } = useContact({
     successMessage: t.notification.success,
     failureMessage: t.notification.failure,
+    loadingMessage: t.notification.pending,
   });
 
   return (
     <section id="contact" className="section-container">
       <div className="content-container layout">
         <SectionHeading index="04" title={sectionTitle} note={subtitle} />
-        <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_1.2fr] lg:px-0">
+        <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_auto] lg:px-0">
           <div className="flex flex-col gap-6">
             <p className="text-muted-foreground text-base leading-relaxed lg:text-lg">
               {t.description}
@@ -116,14 +117,6 @@ export function ContactSection() {
             </CardContent>
           </Card>
         </div>
-      </div>
-
-      <div
-        className={`fixed right-6 bottom-6 z-9999 rounded-lg border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm shadow-lg transition-all ${
-          notif.show ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-2 opacity-0'
-        } ${notif.isSuccess ? 'text-green-400' : 'text-red-400'}`}
-      >
-        {notif.message}
       </div>
     </section>
   );
