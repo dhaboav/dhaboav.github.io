@@ -53,6 +53,7 @@ export function ContactSection() {
                     <Input
                       id="name"
                       name="name"
+                      autoComplete="name"
                       placeholder={placeholders.name}
                       required
                       disabled={isLoading}
@@ -70,6 +71,7 @@ export function ContactSection() {
                       id="email"
                       name="email"
                       type="email"
+                      autoComplete="email"
                       placeholder={placeholders.email}
                       required
                       disabled={isLoading}

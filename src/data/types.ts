@@ -64,6 +64,11 @@ export type blogItem = {
   excerpt: string;
 };
 
+export type skillItem = {
+  category: string;
+  techStack: string[];
+};
+
 export type personalInfo = {
   name: string;
   brandName: string;

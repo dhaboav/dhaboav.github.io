@@ -23,7 +23,8 @@
   },
   "experience": {
     "sectionTitle": "Pengalaman",
-    "subtitle": "tempat sistem lahir"
+    "subtitle": "tempat sistem lahir",
+    "skillsLabel": "tech stack"
   },
   "project": {
     "sectionTitle": "Proyek",

@@ -23,7 +23,8 @@
   },
   "experience": {
     "sectionTitle": "Experience",
-    "subtitle": "where systems are born"
+    "subtitle": "where systems are born",
+    "skillsLabel": "skills matrix"
   },
   "project": {
     "sectionTitle": "Projects",

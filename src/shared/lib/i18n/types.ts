@@ -38,6 +38,7 @@ interface AboutSection {
 interface ExperienceSection {
   sectionTitle: string;
   subtitle: string;
+  skillsLabel: string;
 }
 
 interface ProjectSection {

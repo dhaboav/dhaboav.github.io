@@ -17,8 +17,8 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (!id.includes('node_modules')) return;
-          if (/(react|react-dom|react-router)/.test(id)) return 'vendor-react';
-          if (/(lucide-react|@base-ui|@floating-ui)/.test(id)) return 'vendor-ui';
+          if (/(react | react-dom | react-router)/.test(id)) return 'vendor-react';
+          if (/(lucide-react | @base-ui | @floating-ui)/.test(id)) return 'vendor-ui';
           return 'vendor-libs';
         },
       },
