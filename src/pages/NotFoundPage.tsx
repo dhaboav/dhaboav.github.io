@@ -1,5 +1,5 @@
 import { useI18n } from '@/shared/lib';
-import { NotFound } from '@/shared/ui';
+import { NotFound } from '@/shared/components';
 
 export function NotFoundPage() {
   const { ui } = useI18n();

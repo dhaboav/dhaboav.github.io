@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router-dom';
 import { useBlogDetail } from '@/features/blog';
 import { useI18n, formatDate } from '@/shared/lib';
-import { NotFound } from '@/shared/ui';
+import { NotFound } from '@/shared/components';
 
 export function BlogDetail() {
   const { ui, lang } = useI18n();

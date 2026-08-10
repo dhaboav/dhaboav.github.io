@@ -5,6 +5,7 @@
       "location": "Indonesia"
     },
     "subtitle": "Backend Developer dengan pengalaman mengembangkan REST API menggunakan FastAPI, aplikasi computer vision berbasis OpenCV, serta sistem IoT menggunakan Raspberry Pi dan ESP32.",
+    "tagline": "terbuka untuk bekerja",
     "resumeLink": "resume-id"
   },
   "about": {
@@ -12,9 +13,9 @@
     "description": "Saya senang menyelesaikan permasalahan nyata melalui pengembangan backend, computer vision, dan IoT. Proyek yang saya kerjakan mencakup REST API menggunakan FastAPI hingga sistem embedded berbasis Raspberry Pi dan ESP32. Di luar pemrograman, saya menikmati membaca buku, menonton anime, dan bermain game strategi.",
     "data": {
       "basedIn": "Banyuwangi, Indonesia",
-      "focus": "",
-      "currently": "",
-      "openTo": ""
+      "focus": "Software Engineer",
+      "currently": "Mencari tantangan baru",
+      "openTo": "Bekerja"
     }
   },
   "experience": [

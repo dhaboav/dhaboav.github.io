@@ -8,6 +8,7 @@ interface heroSectionData {
     location: string;
   };
   subtitle: string;
+  tagline: string;
   resumeLink: string;
 }
 

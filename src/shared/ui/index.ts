@@ -1,6 +1,4 @@
-export { NotFound } from './NotFound';
-export { Pagination } from './Pagination';
-export * from './SocialIcons';
+export * from './sns-icon';
 export * from './select';
 export * from './button';
 export * from './card';

@@ -1,6 +1,6 @@
-import { useBlogList } from '@/features/blog';
-import { Pagination } from '@/shared/ui';
-import { useI18n, formatDate, usePagination } from '@/shared/lib';
+import { useBlogList, usePagination } from '@/features/blog';
+import { Pagination } from './Pagination';
+import { useI18n, formatDate } from '@/shared/lib';
 import { BlogCard } from './BlogCard';
 
 export function BlogList() {

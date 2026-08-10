@@ -8,8 +8,8 @@ export function HeroSection() {
   const { ui, data } = useI18n();
   const { projectLabel, resumeLabel, blogLabel } = ui.hero;
   const t = data.hero;
-  const techStack = ['Python', 'Docker', 'FastAPI', 'OpenCV', 'MySQL', 'React', 'Tailwind'];
-  const authorSlug = personalData.name.toLowerCase().replace(' ', '-');
+  const techStack = ['Python', 'OpenCV', 'FastAPI', 'React', 'Tailwindcss', 'Docker', 'MySQL'];
+  const authorSlug = personalData.name.toLowerCase().replaceAll(' ', '-');
 
   return (
     <section id="home" className="section-container">
@@ -53,18 +53,19 @@ export function HeroSection() {
           </div>
         </div>
 
-        <TerminalCard techStack={techStack} authorSlug={authorSlug} />
+        <TerminalCard techStack={techStack} authorSlug={authorSlug} tagline={t.tagline} />
       </div>
     </section>
   );
 }
 
 interface TerminalCardProps {
-  techStack: string[];
   authorSlug: string;
+  tagline: string;
+  techStack: string[];
 }
 
-function TerminalCard({ techStack, authorSlug }: TerminalCardProps) {
+function TerminalCard({ authorSlug, tagline, techStack }: TerminalCardProps) {
   return (
     <div className="border-border bg-card rounded-xl border">
       <div
@@ -82,7 +83,9 @@ function TerminalCard({ techStack, authorSlug }: TerminalCardProps) {
           <p className="text-muted-foreground">
             <span className="text-primary">$</span> whoami
           </p>
-          <p>{authorSlug} — test</p>
+          <p>
+            {authorSlug} — {tagline}
+          </p>
         </div>
 
         <div>

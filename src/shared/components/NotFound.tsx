@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { buttonVariants } from './button';
+import { buttonVariants } from '@/shared/ui';
 import { ArrowLeft } from 'lucide-react';
 
 interface NotFoundProps {

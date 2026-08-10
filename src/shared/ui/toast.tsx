@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Toast as ToastPrimitive } from '@base-ui/react/toast';
-import { cn } from '@/shared/lib/utils/index';
-import { Button } from '@/shared/ui/button';
+import { cn } from '@/shared/lib';
+import { Button } from './button';
 import {
   XIcon,
   CircleCheckIcon,
@@ -132,27 +132,15 @@ function ToastClose({
 }
 
 function ToastIcon({ type }: { type: string | undefined }) {
-  let icon: React.ReactNode = null;
+  const iconMap: Record<string, React.ReactNode> = {
+    success: <CircleCheckIcon aria-hidden="true" />,
+    info: <InfoIcon aria-hidden="true" />,
+    warning: <TriangleAlertIcon aria-hidden="true" />,
+    error: <OctagonXIcon className="text-destructive" aria-hidden="true" />,
+    loading: <Loader2Icon className="animate-spin" aria-hidden="true" />,
+  };
 
-  if (type === 'success') {
-    icon = <CircleCheckIcon aria-hidden="true" />;
-  }
-
-  if (type === 'info') {
-    icon = <InfoIcon aria-hidden="true" />;
-  }
-
-  if (type === 'warning') {
-    icon = <TriangleAlertIcon aria-hidden="true" />;
-  }
-
-  if (type === 'error') {
-    icon = <OctagonXIcon className="text-destructive" aria-hidden="true" />;
-  }
-
-  if (type === 'loading') {
-    icon = <Loader2Icon className="animate-spin" aria-hidden="true" />;
-  }
+  const icon = type ? iconMap[type] : null;
 
   if (!icon) {
     return null;
