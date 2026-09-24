@@ -1,6 +1,9 @@
 {
-	"name": "Node.js & TypeScript",
+	"name": "Personal Web",
 	"image": "mcr.microsoft.com/devcontainers/typescript-node:5-24-trixie",
+  "forwardPorts": [5173],
+  "portsAttributes": {"5173": {"label": "App"}},
+  "otherPortsAttributes": {"onAutoForward": "ignore"},
 	"customizations": {
     "vscode": {
       "extensions": [
@@ -10,5 +13,6 @@
       ]
     }
   },
-  "postCreateCommand": "npm install"
+  "postCreateCommand": "npm install",
+  "postStartCommand": "npm run dev -- --host"
 }
