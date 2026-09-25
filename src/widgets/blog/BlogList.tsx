@@ -42,6 +42,7 @@ export function BlogList() {
             <div className="w-full md:max-w-80">
               <div className="border-border relative overflow-hidden rounded-full border transition-all focus-within:-translate-y-1 focus-within:shadow-[4px_4px_0px_0px_var(--color-primary)]">
                 <input
+                  name="search-query"
                   type="text"
                   placeholder={`${searchPlaceholder}...`}
                   value={searchQuery}

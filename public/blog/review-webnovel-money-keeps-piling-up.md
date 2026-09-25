@@ -44,7 +44,7 @@ menurut saya bagian ini sebenarnya tidak perlu ada.
 Secara keseluruhan, novel ini benar-benar menjadi wujudan fantasi impian setiap orang yang
 dituangkan ke dalam bentuk tulisan yang menyenangkan dan ringan.
 
-- **Sangan cocok untuk:** Anda yang sedang mencari bacaan santai, menyukai cerita bertema finansial
+- **Sangat cocok untuk:** Anda yang sedang mencari bacaan santai, menyukai cerita bertema finansial
   tapi ringan tanpa perlu berpikir terlalu berat, dan menyukai unsur kesalahpahaman.
 
 - **Kurang cocok untuk:** Pembaca yang sedang mencari kisah ekonomi atau bisnis yang sangat
