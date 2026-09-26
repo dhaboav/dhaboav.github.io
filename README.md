@@ -30,7 +30,7 @@ src/
 git clone https://github.com/dhaboav/dhaboav.github.io.git
 cd dhaboav.github.io
 pnpm install
-pnpm run dev
+pnpm dev
 ```
 
 #### Option B: Dev Containers (Recommended)
@@ -45,9 +45,9 @@ Open `http://localhost:5173` in your browser.
 ## 📦 Build & Deploy
 
 ```bash
-pnpm run build     # Production build
-pnpm run preview   # Local preview
-pnpm run deploy    # Deploy to GitHub Pages
+pnpm build      # Production build
+pnpm preview    # Local preview
+pnpm run deploy # Deploy to GitHub Pages
 ```
 
 ## ✏️ Customization
