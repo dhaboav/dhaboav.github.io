@@ -1,13 +1,14 @@
-import rawId from './id.json';
-import rawEn from './en.json';
-import projectsMeta from './projects-meta.json';
-import experiencesMeta from './experiences-meta.json';
+import type { Localized } from '@/i18n/types';
+import { Github, Instagram, Linkedin } from '@/ui/sns-icon';
+
 import blogsData from './blogs.json';
-import skillsData from './techStack.json';
+import rawEn from './en.json';
+import experiencesMeta from './experiences-meta.json';
+import rawId from './id.json';
 import personalInfoData from './personal-info.json';
-import type { dynamicData, blogItem, personalInfo, snsItem, skillItem } from './types';
-import type { Localized } from '@/shared/lib';
-import { Github, Instagram, Linkedin } from '@/shared/ui';
+import projectsMeta from './projects-meta.json';
+import skillsData from './techStack.json';
+import type { blogItem, dynamicData, personalInfo, skillItem, snsItem } from './types';
 
 // Mapping
 const metaProjectMap = new Map(projectsMeta.map((meta) => [meta.id, meta]));

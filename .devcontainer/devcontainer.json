@@ -4,6 +4,9 @@
   "forwardPorts": [5173],
   "portsAttributes": {"5173": {"label": "App"}},
   "otherPortsAttributes": {"onAutoForward": "ignore"},
+  "features": {
+    "ghcr.io/devcontainers-extra/features/pnpm:2": {}
+  },
 	"customizations": {
     "vscode": {
       "extensions": [
@@ -13,6 +16,6 @@
       ]
     }
   },
-  "postCreateCommand": "npm install",
-  "postStartCommand": "npm run dev -- --host"
+  "postCreateCommand": "pnpm install",
+  "postStartCommand": "pnpm dev --host"
 }

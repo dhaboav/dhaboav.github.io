@@ -11,7 +11,10 @@
   "compilerOptions": {
     "resolveJsonModule": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/ui/*": ["./src/components/ui/*"],
+      "@/i18n/*": ["./src/lib/i18n/*"],
+      "@/hooks/*": ["./src/hooks/*"],
     }
   }
 }

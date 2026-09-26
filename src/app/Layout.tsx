@@ -1,6 +1,9 @@
 import { Outlet } from 'react-router-dom';
-import { Footer, Navbar, BackToTop } from '@/widgets/layout';
-import { Toaster } from '@/shared/ui/toast';
+
+import { BackToTop } from '@/components/layout/BackToTop';
+import { Footer } from '@/components/layout/Footer';
+import { Navbar } from '@/components/layout/Navbar';
+import { Toaster } from '@/ui/toast';
 
 export function Layout() {
   return (

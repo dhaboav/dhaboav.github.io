@@ -152,7 +152,7 @@
 
   & p {
     font-family: var(--font-sans), sans-serif;
-    font-size:1.125rem;
+    font-size: 1.125rem;
     color: var(--foreground);
     text-align: justify;
     margin-bottom: 0px;
