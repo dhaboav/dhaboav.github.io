@@ -40,5 +40,12 @@
     "tag": "Book Review",
     "title": "Review Buku No Longer Human: Memahami Apa Itu Manusia dan Kerapuhannya",
     "excerpt": "Review mendalam novel klasik No Longer Human karya Osamu Dazai, sebuah potret pilu tentang keterasingan sosial dan pergulatan batin manusia."
+  },
+  {
+    "slug": "pembahasan-devcontainer",
+    "dateISO": "2026-09-26",
+    "tag": "Tech Blogs",
+    "title": "Penyelamat Proyek Modern: Dev Container",
+    "excerpt": "Pernah kesal karena kode berjalan mulus di laptop rekan tapi gagal total di komputer Anda akibat beda versi tool? Temukan bagaimana Dev Container menuntaskan masalah 'di laptop saya lancar' dengan membungkus lingkungan coding ke dalam kontainer yang seragam dan siap pakai."
   }
 ]
