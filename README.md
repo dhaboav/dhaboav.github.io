@@ -1,68 +1,32 @@
-# 🚀 My personal portofolio website
+# 🚀 My Portfolio Website
 
-A modern, responsive personal portfolio website built with **React**, **TypeScript**, **Tailwind
-CSS**, and **Feature-Sliced Design (FSD)**.
-
-This website showcases my projects, experience, technical skills, and blog posts while following a
-clean and scalable architecture.
-
-Deployed and hosted using **GitHub Pages**.
+A modern, responsive personal portfolio built with **React**, **TypeScript**, **TailwindCSS**, and **Feature-Sliced Design (FSD)**. Hosted on **GitHub Pages**.
 
 ## ✨ Features
 
-- 📱 **Responsive Design**  
-  Works smoothly on desktop, tablet, and mobile devices.
-
-- 🎨 **Modern UI**  
-  Clean interface with smooth animations and scrolling.
-
-- 📄 **Portfolio Sections**  
-  Includes About, Experience, Projects, Blog, and Contact sections.
-
-- 📝 **Blog System**  
-  Supports Markdown-based blogs with easy content management.
-
-- 🌐 **Multi-Language Support**  
-  Centralized translation system for managing multiple languages.
-
-- 🧩 **FSD Architecture**  
-  Built with Feature-Sliced Design for better organization, scalability, and maintainability.
+- **Responsive Design**: Optimized for desktop, tablet, and mobile.
+- **Modern UI**: Clean, scalable interface with smooth transitions.
+- **Portfolio Sections**: About, Experience, Projects, Blog, and Contact.
+- **Markdown Blog**: Easy-to-manage content system with markdown.
+- **Multi-Language Support**: Built-in localization architecture.
+- **FSD Architecture**: Scalable and maintainable project structure.
+- **Dev Containers**: Pre-configured containerized development environment.
 
 ## 🏗 Architecture
 
-This project uses **Feature-Sliced Design (FSD)** to keep the code organized, easy to understand,
-and scalable.
-
 ```text
 src/
-├── app/          # Application setup
-├── data/         # Application data
-├── pages/        # Website pages
-├── widgets/      # Large page sections
-├── features/     # User actions and features
-└── shared/       # Reusable components and utilities
+├── app/          # Application setup & providers
+├── data/         # Portfolio & blog data
+├── pages/        # Page components
+├── widgets/      # Large composite sections
+├── features/     # User interactions
+└── shared/       # Reusable components & utils
 ```
 
-### Layer Purpose
-
-| Layer    | Description                               |
-| -------- | ----------------------------------------- |
-| app      | Application configuration and providers   |
-| data     | Application dynamic data                  |
-| pages    | Complete website pages                    |
-| widgets  | Reusable page sections                    |
-| features | User interactions and functionality       |
-| shared   | Common components, helpers, and utilities |
-
-### Why FSD?
-
-- 📦 Keeps code organized
-- 🔍 Makes files easier to find
-- 🚀 Simplifies adding new features
-- 🛠 Improves maintenance
-- 📈 Supports project growth
-
 ## 🚀 Getting Started
+
+#### Option A: Local Enviroment
 
 ```bash
 git clone https://github.com/dhaboav/dhaboav.github.io.git
@@ -71,30 +35,31 @@ npm install
 npm run dev
 ```
 
+#### Option B: Dev Containers (Recommended)
+
+If you use VS Code with the **Dev Containers** extension:
+
+1. Open the repository in VS Code.
+2. Press `Ctrl/Cmd + Shift + P` and select **Dev Containers: Reopen in Container**.
+
 Open `http://localhost:5173` in your browser.
 
 ## 📦 Build & Deploy
 
 ```bash
 npm run build     # Production build
-npm run preview   # Preview build locally
+npm run preview   # Local preview
 npm run deploy    # Deploy to GitHub Pages
 ```
 
 ## ✏️ Customization
 
-- `src/data/` → Manage blogs, personal info and translations of app data.
-- `src/shared/lib/i18n/` → Manage translations and multilingual content.
+- `src/data/` → Manage data, blogs, and app content.
+- `src/shared/lib/i18n/` → Manage translations and localization.
+- `.devcontainer/` → Configure development environment settings.
 
-> Restart the development server if changes are not reflected automatically.
+> Restart the development server if changes do not reflect automatically.
 
 ## 📄 License
 
-This project is available under the **MIT License**.
-
-⭐ If you find this project interesting, feel free to give it a star.
-
-🐛 Found a bug or have a suggestion? Please open a **GitHub Issue** with details about the problem
-or improvement.
-
-💡 Contributions, feedback, and ideas are always welcome.
+MIT License. Contributions, issues, and feature requests are welcome!
