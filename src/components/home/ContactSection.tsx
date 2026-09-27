@@ -17,11 +17,7 @@ export function ContactSection() {
   const { ui, data } = useI18n();
   const { sectionTitle, subtitle, formLabels, placeholders, submitButton } = ui.contact;
   const t = data.contact;
-  const { form, isLoading, handleSubmit } = useContact({
-    successMessage: t.notification.success,
-    failureMessage: t.notification.failure,
-    loadingMessage: t.notification.pending,
-  });
+  const { form, isLoading, handleSubmit } = useContact();
 
   const textFields = [
     { name: 'name', label: formLabels.name, placeholder: placeholders.name, type: 'text' },

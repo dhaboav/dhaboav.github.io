@@ -2,16 +2,11 @@ import { type SubmitHandler, reset, useForm } from '@formisch/react';
 import { useState } from 'react';
 import * as v from 'valibot';
 
+import { useI18n } from '@/i18n/useI18n';
 import { toast } from '@/ui/toast';
 
 const SCRIPT_URL =
   'https://script.google.com/macros/s/AKfycby3mxHqj4yA8Q15HGEVohQ_F3TS4gQo8AmUcjfqQ7lg4x8u1xwRDjKH33KxzS_FdiFD/exec';
-
-interface UseContactProps {
-  successMessage: string;
-  failureMessage: string;
-  loadingMessage: string;
-}
 
 const FormSchema = v.object({
   name: v.pipe(
@@ -33,51 +28,37 @@ const FormSchema = v.object({
   ),
 });
 
-export function useContact({ successMessage, failureMessage, loadingMessage }: UseContactProps) {
+export function useContact() {
+  const { data } = useI18n();
+  const t = data.contact;
+
   const form = useForm({
     schema: FormSchema,
-    initialInput: {
-      name: '',
-      email: '',
-      message: '',
-    },
+    initialInput: { name: '', email: '', message: '' },
   });
+
   const [isLoading, setIsLoading] = useState(false);
+
   const handleSubmit: SubmitHandler<typeof FormSchema> = async (values) => {
     if (isLoading) return;
     setIsLoading(true);
 
     const formData = new FormData();
-    formData.append('name', values.name);
-    formData.append('email', values.email);
-    formData.append('message', values.message);
+    Object.entries(values).forEach(([key, value]) => formData.append(key, value));
 
-    const sendData = async () => {
-      try {
-        const response = await fetch(SCRIPT_URL, {
-          method: 'POST',
-          body: formData,
-        });
-
-        if (!response.ok) {
-          throw new Error(failureMessage);
-        }
+    const submitPromise = fetch(SCRIPT_URL, { method: 'POST', body: formData })
+      .then((response) => {
+        if (!response.ok) throw new Error(t.notification.failure);
         reset(form);
-      } finally {
-        setIsLoading(false);
-      }
-    };
+      })
+      .finally(() => setIsLoading(false));
 
-    toast.promise(sendData(), {
-      loading: loadingMessage,
-      success: successMessage,
-      error: failureMessage,
+    toast.promise(submitPromise, {
+      loading: t.notification.pending,
+      success: t.notification.success,
+      error: t.notification.failure,
     });
   };
 
-  return {
-    form,
-    isLoading,
-    handleSubmit,
-  };
+  return { form, isLoading, handleSubmit };
 }
