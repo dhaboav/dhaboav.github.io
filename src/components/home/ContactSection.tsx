@@ -1,4 +1,4 @@
-import { Send } from 'lucide-react';
+import { SendIcon } from 'lucide-react';
 
 import { snsData } from '@/data';
 import { useContact } from '@/hooks/contact/useContact';
@@ -117,7 +117,7 @@ export function ContactSection() {
                     </>
                   ) : (
                     <>
-                      <Send />
+                      <SendIcon />
                       <span>{submitButton}</span>
                     </>
                   )}

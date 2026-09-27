@@ -1,20 +1,20 @@
 {
   "hero": {
     "tag": {
-      "jobTitle": "Fullstack Developer",
+      "jobTitle": "Full-Stack Web Developer",
       "location": "Indonesia"
     },
-    "subtitle": "Backend Developer experienced in building REST APIs with FastAPI, Computer Vision applications with OpenCV, and IoT systems using Raspberry Pi & ESP32.",
+    "subtitle": "Full-stack developer focused on building functional web applications with Next.js, React, TypeScript, and SQL databases.",
     "tagline": "open to work",
     "resumeLink": "resume-en"
   },
   "about": {
-    "subtitle": "Building with purpose",
-    "description": "I enjoy solving real-world problems by building backend services, computer vision applications, and IoT systems. My projects range from REST APIs with FastAPI to embedded systems powered by Raspberry Pi and ESP32. Outside programming, I enjoy reading books, anime, and strategy games.",
+    "subtitle": "Building practical software",
+    "description": "I build full-stack web applications, combining UI with backend services. I focus on writing maintainable code and solving real-world problems through web development. Outside programming, I enjoy reading books, watching anime, and playing games.",
     "data": {
       "basedIn": "Banyuwangi, Indonesia",
-      "focus": "Software Engineer",
-      "currently": "Exploring new opportunities",
+      "focus": "Full-Stack Web Development  ",
+      "currently": "Building web apps with Next.js and PostgreSQL",
       "openTo": "Full-time roles / Freelance"
     }
   },
@@ -32,26 +32,21 @@
   ],
   "project": [
     {
-      "id": "trueformat",
-      "title": "TrueFormat",
-      "description": "Backend service built with FastAPI and OpenCV to automatically validate passport photos through computer vision."
-    },
-    {
       "id": "bookshelf",
       "title": "Bookshelf Management System",
-      "description": "Fullstack web application built with React, FastAPI, MySQL, and Docker for managing personal book collections."
+      "description": "Full-stack web application built with Next.js, TypeScript, and PostgreSQL for managing personal book collections."
     },
     {
-      "id": "robot",
-      "title": "Multi-Robot Control System",
-      "description": "Python-based control station for monitoring and controlling multiple robots over a local network."
+      "id": "trueformat",
+      "title": "Photo Format Validation Service",
+      "description": "Backend service built with FastAPI for automated photo validation and processing workflows."
     }
   ],
   "contact": {
-    "description": "Consulting, advisory work, speaking, or just a good systems argument — I read everything and reply within a couple of days.",
+    "description": "Open for full-stack web developer roles, freelance projects, or technical chats. Feel free to reach out — I check messages daily.",
     "notification": {
-      "success": "Message sent",
-      "failure": "Failed to send",
+      "success": "Message sent successfully",
+      "failure": "Failed to send message",
       "pending": "Sending..."
     }
   }

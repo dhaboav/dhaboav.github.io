@@ -1,4 +1,4 @@
-import { ExternalLink } from 'lucide-react';
+import { ExternalLinkIcon } from 'lucide-react';
 import { useState } from 'react';
 
 import { useI18n } from '@/i18n/useI18n';
@@ -114,7 +114,7 @@ function ProjectCard({
             className="hover:border-primary flex h-11 flex-row gap-2 bg-transparent font-mono text-xs hover:bg-transparent"
             variant="outline"
           >
-            <ExternalLink />
+            <ExternalLinkIcon />
             {labels.webButton}
           </Button>
         )}

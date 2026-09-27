@@ -1,6 +1,6 @@
 import { type VariantProps, cva } from 'class-variance-authority';
 import { cn } from 'cn';
-import { MoveRight } from 'lucide-react';
+import { MoveRightIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const blogCardVariants = cva('group flex flex-col transition-all p-4 border-b border-border', {
@@ -72,7 +72,7 @@ export function BlogCard({
           </span>
           <div className="slate-900 group-hover:border-primary group-hover:bg-primary flex h-7 w-7 items-center justify-center rounded-full transition-all duration-300 group-hover:text-white group-data-[variant=highlight]:hidden">
             <span className="transform transition-transform duration-300 group-hover:rotate-45">
-              <MoveRight />
+              <MoveRightIcon />
             </span>
           </div>
         </Link>

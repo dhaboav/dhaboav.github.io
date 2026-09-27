@@ -1,4 +1,4 @@
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeftIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import { buttonVariants } from '@/ui/button';
@@ -20,7 +20,7 @@ export const NotFound = ({ pageTitle, pageDesc, buttonLabel }: NotFoundProps) =>
           to="/"
           className={`${buttonVariants({ variant: 'default' })} h-12 px-6 font-mono text-sm`}
         >
-          <ArrowLeft />
+          <ArrowLeftIcon />
           {buttonLabel}
         </Link>
       </div>

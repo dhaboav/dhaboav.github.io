@@ -1,4 +1,4 @@
-import { Menu, MoonIcon, SunIcon, X } from 'lucide-react';
+import { MenuIcon, MoonIcon, SunIcon, XIcon } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { HashLink } from 'react-router-hash-link';
 
@@ -88,7 +88,7 @@ export function Navbar() {
           </Toggle>
 
           <button ref={buttonRef} onClick={toggleMenu} className="md:hidden" aria-label="nav-icon">
-            {isOpen ? <X /> : <Menu />}
+            {isOpen ? <XIcon /> : <MenuIcon />}
           </button>
         </nav>
 

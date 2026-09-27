@@ -1,4 +1,4 @@
-import { ArrowRight, BookOpen, FileText } from 'lucide-react';
+import { ArrowRightIcon, BookOpenIcon, FileTextIcon } from 'lucide-react';
 import { HashLink } from 'react-router-hash-link';
 
 import { personalData } from '@/data';
@@ -9,7 +9,7 @@ export function HeroSection() {
   const { ui, data } = useI18n();
   const { projectLabel, resumeLabel, blogLabel } = ui.hero;
   const t = data.hero;
-  const techStack = ['Python', 'OpenCV', 'FastAPI', 'React', 'Tailwindcss', 'Docker', 'MySQL'];
+  const techStack = ['Typescript', 'React', 'Tailwindcss', 'Docker', 'MySQL', 'PostgreSQL'];
   const authorSlug = personalData.name.toLowerCase().replaceAll(' ', '-');
 
   return (
@@ -39,17 +39,17 @@ export function HeroSection() {
               className={`${buttonVariants({ variant: 'default' })} h-12 px-6`}
             >
               {projectLabel}
-              <ArrowRight />
+              <ArrowRightIcon />
             </HashLink>
             <a
               href={`other/${t.resumeLink}.pdf`}
               download={`Resume ${personalData.name}`}
               className={`${buttonVariants({ variant: 'secondary' })} h-12 px-6`}
             >
-              <FileText className="h-4 w-4" /> {resumeLabel}
+              <FileTextIcon className="h-4 w-4" /> {resumeLabel}
             </a>
             <HashLink to="/blog" className={`${buttonVariants({ variant: 'outline' })} h-12 px-6`}>
-              <BookOpen /> {blogLabel}
+              <BookOpenIcon /> {blogLabel}
             </HashLink>
           </div>
         </div>

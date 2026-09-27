@@ -1,4 +1,4 @@
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react';
 
 import { useI18n } from '@/i18n/useI18n';
 
@@ -12,7 +12,7 @@ interface ShowMoreProps {
 export function ShowMore({ expanded, hiddenCount, onToggle, label = 'items' }: ShowMoreProps) {
   if (hiddenCount <= 0 && !expanded) return null;
 
-  const Icon = expanded ? ChevronUp : ChevronDown;
+  const Icon = expanded ? ChevronUpIcon : ChevronDownIcon;
   const { ui } = useI18n();
 
   return (

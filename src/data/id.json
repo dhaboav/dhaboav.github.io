@@ -1,21 +1,21 @@
 {
   "hero": {
     "tag": {
-      "jobTitle": "Fullstack Developer",
+      "jobTitle": "Full-Stack Developer",
       "location": "Indonesia"
     },
-    "subtitle": "Backend Developer dengan pengalaman mengembangkan REST API menggunakan FastAPI, aplikasi computer vision berbasis OpenCV, serta sistem IoT menggunakan Raspberry Pi dan ESP32.",
+    "subtitle": "Full-stack developer yang berfokus membangun aplikasi web fungsional menggunakan Next.js, React, TypeScript, dan database SQL.",
     "tagline": "terbuka untuk bekerja",
     "resumeLink": "resume-id"
   },
   "about": {
-    "subtitle": "Membangun dengan Tujuan",
-    "description": "Saya senang menyelesaikan permasalahan nyata melalui pengembangan backend, computer vision, dan IoT. Proyek yang saya kerjakan mencakup REST API menggunakan FastAPI hingga sistem embedded berbasis Raspberry Pi dan ESP32. Di luar pemrograman, saya menikmati membaca buku, menonton anime, dan bermain game strategi.",
+    "subtitle": "Membangun software yang fungsional",
+    "description": "Saya membangun aplikasi web full-stack, menggabungkan antarmuka pengguna dengan layanan backend. Saya berfokus pada penulisan kode yang mudah dipelihara dan memecahkan masalah dunia nyata melalui pengembangan web. Di luar pemrograman, saya menikmati membaca buku, menonton anime, dan bermain game.",
     "data": {
       "basedIn": "Banyuwangi, Indonesia",
-      "focus": "Software Engineer",
-      "currently": "Mencari tantangan baru",
-      "openTo": "Bekerja"
+      "focus": "Full-Stack Developer",
+      "currently": "Membangun web dengan Next.js dan PostgreSQL",
+      "openTo": "Bekerja penuh waktu / Freelance"
     }
   },
   "experience": [
@@ -32,26 +32,21 @@
   ],
   "project": [
     {
-      "id": "trueformat",
-      "title": "TrueFormat",
-      "description": "Layanan backend menggunakan FastAPI dan OpenCV untuk memvalidasi pas foto secara otomatis dengan teknologi computer vision."
-    },
-    {
       "id": "bookshelf",
-      "title": "Aplikasi Manajemen Buku",
-      "description": "Aplikasi web fullstack menggunakan React, FastAPI, MySQL, dan Docker untuk mengelola koleksi buku pribadi."
+      "title": "Sistem Manajemen Rak Buku",
+      "description": "Aplikasi web full-stack yang dibangun dengan Next.js, TypeScript, dan PostgreSQL untuk mengelola koleksi buku pribadi."
     },
     {
-      "id": "robot",
-      "title": "Sistem Kendali Multi Robot",
-      "description": "Sistem kendali berbasis Python untuk memantau dan mengendalikan beberapa robot melalui jaringan lokal."
+      "id": "trueformat",
+      "title": "Layanan Validasi Format Foto",
+      "description": "Layanan backend yang dibangun dengan FastAPI untuk validasi foto otomatis dan alur kerja pemrosesan."
     }
   ],
   "contact": {
-    "description": "Konsultasi, ngobrol, atau sekadar diskusi teknis teknologi — saya membaca semuanya dan akan membalas dalam beberapa hari.",
+    "description": "Terbuka untuk posisi full-stack web developer, proyek freelance, atau diskusi teknis. Silakan hubungi saya — saya mengecek pesan setiap hari.",
     "notification": {
-      "success": "Pesan terkirim",
-      "failure": "Gagal mengirim",
+      "success": "Pesan berhasil dikirim",
+      "failure": "Gagal mengirim pesan",
       "pending": "Mengirim..."
     }
   }

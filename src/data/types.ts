@@ -1,7 +1,4 @@
 import type { LucideIcon } from 'lucide-react';
-import type { ComponentType } from 'react';
-
-import type { IconProps } from '@/shared/ui';
 
 interface heroSectionData {
   tag: {
@@ -81,8 +78,7 @@ export type personalInfo = {
   };
 };
 
-type IconType = LucideIcon | ComponentType<IconProps>;
 export type snsItem = {
-  logo: IconType;
+  logo: LucideIcon;
   href: string;
 };

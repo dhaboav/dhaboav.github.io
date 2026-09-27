@@ -1,4 +1,4 @@
-import { ChevronUp } from 'lucide-react';
+import { ChevronUpIcon } from 'lucide-react';
 
 import { useBackToTop } from '@/hooks/layout/useBackToTop';
 
@@ -13,7 +13,7 @@ export function BackToTop() {
         isVisible ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-4 opacity-0'
       }`}
     >
-      <ChevronUp />
+      <ChevronUpIcon />
     </button>
   );
 }

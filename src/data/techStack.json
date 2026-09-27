@@ -1,18 +1,26 @@
 [
   {
-    "category": "frontend",
-    "techStack": ["React", "Typescript", "Javascript", "Tailwindcss", "Vite"]
+    "category": "Frontend",
+    "techStack": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ]
   },
   {
-    "category": "backend",
-    "techStack": ["Node.js", "FastAPI", "Python", "MySQL"]
+    "category": "Backend & Database",
+    "techStack": [
+      "Node.js",
+      "PostgreSQL",
+      "MySQL"
+    ]
   },
   {
-    "category": "ai & robotics",
-    "techStack": ["OpenCV", "NumPy", "C++", "ROS2", "Raspberry Pi", "Arduino"]
-  },
-  {
-    "category": "tools",
-    "techStack": ["Docker", "Git", "Postman", "VS Code"]
+    "category": "Tools",
+    "techStack": [
+      "Git",
+      "Docker"
+    ]
   }
 ]
