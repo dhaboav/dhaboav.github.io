@@ -1,4 +1,6 @@
-import { useRef, useState } from 'react';
+import { type SubmitHandler, reset, useForm } from '@formisch/react';
+import { useState } from 'react';
+import * as v from 'valibot';
 
 import { toast } from '@/ui/toast';
 
@@ -11,30 +13,56 @@ interface UseContactProps {
   loadingMessage: string;
 }
 
+const FormSchema = v.object({
+  name: v.pipe(
+    v.string(),
+    v.nonEmpty('Please enter your name.'),
+    v.minLength(4, 'Name must be at least 4 characters.'),
+    v.maxLength(32, 'Name must be at most 32 characters.'),
+  ),
+  email: v.pipe(
+    v.string(),
+    v.nonEmpty('Please enter your email.'),
+    v.email('The email address is badly formatted.'),
+  ),
+  message: v.pipe(
+    v.string(),
+    v.nonEmpty('Please enter your message.'),
+    v.minLength(6, 'Message must be at least 6 characters.'),
+    v.maxLength(256, 'Name must be at most 256 characters.'),
+  ),
+});
+
 export function useContact({ successMessage, failureMessage, loadingMessage }: UseContactProps) {
-  const formRef = useRef<HTMLFormElement>(null);
+  const form = useForm({
+    schema: FormSchema,
+    initialInput: {
+      name: '',
+      email: '',
+      message: '',
+    },
+  });
   const [isLoading, setIsLoading] = useState(false);
+  const handleSubmit: SubmitHandler<typeof FormSchema> = async (values) => {
+    if (isLoading) return;
+    setIsLoading(true);
 
-  const handleSubmit = async (e: React.SubmitEvent) => {
-    e.preventDefault();
-    if (!formRef.current || isLoading) return;
-
-    const currentForm = formRef.current;
+    const formData = new FormData();
+    formData.append('name', values.name);
+    formData.append('email', values.email);
+    formData.append('message', values.message);
 
     const sendData = async () => {
-      setIsLoading(true);
       try {
         const response = await fetch(SCRIPT_URL, {
           method: 'POST',
-          body: new FormData(currentForm),
+          body: formData,
         });
 
         if (!response.ok) {
           throw new Error(failureMessage);
         }
-
-        currentForm.reset();
-        return successMessage;
+        reset(form);
       } finally {
         setIsLoading(false);
       }
@@ -48,7 +76,7 @@ export function useContact({ successMessage, failureMessage, loadingMessage }: U
   };
 
   return {
-    formRef,
+    form,
     isLoading,
     handleSubmit,
   };

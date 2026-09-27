@@ -1,3 +1,4 @@
+import { Form, Field as FormischField, reset } from '@formisch/react';
 import { SendIcon } from 'lucide-react';
 
 import { snsData } from '@/data';
@@ -5,8 +6,8 @@ import { useContact } from '@/hooks/contact/useContact';
 import { useI18n } from '@/i18n/useI18n';
 import { Button } from '@/ui/button';
 import { Card, CardContent } from '@/ui/card';
+import { Field, FieldError, FieldLabel } from '@/ui/field';
 import { Input } from '@/ui/input';
-import { Label } from '@/ui/label';
 import { Spinner } from '@/ui/spinner';
 import { Textarea } from '@/ui/textarea';
 
@@ -16,17 +17,22 @@ export function ContactSection() {
   const { ui, data } = useI18n();
   const { sectionTitle, subtitle, formLabels, placeholders, submitButton } = ui.contact;
   const t = data.contact;
-  const { formRef, isLoading, handleSubmit } = useContact({
+  const { form, isLoading, handleSubmit } = useContact({
     successMessage: t.notification.success,
     failureMessage: t.notification.failure,
     loadingMessage: t.notification.pending,
   });
 
+  const textFields = [
+    { name: 'name', label: formLabels.name, placeholder: placeholders.name, type: 'text' },
+    { name: 'email', label: 'email', placeholder: placeholders.email, type: 'email' },
+  ] as const;
+
   return (
     <section id="contact" className="section-container">
       <div className="content-container layout">
         <SectionHeading index="04" title={sectionTitle} note={subtitle} />
-        <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_auto] lg:px-0">
+        <div className="mt-10 grid gap-6 lg:grid-cols-[0.6fr_auto] lg:px-0">
           <div className="flex flex-col gap-6">
             <p className="text-muted-foreground text-base leading-relaxed lg:text-lg">
               {t.description}
@@ -47,82 +53,103 @@ export function ContactSection() {
           </div>
 
           <Card>
-            <CardContent className="px-4 lg:p-6">
-              <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
-                <div className="grid gap-4 lg:grid-cols-2">
-                  <div className="space-y-2">
-                    <Label
-                      htmlFor="name"
-                      className="text-muted-foreground font-mono text-xs tracking-[0.15em] uppercase"
-                    >
-                      {formLabels.name}
-                    </Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      autoComplete="name"
-                      placeholder={placeholders.name}
-                      required
-                      disabled={isLoading}
-                      className="border-border focus:border-primary placeholder:text-muted-foreground py-6 focus-visible:ring-0"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label
-                      htmlFor="email"
-                      className="text-muted-foreground font-mono text-xs tracking-[0.15em] uppercase"
-                    >
-                      Email
-                    </Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      autoComplete="email"
-                      placeholder={placeholders.email}
-                      required
-                      disabled={isLoading}
-                      className="border-border focus:border-primary placeholder:text-muted-foreground py-6 focus-visible:ring-0"
-                    />
-                  </div>
+            <CardContent className="px-4 py-6 lg:p-6">
+              <Form of={form} id="contact-form" onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid gap-4 lg:grid-cols-2 items-start">
+                  {textFields.map(({ name, label, placeholder, type }) => (
+                    <FormischField key={name} of={form} path={[name]}>
+                      {(field) => (
+                        <Field data-invalid={field.errors !== null}>
+                          <FieldLabel
+                            htmlFor={name}
+                            className="text-muted-foreground font-mono text-xs tracking-[0.15em] uppercase"
+                          >
+                            {label}
+                          </FieldLabel>
+                          <Input
+                            {...field.props}
+                            id={name}
+                            type={type}
+                            placeholder={placeholder}
+                            value={field.input ?? ''}
+                            aria-invalid={field.errors !== null}
+                            required
+                            autoComplete="off"
+                            disabled={isLoading}
+                            className="border-border focus:border-primary placeholder:text-muted-foreground bg-background py-6 focus-visible:ring-0"
+                          />
+                          <div className="min-h-[22px]">
+                            {field.errors && (
+                              <FieldError errors={field.errors.map((message) => ({ message }))} />
+                            )}
+                          </div>
+                        </Field>
+                      )}
+                    </FormischField>
+                  ))}
                 </div>
 
-                <div className="space-y-2">
-                  <Label
-                    htmlFor="message"
-                    className="text-muted-foreground font-mono text-xs tracking-[0.15em] uppercase"
-                  >
-                    {formLabels.message}
-                  </Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    disabled={isLoading}
-                    required
-                    rows={5}
-                    placeholder={placeholders.message}
-                    className="border-border focus:border-primary placeholder:text-muted-foreground bg-background min-h-30 resize-none focus-visible:ring-0"
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  disabled={isLoading}
-                  className={`flex w-full items-center justify-center gap-2 p-6 text-sm font-medium transition-all ${isLoading && 'cursor-not-allowed opacity-70'}`}
-                >
-                  {isLoading ? (
-                    <>
-                      <Spinner />
-                      <span>{t.notification.pending}</span>
-                    </>
-                  ) : (
-                    <>
-                      <SendIcon />
-                      <span>{submitButton}</span>
-                    </>
+                <FormischField of={form} path={['message']}>
+                  {(field) => (
+                    <Field data-invalid={field.errors !== null}>
+                      <FieldLabel
+                        htmlFor="message"
+                        className="text-muted-foreground font-mono text-xs tracking-[0.15em] uppercase"
+                      >
+                        {formLabels.message}
+                      </FieldLabel>
+                      <Textarea
+                        {...field.props}
+                        id="message"
+                        value={field.input ?? ''}
+                        placeholder={placeholders.message}
+                        aria-invalid={field.errors !== null}
+                        required
+                        autoComplete="off"
+                        rows={5}
+                        disabled={isLoading}
+                        className="border-border focus:border-primary placeholder:text-muted-foreground bg-background min-h-30 resize-none focus-visible:ring-0"
+                      />
+                      <div className="min-h-[22px]">
+                        {field.errors && (
+                          <FieldError errors={field.errors.map((message) => ({ message }))} />
+                        )}
+                      </div>
+                    </Field>
                   )}
-                </Button>
-              </form>
+                </FormischField>
+
+                <div className="flex items-center gap-3">
+                  <Button
+                    type="button"
+                    disabled={isLoading}
+                    variant="outline"
+                    onClick={() => reset(form)}
+                    className="h-12 px-6 font-medium"
+                  >
+                    Reset
+                  </Button>
+                  <Button
+                    type="submit"
+                    disabled={isLoading}
+                    className={`h-12 flex-1 font-medium transition-all ${
+                      isLoading ? 'cursor-not-allowed opacity-70' : ''
+                    }`}
+                  >
+                    {isLoading ? (
+                      <>
+                        <Spinner />
+                        <span>{t.notification.pending}</span>
+                      </>
+                    ) : (
+                      <>
+                        <SendIcon className="mr-2 h-4 w-4" />
+                        <span>{submitButton}</span>
+                      </>
+                    )}
+                  </Button>
+                </div>
+              </Form>
             </CardContent>
           </Card>
         </div>
