@@ -1,0 +1,27 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Build outputs
+dist
+build
+
+# Version control
+.git
+.gitignore
+
+# Development environments & IDEs
+.devcontainer
+.vscode
+.idea
+
+# Documentation & Licensing
+README.md
+LICENCE
+
+# Linting and formatting configs
+.prettierrc
+.eslintrc*
+
+# Local environment variables
+.env*
