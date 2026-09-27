@@ -7,6 +7,7 @@ import { useI18n } from '@/i18n/useI18n';
 import { formatDate } from '@/lib/utils/formatDate';
 
 import { NotFound } from '../layout/NotFound';
+import { BlogDetailSkeleton } from './BlogDetailSkeleton';
 
 export function BlogDetail() {
   const { ui, lang } = useI18n();
@@ -26,14 +27,7 @@ export function BlogDetail() {
     );
 
   if (isLoading) {
-    return (
-      <section
-        className="text-muted-foreground section-container animate-pulse pt-28 text-center font-mono font-bold"
-        role="status"
-      >
-        {ui.blogDetail.loadingPageLabel}...
-      </section>
-    );
+    return <BlogDetailSkeleton />;
   }
 
   return (

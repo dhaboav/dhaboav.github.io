@@ -164,7 +164,7 @@
   }
 
   & a:hover {
-    color: darken(var(--primary), 70%); 
+    color: darken(var(--primary), 70%);
     text-decoration: underline;
   }
 
