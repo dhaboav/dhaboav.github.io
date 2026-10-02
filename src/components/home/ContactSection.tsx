@@ -1,4 +1,4 @@
-import { Form, Field as FormischField, reset } from '@formisch/react';
+import { Form, reset } from '@formisch/react';
 import { SendIcon } from 'lucide-react';
 
 import { snsData } from '@/data';
@@ -6,10 +6,8 @@ import { useContact } from '@/hooks/contact/useContact';
 import { useI18n } from '@/i18n/useI18n';
 import { Button } from '@/ui/button';
 import { Card, CardContent } from '@/ui/card';
-import { Field, FieldError, FieldLabel } from '@/ui/field';
-import { Input } from '@/ui/input';
+import { InputField, TextareaField } from '@/ui/shared-form-fields';
 import { Spinner } from '@/ui/spinner';
-import { Textarea } from '@/ui/textarea';
 
 import { SectionHeading } from './SectionHeading';
 
@@ -18,11 +16,6 @@ export function ContactSection() {
   const { sectionTitle, subtitle, formLabels, placeholders, submitButton } = ui.contact;
   const t = data.contact;
   const { form, isLoading, handleSubmit } = useContact();
-
-  const textFields = [
-    { name: 'name', label: formLabels.name, placeholder: placeholders.name, type: 'text' },
-    { name: 'email', label: 'email', placeholder: placeholders.email, type: 'email' },
-  ] as const;
 
   return (
     <section id="contact" className="section-container">
@@ -52,68 +45,28 @@ export function ContactSection() {
             <CardContent className="px-4 py-6 lg:p-6">
               <Form of={form} id="contact-form" onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid gap-4 lg:grid-cols-2 items-start">
-                  {textFields.map(({ name, label, placeholder, type }) => (
-                    <FormischField key={name} of={form} path={[name]}>
-                      {(field) => (
-                        <Field data-invalid={field.errors !== null}>
-                          <FieldLabel
-                            htmlFor={name}
-                            className="text-muted-foreground font-mono text-xs tracking-[0.15em] uppercase"
-                          >
-                            {label}
-                          </FieldLabel>
-                          <Input
-                            {...field.props}
-                            id={name}
-                            type={type}
-                            placeholder={placeholder}
-                            value={field.input ?? ''}
-                            aria-invalid={field.errors !== null}
-                            required
-                            autoComplete="off"
-                            disabled={isLoading}
-                            className="border-border focus:border-primary placeholder:text-muted-foreground bg-background py-6 focus-visible:ring-0"
-                          />
-                          <div className="min-h-[22px]">
-                            {field.errors && (
-                              <FieldError errors={field.errors.map((message) => ({ message }))} />
-                            )}
-                          </div>
-                        </Field>
-                      )}
-                    </FormischField>
-                  ))}
+                  <InputField
+                    of={form}
+                    path="name"
+                    label={formLabels.name}
+                    placeholder={placeholders.name}
+                  />
+                  <InputField
+                    of={form}
+                    path="email"
+                    label="email"
+                    placeholder={placeholders.email}
+                    type="email"
+                  />
                 </div>
 
-                <FormischField of={form} path={['message']}>
-                  {(field) => (
-                    <Field data-invalid={field.errors !== null}>
-                      <FieldLabel
-                        htmlFor="message"
-                        className="text-muted-foreground font-mono text-xs tracking-[0.15em] uppercase"
-                      >
-                        {formLabels.message}
-                      </FieldLabel>
-                      <Textarea
-                        {...field.props}
-                        id="message"
-                        value={field.input ?? ''}
-                        placeholder={placeholders.message}
-                        aria-invalid={field.errors !== null}
-                        required
-                        autoComplete="off"
-                        rows={5}
-                        disabled={isLoading}
-                        className="border-border focus:border-primary placeholder:text-muted-foreground bg-background min-h-30 resize-none focus-visible:ring-0"
-                      />
-                      <div className="min-h-[22px]">
-                        {field.errors && (
-                          <FieldError errors={field.errors.map((message) => ({ message }))} />
-                        )}
-                      </div>
-                    </Field>
-                  )}
-                </FormischField>
+                <TextareaField
+                  of={form}
+                  path="message"
+                  label={formLabels.message}
+                  placeholder={placeholders.message}
+                  className="border-border focus:border-primary placeholder:text-muted-foreground bg-background min-h-30 resize-none focus-visible:ring-0"
+                />
 
                 <div className="flex items-center gap-3">
                   <Button
