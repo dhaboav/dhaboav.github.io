@@ -15,11 +15,9 @@ A modern, responsive personal portfolio built with **React**, **TypeScript**, an
 
 ```bash
 src/
-├── app/        # Application setup & providers
-├── data/       # Portfolio & blog data
-├── components/ # UI components
-├── hooks/      # Custom React hooks
-└── lib/        # Helper functions,and utility
+├── app/      # Application setup & providers
+├── modules/  # Feature domains (UI components, pages, & local logic per feature)
+└── shared/   # Global resources (Universal UI components, i18n, & global utilities)
 ```
 
 ## 🚀 Getting Started
@@ -52,9 +50,9 @@ pnpm run deploy # Deploy to GitHub Pages
 
 ## ✏️ Customization
 
-- `src/data/`       → Manage data, blogs, and app content.
-- `src/lib/i18n/`   → Manage translations and localization.
-- `.devcontainer/`  → Configure development environment settings.
+- `data/`            → Manage data, blogs, and app content.
+- `src/shared/i18n/` → Manage translations and localization.
+- `.devcontainer/`   → Configure development environment settings.
 
 > Restart the development server if changes do not reflect automatically.
 
