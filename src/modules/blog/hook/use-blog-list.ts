@@ -6,10 +6,11 @@ export function useBlogList(page: number = 1, size: number = 6) {
 
   // Search Filtered Data
   const filteredData = useMemo(() => {
+    const sorted = [...blogData].sort((a, b) => Number(b.id) - Number(a.id));
     const query = searchQuery.toLowerCase().trim();
-    if (!query) return blogData;
+    if (!query) return sorted;
 
-    return blogData.filter(
+    return sorted.filter(
       (b) => b.title.toLowerCase().includes(query) || b.tag.toLowerCase().includes(query),
     );
   }, [searchQuery]);
