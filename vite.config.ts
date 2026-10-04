@@ -8,9 +8,12 @@ export default defineConfig({
   base: '/',
   resolve: {
     alias: { 
-      '@/ui': resolve(import.meta.dirname, './src/components/ui'), 
-      '@/i18n': resolve(import.meta.dirname, './src/lib/i18n'), 
-      '@/hooks': resolve(import.meta.dirname, './src/hooks'),
+      '@/ui': resolve(import.meta.dirname, './src/shared/ui'), 
+      '@/i18n': resolve(import.meta.dirname, './src/shared/i18n'), 
+      '@/blog': resolve(import.meta.dirname, './src/modules/blog'),
+      '@/homepage': resolve(import.meta.dirname, './src/modules/homepage'),
+      '@/layout': resolve(import.meta.dirname, './src/modules/layout'),
+      '@data': resolve(__dirname, './data'),
       '@': resolve(import.meta.dirname, './src'),
     },
   },

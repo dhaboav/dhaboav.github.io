@@ -1,14 +1,10 @@
 import { HashRouter, Route, Routes } from 'react-router-dom';
 
-import { BlogDetail } from '@/components/blog/BlogDetail';
-import { BlogList } from '@/components/blog/BlogList';
-import { AboutSection } from '@/components/home/AboutSection';
-import { ContactSection } from '@/components/home/ContactSection';
-import { ExperienceSection } from '@/components/home/ExperienceSection';
-import { HeroSection } from '@/components/home/HeroSection';
-import { ProjectSection } from '@/components/home/ProjectSection';
-import { NotFound } from '@/components/layout/NotFound';
-import { useI18n } from '@/i18n/useI18n';
+import { BlogContentPage } from '@/blog/page/BlogContentPage';
+import { BlogListPage } from '@/blog/page/BlogListPage';
+import { Homepage } from '@/homepage/page';
+import { useI18n } from '@/shared/i18n/useI18n';
+import { NotFound } from '@/ui/NotFound';
 
 import { Layout } from './Layout';
 
@@ -20,20 +16,9 @@ export default function App() {
       <main>
         <Routes>
           <Route element={<Layout />}>
-            <Route
-              path="/"
-              element={
-                <>
-                  <HeroSection />
-                  <AboutSection />
-                  <ExperienceSection />
-                  <ProjectSection />
-                  <ContactSection />
-                </>
-              }
-            />
-            <Route path="/blog" element={<BlogList />} />
-            <Route path="/blog/:slug" element={<BlogDetail />} />
+            <Route path="/" element={<Homepage />} />
+            <Route path="/blog" element={<BlogListPage />} />
+            <Route path="/blog/:slug" element={<BlogContentPage />} />
           </Route>
           <Route
             path="*"

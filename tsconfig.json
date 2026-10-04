@@ -12,9 +12,11 @@
     "resolveJsonModule": true,
     "paths": {
       "@/*": ["./src/*"],
-      "@/ui/*": ["./src/components/ui/*"],
-      "@/i18n/*": ["./src/lib/i18n/*"],
-      "@/hooks/*": ["./src/hooks/*"],
+      "@data/*": ["./data/*"],
+      "@/ui/*": ["./src/shared/ui/*"],
+      "@/blog/*": ["./src/modules/blog/*"],
+      "@/homepage/*": ["./src/modules/homepage/*"],
+      "@/layout/*": ["./src/modules/layout/*"]
     }
   }
 }

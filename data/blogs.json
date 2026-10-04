@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "slug": "migrasi-arsitektur-vanilla-js-ke-react-typescript",
+    "dateISO": "2026-06-17",
+    "tag": "Web Dev",
+    "title": "Eksplorasi Migrasi Portofolio: Dari Vanilla JS ke React TypeScript",
+    "excerpt": "Berbagi cerita di balik keputusan merombak total arsitektur kode web portofolio statis agar lebih scalable, menggunakan konsep custom hooks, dan menerapkan routing berbasis file Markdown."
+  },
+  {
+    "id": 2,
+    "slug": "tutorial-pemakaian-repo-web-portofolio",
+    "dateISO": "2026-06-17",
+    "tag": "Tutorial",
+    "title": "Cara Memasang dan Mengkustomisasi Portfolio React & Tailwind CSS",
+    "excerpt": "Panduan lengkap memasang, menjalankan, dan mengkustomisasi portfolio React & Tailwind CSS."
+  },
+  {
+    "id": 3,
+    "slug": "migrasi-arsitektur-react-ke-feature-sliced-design",
+    "dateISO": "2026-06-26",
+    "tag": "Web Dev",
+    "title": "Migrasi Arsitektur React ke Feature-Sliced Design (FSD): Pengalaman dan Pembelajaran",
+    "excerpt": "Cerita pengalaman memindahkan struktur project React ke Feature-Sliced Design, tantangan yang dihadapi, serta alasan di balik setiap perubahan."
+  },
+  {
+    "id": 4,
+    "slug": "pengalaman-migrasi-windows-ke-linux",
+    "dateISO": "2026-09-11",
+    "tag": "Tech Blogs",
+    "title": "Pindah ke Linux: Pengalaman Migrasi dari Windows ke Ubuntu untuk Daily Driver",
+    "excerpt": "Berbagi pengalaman menggunakan Ubuntu sebagai sistem operasi utama dalam pengembangan perangkat lunak dan pemakaian sehari-hari."
+  },
+  {
+    "id": 5,
+    "slug": "review-webnovel-money-keeps-piling-up",
+    "dateISO": "2026-09-24",
+    "tag": "Book Review",
+    "title": "Kaya Raya Tanpa Usaha: Review Webnovel Money Keeps Piling Up No Matter How Much I Spend",
+    "excerpt": "Ulasan jujur webnovel Money Keeps Piling Up: Perpaduan unik antara dunia finansial, komedi kesalahpahaman, dan alur cerita yang asyik buat nemenin waktu santai."
+  },
+  {
+    "id": 6,
+    "slug": "review-buku-no-longer-human",
+    "dateISO": "2026-09-25",
+    "tag": "Book Review",
+    "title": "Review Buku No Longer Human: Memahami Apa Itu Manusia dan Kerapuhannya",
+    "excerpt": "Review mendalam novel klasik No Longer Human karya Osamu Dazai, sebuah potret pilu tentang keterasingan sosial dan pergulatan batin manusia."
+  },
+  {
+    "id": 7,
+    "slug": "pembahasan-devcontainer",
+    "dateISO": "2026-09-26",
+    "tag": "Tech Blogs",
+    "title": "Penyelamat Proyek Modern: Dev Container",
+    "excerpt": "Pernah kesal karena kode berjalan mulus di laptop rekan tapi gagal total di komputer Anda akibat beda versi tool? Temukan bagaimana Dev Container menuntaskan masalah 'di laptop saya lancar' dengan membungkus lingkungan coding ke dalam kontainer yang seragam dan siap pakai."
+  }
+]
