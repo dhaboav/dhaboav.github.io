@@ -13,7 +13,7 @@ export default defineConfig({
       '@/blog': resolve(import.meta.dirname, './src/modules/blog'),
       '@/homepage': resolve(import.meta.dirname, './src/modules/homepage'),
       '@/layout': resolve(import.meta.dirname, './src/modules/layout'),
-      '@data': resolve(__dirname, './data'),
+      '@data': resolve(import.meta.dirname, './data'),
       '@': resolve(import.meta.dirname, './src'),
     },
   },
