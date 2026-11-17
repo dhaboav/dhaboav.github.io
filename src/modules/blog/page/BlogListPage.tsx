@@ -9,7 +9,7 @@ export function BlogListPage() {
   const [searchParams] = useSearchParams();
   const queryConfig = {
     page: Number(searchParams.get('page')) || 1,
-    size: Number(searchParams.get('size')) || 6,
+    size: Number(searchParams.get('size')) || 12,
   };
   const { data, metadata, search } = useBlogList(queryConfig.page, queryConfig.size);
 
@@ -67,7 +67,7 @@ export function BlogListPage() {
             {noResultLabel} <span className="text-foreground font-bold">"{search.query}"</span>
           </div>
         ) : (
-          <div className="grid grid-cols-1 gap-12  md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-12 md:grid-cols-3 lg:grid-cols-4">
             {data.map((item) => {
               return <BlogCard key={item.id} data={item} />;
             })}

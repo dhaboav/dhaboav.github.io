@@ -1,7 +1,7 @@
 import { blogData } from '@data/index';
 import { useMemo, useState } from 'react';
 
-export function useBlogList(page: number = 1, size: number = 6) {
+export function useBlogList(page: number = 1, size: number = 12) {
   const [searchQuery, setSearchQuery] = useState('');
 
   // Search Filtered Data

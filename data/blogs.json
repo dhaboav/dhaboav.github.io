@@ -54,5 +54,13 @@
     "tag": "Tech Blogs",
     "title": "Penyelamat Proyek Modern: Dev Container",
     "excerpt": "Pernah kesal karena kode berjalan mulus di laptop rekan tapi gagal total di komputer Anda akibat beda versi tool? Temukan bagaimana Dev Container menuntaskan masalah 'di laptop saya lancar' dengan membungkus lingkungan coding ke dalam kontainer yang seragam dan siap pakai."
+  },
+  {
+    "id": 8,
+    "slug": "pengalaman-memakai-niri",
+    "dateISO": "2026-11-17",
+    "tag": "Tech Blogs",
+    "title": "Niri: Pengalaman Desktop Linux yang Tidak Biasa",
+    "excerpt": "Bukan sekadar window manager biasa. Niri membawa konsep scrollable tiling yang unik dan memberikan pengalaman berbeda dalam mengelola jendela aplikasi di Linux."
   }
 ]
