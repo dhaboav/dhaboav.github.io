@@ -86,6 +86,7 @@ Beberapa fitur menariknya meliputi widget, kustomisasi tema yang mengikuti warna
 pengaturan desktop yang lebih terpusat.
 
 - [Dokumentasi Noctalia](https://docs.noctalia.dev/noctalia/v5.5.0/)
+- [Video Preview Noctalia](https://youtube.com/shorts/zie3MKjzihQ)
 
 **Kelebihan:**
 
@@ -125,8 +126,7 @@ fokus ketika bekerja.
 
 Untuk saat ini, kombinasi Niri dan Noctalia menjadi pilihan utama saya. Saya cukup puas dengan
 performanya dan sepertinya belum berencana berpindah ke compositor lain dalam waktu dekat, kecuali
-pengembangan Niri sudah tidak aktif lagi. Ke depannya, saya juga berencana membagikan video preview
-penggunaan Niri + Noctalia serta pembahasan lebih mendalam dalam format video panjang.
+pengembangan Niri sudah tidak aktif lagi.
 
 **Jadi, bagaimana menurut kalian? Tertarik mencoba Niri atau justru sudah punya kombinasi compositor
 dan desktop shell andalan sendiri?**
