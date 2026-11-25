@@ -7,7 +7,7 @@ import experiencesMeta from './experiences-meta.json';
 import rawId from './id.json';
 import personalInfoData from './personal-info.json';
 import projectsMeta from './projects-meta.json';
-import skillsData from './techStack.json';
+import skillsData from './tech-stack.json';
 import type { blogItem, dynamicData, personalInfo, skillItem, snsItem } from './types';
 
 // Mapping

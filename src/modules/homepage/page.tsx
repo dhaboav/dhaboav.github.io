@@ -1,8 +1,8 @@
-import { AboutSection } from '@/homepage/ui/AboutSection';
-import { ContactSection } from '@/homepage/ui/ContactSection';
-import { ExperienceSection } from '@/homepage/ui/ExperienceSection';
-import { HeroSection } from '@/homepage/ui/HeroSection';
-import { ProjectSection } from '@/homepage/ui/ProjectSection';
+import { AboutSection } from '@/modules/homepage/ui/about-section';
+import { ContactSection } from '@/modules/homepage/ui/contact-section';
+import { ExperienceSection } from '@/modules/homepage/ui/experience-section';
+import { HeroSection } from '@/modules/homepage/ui/hero-section';
+import { ProjectSection } from '@/modules/homepage/ui/project-section';
 
 function Homepage() {
   return (

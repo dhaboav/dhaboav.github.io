@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { LangContext } from './langContext';
-import { getStoredLang, setStoredLang } from './langStorage';
+import { LangContext } from './lang-context';
+import { getStoredLang, setStoredLang } from './lang-storage';
 import type { SupportedLang } from './types';
 
 export const LangProvider = ({ children }: { children: React.ReactNode }) => {

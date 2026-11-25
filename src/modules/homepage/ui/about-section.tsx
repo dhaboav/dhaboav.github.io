@@ -1,8 +1,9 @@
 import { personalData } from '@data/index';
 
 import { useI18n } from '@/shared/i18n/useI18n';
+import { Card, CardContent } from '@/shared/ui/card';
 
-import { SectionHeading } from './SectionHeading';
+import { SectionHeading } from './section-heading';
 
 export function AboutSection() {
   const { ui, data } = useI18n();
@@ -16,19 +17,19 @@ export function AboutSection() {
   ];
 
   return (
-    <section id="about" className="section-container alt">
+    <section id="about" className="section-container">
       <div className="content-container layout">
         <SectionHeading index="01" title={sectionTitle} note={subtitle} />
-        <div className="mt-10 grid gap-10 md:items-center lg:grid-cols-[minmax(0,320px)_minmax(0,1fr)] lg:items-start">
+        <div className="mt-10 grid gap-10 md:items-start md:grid-cols-[minmax(0,320px)_minmax(0,1fr)]">
           <div aria-label="profile">
             <img
-              src="/img/profile.png"
+              src="/assets/profile.png"
               alt={personalData.brandName}
               loading="lazy"
               width={640}
               height={480}
               onContextMenu={(e) => e.preventDefault()}
-              className="border-border bg-background mx-auto h-full w-full overflow-hidden rounded-xl border object-cover md:max-w-sm"
+              className="border-border mx-auto h-full w-full overflow-hidden rounded-lg border object-cover md:max-w-xs"
             />
             <p className="text-muted-foreground mt-3 font-mono text-xs">
               <span className="text-primary">$</span> whoami — {personalData.name}
@@ -42,13 +43,15 @@ export function AboutSection() {
             </div>
 
             <dl className="mt-8 grid gap-3 md:grid-cols-2">
-              {about.map((f) => (
-                <div key={f.label} className="border-border bg-card rounded-xl border p-4">
-                  <dt className="text-muted-foreground font-mono text-xs tracking-[0.15em] uppercase">
-                    {f.label}
-                  </dt>
-                  <dd className="mt-1 text-sm font-semibold">{f.value}</dd>
-                </div>
+              {about.map((f, index) => (
+                <Card key={index}>
+                  <CardContent>
+                    <p className="text-muted-foreground font-mono text-xs tracking-[0.15em] uppercase">
+                      {f.label}
+                    </p>
+                    <p className="mt-1 text-sm font-semibold">{f.value}</p>
+                  </CardContent>
+                </Card>
               ))}
             </dl>
           </div>

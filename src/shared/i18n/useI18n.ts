@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { appData } from '../../../data';
 import en from './en.json';
 import id from './id.json';
-import { LangContext } from './langContext';
+import { LangContext } from './lang-context';
 import type { SupportedLang, Translations } from './types';
 
 const UiTranslations: Record<SupportedLang, Translations> = { id, en };

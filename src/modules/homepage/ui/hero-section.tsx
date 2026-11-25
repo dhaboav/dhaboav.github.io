@@ -36,13 +36,13 @@ export function HeroSection() {
           <div className="flex flex-col gap-2 md:flex-row">
             <HashLink
               to="/#projects"
-              className={`${buttonVariants({ variant: 'default' })} h-12 px-6`}
+              className={`${buttonVariants({ variant: 'default' })} h-12 px-6 text-inverse-foreground`}
             >
               {projectLabel}
               <ArrowRightIcon />
             </HashLink>
             <a
-              href={`other/${t.resumeLink}.pdf`}
+              href={`assets/${t.resumeLink}.pdf`}
               download={`Resume ${personalData.name}`}
               className={`${buttonVariants({ variant: 'secondary' })} h-12 px-6`}
             >
@@ -68,7 +68,7 @@ interface TerminalCardProps {
 
 function TerminalCard({ authorSlug, tagline, techStack }: TerminalCardProps) {
   return (
-    <div className="border-border bg-card rounded-xl border">
+    <div className="border-border bg-card rounded-lg border">
       <div
         className="border-border flex items-center gap-2 border-b px-4 py-3"
         aria-label="Terminal Window"

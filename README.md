@@ -22,16 +22,7 @@ src/
 
 ## 🚀 Getting Started
 
-#### Option A: Local Enviroment
-
-```bash
-git clone https://github.com/dhaboav/dhaboav.github.io.git
-cd dhaboav.github.io
-pnpm install
-pnpm dev
-```
-
-#### Option B: Dev Containers (Recommended)
+#### Option A: Dev Containers (Recommended)
 
 If you use VS Code with the **Dev Containers** extension:
 
@@ -39,6 +30,15 @@ If you use VS Code with the **Dev Containers** extension:
 2. Press `Ctrl/Cmd + Shift + P` and select **Dev Containers: Reopen in Container**.
 
 Open `http://localhost:5173` in your browser.
+
+#### Option B: Local Enviroment
+
+```bash
+git clone https://github.com/dhaboav/dhaboav.github.io.git
+cd dhaboav.github.io
+pnpm install
+pnpm dev
+```
 
 ## 📦 Build & Deploy
 

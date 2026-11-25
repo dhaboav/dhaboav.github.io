@@ -37,7 +37,7 @@ export function Navbar() {
       <SelectTrigger className={`border-0 p-0 font-mono text-sm uppercase ${className}`}>
         <SelectValue />
       </SelectTrigger>
-      <SelectContent className="bg-background border-0" alignItemWithTrigger={false}>
+      <SelectContent className="bg-input border-0" alignItemWithTrigger={false}>
         {languages.map((langItem) => (
           <SelectItem
             key={langItem.label}
@@ -54,9 +54,7 @@ export function Navbar() {
   return (
     <header
       className={`sticky top-0 z-50 border-b transition-colors ${
-        scrolled
-          ? 'border-border bg-background/85 backdrop-blur-md'
-          : 'border-transparent bg-background'
+        scrolled ? 'border-border bg-surface/85 backdrop-blur-md' : 'border-transparent bg-surface'
       }`}
     >
       <div className="content-container nav">

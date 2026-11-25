@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { useI18n } from '@/shared/i18n/useI18n';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/ui/card';
 
-import { SectionHeading } from './SectionHeading';
-import { ShowMore } from './ShowMore';
+import { SectionHeading } from './section-heading';
+import { ShowMore } from './show-more';
 
 const EXP_LIMIT = 2;
 const SKILL_LIMIT = 4;
@@ -79,7 +79,7 @@ interface ExperienceCardProps {
 
 function ExperienceCard({ workPlace, jobTitle, timePeriod, description }: ExperienceCardProps) {
   return (
-    <Card className="lift border-border bg-card rounded-xl border lg:p-5">
+    <Card className="lift lg:p-5">
       <CardHeader className="flex flex-col">
         <CardTitle className="grid w-full grid-cols-[minmax(0,1fr)_auto] items-center justify-between">
           <span className="truncate text-lg font-bold lg:text-xl">{workPlace}</span>

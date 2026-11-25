@@ -9,7 +9,7 @@ import { Card, CardContent } from '@/ui/card';
 import { InputField, TextareaField } from '@/ui/shared-form-fields';
 import { Spinner } from '@/ui/spinner';
 
-import { SectionHeading } from './SectionHeading';
+import { SectionHeading } from './section-heading';
 
 export function ContactSection() {
   const { ui, data } = useI18n();
@@ -65,7 +65,7 @@ export function ContactSection() {
                   path="message"
                   label={formLabels.message}
                   placeholder={placeholders.message}
-                  className="border-border focus:border-primary placeholder:text-muted-foreground bg-background min-h-30 resize-none focus-visible:ring-0"
+                  className="min-h-30"
                 />
 
                 <div className="flex items-center gap-3">
@@ -81,7 +81,7 @@ export function ContactSection() {
                   <Button
                     type="submit"
                     disabled={isLoading}
-                    className={`h-12 flex-1 font-medium transition-all ${
+                    className={`h-12 flex-1 font-medium transition-all text-inverse-foreground ${
                       isLoading ? 'cursor-not-allowed opacity-70' : ''
                     }`}
                   >

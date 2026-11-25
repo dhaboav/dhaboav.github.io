@@ -1,19 +1,19 @@
 import { HashRouter, Route, Routes } from 'react-router-dom';
 
-import { BlogContentPage } from '@/blog/page/BlogContentPage';
-import { BlogListPage } from '@/blog/page/BlogListPage';
 import { Homepage } from '@/homepage/page';
+import { BlogContentPage } from '@/modules/blog/page/blog-content-page';
+import { BlogListPage } from '@/modules/blog/page/blog-list-page';
 import { useI18n } from '@/shared/i18n/useI18n';
-import { NotFound } from '@/ui/NotFound';
+import { NotFound } from '@/shared/ui/not-found';
 
-import { Layout } from './Layout';
+import { Layout } from './layout';
 
 export default function App() {
   const { ui } = useI18n();
   const { sectionTitle, subtitle, backButtonLabel } = ui.notfoundPage;
   return (
     <HashRouter>
-      <main>
+      <main className="bg-surface">
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Homepage />} />

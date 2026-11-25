@@ -45,7 +45,6 @@ function InputField({ of, path, label, placeholder, type = 'text' }: InputProps)
             aria-invalid={field.errors !== null}
             placeholder={placeholder}
             autoComplete="off"
-            className="border-border focus:border-primary placeholder:text-muted-foreground bg-background py-6 focus-visible:ring-0"
           />
           {field.errors && <FieldError errors={field.errors.map((message) => ({ message }))} />}
         </Field>

@@ -6,8 +6,8 @@ import { Button, buttonVariants } from '@/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/ui/card';
 import { Github } from '@/ui/sns-icon';
 
-import { SectionHeading } from './SectionHeading';
-import { ShowMore } from './ShowMore';
+import { SectionHeading } from './section-heading';
+import { ShowMore } from './show-more';
 
 const PROJECTS_PREVIEW = 3;
 
@@ -19,7 +19,7 @@ export function ProjectSection() {
   const countProject = data.project.length - PROJECTS_PREVIEW;
 
   return (
-    <section id="projects" className="section-container alt">
+    <section id="projects" className="section-container">
       <div className="content-container layout">
         <SectionHeading index="03" title={sectionTitle} note={subtitle} />
         <div className="mt-8 grid gap-4 lg:grid-cols-3" aria-label="project-collections">
@@ -72,7 +72,7 @@ function ProjectCard({
   techStack,
 }: ProjectCardProps) {
   return (
-    <Card key={index} className="lift border-border bg-card flex flex-col rounded-xl border">
+    <Card key={index} className="lift flex flex-col">
       <CardHeader className="flex-1">
         <CardTitle className="font-mono text-base font-bold">
           <span className="text-primary">./</span>

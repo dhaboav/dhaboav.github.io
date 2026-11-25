@@ -3,10 +3,10 @@ import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router-dom';
 
 import { useBlogContent } from '@/blog/hook/use-blog-content';
-import { BlogContentSkeleton } from '@/blog/ui/BlogContentSkeleton';
 import { formatDate } from '@/blog/util/format-date';
+import { BlogContentSkeleton } from '@/modules/blog/ui/blog-content-skeleton';
 import { useI18n } from '@/shared/i18n/useI18n';
-import { NotFound } from '@/ui/NotFound';
+import { NotFound } from '@/shared/ui/not-found';
 
 export function BlogContentPage() {
   const { ui, lang } = useI18n();
