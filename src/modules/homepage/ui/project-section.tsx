@@ -1,7 +1,10 @@
+import type { ProjectItem } from '@data/types';
+import { cn } from 'cn';
 import { ExternalLinkIcon } from 'lucide-react';
 import { useState } from 'react';
 
 import { useI18n } from '@/shared/i18n/useI18n';
+import { Badge } from '@/shared/ui/badge';
 import { Button, buttonVariants } from '@/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/ui/card';
 import { Github } from '@/ui/sns-icon';
@@ -13,7 +16,7 @@ const PROJECTS_PREVIEW = 3;
 
 export function ProjectSection() {
   const { ui, data } = useI18n();
-  const { sectionTitle, subtitle, buttonLabels } = ui.project;
+  const { sectionTitle, subtitle } = ui.project;
   const [showAll, setShowAll] = useState(false);
   const visibleProject = showAll ? data.project : data.project.slice(0, PROJECTS_PREVIEW);
   const countProject = data.project.length - PROJECTS_PREVIEW;
@@ -22,20 +25,9 @@ export function ProjectSection() {
     <section id="projects" className="section-container">
       <div className="content-container layout">
         <SectionHeading index="03" title={sectionTitle} note={subtitle} />
-        <div className="mt-8 grid gap-4 lg:grid-cols-3" aria-label="project-collections">
-          {visibleProject.map((project, index) => (
-            <ProjectCard
-              key={index}
-              index={index}
-              title={project.title}
-              description={project.description}
-              repo={project.repoLink}
-              labels={{
-                repoButton: buttonLabels.repoLabel,
-                webButton: buttonLabels.webLinkLabel,
-              }}
-              techStack={project.techStack}
-            />
+        <div className="mt-8 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+          {visibleProject.map((project) => (
+            <ProjectCard key={project.id} {...project} />
           ))}
         </div>
         <ShowMore
@@ -49,73 +41,53 @@ export function ProjectSection() {
   );
 }
 
-interface ProjectCardProps {
-  index: number;
-  title: string;
-  description: string;
-  labels: {
-    repoButton: string;
-    webButton: string;
-  };
-  techStack: string[];
-  repo?: string;
-  link?: string;
-}
-
-function ProjectCard({
-  index,
-  title,
-  description,
-  labels,
-  repo,
-  link,
-  techStack,
-}: ProjectCardProps) {
+function ProjectCard({ id, ...props }: ProjectItem) {
   return (
-    <Card key={index} className="lift flex flex-col">
+    <Card className="lift flex flex-col">
       <CardHeader className="flex-1">
         <CardTitle className="font-mono text-base font-bold">
           <span className="text-primary">./</span>
-          {title}
+          {props.title}
         </CardTitle>
         <CardDescription className="text-muted-foreground text-sm leading-relaxed">
-          {description}
+          {props.description}
         </CardDescription>
       </CardHeader>
       <CardContent>
         <div className="flex flex-row flex-wrap items-center gap-2">
-          {techStack.map((item, index) => (
-            <span
-              key={index}
-              className="bg-secondary text-secondary-foreground rounded px-2 py-1 font-mono text-xs"
-            >
+          {props.techStack.map((item, index) => (
+            <Badge key={index} className="font-mono text-xs bg-border text-foreground">
               {item}
-            </span>
+            </Badge>
           ))}
         </div>
       </CardContent>
-      <CardFooter className={`bg-card grid ${link ? 'grid-cols-2' : 'grid-cols-1'} gap-2 border-0`}>
+      <CardFooter
+        className={cn(
+          'bg-transparent grid gap-2 border-0',
+          props.demoLink ? 'grid-cols-2' : 'grid-cols-1',
+        )}
+      >
         <a
-          href={repo}
+          href={props.repoLink}
           target="_blank"
           rel="noreferrer"
-          className={`hover:border-primary flex h-11 flex-row items-center justify-center gap-2 bg-transparent font-mono text-xs hover:bg-transparent ${buttonVariants(
-            {
-              variant: 'outline',
-            },
-          )}`}
+          className={buttonVariants({
+            variant: 'outline',
+            className: 'gap-2 bg-input font-mono text-xs hover:border-primary hover:bg-transparent',
+          })}
         >
           <Github />
-          {labels.repoButton}
+          Repo
         </a>
 
-        {link && (
+        {props.demoLink && (
           <Button
             className="hover:border-primary flex h-11 flex-row gap-2 bg-transparent font-mono text-xs hover:bg-transparent"
             variant="outline"
           >
             <ExternalLinkIcon />
-            {labels.webButton}
+            Demo
           </Button>
         )}
       </CardFooter>

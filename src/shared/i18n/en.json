@@ -28,11 +28,7 @@
   },
   "project": {
     "sectionTitle": "Projects",
-    "subtitle": "things shipped in the open",
-    "buttonLabels": {
-      "repoLabel": "Code",
-      "webLinkLabel": "Demo"
-    }
+    "subtitle": "things shipped in the open"
   },
   "showMore": {
     "showLessLabel": "show less",

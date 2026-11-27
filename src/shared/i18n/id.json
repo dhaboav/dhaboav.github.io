@@ -28,11 +28,7 @@
   },
   "project": {
     "sectionTitle": "Proyek",
-    "subtitle": "proyek open source",
-    "buttonLabels": {
-      "repoLabel": "Kode",
-      "webLinkLabel": "Demo"
-    }
+    "subtitle": "proyek open source"
   },
   "showMore": {
     "showLessLabel": "tutup",

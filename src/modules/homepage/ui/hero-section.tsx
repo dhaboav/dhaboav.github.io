@@ -34,21 +34,21 @@ export function HeroSection() {
           </p>
 
           <div className="flex flex-col gap-2 md:flex-row">
-            <HashLink
-              to="/#projects"
-              className={`${buttonVariants({ variant: 'default' })} h-12 px-6 text-inverse-foreground`}
-            >
+            <HashLink to="/#projects" className={buttonVariants({ className: 'h-12 px-6' })}>
               {projectLabel}
               <ArrowRightIcon />
             </HashLink>
             <a
               href={`assets/${t.resumeLink}.pdf`}
               download={`Resume ${personalData.name}`}
-              className={`${buttonVariants({ variant: 'secondary' })} h-12 px-6`}
+              className={buttonVariants({ variant: 'secondary', className: 'h-12 px-6' })}
             >
               <FileTextIcon className="h-4 w-4" /> {resumeLabel}
             </a>
-            <HashLink to="/blog" className={`${buttonVariants({ variant: 'outline' })} h-12 px-6`}>
+            <HashLink
+              to="/blog"
+              className={buttonVariants({ variant: 'outline', className: 'h-12 px-6' })}
+            >
               <BookOpenIcon /> {blogLabel}
             </HashLink>
           </div>

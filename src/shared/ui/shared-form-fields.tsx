@@ -9,6 +9,7 @@
  * without modifying their internal render props implementation.
  */
 import { Field as FormischField } from '@formisch/react';
+import { cn } from 'cn';
 
 import { Field, FieldError, FieldLabel } from '@/ui/field';
 import { Input } from '@/ui/input';
@@ -45,6 +46,7 @@ function InputField({ of, path, label, placeholder, type = 'text' }: InputProps)
             aria-invalid={field.errors !== null}
             placeholder={placeholder}
             autoComplete="off"
+            className="focus-visible:ring-0 focus:border-primary! aria-invalid:ring-0"
           />
           {field.errors && <FieldError errors={field.errors.map((message) => ({ message }))} />}
         </Field>
@@ -71,7 +73,10 @@ function TextareaField({ of, path, label, placeholder, className }: Props) {
             aria-invalid={field.errors !== null}
             placeholder={placeholder}
             autoComplete="off"
-            className={className}
+            className={cn(
+              'focus-visible:ring-0 focus:border-primary! aria-invalid:ring-0',
+              className,
+            )}
           />
           {field.errors && <FieldError errors={field.errors.map((message) => ({ message }))} />}
         </Field>

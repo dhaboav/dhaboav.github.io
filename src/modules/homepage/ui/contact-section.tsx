@@ -1,5 +1,6 @@
 import { snsData } from '@data/index';
 import { Form, reset } from '@formisch/react';
+import { cn } from 'cn';
 import { SendIcon } from 'lucide-react';
 
 import { useContact } from '@/homepage/hook/use-contact';
@@ -76,14 +77,15 @@ export function ContactSection() {
                     onClick={() => reset(form)}
                     className="h-12 px-6 font-medium"
                   >
-                    Reset
+                    Cancel
                   </Button>
                   <Button
                     type="submit"
                     disabled={isLoading}
-                    className={`h-12 flex-1 font-medium transition-all text-inverse-foreground ${
-                      isLoading ? 'cursor-not-allowed opacity-70' : ''
-                    }`}
+                    className={cn(
+                      'h-12 flex-1 font-medium transition-all',
+                      isLoading && 'cursor-not-allowed opacity-70',
+                    )}
                   >
                     {isLoading ? (
                       <>

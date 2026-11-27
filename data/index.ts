@@ -20,8 +20,9 @@ const injectExperiences = (rawExperiences: typeof rawEn.experience) =>
     const meta = metaExperienceMap.get(exp.id);
     return {
       ...exp,
-      workPlace: meta?.workPlace ?? '',
-      timePeriod: meta?.timePeriod ?? '',
+      timeperiod: meta?.timeperiod ?? '',
+      workplace: meta?.workplace ?? '',
+      tags: meta?.tags ?? [],
     };
   });
 
@@ -32,6 +33,7 @@ const injectProjects = (rawProjects: typeof rawEn.project) =>
       ...proj,
       techStack: meta?.techStack ?? [],
       repoLink: meta?.repoLink ?? '',
+      demoLink: meta?.demoLink ?? ''
     };
   });
 

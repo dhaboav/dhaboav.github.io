@@ -1,19 +1,22 @@
 [
   {
-    "id": "trueformat",
+    "id": 1,
     "techStack": [
+      "Typescript",
+      "NextJS",
+      "React",
+      "Docker"
+    ],
+    "repoLink": "https://github.com/dhaboav/bookshelf",
+    "demoLink": ""
+  },
+  {
+    "id": 2,
+    "techStack": [
+      "Python",
       "OpenCV",
       "FastAPI"
     ],
     "repoLink": "https://github.com/dhaboav/trueformat-backend"
-  },
-  {
-    "id": "bookshelf",
-    "techStack": [
-      "React",
-      "FastAPI",
-      "Docker"
-    ],
-    "repoLink": "https://github.com/dhaboav/bookshelf"
   }
 ]

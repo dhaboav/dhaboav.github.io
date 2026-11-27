@@ -44,10 +44,6 @@ interface ExperienceSection {
 interface ProjectSection {
   sectionTitle: string;
   subtitle: string;
-  buttonLabels: {
-    repoLabel: string;
-    webLinkLabel: string;
-  };
 }
 
 interface ShowmoreButton {

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 import { useBlogContent } from '@/blog/hook/use-blog-content';
 import { formatDate } from '@/blog/util/format-date';
@@ -49,12 +49,12 @@ export function BlogContentPage() {
         </div>
 
         <footer className="border-border border-t py-8 pt-6">
-          <Link
-            to="/blog"
+          <HashLink
+            to="/blog#blogs"
             className="text-primary link-underline font-mono text-xs transition-colors"
           >
             ← {ui.blogDetail.backButtonLabel}
-          </Link>
+          </HashLink>
         </footer>
       </article>
     </section>

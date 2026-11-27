@@ -13,7 +13,7 @@ export default function App() {
   const { sectionTitle, subtitle, backButtonLabel } = ui.notfoundPage;
   return (
     <HashRouter>
-      <main className="bg-surface">
+      <main>
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Homepage />} />

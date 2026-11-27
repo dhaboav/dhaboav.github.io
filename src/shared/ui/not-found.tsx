@@ -18,7 +18,10 @@ export const NotFound = ({ pageTitle, pageDesc, buttonLabel }: NotFoundProps) =>
         <p className="text-minor text-muted-foreground mb-4 text-lg font-light">{pageDesc}</p>
         <Link
           to="/"
-          className={`${buttonVariants({ variant: 'default' })} h-12 px-6 font-mono text-sm`}
+          className={buttonVariants({
+            variant: 'default',
+            className: 'h-12 px-6 font-mono text-sm',
+          })}
         >
           <ArrowLeftIcon />
           {buttonLabel}

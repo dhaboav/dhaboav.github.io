@@ -20,24 +20,29 @@
   },
   "experience": [
     {
-      "id": "pkm-re",
-      "jobTitle": "Embedded Systems Engineer",
+      "id": 1,
+      "jobtitle": "Embedded Systems Engineer",
       "description": "Contributed to securing national funding from Belmawa DIKTI for a citrus fruit taste analysis research project. Took full responsibility for hardware design, wiring, and sensor calibration on Raspberry Pi, while developing embedded software to seamlessly integrate camera data into the computational analysis model."
     },
     {
-      "id": "robotic-team",
-      "jobTitle": "Lead Programmer & Member — KRSBI-B Division",
+      "id": 2,
+      "badge": "Education",
+      "jobtitle": "B.S. in Computer Science"
+    },
+    {
+      "id": 3,
+      "jobtitle": "Lead Programmer & Member — KRSBI-B Division",
       "description": "Led cross-functional coordination and integrated software-hardware components for competition robots. Built a desktop basestation app for real-time Wi-Fi control and developed OpenCV computer vision for object tracking."
     }
   ],
   "project": [
     {
-      "id": "bookshelf",
+      "id": 1,
       "title": "Bookshelf Management System",
       "description": "Full-stack web application built with Next.js, TypeScript, and PostgreSQL for managing personal book collections."
     },
     {
-      "id": "trueformat",
+      "id": 2,
       "title": "Photo Format Validation Service",
       "description": "Backend service built with FastAPI for automated photo validation and processing workflows."
     }

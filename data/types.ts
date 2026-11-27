@@ -21,21 +21,24 @@ interface aboutSectionData {
   };
 }
 
-interface experienceSectionData {
-  id: string;
-  workPlace?: string;
-  jobTitle: string;
-  timePeriod?: string;
-  description: string;
+export interface ExperienceItem {
+  id: number;
+  badge?: string;
+  timeperiod?: string;
+  jobtitle: string;
+  workplace?: string;
+  tags?: string[]; 
+  description?: string;
+  highlights?: string[];
 }
 
-interface projectSectionData {
-  id: string;
+export interface ProjectItem {
+  id: number;
   title: string;
   description: string;
   techStack: string[];
   repoLink?: string;
-  webLink?: string;
+  demoLink?: string;
 }
 
 interface contactSectionData {
@@ -50,8 +53,8 @@ interface contactSectionData {
 export interface dynamicData {
   hero: heroSectionData;
   about: aboutSectionData;
-  experience: experienceSectionData[];
-  project: projectSectionData[];
+  experience: ExperienceItem[];
+  project: ProjectItem[];
   contact: contactSectionData;
 }
 

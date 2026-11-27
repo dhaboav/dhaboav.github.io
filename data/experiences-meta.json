@@ -1,12 +1,18 @@
 [
   {
-    "id": "pkm-re",
-    "workPlace": "UNTAN",
-    "timePeriod": "2024"
+    "id": 1,
+    "timeperiod": "2024",
+    "workplace": "UNTAN"
   },
   {
-    "id": "robotic-team",
-    "workPlace": "Team Robotic FT UNTAN",
-    "timePeriod": "2022 — 2024"
+    "id": 2,
+    "timeperiod": "2021 — 2025",
+    "workplace": "Universitas Tanjungpura, Pontianak",
+    "tags": ["GPA 3.74"]
+  },
+  {
+    "id": 3,
+    "timeperiod": "2022 — 2024",
+    "workplace": "Team Robotic FT UNTAN"
   }
 ]

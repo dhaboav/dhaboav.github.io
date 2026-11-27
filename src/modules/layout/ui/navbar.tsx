@@ -1,4 +1,5 @@
 import { personalData } from '@data/index';
+import { cn } from 'cn';
 import { MenuIcon, MoonIcon, SunIcon, XIcon } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { HashLink } from 'react-router-hash-link';
@@ -29,7 +30,7 @@ export function Navbar() {
     { href: '/#experiences', label: experienceLabel },
     { href: '/#projects', label: projectLabel },
     { href: '/#contact', label: contactLabel },
-    { href: '/blog', label: blogLabel },
+    { href: '/blog#blogs', label: blogLabel },
   ];
 
   const LanguagePicker = ({ className = '' }: { className?: string }) => (
@@ -53,9 +54,12 @@ export function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b transition-colors ${
-        scrolled ? 'border-border bg-surface/85 backdrop-blur-md' : 'border-transparent bg-surface'
-      }`}
+      className={cn(
+        'fixed top-0 inset-x-0 z-50 border-b transition-colors',
+        scrolled
+          ? 'border-border bg-background/85 backdrop-blur-md'
+          : 'border-transparent bg-background',
+      )}
     >
       <div className="content-container nav">
         {/* Desktop Navigation */}
@@ -81,7 +85,7 @@ export function Navbar() {
             <LanguagePicker className="text-zinc-400" />
           </div>
 
-          <Toggle size="icon-sm" variant="ghost" className="text-zinc-400" onClick={toggle}>
+          <Toggle size="sm" className="text-zinc-400 " onClick={toggle}>
             {theme === 'dark' ? <MoonIcon /> : <SunIcon />}
           </Toggle>
 
@@ -93,7 +97,10 @@ export function Navbar() {
         {/* Mobile Navigation */}
         <nav
           ref={menuRef}
-          className={`${isOpen ? 'flex' : 'hidden'} text-foreground/80 flex-col gap-2 pt-6 md:hidden`}
+          className={cn(
+            'text-foreground/80 flex-col gap-2 pt-6 md:hidden',
+            isOpen ? 'flex' : 'hidden',
+          )}
         >
           {navLinks.map((link) => (
             <HashLink key={link.href} to={link.href} onClick={closeMenu} className="text-sm">
