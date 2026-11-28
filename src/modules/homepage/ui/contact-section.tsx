@@ -75,7 +75,7 @@ export function ContactSection() {
                     disabled={isLoading}
                     variant="outline"
                     onClick={() => reset(form)}
-                    className="h-12 px-6 font-medium"
+                    className="h-12 px-6 font-medium bg-input"
                   >
                     Cancel
                   </Button>

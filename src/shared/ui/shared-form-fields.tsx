@@ -47,7 +47,7 @@ function InputField({ of, path, label, placeholder, type = 'text' }: InputProps)
             aria-invalid={field.errors !== null}
             placeholder={placeholder}
             autoComplete="off"
-            className="focus-visible:ring-0 focus:border-primary! aria-invalid:ring-0"
+            className="focus-visible:ring-0 focus:border-primary! aria-invalid:ring-0 bg-input border-border"
           />
           {field.errors && <FieldError errors={field.errors.map((message) => ({ message }))} />}
         </Field>
@@ -75,7 +75,7 @@ function TextareaField({ of, path, label, placeholder, className }: Props) {
             placeholder={placeholder}
             autoComplete="off"
             className={cn(
-              'focus-visible:ring-0 focus:border-primary! aria-invalid:ring-0',
+              'focus-visible:ring-0 focus:border-primary! aria-invalid:ring-0 border-border bg-input',
               className,
             )}
           />

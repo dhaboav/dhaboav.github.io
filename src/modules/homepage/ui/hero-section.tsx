@@ -51,13 +51,19 @@ export function HeroSection() {
               href={getResumeUrl}
 
               download={`Resume ${personalData.name}`}
-              className={buttonVariants({ variant: 'secondary', className: 'h-12 px-6' })}
+              className={buttonVariants({
+                variant: 'secondary',
+                className: 'h-12 px-6 bg-input hover:bg-input/80',
+              })}
             >
               <FileTextIcon className="h-4 w-4" /> {resumeLabel}
             </a>
             <HashLink
               to="/blog"
-              className={buttonVariants({ variant: 'outline', className: 'h-12 px-6' })}
+              className={buttonVariants({
+                variant: 'outline',
+                className: 'h-12 px-6 hover:border-border',
+              })}
             >
               <BookOpenIcon /> {blogLabel}
             </HashLink>
