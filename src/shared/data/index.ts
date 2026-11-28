@@ -1,14 +1,15 @@
-import type { Localized } from '@/shared/i18n/types';
-import { Github, Instagram, Linkedin } from '@/ui/sns-icon';
+import rawEn from '@resources/data/en.json';
+import rawId from '@resources/data/id.json';
+import blogsData from '@resources/metadata/blogs.json';
+import experiencesMeta from '@resources/metadata/experiences.json';
+import personalInfoData from '@resources/metadata/personal.json';
+import projectsMeta from '@resources/metadata/projects.json';
+import skillsData from '@resources/metadata/skills.json';
 
-import blogsData from './blogs.json';
-import rawEn from './en.json';
-import experiencesMeta from './experiences-meta.json';
-import rawId from './id.json';
-import personalInfoData from './personal-info.json';
-import projectsMeta from './projects-meta.json';
-import skillsData from './tech-stack.json';
-import type { blogItem, dynamicData, personalInfo, skillItem, snsItem } from './types';
+import type { Localized } from '@/shared/i18n/types';
+import { Github, Instagram, Linkedin } from '@/shared/ui/sns-icon';
+
+import type { BlogItem, SkillItem, dynamicData, personalInfo, snsItem } from './types';
 
 // Mapping
 const metaProjectMap = new Map(projectsMeta.map((meta) => [meta.id, meta]));
@@ -33,7 +34,7 @@ const injectProjects = (rawProjects: typeof rawEn.project) =>
       ...proj,
       techStack: meta?.techStack ?? [],
       repoLink: meta?.repoLink ?? '',
-      demoLink: meta?.demoLink ?? ''
+      demoLink: meta?.demoLink ?? '',
     };
   });
 
@@ -52,9 +53,9 @@ const id: dynamicData = {
 export const appData: Localized<dynamicData> = { en, id };
 
 // Fixed data
-export const blogData: blogItem[] = blogsData;
+export const blogData: BlogItem[] = blogsData;
 export const personalData: personalInfo = personalInfoData;
-export const skillData: skillItem[] = skillsData;
+export const skillData: SkillItem[] = skillsData;
 export const snsData: snsItem[] = [
   { logo: Github, href: personalInfoData.sns.github },
   { logo: Linkedin, href: personalInfoData.sns.linkedin },

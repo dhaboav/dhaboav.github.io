@@ -1,19 +1,28 @@
-import { personalData } from '@data/index';
 import { ArrowRightIcon, BookOpenIcon, FileTextIcon } from 'lucide-react';
 import { HashLink } from 'react-router-hash-link';
 
+import { personalData, skillData } from '@/shared/data/index';
+import type { SkillItem } from '@/shared/data/types';
 import { useI18n } from '@/shared/i18n/useI18n';
-import { buttonVariants } from '@/ui/button';
+import { Badge } from '@/shared/ui/badge';
+import { buttonVariants } from '@/shared/ui/button';
 
 export function HeroSection() {
   const { ui, data } = useI18n();
   const { projectLabel, resumeLabel, blogLabel } = ui.hero;
   const t = data.hero;
-  const techStack = ['Typescript', 'React', 'Tailwindcss', 'Docker', 'MySQL', 'PostgreSQL'];
   const authorSlug = personalData.name.toLowerCase().replaceAll(' ', '-');
 
+  const documents = import.meta.glob('/resources/assets/*.pdf', {
+    eager: true,
+    query: '?url',
+    import: 'default',
+  });
+
+  const getResumeUrl = documents[`/resources/assets/${t.resumeLink}.pdf`] as string;
+
   return (
-    <section id="home" className="section-container">
+    <section id="home" className="section-container md:pt-28 lg:pt-48">
       <div
         className="grid-bg pointer-events-none absolute inset-0"
         aria-hidden="true"
@@ -39,7 +48,8 @@ export function HeroSection() {
               <ArrowRightIcon />
             </HashLink>
             <a
-              href={`assets/${t.resumeLink}.pdf`}
+              href={getResumeUrl}
+
               download={`Resume ${personalData.name}`}
               className={buttonVariants({ variant: 'secondary', className: 'h-12 px-6' })}
             >
@@ -54,7 +64,7 @@ export function HeroSection() {
           </div>
         </div>
 
-        <TerminalCard techStack={techStack} authorSlug={authorSlug} tagline={t.tagline} />
+        <TerminalCard skills={skillData} authorSlug={authorSlug} tagline={t.tagline} />
       </div>
     </section>
   );
@@ -63,10 +73,10 @@ export function HeroSection() {
 interface TerminalCardProps {
   authorSlug: string;
   tagline: string;
-  techStack: string[];
+  skills: SkillItem[];
 }
 
-function TerminalCard({ authorSlug, tagline, techStack }: TerminalCardProps) {
+function TerminalCard({ authorSlug, tagline, skills }: TerminalCardProps) {
   return (
     <div className="border-border bg-card rounded-lg border">
       <div
@@ -94,9 +104,9 @@ function TerminalCard({ authorSlug, tagline, techStack }: TerminalCardProps) {
             <span className="text-primary">$</span> ls stack
           </p>
 
-          <div className="flex flex-wrap gap-x-2">
-            {techStack.map((tech) => (
-              <span key={tech}>{tech}</span>
+          <div className="flex flex-col gap-1">
+            {skills.map((skill) => (
+              <TechStack key={skill.category} {...skill} />
             ))}
           </div>
         </div>
@@ -104,6 +114,21 @@ function TerminalCard({ authorSlug, tagline, techStack }: TerminalCardProps) {
         <p className="text-muted-foreground">
           <span className="text-primary">$</span> <span className="blink-cursor">▍</span>
         </p>
+      </div>
+    </div>
+  );
+}
+
+function TechStack({ category, stack }: SkillItem) {
+  return (
+    <div className="grid md:grid-cols-[20%_1fr] md:items-center items-start">
+      <p className="min-w-0 wrap-break-word">{category}:</p>
+      <div className="flex min-w-0 flex-wrap gap-2">
+        {stack.map((item) => (
+          <Badge key={item} className="rounded-none bg-primary/20 text-primary">
+            {item}
+          </Badge>
+        ))}
       </div>
     </div>
   );

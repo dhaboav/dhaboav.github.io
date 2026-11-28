@@ -10,14 +10,15 @@
  */
 import { Field as FormischField } from '@formisch/react';
 import { cn } from 'cn';
+import type { ComponentProps } from 'react';
 
-import { Field, FieldError, FieldLabel } from '@/ui/field';
-import { Input } from '@/ui/input';
-import { Textarea } from '@/ui/textarea';
+import { Field, FieldError, FieldLabel } from '@/shared/ui/field';
+import { Input } from '@/shared/ui/input';
+import { Textarea } from '@/shared/ui/textarea';
 
-interface Props {
-  of: any;
-  path: string;
+type FormischProps = ComponentProps<typeof FormischField>;
+
+interface Props extends Pick<FormischProps, 'of' | 'path'> {
   label: string;
   placeholder?: string;
   className?: string;
@@ -29,7 +30,7 @@ interface InputProps extends Props {
 
 function InputField({ of, path, label, placeholder, type = 'text' }: InputProps) {
   return (
-    <FormischField of={of} path={[path]}>
+    <FormischField of={of} path={path}>
       {(field) => (
         <Field data-invalid={field.errors !== null}>
           <FieldLabel
@@ -42,7 +43,7 @@ function InputField({ of, path, label, placeholder, type = 'text' }: InputProps)
             {...field.props}
             id={label}
             type={type}
-            value={(field.input ?? '') as any}
+            value={String(field.input ?? '')}
             aria-invalid={field.errors !== null}
             placeholder={placeholder}
             autoComplete="off"
@@ -57,7 +58,7 @@ function InputField({ of, path, label, placeholder, type = 'text' }: InputProps)
 
 function TextareaField({ of, path, label, placeholder, className }: Props) {
   return (
-    <FormischField of={of} path={[path]}>
+    <FormischField of={of} path={path}>
       {(field) => (
         <Field data-invalid={field.errors !== null}>
           <FieldLabel
@@ -69,7 +70,7 @@ function TextareaField({ of, path, label, placeholder, className }: Props) {
           <Textarea
             {...field.props}
             id={label}
-            value={(field.input ?? '') as any}
+            value={String(field.input ?? '')}
             aria-invalid={field.errors !== null}
             placeholder={placeholder}
             autoComplete="off"

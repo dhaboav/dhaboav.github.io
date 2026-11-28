@@ -4,7 +4,7 @@ import { ExperienceSection } from '@/modules/homepage/ui/experience-section';
 import { HeroSection } from '@/modules/homepage/ui/hero-section';
 import { ProjectSection } from '@/modules/homepage/ui/project-section';
 
-function Homepage() {
+export function Homepage() {
   return (
     <>
       <HeroSection />
@@ -15,5 +15,3 @@ function Homepage() {
     </>
   );
 }
-
-export { Homepage };

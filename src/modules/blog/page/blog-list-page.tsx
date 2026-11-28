@@ -1,6 +1,6 @@
 import { useSearchParams } from 'react-router-dom';
 
-import { useBlogList } from '@/blog/hook/use-blog-list';
+import { useBlogList } from '@/modules/blog/hook/use-blog-list';
 import { BlogCard } from '@/modules/blog/ui/blog-card';
 import { BlogPagination } from '@/modules/blog/ui/blog-pagination';
 import { useI18n } from '@/shared/i18n/useI18n';
@@ -65,7 +65,7 @@ export function BlogListPage() {
         ) : (
           <div className="grid gap-12 md:grid-cols-3 lg:grid-cols-4">
             {data.map((item) => {
-              return <BlogCard key={item.id} data={item} />;
+              return <BlogCard key={item.id} {...item} />;
             })}
           </div>
         )}

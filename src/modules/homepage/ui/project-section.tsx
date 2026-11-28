@@ -1,13 +1,20 @@
-import type { ProjectItem } from '@data/types';
 import { cn } from 'cn';
 import { ExternalLinkIcon } from 'lucide-react';
 import { useState } from 'react';
 
+import type { ProjectItem } from '@/shared/data/types';
 import { useI18n } from '@/shared/i18n/useI18n';
 import { Badge } from '@/shared/ui/badge';
-import { Button, buttonVariants } from '@/ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/ui/card';
-import { Github } from '@/ui/sns-icon';
+import { Button, buttonVariants } from '@/shared/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/shared/ui/card';
+import { Github } from '@/shared/ui/sns-icon';
 
 import { SectionHeading } from './section-heading';
 import { ShowMore } from './show-more';
@@ -41,7 +48,7 @@ export function ProjectSection() {
   );
 }
 
-function ProjectCard({ id, ...props }: ProjectItem) {
+function ProjectCard({ ...props }: ProjectItem) {
   return (
     <Card className="lift flex flex-col">
       <CardHeader className="flex-1">

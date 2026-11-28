@@ -1,7 +1,7 @@
 import { cn } from 'cn';
 import { ChevronUpIcon } from 'lucide-react';
 
-import { useBackToTop } from '@/layout/hook/use-back-to-top';
+import { useBackToTop } from '@/modules/layout/hook/use-back-to-top';
 
 export function BackToTop() {
   const { isVisible, scrollToTop } = useBackToTop();

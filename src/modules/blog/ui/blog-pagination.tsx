@@ -1,4 +1,4 @@
-import { usePagination } from '@/blog/hook/use-pagination';
+import { usePagination } from '@/modules/blog/hook/use-pagination';
 import {
   Pagination,
   PaginationContent,
@@ -6,7 +6,7 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from '@/ui/pagination';
+} from '@/shared/ui/pagination';
 
 interface BookPaginationProps {
   currentPage: number;
@@ -14,7 +14,7 @@ interface BookPaginationProps {
   className?: string;
 }
 
-function BlogPagination({ currentPage, totalPages, className }: BookPaginationProps) {
+export function BlogPagination({ currentPage, totalPages, className }: BookPaginationProps) {
   const { pages, createUrl, prev, next } = usePagination(currentPage, totalPages);
 
   return (
@@ -51,5 +51,3 @@ function BlogPagination({ currentPage, totalPages, className }: BookPaginationPr
     </Pagination>
   );
 }
-
-export { BlogPagination };

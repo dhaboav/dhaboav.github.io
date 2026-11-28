@@ -3,7 +3,7 @@ import { useState } from 'react';
 import * as v from 'valibot';
 
 import { useI18n } from '@/shared/i18n/useI18n';
-import { toast } from '@/ui/toast';
+import { toast } from '@/shared/ui/toast';
 
 const SCRIPT_URL =
   'https://script.google.com/macros/s/AKfycby3mxHqj4yA8Q15HGEVohQ_F3TS4gQo8AmUcjfqQ7lg4x8u1xwRDjKH33KxzS_FdiFD/exec';

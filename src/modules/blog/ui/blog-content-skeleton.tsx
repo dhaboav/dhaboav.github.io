@@ -1,11 +1,10 @@
-import { Skeleton } from '@/ui/skeleton';
+import { Skeleton } from '@/shared/ui/skeleton';
 
 export const BlogContentSkeleton = () => {
   return (
     <div className="section-container pt-28">
       <div className="mx-auto max-w-3xl px-4">
-        {/* Header Placeholder */}
-        <div className="border-border mb-10 border-b pb-6 flex flex-col gap-6">
+        <div className="border-border mb-10 border-b pb-6 flex flex-col gap-6" aria-label="header">
           <Skeleton className="h-3 w-24" />
           <div className="space-y-3">
             <Skeleton className="h-10 w-full" />
@@ -14,8 +13,7 @@ export const BlogContentSkeleton = () => {
           <Skeleton className="h-3 w-32" />
         </div>
 
-        {/* Content Placeholder */}
-        <div className="flex flex-col space-y-6">
+        <div className="flex flex-col space-y-6" aria-label="content">
           <div className="space-y-3">
             <Skeleton className="h-4 w-full" />
             <Skeleton className="h-4 w-5/6" />
@@ -36,8 +34,7 @@ export const BlogContentSkeleton = () => {
           </div>
         </div>
 
-        {/* Footer Placeholder */}
-        <div className="border-border border-t mt-10 py-6">
+        <div className="border-border border-t mt-10 py-6" aria-label="footer">
           <Skeleton className="h-3 w-28" />
         </div>
       </div>

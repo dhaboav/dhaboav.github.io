@@ -1,14 +1,14 @@
-import { snsData } from '@data/index';
 import { Form, reset } from '@formisch/react';
 import { cn } from 'cn';
 import { SendIcon } from 'lucide-react';
 
-import { useContact } from '@/homepage/hook/use-contact';
+import { useContact } from '@/modules/homepage/hook/use-contact';
+import { snsData } from '@/shared/data/index';
 import { useI18n } from '@/shared/i18n/useI18n';
-import { Button } from '@/ui/button';
-import { Card, CardContent } from '@/ui/card';
-import { InputField, TextareaField } from '@/ui/shared-form-fields';
-import { Spinner } from '@/ui/spinner';
+import { Button } from '@/shared/ui/button';
+import { Card, CardContent } from '@/shared/ui/card';
+import { InputField, TextareaField } from '@/shared/ui/shared-form-fields';
+import { Spinner } from '@/shared/ui/spinner';
 
 import { SectionHeading } from './section-heading';
 
@@ -48,13 +48,13 @@ export function ContactSection() {
                 <div className="grid gap-4 lg:grid-cols-2 items-start">
                   <InputField
                     of={form}
-                    path="name"
+                    path={['name']}
                     label={formLabels.name}
                     placeholder={placeholders.name}
                   />
                   <InputField
                     of={form}
-                    path="email"
+                    path={['email']}
                     label="email"
                     placeholder={placeholders.email}
                     type="email"
@@ -63,7 +63,7 @@ export function ContactSection() {
 
                 <TextareaField
                   of={form}
-                  path="message"
+                  path={['message']}
                   label={formLabels.message}
                   placeholder={placeholders.message}
                   className="min-h-30"

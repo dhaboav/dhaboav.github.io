@@ -1,7 +1,7 @@
 import { ArrowLeftIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-import { buttonVariants } from '@/ui/button';
+import { buttonVariants } from '@/shared/ui/button';
 
 interface NotFoundProps {
   pageTitle: string;

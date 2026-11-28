@@ -1,8 +1,9 @@
+import en from '@resources/ui/en.json';
+import id from '@resources/ui/id.json';
 import { useContext } from 'react';
 
-import { appData } from '../../../data';
-import en from './en.json';
-import id from './id.json';
+import { appData } from '@/shared/data';
+
 import { LangContext } from './lang-context';
 import type { SupportedLang, Translations } from './types';
 

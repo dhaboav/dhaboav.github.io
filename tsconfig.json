@@ -7,16 +7,5 @@
     {
       "path": "./tsconfig.node.json"
     }
-  ],
-  "compilerOptions": {
-    "resolveJsonModule": true,
-    "paths": {
-      "@/*": ["./src/*"],
-      "@data/*": ["./data/*"],
-      "@/ui/*": ["./src/shared/ui/*"],
-      "@/blog/*": ["./src/modules/blog/*"],
-      "@/homepage/*": ["./src/modules/homepage/*"],
-      "@/layout/*": ["./src/modules/layout/*"]
-    }
-  }
+  ]
 }

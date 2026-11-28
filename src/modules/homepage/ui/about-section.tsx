@@ -1,5 +1,6 @@
-import { personalData } from '@data/index';
+import profileImage from '@resources/assets/profile.avif';
 
+import { personalData } from '@/shared/data/index';
 import { useI18n } from '@/shared/i18n/useI18n';
 import { Card, CardContent } from '@/shared/ui/card';
 
@@ -23,7 +24,7 @@ export function AboutSection() {
         <div className="mt-10 grid gap-10 md:items-start md:grid-cols-[minmax(0,320px)_minmax(0,1fr)]">
           <div aria-label="profile">
             <img
-              src="/assets/profile.png"
+              src={profileImage}
               alt={personalData.brandName}
               loading="lazy"
               width={640}

@@ -14,7 +14,8 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,css}\"",
-    "format:md": "prettier --write \"public/blog/**/*.md\""
+    "format:md": "prettier --write \"resources/blog/**/*.md\"",
+    "format:json": "prettier --write \"resources/**/*.json\""
   },
   "keywords": [
     "portfolio",

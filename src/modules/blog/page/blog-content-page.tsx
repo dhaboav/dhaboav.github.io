@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { HashLink } from 'react-router-hash-link';
 
-import { useBlogContent } from '@/blog/hook/use-blog-content';
-import { formatDate } from '@/blog/util/format-date';
+import { useBlogContent } from '@/modules/blog/hook/use-blog-content';
 import { BlogContentSkeleton } from '@/modules/blog/ui/blog-content-skeleton';
+import { formatDate } from '@/modules/blog/util/format-date';
 import { useI18n } from '@/shared/i18n/useI18n';
 import { NotFound } from '@/shared/ui/not-found';
 

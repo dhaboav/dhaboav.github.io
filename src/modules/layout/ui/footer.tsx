@@ -1,4 +1,4 @@
-import { personalData, snsData } from '@data/index';
+import { personalData, snsData } from '@/shared/data/index';
 
 export function Footer() {
   return (

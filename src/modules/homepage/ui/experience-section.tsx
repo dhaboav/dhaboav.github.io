@@ -1,20 +1,25 @@
-// import { skillData } from '@data/index';
-import type { ExperienceItem } from '@data/types';
 import { cn } from 'cn';
 import { ChevronDownIcon } from 'lucide-react';
 import { useState } from 'react';
 
+import type { ExperienceItem } from '@/shared/data/types';
 import { useI18n } from '@/shared/i18n/useI18n';
 import { Badge } from '@/shared/ui/badge';
 import { Button } from '@/shared/ui/button';
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/shared/ui/card';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/shared/ui/collapsible';
-import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from '@/ui/card';
 
 import { SectionHeading } from './section-heading';
 import { ShowMore } from './show-more';
 
 const EXP_LIMIT = 4;
-// const SKILL_LIMIT = 4;
 
 export function ExperienceSection() {
   const { ui, data } = useI18n();
@@ -23,13 +28,9 @@ export function ExperienceSection() {
     setShowAll((prev) => ({ ...prev, [key]: !prev[key] }));
   };
 
-  // Experience Data Handling
+  // Data slicing
   const countExp = data.experience.length - EXP_LIMIT;
   const visibleExp = showAll.exp ? data.experience : data.experience.slice(0, EXP_LIMIT);
-
-  // Skill Data Handling
-  // const countSkill = skillData.length - SKILL_LIMIT;
-  // const visibleSkill = showAll.skill ? skillData : skillData.slice(0, SKILL_LIMIT);
 
   return (
     <section id="experiences" className="section-container">
@@ -71,25 +72,6 @@ export function ExperienceSection() {
           onToggle={() => toggleShow('exp')}
           label={countExp === 1 ? 'exp' : 'exps'}
         />
-
-        {/* Skills Section
-        <h3
-          className="text-muted-foreground mt-6 font-mono text-sm tracking-[0.2em] uppercase lg:mt-14"
-          aria-label="skills"
-        >
-          {ui.experience.skillsLabel}
-        </h3>
-        <div className="mt-2 grid md:grid-cols-3 gap-3">
-          {visibleSkill.map((item, index) => (
-            <SkillsCard key={index} {...item} />
-          ))}
-        </div>
-        <ShowMore
-          expanded={showAll.skill}
-          hiddenCount={countSkill}
-          onToggle={() => toggleShow('skill')}
-          label={countSkill === 1 ? 'skill' : 'skills'}
-        /> */}
       </div>
     </section>
   );
@@ -97,6 +79,8 @@ export function ExperienceSection() {
 
 function ExperienceCard({ id, tags = [], highlights = [], ...props }: ExperienceItem) {
   const [open, setOpen] = useState(id === 1);
+  const isTags = tags.length > 0;
+  const isHighlights = highlights.length > 0;
 
   return (
     <Collapsible open={open} onOpenChange={setOpen} className="group w-full">
@@ -109,7 +93,7 @@ function ExperienceCard({ id, tags = [], highlights = [], ...props }: Experience
           <CardTitle className="text-base md:text-lg">{props.jobtitle}</CardTitle>
           <CardDescription>
             <p>{props.workplace}</p>
-            {tags.length > 0 && (
+            {isTags && (
               <div className="flex flex-wrap gap-1.5 mt-2">
                 {tags.map((tag) => (
                   <Badge key={tag} variant="outline" className="font-mono text-[10px] rounded-none">
@@ -120,7 +104,7 @@ function ExperienceCard({ id, tags = [], highlights = [], ...props }: Experience
             )}
           </CardDescription>
 
-          {(props.description || highlights.length > 0) && (
+          {(props.description || isHighlights) && (
             <CardAction>
               <CollapsibleTrigger
                 render={
@@ -143,7 +127,7 @@ function ExperienceCard({ id, tags = [], highlights = [], ...props }: Experience
           <CardContent className="space-y-3 border-t pt-4 px-0 border-border">
             <p className="text-sm leading-relaxed text-muted-foreground">{props.description}</p>
 
-            {highlights.length > 0 && (
+            {isHighlights && (
               <ul className="space-y-1.5">
                 {highlights.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -159,27 +143,3 @@ function ExperienceCard({ id, tags = [], highlights = [], ...props }: Experience
     </Collapsible>
   );
 }
-
-// interface SkillsCardProps {
-//   category: string;
-//   techStack: string[];
-// }
-
-// function SkillsCard({ category, techStack }: SkillsCardProps) {
-//   return (
-//     <Card className="lift">
-//       <CardHeader>
-//         <CardTitle className="text-primary font-mono text-xs tracking-widest uppercase">
-//           {category}
-//         </CardTitle>
-//       </CardHeader>
-//       <CardContent className="flex flex-wrap flex-row gap-2">
-//         {techStack.map((skill, index) => (
-//           <Badge key={index} className="text-foreground cursor-default font-mono text-xs bg-border">
-//             {skill}
-//           </Badge>
-//         ))}
-//       </CardContent>
-//     </Card>
-//   );
-// }

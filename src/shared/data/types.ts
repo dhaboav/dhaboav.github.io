@@ -21,13 +21,18 @@ interface aboutSectionData {
   };
 }
 
+export interface SkillItem {
+  category: string;
+  stack: string[];
+}
+
 export interface ExperienceItem {
   id: number;
   badge?: string;
   timeperiod?: string;
   jobtitle: string;
   workplace?: string;
-  tags?: string[]; 
+  tags?: string[];
   description?: string;
   highlights?: string[];
 }
@@ -39,6 +44,15 @@ export interface ProjectItem {
   techStack: string[];
   repoLink?: string;
   demoLink?: string;
+}
+
+export interface BlogItem {
+  id: number;
+  slug: string;
+  tag: string;
+  title: string;
+  dateISO: string;
+  excerpt: string;
 }
 
 interface contactSectionData {
@@ -57,20 +71,6 @@ export interface dynamicData {
   project: ProjectItem[];
   contact: contactSectionData;
 }
-
-export type blogItem = {
-  id: number;
-  slug: string;
-  tag: string;
-  title: string;
-  dateISO: string;
-  excerpt: string;
-};
-
-export type skillItem = {
-  category: string;
-  techStack: string[];
-};
 
 export type personalInfo = {
   name: string;

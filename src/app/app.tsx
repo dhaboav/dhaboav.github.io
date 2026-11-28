@@ -1,8 +1,8 @@
 import { HashRouter, Route, Routes } from 'react-router-dom';
 
-import { Homepage } from '@/homepage/page';
 import { BlogContentPage } from '@/modules/blog/page/blog-content-page';
 import { BlogListPage } from '@/modules/blog/page/blog-list-page';
+import { Homepage } from '@/modules/homepage/page';
 import { useI18n } from '@/shared/i18n/useI18n';
 import { NotFound } from '@/shared/ui/not-found';
 

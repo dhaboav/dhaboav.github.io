@@ -1,5 +1,6 @@
-import { blogData } from '@data/index';
 import { useMemo, useState } from 'react';
+
+import { blogData } from '@/shared/data/index';
 
 export function useBlogList(page: number = 1, size: number = 12) {
   const [searchQuery, setSearchQuery] = useState('');

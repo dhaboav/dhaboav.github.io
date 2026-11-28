@@ -1,15 +1,15 @@
-import { personalData } from '@data/index';
 import { cn } from 'cn';
 import { MenuIcon, MoonIcon, SunIcon, XIcon } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { HashLink } from 'react-router-hash-link';
 
-import { useNavbar } from '@/layout/hook/use-navbar';
-import { useTheme } from '@/layout/hook/use-theme';
+import { useNavbar } from '@/modules/layout/hook/use-navbar';
+import { useTheme } from '@/modules/layout/hook/use-theme';
+import { personalData } from '@/shared/data/index';
 import { type SupportedLang, languages } from '@/shared/i18n/types';
 import { useI18n } from '@/shared/i18n/useI18n';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/ui/select';
-import { Toggle } from '@/ui/toggle';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/shared/ui/select';
+import { Toggle } from '@/shared/ui/toggle';
 
 export function Navbar() {
   const { ui, lang, setLang } = useI18n();
