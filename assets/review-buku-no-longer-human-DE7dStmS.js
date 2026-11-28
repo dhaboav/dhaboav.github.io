@@ -1,4 +1,4 @@
-Halo semuanya! Kembali lagi di segmen review buku.
+var e=`Halo semuanya! Kembali lagi di segmen review buku.
 
 Pernahkah di suatu malam yang tenang, kepala kita dipenuhi pertanyaan eksistensial: _Untuk apa kita
 hidup? Apakah siklus hidup ini cuma bekerja lalu mati?_ Kegelisahan inilah yang dikupas habis dalam
@@ -43,3 +43,4 @@ yang sangat jujur tentang kerapuhan jiwa manusia.
 
 Buku ini sangat direkomendasikan untuk dibaca setidaknya sekali seumur hidup sebagai teman berdialog
 dengan isi kepala sendiri.
+`;export{e as default};

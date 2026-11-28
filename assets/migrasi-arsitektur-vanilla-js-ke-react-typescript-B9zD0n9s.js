@@ -1,4 +1,4 @@
-Sebuah portfolio bukan hanya sekadar halaman untuk menampilkan hasil pekerjaan. Seiring
+var e=`Sebuah portfolio bukan hanya sekadar halaman untuk menampilkan hasil pekerjaan. Seiring
 berkembangnya proyek dan pengalaman, portfolio juga menjadi representasi bagaimana seseorang
 membangun, mengelola, dan memikirkan sebuah sistem.
 
@@ -41,7 +41,7 @@ berkembang.
 
 Setelah migrasi, struktur aplikasi diubah menjadi lebih modular:
 
-```text
+\`\`\`text
 src/
 ├── components/
 │   ├── Header
@@ -59,7 +59,7 @@ src/
 │   └── Blog
 │
 └── hooks/
-```
+\`\`\`
 
 Dengan struktur ini, setiap bagian dapat dikembangkan secara independen tanpa mengganggu bagian
 lainnya.
@@ -76,25 +76,25 @@ peringatan.
 
 Contohnya:
 
-```js
+\`\`\`js
 const project = {
   title: 'Robot Controller',
   description: 'Robot system using Python',
 };
-```
+\`\`\`
 
 Masalah dapat muncul ketika properti yang digunakan tidak konsisten.
 
 Dengan TypeScript, struktur data dapat didefinisikan secara eksplisit:
 
-```ts
+\`\`\`ts
 interface Project {
   title: string;
   description: string;
   technologies: string[];
   link?: string;
 }
-```
+\`\`\`
 
 Pendekatan ini membuat kode lebih mudah dipahami dan mengurangi kemungkinan error saat proyek
 semakin besar.
@@ -110,17 +110,17 @@ ditulis langsung di dalam komponen.
 
 Contoh sederhana:
 
-```ts
+\`\`\`ts
 function useProjects() {
   return projects;
 }
-```
+\`\`\`
 
 Kemudian komponen hanya bertugas menampilkan data:
 
-```tsx
+\`\`\`tsx
 const projects = useProjects();
-```
+\`\`\`
 
 Pemisahan ini membuat kode menjadi lebih bersih dan mudah dikembangkan.
 
@@ -134,7 +134,7 @@ Markdown sebagai sumber konten.
 
 Alurnya menjadi:
 
-```text
+\`\`\`text
 Markdown File
       |
       v
@@ -145,12 +145,12 @@ React Markdown Renderer
       |
       v
 Blog Page
-```
+\`\`\`
 
 Setiap artikel cukup memiliki:
 
-- Metadata pada `blog.ts`
-- File konten `.md`
+- Metadata pada \`blog.ts\`
+- File konten \`.md\`
 - Slug unik sebagai identitas artikel
 
 Dengan pendekatan ini, menulis artikel baru menjadi lebih sederhana tanpa perlu membuat halaman baru
@@ -165,12 +165,12 @@ yang jelas.
 
 Contohnya:
 
-```text
+\`\`\`text
 pages/
 ├── Home.tsx
 ├── Blog.tsx
 └── BlogDetail.tsx
-```
+\`\`\`
 
 Pendekatan ini membuat pengembangan fitur baru seperti halaman artikel, kategori, atau halaman
 tambahan menjadi lebih mudah.
@@ -219,3 +219,4 @@ membangun sistem yang lebih terstruktur, mudah dikembangkan, dan memiliki tujuan
 
 Melalui proses ini, portfolio berkembang dari sekadar halaman statis menjadi sebuah platform
 personal yang dapat terus bertumbuh mengikuti perjalanan dan pengalaman yang dibangun.
+`;export{e as default};

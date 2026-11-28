@@ -1,4 +1,4 @@
-Bosan dengan tampilan desktop yang begitu-begitu saja? Ingin desktop yang lebih personal, bisa
+var e=`Bosan dengan tampilan desktop yang begitu-begitu saja? Ingin desktop yang lebih personal, bisa
 dikustomisasi, serta berfokus pada penggunaan keyboard untuk mengurangi ketergantungan terhadap
 mouse? Niri mungkin bisa menjadi jawabannya.
 
@@ -130,3 +130,4 @@ pengembangan Niri sudah tidak aktif lagi.
 
 **Jadi, bagaimana menurut kalian? Tertarik mencoba Niri atau justru sudah punya kombinasi compositor
 dan desktop shell andalan sendiri?**
+`;export{e as default};

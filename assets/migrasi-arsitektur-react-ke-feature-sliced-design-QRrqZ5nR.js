@@ -1,4 +1,4 @@
-Portfolio ini awalnya dibangun menggunakan struktur React yang sederhana. Namun seiring bertambahnya
+var e=`Portfolio ini awalnya dibangun menggunakan struktur React yang sederhana. Namun seiring bertambahnya
 fitur seperti daftar project, contact form, hingga blog, saya mulai sering berpindah-pindah folder
 hanya untuk mengerjakan satu perubahan.
 
@@ -20,18 +20,18 @@ Alasan saya sebenarnya cukup sederhana.
 
 Awalnya struktur project saya terlihat seperti ini.
 
-```text
+\`\`\`text
 src/
 ├── components/
 ├── hooks/
 ├── pages/
 └── utils/
-```
+\`\`\`
 
 Untuk project kecil, struktur tersebut sebenarnya sudah cukup baik. Namun semakin banyak komponen
 dan fitur yang ditambahkan, saya jadi harus membuka banyak folder hanya untuk mengerjakan satu
-perubahan. Misalnya saat memperbarui halaman **Project**, saya perlu berpindah dari `pages`, ke
-`components`, lalu ke `hooks`, dan terkadang juga ke `utils`. Lama-kelamaan alur kerja seperti ini
+perubahan. Misalnya saat memperbarui halaman **Project**, saya perlu berpindah dari \`pages\`, ke
+\`components\`, lalu ke \`hooks\`, dan terkadang juga ke \`utils\`. Lama-kelamaan alur kerja seperti ini
 terasa kurang nyaman.
 
 ## Apa yang Menarik dari FSD?
@@ -40,9 +40,9 @@ Hal yang membuat saya tertarik dengan FSD bukan jumlah foldernya, melainkan cara
 
 Sebelumnya saya mengelompokkan kode berdasarkan **jenis file**.
 
-- Semua komponen masuk ke `components`.
-- Semua hook masuk ke `hooks`.
-- Semua utility masuk ke `utils`.
+- Semua komponen masuk ke \`components\`.
+- Semua hook masuk ke \`hooks\`.
+- Semua utility masuk ke \`utils\`.
 
 Sedangkan FSD mengelompokkan kode berdasarkan **fitur**.
 
@@ -63,7 +63,7 @@ Setiap selesai memigrasikan satu bagian, saya langsung menguji apakah fungsi dan
 berjalan seperti sebelumnya. Perlahan tetapi pasti, struktur project saya berubah menjadi seperti
 ini.
 
-```text
+\`\`\`text
 src/
 ├── app/
 ├── entities/
@@ -71,7 +71,7 @@ src/
 ├── widgets/
 ├── features/
 └── shared/
-```
+\`\`\`
 
 Migrasi memang terasa lebih lambat, tetapi jauh lebih mudah dikendalikan ketika muncul masalah.
 
@@ -102,10 +102,10 @@ pelajari.
 
 ### Menentukan Komponen Masuk ke Mana
 
-Saya juga sempat bingung menentukan apakah sebuah komponen sebaiknya masuk ke `shared` atau tetap
-berada di dalam `features`. Akhirnya saya menggunakan aturan sederhana.
+Saya juga sempat bingung menentukan apakah sebuah komponen sebaiknya masuk ke \`shared\` atau tetap
+berada di dalam \`features\`. Akhirnya saya menggunakan aturan sederhana.
 
-- Jika komponen dapat digunakan di banyak tempat, maka masuk ke `shared`.
+- Jika komponen dapat digunakan di banyak tempat, maka masuk ke \`shared\`.
 - Jika hanya digunakan oleh satu fitur, maka tetap berada di dalam folder fitur tersebut.
 
 Aturan sederhana ini ternyata cukup membantu menjaga struktur project tetap konsisten.
@@ -114,19 +114,19 @@ Aturan sederhana ini ternyata cukup membantu menjaga struktur project tetap kons
 
 ### Sebelum
 
-```text
+\`\`\`text
 src/
 ├── components/
 ├── hooks/
 ├── pages/
 └── utils/
-```
+\`\`\`
 
 Semua file dipisahkan berdasarkan jenisnya.
 
 ### Sesudah
 
-```text
+\`\`\`text
 src/
 ├── app/
 ├── entities/
@@ -134,7 +134,7 @@ src/
 ├── widgets/
 ├── features/
 └── shared/
-```
+\`\`\`
 
 Sekarang saya jauh lebih mudah menemukan file karena semua yang berkaitan dengan satu fitur berada
 dalam satu tempat.
@@ -185,3 +185,4 @@ Apakah saya akan menggunakan FSD di setiap project? Belum tentu.
 Namun melalui project portfolio ini, saya jadi lebih memahami kapan FSD benar-benar memberikan
 manfaat dan kapan struktur yang lebih sederhana justru sudah cukup. Dan menurut saya, pengalaman
 belajar seperti itu sudah menjadi hasil yang sangat berharga.
+`;export{e as default};

@@ -1,4 +1,4 @@
-Jika Anda menyukai novel bertema finansial yang dibalut dengan santai, webnovel berjudul **Money
+var e=`Jika Anda menyukai novel bertema finansial yang dibalut dengan santai, webnovel berjudul **Money
 Keeps Piling Up No Matter How Much I Spend** (atau judul aslinya 계속 써도 돈이 쌓임) karya
 운좋은놈, mungkin cocok untuk Anda.
 
@@ -49,3 +49,4 @@ dituangkan ke dalam bentuk tulisan yang menyenangkan dan ringan.
 
 - **Kurang cocok untuk:** Pembaca yang sedang mencari kisah ekonomi atau bisnis yang sangat
   realistis, teknis, dan mendalam secara teori.
+`;export{e as default};

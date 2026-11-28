@@ -1,4 +1,4 @@
-Halo! Pada artikel ini, saya ingin membagikan pengalaman menggunakan Linux, khususnya Ubuntu 26.04.1
+var e=`Halo! Pada artikel ini, saya ingin membagikan pengalaman menggunakan Linux, khususnya Ubuntu 26.04.1
 LTS dengan kernel 7.0.0-31-generic, sebagai sistem operasi utama (daily driver) untuk kebutuhan
 sehari-hari.
 
@@ -36,23 +36,23 @@ beradaptasi.
 
 #### Pro (Kelebihan):
 
-- `Ringan & Bersih:`Tidak ada aplikasi bawaan yang tidak perlu. Anda hanya menginstal apa yang
+- \`Ringan & Bersih:\`Tidak ada aplikasi bawaan yang tidak perlu. Anda hanya menginstal apa yang
   benar-benar dipakai.
 
-- `Ramah Pemrograman:`Sangat nyaman untuk coding dengan ekosistem terminal yang seamless.
+- \`Ramah Pemrograman:\`Sangat nyaman untuk coding dengan ekosistem terminal yang seamless.
 
-- `Kustomisasi Tanpa Batas:`Bebas merancang tampilan dan workflow sesuai gaya Anda.
+- \`Kustomisasi Tanpa Batas:\`Bebas merancang tampilan dan workflow sesuai gaya Anda.
 
 #### Cons (Kekurangan):
 
-- `Produktivitas & Office:`Layanan Microsoft Office tidak bisa digunakan secara natif. Alternatif
+- \`Produktivitas & Office:\`Layanan Microsoft Office tidak bisa digunakan secara natif. Alternatif
   seperti LibreOffice memiliki tampilan antarmuka yang butuh pembiasaan. Saya pribadi menyiasatinya
   dengan menggunakan Google Workspace via browser.
 
-- `Gaming:`Dukungan game di Linux masih terbatas. Walaupun Steam sudah sangat membantu, memainkan
+- \`Gaming:\`Dukungan game di Linux masih terbatas. Walaupun Steam sudah sangat membantu, memainkan
   game lewat third-party tetap memiliki risiko terkena banned.
 
-- `Kompatibilitas Driver:`Sebagian besar driver penting (audio, Wi-Fi, Bluetooth, GPU) sudah
+- \`Kompatibilitas Driver:\`Sebagian besar driver penting (audio, Wi-Fi, Bluetooth, GPU) sudah
   otomatis terpasang di Ubuntu. Namun, untuk perangkat lunak khusus pabrikan laptop, seperti Nitro
   Sense di Acer. Anda harus mencari alternatif pihak ketiga (misalnya Acer Manager MAX), di mana
   beberapa fitur seperti RGB keyboard terkadang tidak berfungsi optimal.
@@ -66,3 +66,4 @@ Linux bukanlah sistem operasi yang cocok untuk semua orang. Ada kompromi yang ha
 terutama terkait aplikasi kantoran dan gaming. Namun, jika Anda mendambakan kebebasan, menyukai
 efisiensi, dan fokus pada dunia development, beralih ke Ubuntu bisa jadi keputusan terbaik untuk
 meningkatkan produktivitas.
+`;export{e as default};

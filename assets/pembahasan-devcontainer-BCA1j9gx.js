@@ -1,4 +1,4 @@
-Pernahkah kode berjalan mulus di laptop rekan tim, tapi gagal total di komputer Anda gara-gara beda
+var e=`Pernahkah kode berjalan mulus di laptop rekan tim, tapi gagal total di komputer Anda gara-gara beda
 versi Node.js? Masalah klasik "_di laptop saya lancar-lancar saja_" ini sudah jadi mimpi buruk lama
 developer. Untungnya, ada solusi yang jauh lebih elegan: **Dev Container**.
 
@@ -24,18 +24,18 @@ pemrograman, dependency, hingga ekstensi editor menjadi satu paket praktis denga
 
 Anda bisa menggunakannya di code editor yang mendukung fitur ini, seperti VS Code dengan ekstensi
 **Dev Containers**, atau langsung di-host lewat cloud menggunakan **GitHub Codespaces** tanpa
-konfigurasi rumit di laptop. Cukup buka proyek yang memiliki folder `.devcontainer,` lalu sistem
+konfigurasi rumit di laptop. Cukup buka proyek yang memiliki folder \`.devcontainer,\` lalu sistem
 akan otomatis:
 
-1. Membaca file konfigurasi (`devcontainer.json`).
+1. Membaca file konfigurasi (\`devcontainer.json\`).
 2. Menyalakan kontainer Docker di latar belakang.
 3. Memindahkan seluruh file ke dalam kontainer tersebut.
 
 Agar sistem bisa melakukan itu semua, Anda hanya perlu membuat sebuah file bernama
-`devcontainer.json` di dalam folder `.devcontainer` pada direktori utama proyek Anda. Berikut adalah
+\`devcontainer.json\` di dalam folder \`.devcontainer\` pada direktori utama proyek Anda. Berikut adalah
 contoh konfigurasi nyata yang saya gunakan dan aplikasikan untuk web app ini:
 
-```code
+\`\`\`code
 {
   "name": "Personal Web",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:5-24-trixie",
@@ -57,7 +57,7 @@ contoh konfigurasi nyata yang saya gunakan dan aplikasikan untuk web app ini:
   "postCreateCommand": "pnpm install",
   "postStartCommand": "pnpm dev --host"
 }
-```
+\`\`\`
 
 Hasilnya? Terminal, linter, dan server lokal Anda berjalan bersih di dalam kontainer, namun tetap
 menyatu mulus dengan komputer lokal Anda.
@@ -67,15 +67,15 @@ menyatu mulus dengan komputer lokal Anda.
 Jika Anda mulai menggunakan Dev Container, ada beberapa pengaturan penting yang sering kali menjadi
 penentu kelancaran proyek:
 
-- **`forwardPorts`:** Karena terisolasi, Anda perlu mendaftarkan port aplikasi (seperti `5173` untuk
+- **\`forwardPorts\`:** Karena terisolasi, Anda perlu mendaftarkan port aplikasi (seperti \`5173\` untuk
   Vite) di file konfigurasi agar bisa diakses lewat _browser_ lokal.
 
 - **Ekstensi Otomatis:** Mengatur agar ekstensi editor pilihan (seperti Prettier atau ESLint)
   langsung terpasang otomatis begitu kontainer menyala.
 
-- **Lifecycle Commands (`postCreateCommand`, dll):** Berbagai perintah yang dieksekusi secara
+- **Lifecycle Commands (\`postCreateCommand\`, dll):** Berbagai perintah yang dieksekusi secara
   otomatis sesuai tahapan siklus hidup kontainer. Hal ini memungkinkan otomatisasi penuh untuk
-  mengurangi langkah manual—seperti menjalankan `npm install` atau langsung menyalakan server
+  mengurangi langkah manual—seperti menjalankan \`npm install\` atau langsung menyalakan server
   aplikasi—segera setelah kontainer siap digunakan.
 
 Untuk informasi lebih mendalam dan spesifikasi lengkapnya, Anda bisa membaca dokumentasi resmi di
@@ -88,3 +88,4 @@ berjam-jam membaca panduan instalasi yang rentan _error_, Anda cukup menekan sat
 (_Rebuild_), dan seluruh ekosistem ngoding langsung siap pakai dalam hitungan menit.
 
 Bagaimana pengalaman Anda sejauh ini menggunakan kontainer Docker untuk pengembangan sehari-hari?
+`;export{e as default};
