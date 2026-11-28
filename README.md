@@ -1,6 +1,7 @@
 # 🚀 My Portfolio Website
 
-A modern, responsive personal portfolio built with **React**, **TypeScript**, and **TailwindCSS**. Hosted on **GitHub Pages**.
+A modern, responsive personal portfolio built with **React**, **TypeScript**, and **TailwindCSS**.
+Hosted on **GitHub Pages**.
 
 ## ✨ Features
 
@@ -17,7 +18,7 @@ A modern, responsive personal portfolio built with **React**, **TypeScript**, an
 src/
 ├── app/      # Application setup & providers
 ├── modules/  # Feature domains (UI components, pages, & local logic per feature)
-└── shared/   # Global resources (Universal UI components, i18n, & global utilities)
+└── shared/   # Global resources (Universal UI components, data, i18n, & global utilities)
 ```
 
 ## 🚀 Getting Started
@@ -43,16 +44,16 @@ pnpm dev
 ## 📦 Build & Deploy
 
 ```bash
-pnpm build      # Production build
-pnpm preview    # Local preview
-pnpm run deploy # Deploy to GitHub Pages
+pnpm build    # Production build
+pnpm preview  # Local preview
+pnpm deploy   # Deploy to GitHub Pages
 ```
 
 ## ✏️ Customization
 
-- `data/`            → Manage data, blogs, and app content.
-- `src/shared/i18n/` → Manage translations and localization.
-- `.devcontainer/`   → Configure development environment settings.
+- `.devcontainer/` → Contains development container configuration.
+- `resources/` → Centralizes application resources, including assets, blog content, data, metadata,
+  and UI translations.
 
 > Restart the development server if changes do not reflect automatically.
 
